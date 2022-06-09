@@ -1,0 +1,19 @@
+.img-staycation-choosed {
+	display: grid;
+	grid-template-columns: auto 229px;
+	gap: 12px;
+	width: 100%;
+	height: 293px;
+	margin-bottom: 24px;
+	.left {
+		border-radius: 8px 0px 0px 8px;
+		height: 100%;
+		width: 100%;
+		margin-right: 12px;
+		background-color: var(--ultralight-gray);
+	}
+	.right {
+		height: 100%;
+		background-color: var(--ultralight-gray);
+	}
+}

@@ -1,0 +1,83 @@
+#product-card {
+	width: 100%;
+
+	figure {
+		display: flex;
+		justify-content: center;
+		cursor: pointer;
+		position: relative;
+		padding-top: 100%;
+		width: 100%;
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 6px;
+			border: none;
+		}
+	}
+
+	.card-dots {
+		margin-top: 90%;
+		margin-bottom: 22px;
+		display: flex;
+		position: absolute;
+		top: 0%;
+
+		span {
+			width: 6px;
+			height: 6px;
+			border-radius: 100px;
+			margin-left: 6px;
+			background-color: #fefefe;
+		}
+	}
+
+	.description {
+		display: flex;
+		flex-direction: column;
+
+		div {
+			display: flex;
+			justify-content: space-between;
+			&.budget {
+				display: block;
+			}
+		}
+
+		.description-head {
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+	}
+
+	.location {
+		margin-bottom: 2px;
+		font-size: 14px;
+		color: gray;
+	}
+
+	.date {
+		margin-bottom: 10px;
+		font-size: 14px;
+		color: gray;
+	}
+
+	.budget {
+		span {
+			font-size: 12px;
+		}
+	}
+}
+
+/* animation */
+@keyframes anm-product-card {
+	from {
+		opacity: 0%;
+	}
+	to {
+		opacity: 100%;
+	}
+}

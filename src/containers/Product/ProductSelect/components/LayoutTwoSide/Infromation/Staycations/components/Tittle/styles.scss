@@ -1,0 +1,39 @@
+#tittle-staycation-choosed {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 24px;
+	.head {
+		display: flex;
+		align-items: center;
+		label {
+			margin-left: 20px;
+		}
+		div {
+			font-size: 24px;
+			color: var(--gray);
+		}
+		span {
+			display: flex;
+			width: 6px;
+			height: 6px;
+			background-color: var(--gray);
+			border-radius: 100px;
+			margin-left: 20px;
+		}
+	}
+	.foot > * {
+		margin-right: 15px;
+	}
+	.budget {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		label {
+			font-size: 24px;
+			color: var(--gray);
+			span {
+				font-size: 16px;
+			}
+		}
+	}
+}

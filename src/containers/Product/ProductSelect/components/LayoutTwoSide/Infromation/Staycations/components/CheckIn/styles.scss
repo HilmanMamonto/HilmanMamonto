@@ -1,0 +1,59 @@
+#check-in {
+	.h {
+		margin-bottom: 12px;
+	}
+	.from-wraper {
+		display: grid;
+		grid-template-columns: auto 145px;
+		width: 100%;
+		height: 80px;
+
+		.form-input {
+			height: 100%;
+			border: 1px solid var(--ultralight-gray);
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding: 0px 20px;
+			align-items: center;
+			margin-right: 20px;
+			border-radius: 6px;
+			.in {
+				display: flex;
+				flex-direction: column;
+				& > * {
+					display: flex;
+				}
+			}
+
+			.out {
+				display: flex;
+				span {
+					margin-right: 20px;
+				}
+				div {
+					display: flex;
+					flex-direction: column;
+					& > * {
+						display: flex;
+					}
+				}
+			}
+			label {
+				color: var(--gray);
+				margin-bottom: 4px;
+				font-size: 12px;
+				font-weight: bold;
+			}
+			span {
+				background-color: var(--ultralight-gray);
+				height: 40px;
+				width: 2px;
+			}
+		}
+		.btn-add-to-list {
+			width: 145px;
+			border-radius: 4px;
+			font-size: 16px;
+		}
+	}
+}

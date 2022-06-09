@@ -1,0 +1,82 @@
+button {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	margin: 0px;
+	padding: 0px;
+}
+
+// background colors
+
+.btn-primary {
+	background-color: var(--black);
+}
+
+.btn-secondary {
+	background-color: var(--red);
+}
+
+.btn-gray {
+	background-color: var(--gray);
+}
+.btn-light-gray {
+	background-color: var(--light-gray);
+}
+.btn-ultralight-gray {
+	background-color: var(--ultralight-gray);
+}
+
+.btn-white {
+	background-color: var(--white);
+}
+
+// text colors
+
+.btn-txt-primary {
+	color: var(--black);
+}
+
+.btn-txt-secondary {
+	color: var(--red);
+}
+
+.btn-txt-gray {
+	color: var(--gray);
+}
+.btn-txt-light-gray {
+	color: var(--light-gray);
+}
+.btn-txt-ultralight-gray {
+	color: var(--ultralight-gray);
+}
+
+.btn-txt-white {
+	color: var(--white);
+}
+
+.btn-rounded {
+	border-radius: 100px;
+}
+
+.btn-bordered {
+	border: 1px solid var(--gray);
+}
+
+// underline
+
+.btn-underline {
+	text-decoration: underline;
+}
+
+// button toggle
+
+.btn-active {
+	opacity: 100%;
+	transition: opacity 0.3s ease-in-out;
+	visibility: visible;
+}
+.btn-hide {
+	opacity: 0%;
+	transition: visibility 0s linear .3s, opacity .3s;
+	visibility: hidden;
+}

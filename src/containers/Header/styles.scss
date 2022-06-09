@@ -1,0 +1,50 @@
+#header {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	top: 0;
+	z-index: 3;
+	position: sticky;
+
+	header {
+		background-color: var(--white);
+		width: 100%;
+		opacity: 0%;
+		overflow: hidden;
+		transition: visibility linear .3s, opacity .3s ease-in-out, height .3s ease-in-out;
+		z-index: 3;
+		visibility: hidden;
+		position: relative;
+		&.active {
+			height: auto;
+			opacity: 100%;
+			visibility: visible;
+			overflow: visible;
+			nav {
+				height: 80px;
+				transition: visibility linear .3s, opacity .3s ease-in-out, height .3s ease-in-out;
+			}
+		}
+		nav {
+			background-color: var(--white);
+			width: 100%;
+			height: 0px;
+			transition: visibility linear .3s, opacity .3s ease-in-out, height .3s ease-in-out;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			position: absolute;
+			left: 0;
+			top: 0;
+			padding: 0 120px;
+		}
+		border-bottom: 1px solid var(--ultralight-gray);
+	}
+	.bg-black-transparent {
+		background-color: black;
+		height: 100vh;
+		width: 100%;
+		position: absolute;
+		z-index: -10;
+		opacity: .2;
+	}
+}

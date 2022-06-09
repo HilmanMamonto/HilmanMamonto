@@ -1,0 +1,14 @@
+#select-product-reviews {
+	padding-top: 42px;
+	padding-bottom: 62px;
+	border-top: 1px solid var(--ultralight-gray);
+	border-bottom: 1px solid var(--ultralight-gray);
+	margin: 0 120px;
+	margin-bottom: 42px;
+	.tittle {
+		display: flex;
+		.h {
+			margin-right: 20px;
+		}
+	}
+}

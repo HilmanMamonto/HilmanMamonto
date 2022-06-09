@@ -1,0 +1,47 @@
+#rate-chart {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	grid-template-columns: 1fr 2fr;
+	row-gap: 16px;
+	column-gap: 68px;
+	margin-top: 24px;
+	margin-bottom: 83px;
+	padding-right: auto;
+
+	.item {
+		display: flex;
+		.tittle {
+			width: 117px;
+			margin-top: auto;
+			margin-bottom: auto;
+			margin-right: 33px;
+			font-weight: 400;
+			color: var(--gray);
+		}
+		.rate {
+			margin-top: auto;
+			margin-bottom: auto;
+			font-weight: 600;
+			color: var(--gray);
+		}
+		div {
+			margin: auto 0px;
+			border-radius: 100px;
+			width: 200px;
+			height: 6px;
+			background-color: var(--ultralight-gray);
+			position: relative;
+			margin-right: 21px;
+			span {
+				display: flex;
+				position: absolute;
+				z-index: 2;
+				left: 0;
+				width: 80%;
+				height: 100%;
+				border-radius: 100px;
+				background-color: var(--black);
+			}
+		}
+	}
+}

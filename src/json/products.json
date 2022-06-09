@@ -1,0 +1,303 @@
+[
+	{
+		"id": "abcdabcd001",
+		"tourName": "Holiday Package: Bromo",
+		"location": "Malang, Bromo Tengger Semeru, Indonesia",
+		"locationSrc": "https://goo.gl/maps/53u2FjvCqJHAcwpc9",
+		"tourGuideName": "Andy Mahendra",
+		"tourGuidePhoto": "andy.jpg",
+		"freePickup": true,
+		"maxPax": 6,
+		"rate": 4.8,
+		"imagesUrl": [
+			{
+				"id": "abcdabcd001",
+				"url": "andy-bromo-1.jpg"
+			},
+			{
+				"id": "abcdabcd001",
+				"url": "andy-bromo-2.jpg"
+			},
+			{
+				"id": "abcdabcd001",
+				"url": "/images/img-tour-moh-sidik-3"
+			}
+		],
+		"travelAmenities": [
+			{
+				"name": "Lunch",
+				"iconUrl": "spon-fork.svg"
+			},
+			{
+				"name": "Photograph",
+				"iconUrl": "camera.svg"
+			},
+			{
+				"name": "Transport",
+				"iconUrl": "car.svg"
+			},
+			{
+				"name": "Free Ticket",
+				"iconUrl": "ticket.svg"
+			},
+			{
+				"name": "Best Route",
+				"iconUrl": "route.svg"
+			},
+			{
+				"name": "Umbrella",
+				"iconUrl": "umbrella.svg"
+			},
+			{
+				"name": "Sunscreen",
+				"iconUrl": "sunscreen.svg"
+			}
+		],
+		"travelAmenitiesNot": [
+			{
+				"name": "on car",
+				"iconUrl": "no-smoking.svg"
+			},
+			{
+				"name": "Launch",
+				"iconUrl": "/Icon/..."
+			}
+		],
+		"language": [
+			{ "name": "English", "iconUrl": "flag-english.png" },
+			{ "name": "Indonesia", "iconUrl": "flag-indonesia.png" }
+		],
+		"itinerary": [
+			{
+				"time": "00:15 - 00:30",
+				"do": "Pick up in Malang areas (can be done to hotels)"
+			},
+			{
+				"time": "00:30 - 03:30",
+				"do": "Go to View Point Sunrise (hiking point/Kingkong Hill/other situational alternatives)"
+			},
+			{
+				"time": "06:00 - 07:00",
+				"do": "Go to Love Hill, Widodaren, then go exploring and hunting for photos"
+			},
+			{
+				"time": "07:00 - 09:00",
+				"do": "Explore Bromo Crater & Pura Luhur Poten, trekking, and photo hunting"
+			},
+			{
+				"time": "09:00 - 10:00",
+				"do": "Explore Whispering Sand, Savanah, and Teletubbies Hill"
+			},
+			{
+				"time": "10:00 - 11:00",
+				"do": "Return back to Malang, Bonus Coban Pelangi Waterfall (situational, depends on participants' choice) "
+			}
+		],
+		"staycations": [
+			{
+				"name": "Cemara Indah Hotel",
+				"budget": 32,
+				"rate": 5.0,
+				"description": "Located in Bromo, 1.7 km from Mount Bromo, Cemara Indah Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free",
+				"amenities": [
+					{
+						"name": "Pool",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Parking Area",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Parking Area",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Wifi",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Hot Tub",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Heater",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Lauch",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Iron",
+						"iconUrl": "Icon/..."
+					}
+				]
+			}
+		],
+		"additionalInformation": [ "Please bring a mask and a flashlight", "Please wear shoes instead of sandals" ],
+		"pickUpServices": [ "Free Pick-up Available. Malang city area except for the station" ],
+		"rateDetails": {
+			"comunication": 4.8,
+			"value": 5.0,
+			"location": 5.0,
+			"accuracy": 5.0
+		},
+		"reviews": [
+			{
+				"name": "Fran G. Pani",
+				"review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+			},
+			{
+				"name": "Simon Sais",
+				"review": "Interesting, nice place, good experiance!"
+			},
+			{
+				"name": "Amanda Hug",
+				"review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+			},
+			{
+				"name": "Manuel Labor",
+				"review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+			}
+		],
+		"placeDescription": "Begin your day with a breathtaking sunrise over the majestic Mount Bromo. Find the best spot at the View Point Penanjakan and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the national park has to offer. Make way to many more photogenic spots, such as Bukit Cinta, Mount Bromo and its crater, the stunning vastness of Pasir Bercepat and the savanna. Don't forget to see the picturesque Bukit Teletubbies that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to the Coban Pelangi Waterfall to your itinerary! "
+	},
+	{
+		"id": "abcdabcd002",
+		"tourName": "One Day Bycicle In Kyoto",
+		"location": "Kyoto, Japan",
+		"tourGuideName": "Makoto Hirata",
+		"freePickup": true,
+		"maxPax": 3,
+		"rate": 4.8,
+		"imagesUrl": [
+			{
+				"id": "abcdabcd002",
+				"url": "products-images/abcdabcd002/kyoto-bamboo"
+			},
+			{
+				"id": "abcdabcd002",
+				"url": "products-images/abcdabcd002/kyoto-bamboo-forest"
+			},
+			{
+				"id": "abcdabcd002",
+				"url": "products-images/abcdabcd002/kyoto-fushimi-inari"
+			},
+			{
+				"id": "abcdabcd002",
+				"url": "products-images/abcdabcd002/kyoto-gion"
+			},
+			{
+				"id": "abcdabcd002",
+				"url": "products-images/abcdabcd002/kyoto-kiyomizu"
+			},
+			{
+				"id": "abcdabcd002",
+				"url": "products-images/abcdabcd002/kyoto-kinkakuji"
+			}
+		],
+		"travelAmenities": [
+			{
+				"name": "Bycicle",
+				"iconUrl": "/Icon/bycicle"
+			},
+			{
+				"name": "Helmet",
+				"iconUrl": "/Icon/..."
+			},
+			{
+				"name": "Bottled Water",
+				"iconUrl": "/Icon/..."
+			},
+			{
+				"name": "Admission Ticket",
+				"iconUrl": "/Icon/ticket"
+			},
+			{
+				"name": "Launch",
+				"iconUrl": "/Icon/burger"
+			},
+			{
+				"name": "Snacks",
+				"iconUrl": "/Icon/donuts"
+			}
+		],
+		"itinerary": [
+			{
+				"time": "07:00 - 7:30",
+				"do": "Pick up in Kyoto areas"
+			},
+			{
+				"time": "70:30 - 08:00",
+				"do": "Start biking at Saga-Arashiyama Station"
+			},
+			{
+				"time": "08:00 - 08:30",
+				"do": "Bamboo forest street"
+			},
+			{
+				"time": "08:30 - 09:00",
+				"do": "Fushimi Inari-taisha Shrine"
+			},
+			{
+				"time": "09:00 - 10:00",
+				"do": "Gion District"
+			},
+			{
+				"time": "10:00 - 11:00",
+				"do": "Kiyomizu-dera Temple"
+			},
+			{
+				"time": "11:00 - 12:00",
+				"do": "Kinkakuji Temple"
+			}
+		],
+		"staycations": [
+			{
+				"name": "Hotel Resol Kyoto Kawaramachi Sanjo",
+				"budget": 32,
+				"rate": 5.0,
+				"description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+				"amenities": [
+					{
+						"name": "Wifi",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Bath",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Air conditioning",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Heater",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Smoke alarams",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Security alaram",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Laundry",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "24-hour security",
+						"iconUrl": "Icon/..."
+					},
+					{
+						"name": "Restaurant",
+						"iconUrl": "Icon/..."
+					}
+				]
+			}
+		]
+	}
+]

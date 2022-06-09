@@ -1,0 +1,29 @@
+#nav-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	label {
+		font-size: 14px;
+	}
+
+	div {
+		margin-right: 24px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 20px;
+		span {
+			border-radius: 100px;
+			display: block;
+			height: 4px;
+			width: 24px;
+			background-color: var(--gray);
+		}
+	}
+	img {
+		width: 30px;
+		height: 30px;
+		background-color: var(--gray);
+		border-radius: 100px;
+	}
+}

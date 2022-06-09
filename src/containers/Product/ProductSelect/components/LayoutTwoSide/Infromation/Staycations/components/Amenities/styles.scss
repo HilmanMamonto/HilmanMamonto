@@ -1,0 +1,16 @@
+#staycation-aminities {
+	.h {
+		margin-bottom: 24px;
+	}
+	.items {
+		display: grid;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		row-gap: 16px;
+		.item {
+			display: flex;
+			color: var(--light-gray);
+		}
+		margin-bottom: 42px;
+	}
+}

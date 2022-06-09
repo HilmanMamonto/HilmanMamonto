@@ -1,0 +1,11 @@
+#product-body {
+	display: grid;
+	grid-template-columns: auto auto;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0px 120px;
+	margin-top: 42px;
+	.body-left {
+		max-width: 686px;
+	}
+}

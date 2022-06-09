@@ -1,0 +1,29 @@
+#hero {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	animation: anm-hero 3s ease-in-out;
+	margin: (160px + 32px) 120px 42px 120px;
+	figure {
+		height: 380px;
+		border-radius: 15px;
+		position: relative;
+		overflow: hidden;
+
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 14px;
+		}
+	}
+}
+
+/* animation */
+@keyframes anm-hero {
+	from {
+		opacity: 0%;
+	}
+	to {
+		opacity: 100%;
+	}
+}
