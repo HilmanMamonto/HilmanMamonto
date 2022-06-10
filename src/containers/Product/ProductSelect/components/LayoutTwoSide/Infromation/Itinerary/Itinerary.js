@@ -1,5 +1,5 @@
 import React from 'react';
-import './Itinerary.css';
+import './Itinerary.scss';
 import PropTypes from 'prop-types';
 const Itinerary = (props) => {
 	return (

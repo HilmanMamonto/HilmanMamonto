@@ -7,7 +7,7 @@ const SearchLocation = (props) => {
 	const isActive = props.isActive ? 'active' : 'hide';
 
 	if (props.type === 'recomended') {
-		return <SearchLocationRecomended className={props.className} />;
+		return <SearchLocationRecomended className={props.className} onClick={props.onClick} />;
 	}
 	if (props.type === 'manual') {
 		return <SearchLocationManual data={props.data} className={props.className} />;

@@ -48,6 +48,12 @@ const FormSearch = (props) => {
 		});
 		setInputLocation(result);
 	};
+
+	//location
+	const handleClickLocation = (e) => {
+		console.log('e');
+	};
+
 	const [ isCount, setIsCount ] = useState(0);
 	const handleCount = (e) => {
 		if (e.target.className === 'btn-plus') setIsCount(isCount + 1);
@@ -95,6 +101,7 @@ const FormSearch = (props) => {
 				data={inputLocation}
 				type={locationType}
 				className={locationIsShowed && isActive === 'active' ? 'active' : ''}
+				onClick={handleClickLocation}
 			/>
 			<SearchDate className={dateIsShowed && isActive === 'active' ? 'active' : ''} />
 			<SearchPax

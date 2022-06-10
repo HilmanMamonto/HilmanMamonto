@@ -1,15 +1,23 @@
 import React, { useState, useRef } from 'react';
-import vrData from 'json/vacation-recomendation.json';
+import Button from 'components/Button';
+import data from 'json/vacations-staycations-recomendation.json';
 import './styles.scss';
+import PropTypes from 'prop-types';
 
 const SearchLocationRecomended = (props) => {
 	const [ isShowed, setIsShowed ] = useState('vacation');
-
+	const [ _data, setData ] = useState(data.vacations);
 	const refItems = useRef(null);
 
 	const handleClick = (param) => {
-		if (param === 'vacation') setIsShowed('vacation');
-		if (param === 'staycation') setIsShowed('staycation');
+		if (param === 'vacation') {
+			setIsShowed('vacation');
+			setData(data.vacations);
+		}
+		if (param === 'staycation') {
+			setIsShowed('staycation');
+			setData(data.staycations);
+		}
 		if (param === 'btn-next') refItems.current.scrollLeft += 700;
 		if (param === 'btn-prev') refItems.current.scrollLeft -= 700;
 	};
@@ -40,13 +48,13 @@ const SearchLocationRecomended = (props) => {
 					+
 				</div>
 				<div className="items" ref={refItems}>
-					{vrData.map((val, i) => {
+					{_data.map((item, i) => {
 						return (
-							<div key={'vr' + i} className="item">
+							<div key={'vr' + i} className="item" onClick={handleClickLocation}>
 								<figure>
-									<img src={val.image} alt="" />
+									<img src={item.image} alt="" />
 								</figure>
-								<label>{val.tittle}</label>
+								<label>{item.tittle}</label>
 							</div>
 						);
 					})}
@@ -78,6 +86,10 @@ const SearchLocationRecomended = (props) => {
 			</div>
 		</div>
 	);
+};
+
+SearchLocationRecomended.propTypes = {
+	onClick: PropTypes.func
 };
 
 export default SearchLocationRecomended;

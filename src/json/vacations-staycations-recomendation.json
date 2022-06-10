@@ -1,0 +1,70 @@
+{
+	"vacations": [
+		{
+			"tittle": "Mountains",
+			"image": "vr/vr-mountains.jpg"
+		},
+		{
+			"tittle": "Cities",
+			"image": "vr/vr-cities.jpg"
+		},
+		{
+			"tittle": "Middle East",
+			"image": "vr/vr-middle-east.jpg"
+		},
+		{
+			"tittle": "Rivers",
+			"image": "vr/vr-rivers.jpg"
+		},
+		{
+			"tittle": "Snorkel",
+			"image": "vr/vr-snorkel.jpg"
+		},
+		{
+			"tittle": "Erope",
+			"image": "vr/vr-erope.jpg"
+		},
+		{
+			"tittle": "Waterfalls",
+			"image": "vr/vr-waterfalls.jpg"
+		},
+		{
+			"tittle": "Beach",
+			"image": "vr/vr-beach.jpg"
+		},
+		{
+			"tittle": "Culture",
+			"image": "vr/vr-culture.jpg"
+		},
+		{
+			"tittle": "Spiritual",
+			"image": "vr/vr-spiritual.jpg"
+		}
+	],
+	"staycations": [
+		{
+			"tittle": "Modern",
+			"image": "sr/sr-modern-house.jpg"
+		},
+		{
+			"tittle": "Tiny House",
+			"image": "sr/sr-tiny-house.jpg"
+		},
+		{
+			"tittle": "Classic",
+			"image": "sr/sr-classic-house.jpg"
+		},
+		{
+			"tittle": "Island",
+			"image": "sr/sr-island.jpg"
+		},
+		{
+			"tittle": "Awesome Interior",
+			"image": "sr/sr-awesome-interior.jpg"
+		},
+		{
+			"tittle": "Pool",
+			"image": "sr/sr-pool.jpg"
+		}
+	]
+}
