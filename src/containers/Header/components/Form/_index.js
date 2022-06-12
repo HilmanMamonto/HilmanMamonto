@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import SearchLocationRecomended from './Location/Recomended';
+import SearchLocationManual from './Location/Manual';
+import _dataVacationsStaycations from 'json/vacations-staycations-recomendation.json';
 
 const FormSearch = (props) => {
 	const [ locationIsShowed, locSetIsShowed ] = useState(true);
@@ -8,8 +11,11 @@ const FormSearch = (props) => {
 	const [ _leftIsShowed, _leftSetIsShowed ] = useState(false);
 	const [ _rightIsShowed, _rightSetIsShowed ] = useState(false);
 	const [ locationType, setLocationType ] = useState('recomended');
-
 	const [ inputLocation, setInputLocation ] = useState([]);
+
+	const [ vacStay, setVacStay ] = useState(true);
+
+	const _data = _dataVacationsStaycations;
 
 	const isActive = props.isActive ? 'active' : 'hide';
 
@@ -97,12 +103,29 @@ const FormSearch = (props) => {
 				<Button type="button" isPrimary isRounded style={{ width: '42px', height: '42px' }} />
 			</div>
 
-			<SearchLocation
-				data={inputLocation}
-				type={locationType}
-				className={locationIsShowed && isActive === 'active' ? 'active' : ''}
-				onClick={handleClickLocation}
-			/>
+			{locationType === 'recomended' && (
+				<SearchLocationRecomended
+					items={_data.map((item, i) => {
+						return (
+							<div key={'vr' + i} className="item" onClick={handleClickLocation}>
+								<figure>
+									<img src={item.image} alt="" />
+								</figure>
+								<label>{item.tittle}</label>
+							</div>
+						);
+					})}
+					onClickVac={() => setVacStay(!vacStay)}
+					vacStayToggle={vacStay}
+				/>
+			)}
+			{locationType === 'manual' && (
+				<SearchLocationManual
+					data={inputLocation}
+					className={locationIsShowed && isActive === 'active' ? 'active' : ''}
+					onClick={handleClickLocation}
+				/>
+			)}
 			<SearchDate className={dateIsShowed && isActive === 'active' ? 'active' : ''} />
 			<SearchPax
 				onClick={handleCount}

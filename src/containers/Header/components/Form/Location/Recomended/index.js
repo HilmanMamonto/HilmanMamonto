@@ -1,23 +1,12 @@
 import React, { useState, useRef } from 'react';
-import Button from 'components/Button';
-import data from 'json/vacations-staycations-recomendation.json';
+
 import './styles.scss';
 import PropTypes from 'prop-types';
 
 const SearchLocationRecomended = (props) => {
-	const [ isShowed, setIsShowed ] = useState('vacation');
-	const [ _data, setData ] = useState(data.vacations);
 	const refItems = useRef(null);
 
 	const handleClick = (param) => {
-		if (param === 'vacation') {
-			setIsShowed('vacation');
-			setData(data.vacations);
-		}
-		if (param === 'staycation') {
-			setIsShowed('staycation');
-			setData(data.staycations);
-		}
 		if (param === 'btn-next') refItems.current.scrollLeft += 700;
 		if (param === 'btn-prev') refItems.current.scrollLeft -= 700;
 	};
@@ -27,17 +16,17 @@ const SearchLocationRecomended = (props) => {
 			<div className="search-location-tittle">
 				<label
 					id="vacation"
-					className={isShowed === 'vacation' ? 'active' : ''}
-					onClick={() => handleClick('vacation')}
+					className={props.vacStay === 'Vacations' ? 'active' : ''}
+					onClick={props.onClickVacatons}
 				>
-					Vacation
+					Vacations
 				</label>
 				<label
 					id="staycation"
-					className={isShowed === 'staycation' ? 'active' : ''}
-					onClick={() => handleClick('staycation')}
+					className={props.vacStay === 'Staycations' ? 'active' : ''}
+					onClick={props.onClickStaycations}
 				>
-					Staycation
+					Staycations
 				</label>
 			</div>
 			<div className="location-categories">
@@ -48,16 +37,7 @@ const SearchLocationRecomended = (props) => {
 					+
 				</div>
 				<div className="items" ref={refItems}>
-					{_data.map((item, i) => {
-						return (
-							<div key={'vr' + i} className="item" onClick={handleClickLocation}>
-								<figure>
-									<img src={item.image} alt="" />
-								</figure>
-								<label>{item.tittle}</label>
-							</div>
-						);
-					})}
+					{props.items}
 				</div>
 			</div>
 
@@ -75,7 +55,7 @@ const SearchLocationRecomended = (props) => {
 					</div>
 					<div className="item">
 						<figure>
-							<img src="" />
+							<img src="" alt="" />
 						</figure>
 						<div className="details">
 							<label>Mountain</label>
@@ -89,7 +69,10 @@ const SearchLocationRecomended = (props) => {
 };
 
 SearchLocationRecomended.propTypes = {
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
+	vacStayToggle: PropTypes.bool,
+	onClickStaycations: PropTypes.func,
+	onClickVacatons: PropTypes.func
 };
 
 export default SearchLocationRecomended;

@@ -6,7 +6,10 @@ import _countriesData from 'json/countries.json';
 import PropTypes from 'prop-types';
 import SearchDate from '../Form/Date/SearchDate';
 import SearchPax from '../Form/Pax/SearchPax';
-import SearchLocation from '../Form/Location';
+import SearchLocationRecomended from '../Form/Location/Recomended';
+import SearchLocationManual from '../Form/Location/Manual';
+import _dataVacStay from 'json/vacations-staycations-recomendation.json';
+import { useSelector } from 'react-redux';
 
 const HeaderBottom = (props, ref) => {
 	const [ locationIsShowed, locSetIsShowed ] = useState(true);
@@ -15,10 +18,15 @@ const HeaderBottom = (props, ref) => {
 	const [ _leftIsShowed, _leftSetIsShowed ] = useState(false);
 	const [ _rightIsShowed, _rightSetIsShowed ] = useState(false);
 	const [ locationType, setLocationType ] = useState('recomended');
-	const [ inputLocation, setInputLocation ] = useState([]);
+	const [ manualInputLocation, setManualInputLocation ] = useState([]);
+	const [ inputLocationVal, setInputLocationVal ] = useState('');
+	const [ inputDateVal, setInputDateVal ] = useState('');
 	const [ isCount, setIsCount ] = useState(0);
-
+	const [ vacStay, setVacStay ] = useState('Vacations');
 	const isActive = props.isActive ? 'active' : 'hide';
+	const dateValue = useSelector((state) => state.searchInputDate.value);
+	console.log(dateValue);
+	const [ _dataVS, setDataVs ] = useState(_dataVacStay.vacations);
 
 	const handleClick = (param) => {
 		locSetIsShowed(false);
@@ -40,7 +48,12 @@ const HeaderBottom = (props, ref) => {
 		}
 	};
 
+	const handleClickLocation = () => {
+		console.log('cek');
+	};
+
 	const handleChange = (e) => {
+		setInputLocationVal(e.target.value);
 		if (e.target.value) {
 			setLocationType('manual');
 		} else {
@@ -48,13 +61,10 @@ const HeaderBottom = (props, ref) => {
 		}
 
 		let regex = new RegExp(e.target.value, 'i');
-		let result = [];
-		_countriesData.map((val) => {
-			if (val.capital.match(regex)) {
-				result.push(val);
-			}
+		const regexResult = _countriesData.filter((item) => {
+			return item.capital.match(regex) ? item : null;
 		});
-		setInputLocation(result);
+		setManualInputLocation(regexResult);
 	};
 
 	const handleCount = (e) => {
@@ -77,6 +87,7 @@ const HeaderBottom = (props, ref) => {
 						onChange={handleChange}
 						style={{ fontSize: '14px' }}
 						autoFocus
+						value={inputLocationVal}
 					/>
 				</div>
 				<div
@@ -86,7 +97,7 @@ const HeaderBottom = (props, ref) => {
 				>
 					<span className={_leftIsShowed ? '_left' : '_left hide'} />
 					<label>Date</label>
-					<div id="input-date">Any time</div>
+					<div id="input-date">{dateValue}</div>
 					<span className={_rightIsShowed ? '_right' : '_right hide'} />
 				</div>
 				<div
@@ -100,11 +111,41 @@ const HeaderBottom = (props, ref) => {
 					</div>
 					<Button type="button" isPrimary isRounded style={{ width: '42px', height: '42px' }} />
 				</div>
-				<SearchLocation
-					data={inputLocation}
-					type={locationType}
-					className={locationIsShowed && isActive === 'active' ? 'active' : ''}
-				/>
+				{locationType === 'recomended' && (
+					<SearchLocationRecomended
+						className={locationIsShowed && isActive === 'active' ? 'active' : ''}
+						items={_dataVS.map((item, i) => {
+							return (
+								<div
+									key={'vr' + i}
+									className="item"
+									onClick={() => setInputLocationVal(vacStay + ' ' + item.tittle)}
+								>
+									<figure>
+										<img src={item.image} alt="" />
+									</figure>
+									<label>{item.tittle}</label>
+								</div>
+							);
+						})}
+						onClickVacatons={() => {
+							setVacStay('Vacations');
+							setDataVs(_dataVacStay.vacations);
+						}}
+						onClickStaycations={() => {
+							setVacStay('Staycations');
+							setDataVs(_dataVacStay.staycations);
+						}}
+						vacStay={vacStay}
+					/>
+				)}
+				{locationType === 'manual' && (
+					<SearchLocationManual
+						data={manualInputLocation}
+						className={locationIsShowed && isActive === 'active' ? 'active' : ''}
+						onClick={handleClickLocation}
+					/>
+				)}
 				<SearchDate className={dateIsShowed && isActive === 'active' ? 'active' : ''} />
 				<SearchPax
 					onClick={handleCount}

@@ -17,6 +17,7 @@ const Input = (props) => {
 			value={props.value}
 			min={props.min}
 			max={props.max}
+			autoFocus={props.autoFocus}
 		/>
 	);
 };
@@ -31,7 +32,8 @@ Input.propTypes = {
 	type: PropTypes.string,
 	min: PropTypes.number,
 	max: PropTypes.number,
-	cursorPointer: PropTypes.bool
+	cursorPointer: PropTypes.bool,
+	autoFocus: PropTypes.bool
 };
 
 export default Input;

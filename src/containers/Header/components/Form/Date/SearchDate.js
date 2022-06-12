@@ -1,28 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchDate.scss';
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import { useDispatch } from 'react-redux';
+import { changeDate } from 'redux/features/search';
 
 const SearchDate = (props) => {
-	const [ state, setState ] = useState([
+	const dispatch = useDispatch();
+	const [ dateState, setDateState ] = useState([
 		{
 			startDate: new Date(),
 			endDate: new Date(),
 			key: 'selection'
 		}
 	]);
+	const [ test, setTest ] = useState('');
+	useEffect(() => {
+		dispatch(changeDate(datePicked()));
+	});
 
+	let result = '';
 	const datePicked = () => {
-		const startDay = format(state[0].startDate, 'd');
-		const endDay = format(state[0].endDate, 'd');
-		const startMonth = format(state[0].startDate, 'MMM');
-		const endMonth = format(state[0].endDate, 'MMM');
-		const startYear = format(state[0].startDate, 'yyyy');
-		const endYear = format(state[0].endDate, 'yyyy');
-
-		let result = '';
+		const startDay = format(dateState[0].startDate, 'd');
+		const endDay = format(dateState[0].endDate, 'd');
+		const startMonth = format(dateState[0].startDate, 'MMM');
+		const endMonth = format(dateState[0].endDate, 'MMM');
+		const startYear = format(dateState[0].startDate, 'yyyy');
+		const endYear = format(dateState[0].endDate, 'yyyy');
 
 		if (startMonth === endMonth) {
 			if (startDay === endDay) result = startDay + ' ' + startMonth + ' ' + startYear;
@@ -54,10 +60,12 @@ const SearchDate = (props) => {
 			<div className="date-choosed">{datePicked()}</div>
 			<DateRange
 				editableDateInputs={true}
-				onChange={(item) => setState([ item.selection ])}
+				onChange={(item) => {
+					setDateState([ item.selection ]);
+				}}
 				moveRangeOnFirstSelection={false}
 				dayContentRenderer={costumDayContent}
-				ranges={state}
+				ranges={dateState}
 				months={2}
 				direction="horizontal"
 				rangeColors={[ '#373737' ]}
