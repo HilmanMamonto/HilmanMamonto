@@ -67,9 +67,6 @@
 
 		&:hover {
 			background-color: rgb(224, 224, 224);
-			+ ._left {
-				height: 0px;
-			}
 		}
 		&.active {
 			background-color: var(--white);
@@ -120,9 +117,6 @@
 			justify-content: space-between;
 			&:hover {
 				background-color: rgb(224, 224, 224);
-				._right {
-					height: 0px;
-				}
 			}
 
 			&.active {

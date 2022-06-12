@@ -11,7 +11,7 @@ const SearchLocationManual = (props) => {
 						return (
 							<div className="item" key={'location' + i}>
 								<figure>
-									<img />
+									<img src={val.flag} alt="" />
 								</figure>
 								<div className="details">
 									<label>{val.capital}</label>

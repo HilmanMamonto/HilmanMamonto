@@ -9,7 +9,8 @@ import SearchPax from '../Form/Pax/SearchPax';
 import SearchLocationRecomended from '../Form/Location/Recomended';
 import SearchLocationManual from '../Form/Location/Manual';
 import _dataVacStay from 'json/vacations-staycations-recomendation.json';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeLocation } from 'redux/features/searchInputLocation';
 
 const HeaderBottom = (props, ref) => {
 	const [ locationIsShowed, locSetIsShowed ] = useState(true);
@@ -25,8 +26,9 @@ const HeaderBottom = (props, ref) => {
 	const [ vacStay, setVacStay ] = useState('Vacations');
 	const isActive = props.isActive ? 'active' : 'hide';
 	const dateValue = useSelector((state) => state.searchInputDate.value);
-	console.log(dateValue);
+	const locationValue = useSelector((state) => state.searchInputLocation.value);
 	const [ _dataVS, setDataVs ] = useState(_dataVacStay.vacations);
+	const dispatch = useDispatch();
 
 	const handleClick = (param) => {
 		locSetIsShowed(false);
@@ -53,7 +55,7 @@ const HeaderBottom = (props, ref) => {
 	};
 
 	const handleChange = (e) => {
-		setInputLocationVal(e.target.value);
+		dispatch(changeLocation(e.target.value));
 		if (e.target.value) {
 			setLocationType('manual');
 		} else {
@@ -79,6 +81,8 @@ const HeaderBottom = (props, ref) => {
 					id="search-input-location"
 					className={locationIsShowed ? 'active' : ''}
 					onClick={() => handleClick('location')}
+					onMouseOver={() => _leftSetIsShowed(false)}
+					onMouseOut={() => (!locationIsShowed ? _leftSetIsShowed(true) : '')}
 				>
 					<label>Location</label>
 					<Input
@@ -87,7 +91,7 @@ const HeaderBottom = (props, ref) => {
 						onChange={handleChange}
 						style={{ fontSize: '14px' }}
 						autoFocus
-						value={inputLocationVal}
+						value={locationValue}
 					/>
 				</div>
 				<div
@@ -104,6 +108,8 @@ const HeaderBottom = (props, ref) => {
 					id="search-input-people"
 					className={peopleIsShowed ? 'active' : ''}
 					onClick={() => handleClick('people')}
+					onMouseOver={() => _rightSetIsShowed(false)}
+					onMouseOut={() => (!peopleIsShowed ? _rightSetIsShowed(true) : '')}
 				>
 					<div className="input-people">
 						<label>Who</label>

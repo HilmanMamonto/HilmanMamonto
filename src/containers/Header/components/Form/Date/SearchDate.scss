@@ -23,6 +23,10 @@
 	.date-choosed {
 		display: flex;
 		justify-content: center;
+		border: 1px solid var(--ultralight-gray);
+		border-radius: 100px;
+		padding: 5px 10px;
+		color: var(--light-gray);
 	}
 
 	.day-extra-dash {

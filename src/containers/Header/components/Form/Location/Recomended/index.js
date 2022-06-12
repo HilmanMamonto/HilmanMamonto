@@ -1,10 +1,20 @@
-import React, { useState, useRef } from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import _dataVacStay from 'json/vacations-staycations-recomendation.json';
+import { changeLocation } from 'redux/features/searchInputLocation';
 
 const SearchLocationRecomended = (props) => {
 	const refItems = useRef(null);
+	const dispatch = useDispatch();
+	const [ vacStay, setVacStay ] = useState('Vacations');
+	const [ dataVacStay, setDataVacStay ] = useState(_dataVacStay.vacations);
+
+	useEffect(() => {
+		if (vacStay === 'Vacations') setDataVacStay(_dataVacStay.vacations);
+		if (vacStay === 'Staycations') setDataVacStay(_dataVacStay.staycations);
+	});
 
 	const handleClick = (param) => {
 		if (param === 'btn-next') refItems.current.scrollLeft += 700;
@@ -16,15 +26,15 @@ const SearchLocationRecomended = (props) => {
 			<div className="search-location-tittle">
 				<label
 					id="vacation"
-					className={props.vacStay === 'Vacations' ? 'active' : ''}
-					onClick={props.onClickVacatons}
+					className={vacStay === 'Vacations' ? 'active' : ''}
+					onClick={() => setVacStay('Vacations')}
 				>
 					Vacations
 				</label>
 				<label
 					id="staycation"
-					className={props.vacStay === 'Staycations' ? 'active' : ''}
-					onClick={props.onClickStaycations}
+					className={vacStay === 'Staycations' ? 'active' : ''}
+					onClick={() => setVacStay('Staycations')}
 				>
 					Staycations
 				</label>
@@ -37,7 +47,20 @@ const SearchLocationRecomended = (props) => {
 					+
 				</div>
 				<div className="items" ref={refItems}>
-					{props.items}
+					{dataVacStay.map((item, i) => {
+						return (
+							<div
+								key={'vr' + i}
+								className="item"
+								onClick={() => dispatch(changeLocation(vacStay + ' ' + item.tittle))}
+							>
+								<figure>
+									<img src={item.image} alt="" />
+								</figure>
+								<label>{item.tittle}</label>
+							</div>
+						);
+					})}
 				</div>
 			</div>
 
