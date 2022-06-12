@@ -5,14 +5,13 @@ import './styles.scss';
 
 const ProductListLayout = (props) => {
 	const _data = props.data;
-	_data.map((item) => {
-		console.log(item.tourName);
-	});
+
 	return (
 		<div id="product-grid">
 			{_data.map((item, i) => {
 				return (
 					<ProductCard
+						id={item.id}
 						key={'product-list' + i}
 						tittle={item.tourName}
 						rate={4.8}

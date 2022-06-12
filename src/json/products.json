@@ -5,18 +5,18 @@
 		"location": "Malang, Bromo Tengger Semeru, Indonesia",
 		"locationSrc": "https://goo.gl/maps/53u2FjvCqJHAcwpc9",
 		"tourGuideName": "Andy Mahendra",
-		"tourGuidePhoto": "andy.jpg",
+		"tourGuidePhoto": "andy/andy.jpg",
 		"freePickup": true,
 		"maxPax": 6,
 		"rate": 4.8,
 		"imagesUrl": [
 			{
 				"id": "abcdabcd001",
-				"url": "andy-bromo-1.jpg"
+				"url": "andy/andy-bromo-1.jpg"
 			},
 			{
 				"id": "abcdabcd001",
-				"url": "andy-bromo-2.jpg"
+				"url": "andy/andy-bromo-2.jpg"
 			},
 			{
 				"id": "abcdabcd001",

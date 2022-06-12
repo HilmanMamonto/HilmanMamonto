@@ -5,7 +5,12 @@
 		"location": "Agra, India",
 		"availibility": "Mei 04 - 29",
 		"budget": 350,
-		"imagesUrl": [ { "id": "abcdabcd001", "url": "product-list/taj-mahal.jpg" } ]
+		"imagesUrl": [
+			{ "id": "abcdabcd001", "url": "product-list/taj-mahal.jpg" },
+			{ "id": "abcdabcd001", "url": "product-list/taj-mahal.jpg" },
+			{ "id": "abcdabcd001", "url": "product-list/taj-mahal.jpg" },
+			{ "id": "abcdabcd001", "url": "product-list/taj-mahal.jpg" }
+		]
 	},
 	{
 		"id": "abcdabcd002",

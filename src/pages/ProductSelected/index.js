@@ -1,11 +1,15 @@
 import Header from 'containers/Header';
 import ProductSelected from 'containers/Product/ProductSelect';
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const ProductSelectedPage = () => {
+	useEffect(() => {
+		window.scroll(0, 0)
+	})
+	
 	return (
 		<>
-			<Header type="selected product" />
+			<Header type="product selected" />
 			<ProductSelected />
 		</>
 	);

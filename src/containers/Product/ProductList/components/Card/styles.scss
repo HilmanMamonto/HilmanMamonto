@@ -64,6 +64,7 @@
 			&::-webkit-scrollbar {
 				height: 0px;
 			}
+
 			img {
 				height: 100%;
 				width: 100%;
@@ -73,18 +74,21 @@
 	}
 
 	.card-dots {
-		margin-top: 90%;
 		margin-bottom: 22px;
 		display: flex;
+		align-items: center;
 		position: absolute;
-		top: 0%;
-
-		span {
+		bottom: 0;
+		.dot {
 			width: 6px;
 			height: 6px;
 			border-radius: 100px;
 			margin-left: 6px;
-			background-color: #fefefe;
+			background-color: var(--white);
+			opacity: 70%;
+			&.active {
+				opacity: 100%;
+			}
 		}
 	}
 
@@ -122,15 +126,5 @@
 		span {
 			font-size: 12px;
 		}
-	}
-}
-
-/* animation */
-@keyframes anm-product-card {
-	from {
-		opacity: 0%;
-	}
-	to {
-		opacity: 100%;
 	}
 }

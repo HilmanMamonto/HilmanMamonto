@@ -12,6 +12,9 @@ const Header = (props) => {
 	const [ isShowed, setIsShowed ] = useState(false);
 	const [ isActive, setIsActive ] = useState(true);
 	const [ catShadow, setCatShadow ] = useState(false);
+	const [ navShadow, setNavShadow ] = useState(false);
+	const refHeader = useRef(null);
+	const refInput = useRef(null);
 
 	useEffect(() => {
 		window.addEventListener('click', handleClickOutside);
@@ -27,9 +30,10 @@ const Header = (props) => {
 		const scrollY = window.pageYOffset;
 		setCatShadow(false);
 
-		if (props.type === 'selected product') {
+		if (props.type === 'product selected') {
+			setIsActive(true);
 			if (scrollY === 0) {
-				setIsActive(true);
+				setNavShadow(true);
 			}
 			if (isActive && scrollY > 1 && scrollY < 200) {
 				setIsActive(true);
@@ -45,8 +49,6 @@ const Header = (props) => {
 		}
 	};
 
-	const refHeader = useRef(null);
-	const refInput = useRef(null);
 	const handleClickOutside = (e) => {
 		if (refHeader && !refHeader.current.contains(e.target) && !refInput.current.contains(e.target)) {
 			setIsShowed(false);
@@ -56,7 +58,7 @@ const Header = (props) => {
 	return (
 		<div id="header">
 			<header className={isActive ? 'active' : ''}>
-				<nav>
+				<nav className={navShadow ? 'active' : ''}>
 					<NavLeft />
 					<NavMid ref={refHeader} onClick={() => setIsShowed(!isShowed)} />
 					<NavRight />
