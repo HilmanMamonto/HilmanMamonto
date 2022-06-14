@@ -1,8 +1,14 @@
 import Button from 'components/Button';
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.scss';
 
 const SideBar = () => {
+	const [ packagesIsShowed, setPackagesIsShowed ] = useState(true);
+	const [ orderedIsShowed, setOrderedIsShowed ] = useState(false);
+	const [ messagesIsShowed, setMessagesIsShowed ] = useState(false);
+
+	const handleClick = (param) => {};
+
 	return (
 		<div id="side-bar">
 			<div className="profile">
@@ -22,7 +28,7 @@ const SideBar = () => {
 					className="btn-witdraw"
 					children={
 						<div>
-							<span>Witraw</span>
+							<span>Witdraw</span>
 							<img src="" />
 						</div>
 					}
@@ -41,25 +47,88 @@ const SideBar = () => {
 			<div className="packages">
 				<label className="tittle">
 					<span>PACKAGES</span>
-					<Button type="button" children={'>'} />
+					<Button
+						type="button"
+						className={packagesIsShowed ? 'active' : ''}
+						children={<img src="arrow-right.svg" alt="" />}
+						onClick={() => setPackagesIsShowed(!packagesIsShowed)}
+					/>
 				</label>
-				<div className="items">
+				<div className={packagesIsShowed ? 'items active' : 'items'}>
 					<Button textGray type="button" className="active" children={'Fushimi Inari Taisha'} />
+					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
+					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
+					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
 					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
 					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
 					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
 				</div>
 			</div>
-			<div className="packages">
+			<div className="ordered">
 				<label className="tittle">
-					<span>PACKAGES</span>
-					<Button type="button" children={'>'} />
+					<span>ORDERED</span>
+					<Button
+						type="button"
+						className={orderedIsShowed ? 'active' : ''}
+						children={<img src="arrow-right.svg" alt="" />}
+						onClick={() => setOrderedIsShowed(!orderedIsShowed)}
+					/>
 				</label>
-				<div className="items">
-					<Button textGray type="button" className="active" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
+				<div className={orderedIsShowed ? 'items active' : 'items'}>
+					<Button textGray type="button">
+						<span className="item-tittle">Fushimi Inari Taisha</span>
+						<span className="date">11 oct</span>
+					</Button>
+					<Button textGray type="button">
+						<span>Fushimi Inari Taisha</span>
+						<span className="date">11 oct</span>
+					</Button>
+					<Button textGray type="button">
+						<span>Fushimi Inari Taisha</span>
+						<span className="date">11 oct</span>
+					</Button>
+					<Button textGray type="button">
+						<span>Fushimi Inari Taisha</span>
+						<span className="date">11 oct</span>
+					</Button>
+					<Button textGray type="button">
+						<span>Fushimi Inari Taisha</span>
+						<span className="date">11 oct</span>
+					</Button>
+				</div>
+			</div>
+			<div className="messages">
+				<label className="tittle">
+					<span>MESSAGES</span>
+					<Button
+						type="button"
+						className={messagesIsShowed ? 'active' : ''}
+						children={<img src="arrow-right.svg" alt="" />}
+						onClick={() => setMessagesIsShowed(!messagesIsShowed)}
+					/>
+				</label>
+				<div className={messagesIsShowed ? 'items active' : 'items'}>
+					<Button textGray type="button">
+						<div>
+							<img src="" />
+							<span>Dani Setiawan</span>
+						</div>
+						<span className="count">6</span>
+					</Button>
+					<Button textGray type="button">
+						<div>
+							<img src="" />
+							<span>Dani Setiawan</span>
+						</div>
+						<span className="count">6</span>
+					</Button>
+					<Button textGray type="button">
+						<div>
+							<img src="" />
+							<span>Dani Setiawan</span>
+						</div>
+						<span className="count">6</span>
+					</Button>
 				</div>
 			</div>
 		</div>
