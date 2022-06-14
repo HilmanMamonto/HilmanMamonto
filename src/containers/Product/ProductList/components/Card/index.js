@@ -50,7 +50,7 @@ const ProductCard = (props) => {
 					children={'>'}
 					onClick={() => handleClick('btn-next')}
 				/>
-				<Button type="link" href={'/' + props.id}>
+				<Button type="link" href={'product'}>
 					<div className="images" ref={scrollRef}>
 						<img src={props.imagesUrl[0].url} alt="" />
 						<img src={props.imagesUrl[0].url} alt="" />

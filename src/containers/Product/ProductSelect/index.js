@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 
 const ProductSelected = () => {
 	let { id } = useParams();
-	let dataProduct = _dataProduct.filter((item) => item.id === id);
+	let dataProduct = _dataProduct.filter((item) => item.id === 'abcdabcd001');
 
 	return dataProduct.map((item, i) => (
 		<div key={'ps' + i} id="product-selected">
@@ -37,21 +37,6 @@ const ProductSelected = () => {
 			<PlaceDesc />
 		</div>
 	));
-	// return (
-	// 	<div id="product-selected">
-	// 		<ProductTittle
-	// 			tourName="Holiday Package: Bromo"
-	// 			maxPax={3}
-	// 			rate={4.8}
-	// 			sumOfReviews={210}
-	// 			tourLocation="Malang, East Java, Indonesia"
-	// 		/>
-	// 		<ProductPictures sumOfPictures={2} />
-	// 		<LayoutTwoSide />
-	// 		<Reviews />
-	// 		<PlaceDesc />
-	// 	</div>
-	// );
 };
 
 export default ProductSelected;

@@ -6,20 +6,67 @@
 		font-size: 14px;
 	}
 
-	div {
-		margin-right: 24px;
+	.burger-wraper {
+		position: relative;
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		height: 20px;
-		span {
-			border-radius: 100px;
-			display: block;
-			height: 4px;
-			width: 24px;
-			background-color: var(--gray);
+		align-items: center;
+		.btn-burger {
+			div {
+				margin-right: 24px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 20px;
+				._burger {
+					border-radius: 100px;
+					display: block;
+					height: 4px;
+					width: 24px;
+					background-color: var(--gray);
+				}
+			}
+		}
+		.burger-items {
+			position: absolute;
+			top: 30px;
+			right: 20px;
+			height: 0px;
+			width: 0px;
+			background-color: var(--white);
+			z-index: 3;
+			box-shadow: 0px 2px 6px var(--ultralight-gray);
+			border-radius: 4px;
+			overflow: hidden;
+			transition: height .3s ease-in-out;
+			&.active {
+				transition: all .3s ease-in-out;
+				height: auto;
+				width: 202px;
+				padding: 20px 0;
+				.main-items {
+					border-bottom: 1px solid var(--ultralight-gray);
+					margin-bottom: 15px;
+					padding: 0px 20px;
+				}
+				.sub-items {
+					padding: 0 20px;
+					* {
+						color: var(--gray);
+						font-size: 14px;
+					}
+				}
+				.item {
+					display: flex;
+					margin-bottom: 15px;
+					* {
+						color: var(--gray);
+						font-size: 14px;
+					}
+				}
+			}
 		}
 	}
+
 	img {
 		width: 30px;
 		height: 30px;
