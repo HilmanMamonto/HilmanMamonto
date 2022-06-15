@@ -17,11 +17,11 @@ const ProductTittle = (props) => {
 				</div>
 				<div className="product-tittle-foot">
 					<label>
-						<img src="bold-star.svg" alt="" />
+						<img src="/bold-star.svg" alt="" />
 						<Button type="a" href="/" children={props.rate} hasUnderline textGray />
 					</label>
 					<label>
-						<img src="person.svg" alt="" />
+						<img src="/person.svg" alt="" />
 						<Button
 							type="a"
 							href="/"
@@ -31,7 +31,7 @@ const ProductTittle = (props) => {
 						/>
 					</label>
 					<label>
-						<img src="location.svg" alt="" />
+						<img src="/location.svg" alt="" />
 						<Button type="a" href={props.locationSrc} textGray children={props.location} hasUnderline />
 					</label>
 					<span>Only you and your group</span>
@@ -43,7 +43,7 @@ const ProductTittle = (props) => {
 				isBgWhite
 				children={
 					<div>
-						<img src="love-checked.svg" />
+						<img src="/love-checked.svg" />
 						<span>save</span>
 					</div>
 				}

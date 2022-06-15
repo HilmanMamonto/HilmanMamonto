@@ -34,7 +34,13 @@ const Button = (props) => {
 	}
 	if (props.type === 'link') {
 		return (
-			<Link id={props.id} to={props.href} className={arrClass.join(' ')} style={props.style}>
+			<Link
+				id={props.id}
+				to={props.href}
+				className={arrClass.join(' ')}
+				style={props.style}
+				onClick={props.onClick}
+			>
 				{props.children}
 			</Link>
 		);

@@ -1,7 +1,22 @@
 #side-bar {
+	padding: 24px 0;
+	border-right: 1px solid var(--ultralight-gray);
+	position: relative;
+	.btn-home-page {
+		margin: 0 30px;
+		margin-bottom: 20px;
+		border-radius: 6px;
+		font-weight: 400;
+		font-size: 14px;
+		display: flex;
+		padding: 5px 0;
+		display: flex;
+		justify-content: space-between;
+	}
 	.profile {
 		display: flex;
 		align-items: center;
+		padding: 0px 30px;
 		img {
 			width: 40px;
 			height: 40px;
@@ -30,8 +45,8 @@
 		box-shadow: -5px 10px 30px rgb(33, 33, 33, 0.1);
 		border-radius: 20px;
 		margin-top: 24px;
-		margin-left: 20px;
-		margin-right: 20px;
+		margin-left: 50px;
+		margin-right: 50px;
 		padding: 24px 15px;
 		div {
 			display: flex;
@@ -73,6 +88,7 @@
 
 	.travel-active {
 		margin-top: 24px;
+		padding: 0px 30px;
 		.tittle {
 			font-size: 14px;
 			font-weight: 600;
@@ -82,6 +98,7 @@
 			margin-top: 10px;
 			display: flex;
 			align-items: center;
+
 			.dot {
 				display: flex;
 				justify-content: center;
@@ -123,6 +140,7 @@
 			color: var(--black);
 			display: flex;
 			justify-content: space-between;
+			padding: 0 30px;
 			button {
 				display: flex;
 				align-items: center;
@@ -143,18 +161,23 @@
 			max-height: 0;
 			overflow: hidden;
 			transition: max-height 0.3s ease-in;
+			padding: 0px 30px;
+			display: flex;
+			flex-direction: column;
 			&.active {
 				max-height: 100vh;
 				transition: max-height 0.3s ease-in;
 			}
-			button {
+			a {
 				margin-bottom: 10px;
 				position: relative;
 				font-size: 14px;
 				&.active {
 					&::after {
 						content: '';
+						transition: height .3s ease-in-out;
 						position: absolute;
+						top: -1px;
 						left: -30px;
 						width: 6px;
 						height: 100%;
@@ -172,6 +195,7 @@
 			color: var(--black);
 			display: flex;
 			justify-content: space-between;
+			padding: 0 30px;
 			button {
 				display: flex;
 				align-items: center;
@@ -188,6 +212,7 @@
 		}
 
 		.items {
+			padding: 0 30px;
 			margin-top: 10px;
 			max-height: 0;
 			overflow: hidden;
@@ -215,7 +240,9 @@
 				&.active {
 					&::after {
 						content: '';
+						transition: height .3s ease-in-out;
 						position: absolute;
+						top: -1px;
 						left: -30px;
 						width: 6px;
 						height: 100%;
@@ -232,6 +259,7 @@
 			font-weight: 600;
 			color: var(--black);
 			display: flex;
+			padding: 0 30px;
 			justify-content: space-between;
 			button {
 				display: flex;
@@ -249,6 +277,7 @@
 		}
 
 		.items {
+			padding: 0 30px;
 			margin-top: 10px;
 			max-height: 0;
 			overflow: hidden;

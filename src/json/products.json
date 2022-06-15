@@ -5,18 +5,18 @@
 		"location": "Malang, Bromo Tengger Semeru, Indonesia",
 		"locationSrc": "https://goo.gl/maps/53u2FjvCqJHAcwpc9",
 		"tourGuideName": "Andy Mahendra",
-		"tourGuidePhoto": "andy/andy.jpg",
+		"tourGuidePhoto": "/andy/andy.jpg",
 		"freePickup": true,
 		"maxPax": 6,
 		"rate": 4.8,
 		"imagesUrl": [
 			{
 				"id": "abcdabcd001",
-				"url": "andy/andy-bromo-1.jpg"
+				"url": "/andy/andy-bromo-1.jpg"
 			},
 			{
 				"id": "abcdabcd001",
-				"url": "andy/andy-bromo-2.jpg"
+				"url": "/andy/andy-bromo-2.jpg"
 			},
 			{
 				"id": "abcdabcd001",
@@ -26,37 +26,37 @@
 		"travelAmenities": [
 			{
 				"name": "Lunch",
-				"iconUrl": "spon-fork.svg"
+				"iconUrl": "/spon-fork.svg"
 			},
 			{
 				"name": "Photograph",
-				"iconUrl": "camera.svg"
+				"iconUrl": "/camera.svg"
 			},
 			{
 				"name": "Transport",
-				"iconUrl": "car.svg"
+				"iconUrl": "/car.svg"
 			},
 			{
 				"name": "Free Ticket",
-				"iconUrl": "ticket.svg"
+				"iconUrl": "/ticket.svg"
 			},
 			{
 				"name": "Best Route",
-				"iconUrl": "route.svg"
+				"iconUrl": "/route.svg"
 			},
 			{
 				"name": "Umbrella",
-				"iconUrl": "umbrella.svg"
+				"iconUrl": "/umbrella.svg"
 			},
 			{
 				"name": "Sunscreen",
-				"iconUrl": "sunscreen.svg"
+				"iconUrl": "/sunscreen.svg"
 			}
 		],
 		"travelAmenitiesNot": [
 			{
 				"name": "on car",
-				"iconUrl": "no-smoking.svg"
+				"iconUrl": "/no-smoking.svg"
 			},
 			{
 				"name": "Launch",

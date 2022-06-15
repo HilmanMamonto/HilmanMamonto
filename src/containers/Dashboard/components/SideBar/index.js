@@ -2,15 +2,21 @@ import Button from 'components/Button';
 import React, { useState } from 'react';
 import './styles.scss';
 
+const packagesItems = [ { name: 'Fushimi Inari Taisha' }, { name: 'Sibuya' }, { name: 'Tokyo' }, { name: 'Kyoto' } ];
+
 const SideBar = () => {
 	const [ packagesIsShowed, setPackagesIsShowed ] = useState(true);
 	const [ orderedIsShowed, setOrderedIsShowed ] = useState(false);
 	const [ messagesIsShowed, setMessagesIsShowed ] = useState(false);
-
-	const handleClick = (param) => {};
+	const [ navActive, setNavActive ] = useState('');
 
 	return (
 		<div id="side-bar">
+			<Button textGray type="link" className="btn-home-page" href="/">
+				<span>{'<'}</span>
+				<span>Home Page</span>
+				<span />
+			</Button>
 			<div className="profile">
 				<img src="" alt="" />
 				<div className="tittle">
@@ -50,18 +56,25 @@ const SideBar = () => {
 					<Button
 						type="button"
 						className={packagesIsShowed ? 'active' : ''}
-						children={<img src="arrow-right.svg" alt="" />}
+						children={<img src="/arrow-right.svg" alt="" />}
 						onClick={() => setPackagesIsShowed(!packagesIsShowed)}
 					/>
 				</label>
 				<div className={packagesIsShowed ? 'items active' : 'items'}>
-					<Button textGray type="button" className="active" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
-					<Button textGray type="button" children={'Fushimi Inari Taisha'} />
+					{packagesItems.map((item, i) => {
+						const cName = item.name.split(' ').join('-').toLowerCase();
+						return (
+							<Button
+								key={'package-' + i}
+								textGray
+								type="link"
+								href={'package/' + cName}
+								className={navActive === 'packages-' + i ? 'active' : ''}
+								children={item.name}
+								onClick={() => setNavActive('packages-' + i)}
+							/>
+						);
+					})}
 				</div>
 			</div>
 			<div className="ordered">
@@ -70,29 +83,54 @@ const SideBar = () => {
 					<Button
 						type="button"
 						className={orderedIsShowed ? 'active' : ''}
-						children={<img src="arrow-right.svg" alt="" />}
+						children={<img src="/arrow-right.svg" alt="" />}
 						onClick={() => setOrderedIsShowed(!orderedIsShowed)}
 					/>
 				</label>
 				<div className={orderedIsShowed ? 'items active' : 'items'}>
-					<Button textGray type="button">
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'ordered-1' ? 'active' : ''}
+						onClick={() => setNavActive('ordered-1')}
+					>
 						<span className="item-tittle">Fushimi Inari Taisha</span>
 						<span className="date">11 oct</span>
 					</Button>
-					<Button textGray type="button">
-						<span>Fushimi Inari Taisha</span>
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'ordered-2' ? 'active' : ''}
+						onClick={() => setNavActive('ordered-2')}
+					>
+						<span className="item-tittle">Fushimi Inari Taisha</span>
 						<span className="date">11 oct</span>
 					</Button>
-					<Button textGray type="button">
-						<span>Fushimi Inari Taisha</span>
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'ordered-3' ? 'active' : ''}
+						onClick={() => setNavActive('ordered-3')}
+					>
+						<span className="item-tittle">Fushimi Inari Taisha</span>
 						<span className="date">11 oct</span>
 					</Button>
-					<Button textGray type="button">
-						<span>Fushimi Inari Taisha</span>
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'ordered-4' ? 'active' : ''}
+						onClick={() => setNavActive('ordered-4')}
+					>
+						<span className="item-tittle">Fushimi Inari Taisha</span>
 						<span className="date">11 oct</span>
 					</Button>
-					<Button textGray type="button">
-						<span>Fushimi Inari Taisha</span>
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'ordered-5' ? 'active' : ''}
+						onClick={() => setNavActive('ordered-5')}
+					>
+						<span className="item-tittle">Fushimi Inari Taisha</span>
 						<span className="date">11 oct</span>
 					</Button>
 				</div>
@@ -103,26 +141,53 @@ const SideBar = () => {
 					<Button
 						type="button"
 						className={messagesIsShowed ? 'active' : ''}
-						children={<img src="arrow-right.svg" alt="" />}
+						children={<img src="/arrow-right.svg" alt="" />}
 						onClick={() => setMessagesIsShowed(!messagesIsShowed)}
 					/>
 				</label>
 				<div className={messagesIsShowed ? 'items active' : 'items'}>
-					<Button textGray type="button">
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'messages-1' ? 'active' : ''}
+						onClick={() => setNavActive('messages-1')}
+					>
 						<div>
 							<img src="" />
 							<span>Dani Setiawan</span>
 						</div>
 						<span className="count">6</span>
 					</Button>
-					<Button textGray type="button">
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'messages-2' ? 'active' : ''}
+						onClick={() => setNavActive('messages-2')}
+					>
 						<div>
 							<img src="" />
 							<span>Dani Setiawan</span>
 						</div>
 						<span className="count">6</span>
 					</Button>
-					<Button textGray type="button">
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'messages-3' ? 'active' : ''}
+						onClick={() => setNavActive('messages-3')}
+					>
+						<div>
+							<img src="" />
+							<span>Dani Setiawan</span>
+						</div>
+						<span className="count">6</span>
+					</Button>
+					<Button
+						textGray
+						type="button"
+						className={navActive === 'messages-4' ? 'active' : ''}
+						onClick={() => setNavActive('messages-4')}
+					>
 						<div>
 							<img src="" />
 							<span>Dani Setiawan</span>

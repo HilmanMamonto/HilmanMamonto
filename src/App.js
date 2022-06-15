@@ -11,8 +11,8 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/product" element={<ProductSelectedPage />} />
-					<Route path="/dashboard" element={<DashboardPage />} />
+					<Route path="/product/:id" element={<ProductSelectedPage />} />
+					<Route path="dashboard/*" element={<DashboardPage />} />
 				</Routes>
 			</Router>
 		</Provider>
