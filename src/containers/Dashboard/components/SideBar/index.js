@@ -1,15 +1,19 @@
 import Button from 'components/Button';
 import React, { useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import './styles.scss';
 
 const packagesItems = [ { name: 'Fushimi Inari Taisha' }, { name: 'Sibuya' }, { name: 'Tokyo' }, { name: 'Kyoto' } ];
 const orderedItems = [ { name: 'Fushimi Inari Taisha' }, { name: 'Sibuya' }, { name: 'Tokyo' }, { name: 'Kyoto' } ];
+const massagesItems = [ { name: 'Dani Setiawan' }, { name: 'Veronika Mark' }, { name: 'Joe Winata' } ];
 
 const SideBar = () => {
 	const [ packagesIsShowed, setPackagesIsShowed ] = useState(true);
 	const [ orderedIsShowed, setOrderedIsShowed ] = useState(false);
 	const [ messagesIsShowed, setMessagesIsShowed ] = useState(false);
 	const [ navActive, setNavActive ] = useState('');
+	const { idDashboardItem } = useParams();
+	const location = useLocation().pathname;
 
 	return (
 		<div id="side-bar">
@@ -70,9 +74,8 @@ const SideBar = () => {
 								textGray
 								type="link"
 								href={'package/' + cName}
-								className={navActive === 'packages-' + i ? 'active' : ''}
+								className={location.match('package') && idDashboardItem === cName ? 'active' : ''}
 								children={item.name}
-								onClick={() => setNavActive('packages-' + i)}
 							/>
 						);
 					})}
@@ -97,8 +100,7 @@ const SideBar = () => {
 								textGray
 								type="link"
 								href={'ordered/' + cName}
-								className={navActive === 'ordered-' + i ? 'active' : ''}
-								onClick={() => setNavActive('ordered-' + i)}
+								className={location.match('ordered') && idDashboardItem === cName ? 'active' : ''}
 							>
 								<span className="item-tittle">{item.name}</span>
 								<span className="date">11 oct</span>
@@ -118,54 +120,24 @@ const SideBar = () => {
 					/>
 				</label>
 				<div className={messagesIsShowed ? 'items active' : 'items'}>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'messages-1' ? 'active' : ''}
-						onClick={() => setNavActive('messages-1')}
-					>
-						<div>
-							<img src="" />
-							<span>Dani Setiawan</span>
-						</div>
-						<span className="count">6</span>
-					</Button>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'messages-2' ? 'active' : ''}
-						onClick={() => setNavActive('messages-2')}
-					>
-						<div>
-							<img src="" />
-							<span>Dani Setiawan</span>
-						</div>
-						<span className="count">6</span>
-					</Button>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'messages-3' ? 'active' : ''}
-						onClick={() => setNavActive('messages-3')}
-					>
-						<div>
-							<img src="" />
-							<span>Dani Setiawan</span>
-						</div>
-						<span className="count">6</span>
-					</Button>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'messages-4' ? 'active' : ''}
-						onClick={() => setNavActive('messages-4')}
-					>
-						<div>
-							<img src="" />
-							<span>Dani Setiawan</span>
-						</div>
-						<span className="count">6</span>
-					</Button>
+					{massagesItems.map((item, i) => {
+						const cName = item.name.split(' ').join('-').toLowerCase();
+						return (
+							<Button
+								key={'massage-' + i}
+								textGray
+								type="link"
+								href={'messages/' + cName}
+								className={location.match('messages') && idDashboardItem === cName ? 'active' : ''}
+							>
+								<div>
+									<img src="" alt="" />
+									<span>{item.name}</span>
+								</div>
+								<span className="count">6</span>
+							</Button>
+						);
+					})}
 				</div>
 			</div>
 		</div>
