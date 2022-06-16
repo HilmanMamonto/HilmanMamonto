@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './styles.scss';
 
 const packagesItems = [ { name: 'Fushimi Inari Taisha' }, { name: 'Sibuya' }, { name: 'Tokyo' }, { name: 'Kyoto' } ];
+const orderedItems = [ { name: 'Fushimi Inari Taisha' }, { name: 'Sibuya' }, { name: 'Tokyo' }, { name: 'Kyoto' } ];
 
 const SideBar = () => {
 	const [ packagesIsShowed, setPackagesIsShowed ] = useState(true);
@@ -35,7 +36,7 @@ const SideBar = () => {
 					children={
 						<div>
 							<span>Witdraw</span>
-							<img src="" />
+							<img src="/arrow-right-white.svg" alt="" />
 						</div>
 					}
 				/>
@@ -88,51 +89,22 @@ const SideBar = () => {
 					/>
 				</label>
 				<div className={orderedIsShowed ? 'items active' : 'items'}>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'ordered-1' ? 'active' : ''}
-						onClick={() => setNavActive('ordered-1')}
-					>
-						<span className="item-tittle">Fushimi Inari Taisha</span>
-						<span className="date">11 oct</span>
-					</Button>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'ordered-2' ? 'active' : ''}
-						onClick={() => setNavActive('ordered-2')}
-					>
-						<span className="item-tittle">Fushimi Inari Taisha</span>
-						<span className="date">11 oct</span>
-					</Button>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'ordered-3' ? 'active' : ''}
-						onClick={() => setNavActive('ordered-3')}
-					>
-						<span className="item-tittle">Fushimi Inari Taisha</span>
-						<span className="date">11 oct</span>
-					</Button>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'ordered-4' ? 'active' : ''}
-						onClick={() => setNavActive('ordered-4')}
-					>
-						<span className="item-tittle">Fushimi Inari Taisha</span>
-						<span className="date">11 oct</span>
-					</Button>
-					<Button
-						textGray
-						type="button"
-						className={navActive === 'ordered-5' ? 'active' : ''}
-						onClick={() => setNavActive('ordered-5')}
-					>
-						<span className="item-tittle">Fushimi Inari Taisha</span>
-						<span className="date">11 oct</span>
-					</Button>
+					{orderedItems.map((item, i) => {
+						const cName = item.name.split(' ').join('-').toLowerCase();
+						return (
+							<Button
+								key={'ordered-' + i}
+								textGray
+								type="link"
+								href={'ordered/' + cName}
+								className={navActive === 'ordered-' + i ? 'active' : ''}
+								onClick={() => setNavActive('ordered-' + i)}
+							>
+								<span className="item-tittle">{item.name}</span>
+								<span className="date">11 oct</span>
+							</Button>
+						);
+					})}
 				</div>
 			</div>
 			<div className="messages">

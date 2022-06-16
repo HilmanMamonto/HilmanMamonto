@@ -2,6 +2,11 @@
 	padding: 24px 0;
 	border-right: 1px solid var(--ultralight-gray);
 	position: relative;
+	height: 100vh;
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
 	.btn-home-page {
 		margin: 0 30px;
 		margin-bottom: 20px;
@@ -40,24 +45,28 @@
 	}
 	.wallet-info {
 		display: grid;
-		grid-template-rows: 2fr auto;
+		grid-template-rows: 1fr auto;
 		background-color: var(--white);
 		box-shadow: -5px 10px 30px rgb(33, 33, 33, 0.1);
-		border-radius: 20px;
+		border-radius: 15px;
 		margin-top: 24px;
-		margin-left: 50px;
-		margin-right: 50px;
-		padding: 24px 15px;
+		margin-left: 65px;
+		margin-right: 65px;
+		padding: 20px 15px;
 		div {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			label {
-				font-size: 12px;
+				font-size: 10px;
+				margin-bottom: 2px;
+				color: var(--light-gray);
+				font-weight: 500;
 			}
 			span {
 				font-size: 24px;
-				font-weight: 600;
+				font-weight: 400;
+				color: var(--black);
 			}
 		}
 		.btn-witdraw {
@@ -65,7 +74,7 @@
 			border-radius: 6px;
 			height: 30px;
 			padding: 0 10px;
-			margin-top: 22px;
+			margin-top: 16px;
 			div {
 				display: flex;
 				align-items: center;
@@ -74,13 +83,16 @@
 				span {
 					color: var(--white);
 					font-size: 14px;
-					font-weight: 400;
+					font-weight: 300;
 				}
 				img {
 					background-color: var(--white);
 					width: 18px;
 					height: 18px;
+					padding: 3px;
+					padding: 3px;
 					border-radius: 100px;
+					background-color: rgba(255, 255, 255, 0.3);
 				}
 			}
 		}
@@ -224,7 +236,7 @@
 			.item-tittle {
 				overflow-x: hidden;
 			}
-			button {
+			a {
 				margin-bottom: 10px;
 				position: relative;
 				display: flex;
