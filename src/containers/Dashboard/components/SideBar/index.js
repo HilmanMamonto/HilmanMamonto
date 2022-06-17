@@ -23,7 +23,7 @@ const SideBar = () => {
 				<span />
 			</Button>
 			<div className="profile">
-				<img src="" alt="" />
+				<img src="/andy/andy.jpg" alt="" />
 				<div className="tittle">
 					<label>Moh Sidik</label>
 					<span>Tour Guide</span>
