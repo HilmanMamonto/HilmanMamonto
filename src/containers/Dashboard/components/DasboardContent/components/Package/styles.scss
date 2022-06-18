@@ -118,4 +118,124 @@
 			}
 		}
 	}
+
+	#availability {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		margin-top: 42px;
+		column-gap: 50px;
+		.scheduled {
+			display: flex;
+			flex-direction: column;
+			.head {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 24px;
+				div {
+					display: flex;
+					align-items: center;
+					span {
+						margin-right: 10px;
+					}
+					.btn-category {
+						width: 100px;
+						border-radius: 100px;
+						display: flex;
+						justify-content: center;
+						background-color: #fafafa;
+						color: var(--gray);
+					}
+				}
+
+				.btn {
+					padding: 10px 15px;
+					background-color: var(--black);
+					border-radius: 4px;
+					color: var(--white);
+					font-weight: 300;
+				}
+			}
+			.date {
+				border-radius: 14px;
+				background-color: var(--white);
+				box-shadow: 0px 10px 20px rgb(33 33 33 / 10%);
+				padding: 0px 20px 20px 20px;
+				color: var(--black);
+				margin-bottom: 42px;
+
+				.rdrDayToday {
+					span {
+						::after {
+							content: '';
+							background-color: var(--black);
+						}
+					}
+				}
+				.available {
+					position: relative;
+					&::after {
+						content: '';
+						width: 6px;
+						height: 6px;
+						right: -10px;
+						top: 8px;
+						background-color: var(--red);
+						border-radius: 100px;
+						position: absolute;
+					}
+				}
+				.rdrMonthAndYearWrapper {
+					padding-top: 0px;
+				}
+				.rdrDayDisabled {
+					position: relative;
+					background-color: var(--white);
+					.rdrDayNumber {
+						&::after {
+							content: '';
+							position: absolute;
+							width: 14px;
+							height: 2px;
+							background-color: var(--ultralight-gray);
+						}
+					}
+				}
+			}
+		}
+
+		.ordered {
+			.tittle {
+				margin-bottom: 24px;
+				height: 40px;
+				display: flex;
+				align-items: center;
+			}
+			.items {
+				.item {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin-bottom: 15px;
+					.btn {
+						font-size: 14px;
+						display: flex;
+						align-items: center;
+						img {
+							margin-right: 10px;
+							width: 30px;
+							height: 30px;
+							border-radius: 100px;
+						}
+					}
+					.date {
+						font-size: 12px;
+						padding: 2px 10px;
+						border: 1px solid var(--ultralight-gray);
+						border-radius: 100px;
+					}
+				}
+			}
+		}
+	}
 }
