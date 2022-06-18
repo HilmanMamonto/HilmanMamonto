@@ -77,6 +77,7 @@ const Availability = () => {
 						<span className="date">11 oct</span>
 					</div>
 				</div>
+				<Button type="button" className="btn-see-all" textGray children={'see all'} />
 			</div>
 		</div>
 	);
