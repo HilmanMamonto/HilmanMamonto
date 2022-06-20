@@ -3,16 +3,17 @@ import Header from '../Header';
 import './styles.scss';
 import Charts from './Charts';
 import Availability from './Availability';
+import Details from './Details';
 
 const Package = () => {
 	const [ isToggleStatistics, setToggleStatistics ] = useState(false);
 
 	return (
 		<div id="dashboard-package">
-			<Header />
+			<Header type="package" />
 			<Charts onClickToggle={() => setToggleStatistics(!isToggleStatistics)} toggle={isToggleStatistics} />
 			<Availability />
-			{/* Detail Package */}
+			<Details />
 		</div>
 	);
 };

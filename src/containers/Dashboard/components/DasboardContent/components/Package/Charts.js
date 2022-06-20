@@ -6,8 +6,70 @@ import Button from 'components/Button';
 import PropTypes from 'prop-types';
 import 'animate.css';
 
-const lineLabels = [ 'FEB', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ];
-const lineStat = [ 8, 10, 10, 12, 11, 15, 15, 12, 14, 10, 11, 12, 12, 10, 10, 11, 12, 11, 11, 14, 13, 13, 10, 10, 10 ];
+const lineLabels = [
+	1,
+	2,
+	3,
+	4,
+	5,
+	6,
+	7,
+	8,
+	9,
+	10,
+	11,
+	12,
+	13,
+	14,
+	15,
+	16,
+	17,
+	18,
+	19,
+	20,
+	21,
+	22,
+	23,
+	24,
+	25,
+	26,
+	27,
+	28,
+	29,
+	30
+];
+const lineStat = [
+	8,
+	10,
+	10,
+	12,
+	11,
+	15,
+	15,
+	12,
+	14,
+	10,
+	11,
+	12,
+	12,
+	10,
+	10,
+	11,
+	12,
+	11,
+	11,
+	14,
+	13,
+	13,
+	10,
+	10,
+	10,
+	11,
+	12,
+	14,
+	13,
+	13
+];
 
 const monthsValue = [
 	{ month: 'OCT', value: 350 },
@@ -110,7 +172,10 @@ const Charts = (props) => {
 			</div>
 			<div className="charts">
 				<div className="chart-line">
-					<span className="tittle">Daily Views</span>
+					<div className="head">
+						<span className="tittle">Daily Views</span>
+						<Button type="button" className="btn" children={'FEB 2022'} />
+					</div>
 					<Chart type="line" options={lineOptions} data={dataLine} />
 				</div>
 				<div className="chart-bar">

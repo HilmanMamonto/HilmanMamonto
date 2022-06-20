@@ -1,4 +1,6 @@
 #dashboard-content {
-	padding: 24px 30px;
+	position: relative;
+	padding: 24px 30px 42px 30px;
 	height: 100vh;
+	overflow-y: scroll;
 }

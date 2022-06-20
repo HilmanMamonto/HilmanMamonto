@@ -53,7 +53,10 @@ const Availability = () => {
 				</div>
 			</div>
 			<div className="ordered">
-				<div className="tittle">Ordered</div>
+				<div className="head">
+					<div className="tittle">Ordered</div>
+					<span>10</span>
+				</div>
 				<div className="items">
 					<div className="item">
 						<Button className="btn" type="button">
