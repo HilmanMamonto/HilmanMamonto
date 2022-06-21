@@ -1,51 +1,50 @@
 import Input from 'components/Input';
+import Container from 'Layout/Container';
+import Grid from 'Layout/Grid';
 import React from 'react';
 
 const Desc = () => {
-	const inputTittle = (
-		<Input
-			type="text"
-			label="Tittle"
-			className="input-tittle"
-			height={41}
-			border={2}
-			hasBordered
-			borderRadius={4}
-		/>
-	);
+	const InputTittle = () => {
+		return <Input type="email" label="Tittle" status="filed" />;
+	};
 
-	const inputBudget = (
-		<Input
-			label="Budget / Pax"
-			variant="money"
-			className="input-tittle"
-			height={41}
-			border={2}
-			hasBordered
-			borderRadius={4}
-		/>
-	);
+	const InputBudget = () => {
+		return <Input label="Budget / Pax" variant="money" />;
+	};
 
-	const inputPax = (
-		<Input label="Max Pax" className="input-tittle" height={41} border={2} hasBordered borderRadius={4} />
-	);
+	const InputPax = () => {
+		return <Input label="Max Pax" />;
+	};
+
+	const InputAminities = () => {
+		return <Input label="Travel Amenities" />;
+	};
+
+	const InputDesc = () => {
+		return <Input label="Place Description" />;
+	};
 
 	return (
-		<div id="add-package-desc">
-			<div className="item">{inputTittle}</div>
-			<div className="items">
-				<div className="item">{inputBudget}</div>
-				<div className="item">{inputPax}</div>
-			</div>
-			<div className="items">
-				<div className="item">
-					<label>Travel Amenities</label>
-				</div>
-				<div className="item">
-					<label>Not Include</label>
-				</div>
-			</div>
-		</div>
+		<Container flex direction="column">
+			<Container bottom="medium">
+				<InputTittle />
+			</Container>
+			<Container bottom="medium">
+				<Grid colGap={20}>
+					<InputBudget />
+					<InputPax />
+				</Grid>
+			</Container>
+			<Container bottom="medium">
+				<Grid colGap={20}>
+					<InputAminities />
+					<InputPax />
+				</Grid>
+			</Container>
+			<Container bottom="medium">
+				<InputDesc />
+			</Container>
+		</Container>
 	);
 };
 
