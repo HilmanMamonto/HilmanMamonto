@@ -1,5 +1,27 @@
+span {
+	&.container {
+		line-height: 100%;
+	}
+}
+
 .container {
 	background-color: var(--white);
+	&.y-scroll {
+		overflow-y: auto;
+	}
+	&.x-scroll {
+		overflow-x: auto;
+	}
+
+	&.black-transparent {
+		background-color: rgba(33, 33, 33, 0.5);
+	}
+	&.height-100vh {
+		height: 100vh;
+	}
+	&.width-100vw {
+		width: 100vw;
+	}
 	&.flex {
 		display: flex;
 	}
@@ -31,6 +53,26 @@
 
 	&.jc-flex-end {
 		justify-content: flex-end;
+	}
+
+	&.ai-center {
+		align-items: center;
+	}
+
+	&.ai-space-betwen {
+		align-items: space-between;
+	}
+
+	&.ai-space-around {
+		align-items: space-around;
+	}
+
+	&.ai-flex-start {
+		align-items: flex-start;
+	}
+
+	&.ai-flex-end {
+		align-items: flex-end;
 	}
 
 	&.position-absolute {
@@ -105,5 +147,17 @@
 	}
 	&.mr-xl {
 		margin-right: 2.5rem;
+	}
+	&.mt-auto {
+		margin-top: auto;
+	}
+	&.mb-auto {
+		margin-bottom: auto;
+	}
+	&.ml-auto {
+		margin-left: auto;
+	}
+	&.mr-auto {
+		margin-right: auto;
 	}
 }

@@ -7,6 +7,7 @@
 		height: 100%;
 		border: none;
 		padding: 0;
+		line-height: 100%;
 	}
 
 	input[type=number]::-webkit-inner-spin-button {
@@ -17,18 +18,32 @@
 		outline-color: transparent;
 	}
 
+	textarea {
+		border: none;
+		resize: none;
+		width: 100%;
+		height: 200px;
+		display: flex;
+		font-family: inherit;
+	}
+
+	textarea:focus {
+		outline-color: transparent;
+	}
+
 	&.small {
 		* {
-			font-size: 12px;
+			font-size: 0.75rem;
 		}
+
 		.input-wrapper {
-			padding: 4px 10px;
+			padding: 5px 10px;
 		}
 	}
 
 	&.medium {
 		* {
-			font-size: 14px;
+			font-size: 1rem;
 		}
 		.input-wrapper {
 			padding: 8px 10px;
@@ -37,25 +52,25 @@
 
 	&.large {
 		* {
-			font-size: 16px;
+			font-size: 1.5rem;
 		}
 		.input-wrapper {
 			padding: 10px 15px;
 		}
 	}
-
 	label {
-		display: flex;
-		margin-bottom: 5px;
+		line-height: 100%;
+		font-weight: 500;
 	}
 	.input-wrapper {
 		border: 1px solid var(--ultralight-gray);
 		border-radius: 4px;
-		display: flex;
-		align-items: center;
 		&.focus {
 			outline: 2px solid var(--gray);
-			border-color: var(--white);
+			border-color: var(--white) !important;
+		}
+		&.error {
+			border: 1px solid var(--error);
 		}
 		.status {
 			width: 20px;
