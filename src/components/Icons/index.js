@@ -7,13 +7,16 @@ const Icon = (props) => {
 	if (props.size === 'small') arrClass.push('icon-small');
 	if (props.size === 'medium') arrClass.push('icon-medium');
 	if (props.size === 'large') arrClass.push('icon-large');
-	const className = arrClass.join(' ');
-	const alt = props.variant;
+	if (props.clickable) arrClass.push('clickable');
 	let url = '';
 	if (props.variant === 'warning') url = '/icons/warning-alert.svg';
 	if (props.variant === 'checkmark') url = '/icons/checkmark-alert.svg';
+	if (props.variant === 'dollar') url = '/icons/dollar.svg';
+	if (props.variant === 'arrow-up') url = '/icons/arrow-up.svg';
 
-	return <img className={className} src={url} alt={alt} />;
+	const className = 'icon ' + arrClass.join(' ');
+	const alt = props.variant;
+	return <img className={className} onClick={props.onClick} style={props.style} src={url} alt={alt} />;
 };
 
 Icon.defaultProps = {
@@ -22,7 +25,10 @@ Icon.defaultProps = {
 
 Icon.propTypes = {
 	size: PropTypes.string,
-	variant: PropTypes.string.isRequired
+	variant: PropTypes.string.isRequired,
+	style: PropTypes.string,
+	onClick: PropTypes.func,
+	clickable: PropTypes.bool
 };
 
 export default Icon;

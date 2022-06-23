@@ -6,8 +6,10 @@ const Grid = ({ children, ...props }) => {
 	const length = children.length;
 	const cGap = props.colGap;
 	const rGap = props.rowGap;
+
 	const styles = {
-		gridTemplateColumns: 'repeat(' + length + ', ' + props.itemWidth + '  )',
+		gridTemplateRows: props.direction === 'row' ? 'repeat(' + length + ', ' + props.itemWidth + '  )' : '',
+		gridTemplateColumns: props.direction === 'col' ? 'repeat(' + length + ', ' + props.itemWidth + '  )' : '',
 		columnGap: cGap,
 		rowGap: rGap
 	};
@@ -22,19 +24,19 @@ const Grid = ({ children, ...props }) => {
 const Item = ({ children }) => {
 	return <div>{children}</div>;
 };
-
+Grid.Item = Item;
 Grid.defaultProps = {
 	colGap: 0,
 	rowGap: 0,
-	itemWidth: '1fr'
+	itemWidth: '1fr',
+	direction: 'col'
 };
 
 Grid.propTypes = {
 	colGap: PropTypes.number,
 	rowGap: PropTypes.number,
-	itemWidth: PropTypes.string
+	itemWidth: PropTypes.string,
+	direction: PropTypes.string
 };
-
-Grid.Item = Item;
 
 export default Grid;

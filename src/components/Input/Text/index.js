@@ -1,88 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 import Icon from 'components/Icons';
 import Container from 'Layout/Container';
-import Line from 'components/Line';
-import Typography from 'components/Typography';
+import './styles.scss';
+import '../main_styles.scss';
 
-//status
 const IconStatus = (props) => {
+	const styles = {
+		marginLeft: '10px'
+	};
 	if (props.status === 'success') {
-		return <Icon variant="checkmark" />;
+		return <Icon styles={styles} variant="checkmark" size={props.size} />;
 	}
 	if (props.status === 'error') {
-		return <Icon variant="warning" />;
+		return <Icon styles={styles} variant="warning" size={props.size} />;
 	}
 };
 
-//label
 const Label = (props) => (
 	<Container flex bottom="xsmall">
 		<label>{props.label}</label>
 	</Container>
 );
 
-//icon money
-const IconMoney = () => {
-	return <span className="money">$</span>;
+const IconMoney = (props) => {
+	return (
+		<span className="money">
+			<Icon variant="dollar" size={props.size} />
+		</span>
+	);
 };
 
-//inputElement
 const InputElement = React.forwardRef((props, ref) => {
-	//default
-	if (props.as === 'input') {
-		return (
-			<input
-				ref={ref}
-				id={props.id}
-				placeholder={props.placeholder}
-				onClick={props.onClick}
-				onChange={props.onChange}
-				onFocus={props.onFocus}
-				onBlur={props.onBlur}
-				className={props.className}
-				style={props.style}
-				value={props.value}
-				min={props.min}
-				max={props.max}
-				autoFocus={props.autoFocus}
-				type={props.type}
-				pattern={props.pattern}
-			/>
-		);
-	}
-	if (props.as === 'text-area') {
-		return (
-			<Container flex direction="column">
-				<Container>
-					<textarea
-						ref={ref}
-						onClick={props.onClick}
-						onChange={props.onChange}
-						onFocus={props.onFocus}
-						onBlur={props.onBlur}
-						value={props.value}
-						className={props.className}
-						min={props.min}
-						max={props.max}
-					/>
-				</Container>
-				<Line />
-				<Container flex justifyContent="space-betwen" as="span" top="xsmall">
-					<Container flex alignItems="center" as="span">
-						<Typography size="xxsmall" color="red">
-							Opps! least than 20 charachter
-						</Typography>
-					</Container>
-					<Icon variant="warning" />
-				</Container>
-			</Container>
-		);
-	}
+	return (
+		<input
+			ref={ref}
+			id={props.id}
+			placeholder={props.placeholder}
+			onClick={props.onClick}
+			onChange={props.onChange}
+			onFocus={props.onFocus}
+			onBlur={props.onBlur}
+			className={props.className}
+			style={props.style}
+			value={props.value}
+			min={props.min}
+			max={props.max}
+			autoFocus={props.autoFocus}
+			type={props.type}
+			pattern={props.pattern}
+		/>
+	);
 });
 
 const Input = (props) => {
@@ -93,10 +64,6 @@ const Input = (props) => {
 			refInput.current.focus();
 		}
 	});
-	console.log(focus);
-
-	let pattern = undefined;
-	if (props.type === 'email') pattern = '[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$';
 
 	const size = props.size;
 	const status = props.status;
@@ -107,7 +74,7 @@ const Input = (props) => {
 		<div className={containerClass}>
 			{props.label && <Label label={props.label} />}
 			<Container flex alignItems="center" className={wrapperClass}>
-				{props.variant === 'money' && <IconMoney />}
+				{props.variant === 'budget' && <IconMoney {...props} />}
 				<InputElement {...props} ref={refInput} onFocus={() => setFocus('focus')} onBlur={() => setFocus('')} />
 				<IconStatus {...props} />
 			</Container>

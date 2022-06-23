@@ -1,0 +1,47 @@
+// size
+.input {
+	&.small {
+		* {
+			font-size: 0.75rem;
+		}
+
+		.input-wrapper {
+			padding: 5px 10px;
+		}
+	}
+
+	&.medium {
+		* {
+			font-size: 1rem;
+		}
+
+		.input-wrapper {
+			padding: 8px 10px;
+		}
+	}
+
+	&.large {
+		* {
+			font-size: 1.5rem;
+		}
+
+		.input-wrapper {
+			padding: 10px 15px;
+		}
+	}
+}
+
+// basic
+.input {
+	.input-wrapper {
+		border: 1px solid var(--ultralight-gray);
+		border-radius: 4px;
+		&.focus {
+			outline: 2px solid var(--gray);
+			border-color: var(--white) !important;
+		}
+		&.error {
+			border: 1px solid var(--error);
+		}
+	}
+}

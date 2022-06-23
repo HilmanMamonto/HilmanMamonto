@@ -1,0 +1,9 @@
+textarea {
+	width: 100%;
+	border: 0;
+	resize: none;
+	font-family: inherit;
+	&:focus {
+		outline: none;
+	}
+}

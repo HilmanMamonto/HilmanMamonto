@@ -42,6 +42,7 @@ const AddPackage = () => {
 				left="small"
 				right="small"
 				borderRadius={14}
+				maxWidth="460px"
 			>
 				<Header />
 				<StepperItems />

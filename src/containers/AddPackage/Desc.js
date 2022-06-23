@@ -1,37 +1,38 @@
-import Input from 'components/Input';
+import InputCheckBox from 'components/Input/CheckBox/CheckBox';
+import Input from 'components/Input/Text';
+import TextArea from 'components/Input/TextArea';
+import TimePicker from 'components/TimePicker';
 import Container from 'Layout/Container';
 import Grid from 'Layout/Grid';
 import React from 'react';
 import { useState } from 'react';
 
 const InputTittle = () => {
-	return <Input type="email" label="Tittle" status="success" size="small" />;
+	const [ value, setValue ] = useState();
+	return <Input label="Tittle" status="error" />;
 };
 
 const InputBudget = () => {
-	return <Input label="Budget / Pax" variant="money" size="small" />;
-};
-
-const InputPax = () => {
-	return <Input label="Max Pax" size="small" />;
-};
-
-const InputAminities = () => {
 	const [ value, setValue ] = useState();
-	return <Input label="Travel Amenities" size="small" onChange={(e) => setValue(e.target.value)} value={value} />;
+	return <Input label="Budget / Pax" variant="budget" status="error" />;
 };
 
 const InputDesc = () => {
 	const [ value, setValue ] = useState();
-	return (
-		<Input
-			label="Place Description"
-			as="text-area"
-			onChange={(e) => setValue(e.target.value)}
-			value={value}
-			min={20}
-		/>
-	);
+	return <TextArea label="Place Descrition" />;
+};
+
+const InputAmenites = () => {
+	const [ value, setValue ] = useState();
+	const data = [
+		{ name: 'sun screen' },
+		{ name: 'lunch' },
+		{ name: 'lunch' },
+		{ name: 'lunch' },
+		{ name: 'lunch' },
+		{ name: 'lunch' }
+	];
+	return <InputCheckBox label="Travel Amenities" data={data} />;
 };
 
 const Desc = () => {
@@ -43,17 +44,14 @@ const Desc = () => {
 			<Container bottom="medium">
 				<Grid colGap={20}>
 					<InputBudget />
-					<InputPax />
-				</Grid>
-			</Container>
-			<Container bottom="medium">
-				<Grid colGap={20}>
-					<InputAminities />
-					<InputPax />
+					<InputAmenites />
 				</Grid>
 			</Container>
 			<Container bottom="medium">
 				<InputDesc />
+			</Container>
+			<Container bottom="medium">
+				<TimePicker size="large" />
 			</Container>
 		</Container>
 	);
