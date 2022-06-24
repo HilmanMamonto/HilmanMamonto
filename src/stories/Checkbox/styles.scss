@@ -1,0 +1,29 @@
+.cb-wrapper {
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: gray;
+	border-radius: 100%;
+
+	.cb {
+		display: inline-block;
+
+		* {
+			cursor: pointer;
+		}
+		input {
+			display: none;
+		}
+		&.cb-small {
+			height: 1.5rem;
+		}
+		&.cb-medium {
+			height: 2rem;
+		}
+
+		&.active {
+		}
+	}
+}

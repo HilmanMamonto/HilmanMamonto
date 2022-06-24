@@ -1,6 +1,6 @@
 import FormWrapper from 'components/FormWrapper';
 import H from 'components/H';
-import Stepper from 'components/Stepper';
+import Stepper from 'stories/Stepper';
 import Typography from 'components/Typography';
 import Container from 'Layout/Container';
 import React from 'react';
