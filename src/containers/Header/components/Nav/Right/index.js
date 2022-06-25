@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './styles.scss';
 import Button from 'components/Button';
+import Avatar from 'components/Avatar/Avatar';
 
 const NavRight = (props) => {
 	const [ burgerIsActive, setBurgerIsActive ] = useState();
@@ -58,7 +59,7 @@ const NavRight = (props) => {
 					</div>
 				</div>
 			</div>
-			<img alt="" />
+			<Avatar size="large" as="link" href="/dashboard" src="/andy/andy.jpg" />
 		</div>
 	);
 };

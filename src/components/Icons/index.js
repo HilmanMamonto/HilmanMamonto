@@ -2,33 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const Icon = (props) => {
-	const arrClass = [ props.className ];
-	if (props.size === 'small') arrClass.push('icon-small');
-	if (props.size === 'medium') arrClass.push('icon-medium');
-	if (props.size === 'large') arrClass.push('icon-large');
-	if (props.clickable) arrClass.push('clickable');
-	let url = '';
-	if (props.variant === 'warning') url = '/icons/warning-alert.svg';
-	if (props.variant === 'checkmark') url = '/icons/checkmark-alert.svg';
-	if (props.variant === 'dollar') url = '/icons/dollar.svg';
-	if (props.variant === 'arrow-up') url = '/icons/arrow-up.svg';
-
-	const className = 'icon ' + arrClass.join(' ');
-	const alt = props.variant;
-	return <img className={className} onClick={props.onClick} style={props.style} src={url} alt={alt} />;
+const sizes = {
+	small: 'icon-small ',
+	medium: 'icon-medium ',
+	large: 'icon-large '
 };
 
-Icon.defaultProps = {
-	size: 'medium'
+const variants = {
+	warning: '/icons/warning-alert.svg',
+	checkmark: '/icons/checkmark-alert.svg',
+	dollar: '/icons/dollar.svg',
+	arrowUp: '/icons/arrow-up.svg'
 };
 
-Icon.propTypes = {
+const Icons = ({ size, clickable, variant, onClick, style }) => {
+	const sizeClass = sizes[size];
+	const clickAbility = clickable ? 'icon-clickable ' : '';
+	const className = 'icon ' + sizeClass + clickAbility;
+	const url = variants[variant];
+	const alt = variant ? url : '';
+
+	return <img className={className} onClick={onClick} style={style} src={url} alt={alt} />;
+};
+
+Icons.defaultProps = {
+	size: 'medium',
+	url: ''
+};
+
+Icons.propTypes = {
 	size: PropTypes.string,
 	variant: PropTypes.string.isRequired,
 	style: PropTypes.string,
 	onClick: PropTypes.func,
-	clickable: PropTypes.bool
+	clickable: PropTypes.bool,
+	fullHeight: PropTypes.bool
 };
 
-export default Icon;
+export default Icons;
