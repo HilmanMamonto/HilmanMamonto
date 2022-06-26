@@ -1,53 +1,124 @@
 .loading-wrapper {
-}
+	display: inline-flex;
+	align-items: center;
+	.loading-items {
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		&.loading-small {
+			width: 20px;
+			div {
+				width: 4px;
+				height: 4px;
+			}
+		}
+		&.loading-medium {
+			width: 30px;
+			div {
+				width: 6px;
+				height: 6px;
+			}
+		}
 
-.dot-flashing {
-	position: relative;
-	width: 10px;
-	height: 10px;
-	border-radius: 5px;
-	background-color: #9880ff;
-	color: #9880ff;
-	animation: dotFlashing 1s infinite linear alternate;
-	animation-delay: .5s;
-}
+		&.loading-large {
+			width: 40px;
+			div {
+				width: 8px;
+				height: 8px;
+			}
+		}
 
-.dot-flashing::before,
-.dot-flashing::after {
-	content: '';
-	display: inline-block;
-	position: absolute;
-	top: 0;
-}
+		&.loading-xlarge {
+			width: 50px;
+			div {
+				width: 10px;
+				height: 10px;
+			}
+		}
 
-.dot-flashing::before {
-	left: -15px;
-	width: 10px;
-	height: 10px;
-	border-radius: 5px;
-	background-color: #9880ff;
-	color: #9880ff;
-	animation: dotFlashing 1s infinite alternate;
-	animation-delay: 0s;
-}
-
-.dot-flashing::after {
-	left: 15px;
-	width: 10px;
-	height: 10px;
-	border-radius: 5px;
-	background-color: #9880ff;
-	color: #9880ff;
-	animation: dotFlashing 1s infinite alternate;
-	animation-delay: 1s;
-}
-
-@keyframes dotFlashing {
-	0% {
-		background-color: #9880ff;
+		div {
+			border-radius: 100%;
+			div {
+				width: 5px;
+				height: 5px;
+			}
+		}
+		&.loading-primary {
+			div {
+				animation-name: anm-primary;
+			}
+		}
+		&.loading-secondary {
+			div {
+				animation-name: anm-secondary;
+			}
+		}
+		&.loading-gray {
+			div {
+				animation-name: anm-gray;
+			}
+		}
+		&.loading-white {
+			div {
+				animation-name: anm-white;
+			}
+		}
+		.left {
+			animation: anm 1s 1s infinite alternate;
+		}
+		.mid {
+			animation: anm 1s 0s infinite alternate;
+		}
+		.right {
+			animation: anm 1s .5s infinite alternate;
+		}
 	}
-	50%,
-	100% {
-		background-color: #ebe6ff;
+
+	.loading-primary {
+		@keyframes anm {
+			0% {
+				background-color: var(--black);
+			}
+			50%,
+			100% {
+				background-color: var(--ultralight-gray);
+			}
+		}
+	}
+	@keyframes anm-primary {
+		0% {
+			background-color: var(--black);
+		}
+		50%,
+		100% {
+			background-color: var(--ultralight-gray);
+		}
+	}
+	@keyframes anm-secondary {
+		0% {
+			background-color: var(--red);
+		}
+		50%,
+		100% {
+			background-color: var(--ultralight-gray);
+		}
+	}
+	@keyframes anm-gray {
+		0% {
+			background-color: var(--gray);
+		}
+		50%,
+		100% {
+			background-color: var(--ultralight-gray);
+		}
+	}
+	@keyframes anm-white {
+		0% {
+			background-color: var(--white);
+		}
+		50%,
+		100% {
+			background-color: rgba(211, 211, 211, 0.2);
+		}
 	}
 }

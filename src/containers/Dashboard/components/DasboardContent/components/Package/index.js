@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import Header from '../Header';
+
 import './styles.scss';
 import Charts from './Charts';
 import Availability from './Availability';
 import Details from './Details';
+import DasboardHead from 'containers/Headers/DasboardHead';
 
 const Package = () => {
 	const [ isToggleStatistics, setToggleStatistics ] = useState(false);
 
 	return (
 		<div id="dashboard-package">
-			<Header type="package" />
+			<DasboardHead />
 			<Charts onClickToggle={() => setToggleStatistics(!isToggleStatistics)} toggle={isToggleStatistics} />
 			<Availability />
 			<Details />

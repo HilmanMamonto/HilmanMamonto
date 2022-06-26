@@ -1,0 +1,29 @@
+.dashboard-avatar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	max-width: 300px;
+	.left {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		.info {
+			display: inline-flex;
+			flex-direction: column;
+			margin-left: 1rem;
+			.da-name {
+				color: var(--gray);
+				font-size: 1rem;
+				font-weight: 500;
+				max-width: 100px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.da-tittle {
+				color: var(--light-gray);
+				font-size: .75rem;
+			}
+		}
+	}
+}

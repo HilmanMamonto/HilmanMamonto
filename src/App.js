@@ -7,35 +7,43 @@ import DashboardPage from 'pages/Dashboard';
 import Button from 'components/NewButton/Button';
 import Icons from 'components/Icons';
 import Loading from 'components/Loading/Loading';
+import WalletInfo from 'components/DataDisplay/WalletInfo/WalletInfo';
+import DashboardAvatar from 'components/DataDisplay/DashboradAvatar/DashboardAvatar';
 
 const button = (
 	<div>
 		<Button
+			loading
+			fullWidth
 			as="button"
-			startIcon={<Icons size="large" variant="checkmark" />}
+			leftIcon={<Icons size="large" variant="checkmark" />}
 			label="button"
-			size="large"
+			size="medium"
 			shadow="medium"
 		/>
-		<Button as="button" label="button" size="medium" shadow="large" color="secondary" />
+		<Button loading as="button" label="button" size="medium" shadow="large" color="secondary" />
 		<Button
-			loading
 			as="button"
-			startIcon={<Icons size="medium" variant="checkmark" />}
+			leftIcon={<Icons size="medium" variant="checkmark" />}
 			label="button"
 			size="small"
 			color="lightGray"
 			shadow="small"
 		/>
 		<Button
-			startIcon={<Icons size="small" variant="checkmark" />}
+			leftIcon={<Icons size="small" variant="checkmark" />}
 			as="button"
 			label="button"
 			size="xsmall"
 			color="ultraLightGray"
 			shadow="small"
 		/>
-		<Loading />
+		<Loading color="white" size="small" />
+		<Loading color="white" size="medium" />
+		<Loading color="white" size="large" />
+		<Loading color="white" size="xlarge" />
+		<WalletInfo />
+		<DashboardAvatar imgUrl="/andy/andy.jpg" name="Andy" tittle="Tour Guide" />
 	</div>
 );
 

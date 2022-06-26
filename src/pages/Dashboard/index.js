@@ -5,12 +5,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 const DashboardPage = () => {
-	return (
-		<>
-			<Dashboard />
-			<AddPackage />
-		</>
-	);
+	return <Dashboard />;
 };
 
 export default DashboardPage;

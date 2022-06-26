@@ -12,17 +12,22 @@ const variants = {
 	warning: '/icons/warning-alert.svg',
 	checkmark: '/icons/checkmark-alert.svg',
 	dollar: '/icons/dollar.svg',
-	arrowUp: '/icons/arrow-up.svg'
+	'arrow-up': '/icons/arrow-up.svg',
+	home: '/icons/home.svg',
+	dashboard: '/icons/dashboard.svg',
+	bell: '/icons/bell.svg',
+	bag: '/icons/bag.svg',
+	'plus-background-rounded': '/icons/plus-background-rounded.svg'
 };
 
-const Icons = ({ size, clickable, variant, onClick, style }) => {
+const Icons = ({ size, variant, onClick, style, className }) => {
 	const sizeClass = sizes[size];
-	const clickAbility = clickable ? 'icon-clickable ' : '';
-	const className = 'icon ' + sizeClass + clickAbility;
+	const clickAbility = onClick ? 'icon-clickable ' : '';
+	const classIcon = 'icon ' + sizeClass + clickAbility + className;
 	const url = variants[variant];
 	const alt = variant ? url : '';
 
-	return <img className={className} onClick={onClick} style={style} src={url} alt={alt} />;
+	return <img className={classIcon} onClick={onClick} style={style} src={url} alt={alt} />;
 };
 
 Icons.defaultProps = {
@@ -35,7 +40,6 @@ Icons.propTypes = {
 	variant: PropTypes.string.isRequired,
 	style: PropTypes.string,
 	onClick: PropTypes.func,
-	clickable: PropTypes.bool,
 	fullHeight: PropTypes.bool
 };
 

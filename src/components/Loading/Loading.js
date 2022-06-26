@@ -10,21 +10,26 @@ const sizes = {
 	small: 'loading-small ',
 	medium: 'loading-medium ',
 	large: 'loading-large ',
-	xLarge: 'loading-xlarge',
-	xxlarge: 'loading-xxlarge'
+	xlarge: 'loading-xlarge '
 };
 
 const colors = {
-	primary: 'loading-primary',
-	secondary: 'loading-secondary'
+	primary: 'loading-primary ',
+	secondary: 'loading-secondary ',
+	gray: 'loading-gray ',
+	white: 'loading-white '
 };
 
-const Loading = ({ variant, size }) => {
-	const className = 'loading ' + variants[variant] + sizes[size];
+const Loading = ({ variant, size, color }) => {
+	const className = 'loading loading-items ' + variants[variant] + sizes[size] + colors[color];
 
 	return (
 		<div className="loading-wrapper">
-			<div className={className} />
+			<div className={className}>
+				<div className="left" />
+				<div className="mid" />
+				<div className="right" />
+			</div>
 		</div>
 	);
 };

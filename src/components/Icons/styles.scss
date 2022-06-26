@@ -1,5 +1,5 @@
 .icon {
-	&.clickable {
+	&.icon-clickable {
 		&:hover {
 			cursor: pointer;
 		}
@@ -13,7 +13,7 @@
 	}
 
 	&.icon-large {
-		height: 1.5rem;
+		height: 1.25rem;
 	}
 
 	&.icon-xlarge {

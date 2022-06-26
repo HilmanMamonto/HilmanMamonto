@@ -1,0 +1,17 @@
+.dashboard-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.dh-left {
+		display: flex;
+		flex-direction: column;
+		label {
+			font-size: 1.5rem;
+			color: var(--gray);
+		}
+		span {
+			font-size: 0.9rem;
+			color: var(--ultralight-gray);
+		}
+	}
+}
