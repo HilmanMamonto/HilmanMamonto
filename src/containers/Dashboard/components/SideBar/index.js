@@ -10,7 +10,12 @@ import Icons from 'components/Icons';
 import NavSideBar from 'components/Navigations/NavSideBar/NavSideBar';
 import Line from 'components/Line';
 
-const packagesItems = [ { name: 'Fushimi Inari Taisha' }, { name: 'Sibuya' }, { name: 'Tokyo' }, { name: 'Kyoto' } ];
+const packagesItems = [
+	{ id: 'abcdabcd001', name: 'Fushimi Inari Taisha' },
+	{ id: 'abcdabcd002', name: 'Sibuya' },
+	{ id: 'abcdabcd003', name: 'Tokyo' },
+	{ id: 'abcdabcd004', name: 'Kyoto' }
+];
 const orderedItems = [ { name: 'Fushimi Inari Taisha' }, { name: 'Sibuya' }, { name: 'Tokyo' }, { name: 'Kyoto' } ];
 const massagesItems = [ { name: 'Dani Setiawan' }, { name: 'Veronika Mark' }, { name: 'Joe Winata' } ];
 
@@ -23,7 +28,7 @@ const topNav = (
 
 const avatar = (
 	<Container left="medium" right="medium" bottom="medium">
-		<DashboardAvatar name="Andyaaaaaaaaaaaaaaaa" imgUrl="/andy/andy.jpg" tittle="Tour Guide" />
+		<DashboardAvatar name="Andy Mahendra" imgUrl="/andy/andy.jpg" tittle="Tour Guide" />
 	</Container>
 );
 

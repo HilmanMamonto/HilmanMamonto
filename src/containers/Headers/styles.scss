@@ -5,13 +5,17 @@
 	.dh-left {
 		display: flex;
 		flex-direction: column;
-		label {
+		.dh-label {
 			font-size: 1.5rem;
 			color: var(--gray);
 		}
-		span {
+		.dh-name {
 			font-size: 0.9rem;
 			color: var(--ultralight-gray);
+			max-width: 240px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	}
 }

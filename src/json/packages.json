@@ -1,0 +1,434 @@
+[
+	{
+		"userId": "u0001",
+		"usename": "Andy Mahendra",
+		"packages": [
+			{
+				"packageId": "0001",
+				"name": "Fushimi Inari Taisha",
+				"statistics": {
+					"views": {
+						"2022": {
+							"mei": {
+								"total": 16954,
+								"values": [
+									{ "day": "1", "value": 180 },
+									{ "day": "2", "value": 423 },
+									{ "day": "3", "value": 210 },
+									{ "day": "4", "value": 320 },
+									{ "day": "5", "value": 205 },
+									{ "day": "6", "value": 102 },
+									{ "day": "7", "value": 140 },
+									{ "day": "8", "value": 200 },
+									{ "day": "9", "value": 210 },
+									{ "day": "10", "value": 320 },
+									{ "day": "11", "value": 310 },
+									{ "day": "12", "value": 400 },
+									{ "day": "13", "value": 620 },
+									{ "day": "14", "value": 521 },
+									{ "day": "15", "value": 551 },
+									{ "day": "16", "value": 531 },
+									{ "day": "17", "value": 541 },
+									{ "day": "18", "value": 621 },
+									{ "day": "19", "value": 631 },
+									{ "day": "20", "value": 431 },
+									{ "day": "21", "value": 681 },
+									{ "day": "22", "value": 771 },
+									{ "day": "23", "value": 881 },
+									{ "day": "24", "value": 991 },
+									{ "day": "25", "value": 921 },
+									{ "day": "26", "value": 1100 },
+									{ "day": "27", "value": 1020 },
+									{ "day": "28", "value": 800 },
+									{ "day": "29", "value": 1122 },
+									{ "day": "30", "value": 1200 }
+								]
+							},
+							"june": {
+								"total": 10049,
+								"values": [
+									{ "day": "1", "value": 60 },
+									{ "day": "2", "value": 100 },
+									{ "day": "3", "value": 122 },
+									{ "day": "4", "value": 132 },
+									{ "day": "5", "value": 220 },
+									{ "day": "6", "value": 222 },
+									{ "day": "7", "value": 140 },
+									{ "day": "8", "value": 89 },
+									{ "day": "9", "value": 24 },
+									{ "day": "10", "value": 56 },
+									{ "day": "11", "value": 82 },
+									{ "day": "12", "value": 120 },
+									{ "day": "13", "value": 325 },
+									{ "day": "14", "value": 421 },
+									{ "day": "15", "value": 522 },
+									{ "day": "16", "value": 410 },
+									{ "day": "17", "value": 321 },
+									{ "day": "18", "value": 440 },
+									{ "day": "19", "value": 443 },
+									{ "day": "20", "value": 452 },
+									{ "day": "21", "value": 462 },
+									{ "day": "22", "value": 472 },
+									{ "day": "23", "value": 480 },
+									{ "day": "24", "value": 482 },
+									{ "day": "25", "value": 530 },
+									{ "day": "26", "value": 531 },
+									{ "day": "27", "value": 501 },
+									{ "day": "28", "value": 430 },
+									{ "day": "29", "value": 630 },
+									{ "day": "30", "value": 830 }
+								]
+							}
+						}
+					},
+					"earn": {
+						"2022": {
+							"mei": {
+								"total": 2022,
+								"values": [
+									{ "day": "1", "value": 0 },
+									{ "day": "2", "value": 0 },
+									{ "day": "3", "value": 120 },
+									{ "day": "4", "value": 210 },
+									{ "day": "5", "value": 0 },
+									{ "day": "6", "value": 110 },
+									{ "day": "7", "value": 120 },
+									{ "day": "8", "value": 0 },
+									{ "day": "9", "value": 0 },
+									{ "day": "10", "value": 120 },
+									{ "day": "11", "value": 120 },
+									{ "day": "12", "value": 0 },
+									{ "day": "13", "value": 112 },
+									{ "day": "14", "value": 230 },
+									{ "day": "15", "value": 0 },
+									{ "day": "16", "value": 0 },
+									{ "day": "17", "value": 300 },
+									{ "day": "18", "value": 120 },
+									{ "day": "19", "value": 0 },
+									{ "day": "20", "value": 0 },
+									{ "day": "21", "value": 120 },
+									{ "day": "22", "value": 120 },
+									{ "day": "23", "value": 0 },
+									{ "day": "24", "value": 0 },
+									{ "day": "25", "value": 0 },
+									{ "day": "26", "value": 210 },
+									{ "day": "27", "value": 0 },
+									{ "day": "28", "value": 120 },
+									{ "day": "29", "value": 120 },
+									{ "day": "30", "value": 0 }
+								]
+							},
+							"jun": {
+								"total": 1979,
+								"values": [
+									{ "day": "1", "value": 0 },
+									{ "day": "2", "value": 210 },
+									{ "day": "3", "value": 0 },
+									{ "day": "4", "value": 110 },
+									{ "day": "5", "value": 0 },
+									{ "day": "6", "value": 0 },
+									{ "day": "7", "value": 220 },
+									{ "day": "8", "value": 0 },
+									{ "day": "9", "value": 0 },
+									{ "day": "10", "value": 410 },
+									{ "day": "11", "value": 0 },
+									{ "day": "12", "value": 0 },
+									{ "day": "13", "value": 420 },
+									{ "day": "14", "value": 0 },
+									{ "day": "15", "value": 0 },
+									{ "day": "16", "value": 120 },
+									{ "day": "17", "value": 110 },
+									{ "day": "18", "value": 0 },
+									{ "day": "19", "value": 0 },
+									{ "day": "20", "value": 120 },
+									{ "day": "21", "value": 0 },
+									{ "day": "22", "value": 0 },
+									{ "day": "23", "value": 0 },
+									{ "day": "24", "value": 110 },
+									{ "day": "25", "value": 0 },
+									{ "day": "26", "value": 0 },
+									{ "day": "27", "value": 149 },
+									{ "day": "28", "value": 0 },
+									{ "day": "29", "value": 0 },
+									{ "day": "30", "value": 0 }
+								]
+							}
+						}
+					}
+				},
+				"availibility": {
+					"2022": {
+						"march": {
+							"values": [
+								{ "day": "2", "status": "ordered", "orderId": "o0001" },
+								{ "day": "3", "status": "ordered", "orderId": "o0002" },
+								{ "day": "4", "status": "available" },
+								{ "day": "5", "status": "available" },
+								{ "day": "7", "status": "ordered", "orderId": "o0003" },
+								{ "day": "10", "status": "available" },
+								{ "day": "11", "status": "available" },
+								{ "day": "12", "status": "available" },
+								{ "day": "13", "status": "available" },
+								{ "day": "14", "status": "available" },
+								{ "day": "15", "status": "available" },
+								{ "day": "16", "status": "available" }
+							],
+							"total": {
+								"available": 9,
+								"ordered": 3
+							}
+						},
+						"june": {
+							"values": [
+								{ "day": "2", "status": "ordered", "orderId": "o0001" },
+								{ "day": "3", "status": "ordered", "orderId": "o0002" },
+								{ "day": "4", "status": "available" },
+								{ "day": "5", "status": "available" },
+								{ "day": "7", "status": "ordered", "orderId": "o0003" },
+								{ "day": "10", "status": "available" },
+								{ "day": "11", "status": "available" },
+								{ "day": "12", "status": "available" },
+								{ "day": "13", "status": "available" },
+								{ "day": "14", "status": "available" },
+								{ "day": "15", "status": "available" },
+								{ "day": "16", "status": "available" }
+							],
+							"total": {
+								"available": 9,
+								"ordered": 3
+							}
+						}
+					}
+				},
+				"orders": [
+					{
+						"orderId": "o0001",
+						"customerId": "u0002",
+						"name": "Dani Setiawan",
+						"avatar": "/dani/dani.jpg",
+						"date": "2 march"
+					},
+					{
+						"orderId": "o0002",
+						"customerId": "u0003",
+						"name": "Stevany Gabrielle",
+						"avatar": "/stevany/stevany.jpg",
+						"date": "3 march"
+					},
+					{
+						"orderId": "o0003",
+						"customerId": "u0004",
+						"name": "Dani Setiawan",
+						"avatar": "/dani/dani.jpg",
+						"date": "7 march"
+					}
+				],
+				"staycations": [
+					{
+						"staycationId": "s0001",
+						"name": "The Thousand Kyoto",
+						"rate": 4.5,
+						"budget": 120,
+						"location": "Kyoto City Center"
+					},
+					{
+						"staycationId": "s0002",
+						"name": "Hotel The M's Kyoto",
+						"rate": 4.3,
+						"budget": 200,
+						"location": "Kyoto City Center"
+					},
+					{
+						"staycationId": "s0003",
+						"name": "Solaria Nishitetsu Hotel Kyoto Premier Sanjo Kamogawa",
+						"rate": 4.0,
+						"budget": 68,
+						"location": "Kamiosakacho"
+					},
+					{
+						"staycationId": "s0004",
+						"name": "Hotel Granvaia Kyoto",
+						"rate": 4.8,
+						"budget": 110,
+						"location": "Shiokojisagaru"
+					},
+					{
+						"staycationId": "s0005",
+						"name": "Hotel M's Est Kyoto Station South",
+						"rate": 4.8,
+						"budget": 110,
+						"location": "Higashikujo"
+					},
+					{
+						"staycationId": "s0006",
+						"name": "BnA Alter Museum",
+						"rate": 4.8,
+						"budget": 170,
+						"location": "Temmocho"
+					},
+					{
+						"staycationId": "s0007",
+						"name": "Cross Hotel Kyoto",
+						"rate": 4.8,
+						"budget": 170,
+						"location": "Daikokucho"
+					}
+				]
+			},
+			{
+				"packageId": "0002",
+				"name": "Sibuya",
+				"statistics": {
+					"views": {
+						"2022": {
+							"mei": {
+								"total": 25947,
+								"values": [
+									{ "day": "1", "value": 320 },
+									{ "day": "2", "value": 420 },
+									{ "day": "3", "value": 490 },
+									{ "day": "4", "value": 421 },
+									{ "day": "5", "value": 411 },
+									{ "day": "6", "value": 498 },
+									{ "day": "7", "value": 530 },
+									{ "day": "8", "value": 592 },
+									{ "day": "9", "value": 690 },
+									{ "day": "10", "value": 612 },
+									{ "day": "11", "value": 629 },
+									{ "day": "12", "value": 690 },
+									{ "day": "13", "value": 397 },
+									{ "day": "14", "value": 490 },
+									{ "day": "15", "value": 529 },
+									{ "day": "16", "value": 590 },
+									{ "day": "17", "value": 728 },
+									{ "day": "18", "value": 772 },
+									{ "day": "19", "value": 790 },
+									{ "day": "20", "value": 729 },
+									{ "day": "21", "value": 719 },
+									{ "day": "22", "value": 783 },
+									{ "day": "23", "value": 729 },
+									{ "day": "24", "value": 989 },
+									{ "day": "25", "value": 890 },
+									{ "day": "26", "value": 1600 },
+									{ "day": "27", "value": 1899 },
+									{ "day": "28", "value": 1990 },
+									{ "day": "29", "value": 2090 },
+									{ "day": "30", "value": 2930 }
+								]
+							},
+							"june": {
+								"total": 202109,
+								"values": [
+									{ "day": "1", "value": 3021 },
+									{ "day": "2", "value": 3901 },
+									{ "day": "3", "value": 3029 },
+									{ "day": "4", "value": 3911 },
+									{ "day": "5", "value": 3110 },
+									{ "day": "6", "value": 3920 },
+									{ "day": "7", "value": 4900 },
+									{ "day": "8", "value": 4201 },
+									{ "day": "9", "value": 3199 },
+									{ "day": "10", "value": 4290 },
+									{ "day": "11", "value": 5019 },
+									{ "day": "12", "value": 5901 },
+									{ "day": "13", "value": 6091 },
+									{ "day": "14", "value": 6119 },
+									{ "day": "15", "value": 6801 },
+									{ "day": "16", "value": 6821 },
+									{ "day": "17", "value": 6921 },
+									{ "day": "18", "value": 7921 },
+									{ "day": "19", "value": 8121 },
+									{ "day": "20", "value": 8321 },
+									{ "day": "21", "value": 8921 },
+									{ "day": "22", "value": 9921 },
+									{ "day": "23", "value": 9021 },
+									{ "day": "24", "value": 9921 },
+									{ "day": "25", "value": 10021 },
+									{ "day": "26", "value": 10221 },
+									{ "day": "27", "value": 10231 },
+									{ "day": "28", "value": 11221 },
+									{ "day": "29", "value": 11121 },
+									{ "day": "30", "value": 12221 }
+								]
+							}
+						}
+					},
+					"earn": {
+						"2022": {
+							"mei": {
+								"total": 41655,
+								"values": [
+									{ "day": "1", "value": 380 },
+									{ "day": "2", "value": 523 },
+									{ "day": "3", "value": 510 },
+									{ "day": "4", "value": 820 },
+									{ "day": "5", "value": 905 },
+									{ "day": "6", "value": 1202 },
+									{ "day": "7", "value": 1280 },
+									{ "day": "8", "value": 1100 },
+									{ "day": "9", "value": 1021 },
+									{ "day": "10", "value": 1200 },
+									{ "day": "11", "value": 1440 },
+									{ "day": "12", "value": 1320 },
+									{ "day": "13", "value": 1330 },
+									{ "day": "14", "value": 1320 },
+									{ "day": "15", "value": 1321 },
+									{ "day": "16", "value": 1520 },
+									{ "day": "17", "value": 1620 },
+									{ "day": "18", "value": 1640 },
+									{ "day": "19", "value": 1550 },
+									{ "day": "20", "value": 1581 },
+									{ "day": "21", "value": 1591 },
+									{ "day": "22", "value": 1690 },
+									{ "day": "23", "value": 1691 },
+									{ "day": "24", "value": 1699 },
+									{ "day": "25", "value": 1798 },
+									{ "day": "26", "value": 1701 },
+									{ "day": "27", "value": 1802 },
+									{ "day": "28", "value": 1902 },
+									{ "day": "29", "value": 2097 },
+									{ "day": "30", "value": 2101 }
+								]
+							},
+							"juni": {
+								"total": 116628,
+								"values": [
+									{ "day": "1", "value": 2130 },
+									{ "day": "2", "value": 2400 },
+									{ "day": "3", "value": 2420 },
+									{ "day": "4", "value": 2411 },
+									{ "day": "5", "value": 2414 },
+									{ "day": "6", "value": 2553 },
+									{ "day": "7", "value": 2251 },
+									{ "day": "8", "value": 2953 },
+									{ "day": "9", "value": 2958 },
+									{ "day": "10", "value": 3158 },
+									{ "day": "11", "value": 3420 },
+									{ "day": "12", "value": 3110 },
+									{ "day": "13", "value": 3290 },
+									{ "day": "14", "value": 3401 },
+									{ "day": "15", "value": 3190 },
+									{ "day": "16", "value": 3210 },
+									{ "day": "17", "value": 3490 },
+									{ "day": "18", "value": 3901 },
+									{ "day": "19", "value": 4193 },
+									{ "day": "20", "value": 4032 },
+									{ "day": "21", "value": 4493 },
+									{ "day": "22", "value": 4950 },
+									{ "day": "23", "value": 5290 },
+									{ "day": "24", "value": 5301 },
+									{ "day": "25", "value": 5592 },
+									{ "day": "26", "value": 5801 },
+									{ "day": "27", "value": 5902 },
+									{ "day": "28", "value": 6213 },
+									{ "day": "29", "value": 6901 },
+									{ "day": "30", "value": 7290 }
+								]
+							}
+						}
+					}
+				}
+			}
+		]
+	}
+]

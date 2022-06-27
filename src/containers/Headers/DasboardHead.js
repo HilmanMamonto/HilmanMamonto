@@ -4,13 +4,20 @@ import H from 'components/H';
 import Button from 'components/NewButton/Button';
 import Icons from 'components/Icons';
 import './styles.scss';
+import { useLocation, useMatch } from 'react-router-dom';
 
-const DasboardHead = (props) => {
+const DasboardHead = ({ name }) => {
+	const matchDashboard = useMatch('/dashboard/*').pathnameBase;
+	const matchPackages = useMatch('/dashboard/packages/*');
+	const packageName = useLocation().pathname.split('/dashboard/packages/').join(' ');
+
+	const label = matchPackages ? 'Package, ' + packageName : '';
+	console.log(matchDashboard);
 	return (
 		<header className="dashboard-head">
 			<div className="dh-left">
-				<label>Dashboard</label>
-				<span>Welcome Back Moh Sidik</span>
+				<label className="dh-label">{label}</label>
+				<span className="dh-name">Welcome Back, {name}</span>
 			</div>
 			<div className="dh-right">
 				<Button
