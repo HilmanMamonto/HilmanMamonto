@@ -1,8 +1,10 @@
+@import '/src/assets/styles/styles.scss';
+
 #search-date {
 	width: 0px;
 	height: 0px;
 	position: absolute;
-	background-color: var(--white);
+	background-color: $white;
 	top: 95px;
 	padding: 0px 40px;
 	display: flex;
@@ -23,16 +25,16 @@
 	.date-choosed {
 		display: flex;
 		justify-content: center;
-		border: 1px solid var(--ultralight-gray);
+		border: 1px solid $ultralight-gray;
 		border-radius: 100px;
 		padding: 5px 10px;
-		color: var(--light-gray);
+		color: $light-gray;
 	}
 
 	.day-extra-dash {
 		height: 1px;
 		width: 12px;
-		background-color: var(--light-gray);
+		background-color: $light-gray;
 		position: absolute;
 		top: 12px;
 		left: 16px;

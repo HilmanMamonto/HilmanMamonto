@@ -1,9 +1,11 @@
+@import '/src/assets/styles/styles.scss';
+
 #travel-amenities {
 	margin-top: 42px;
 	font-size: 24px;
-	color: var(--black);
+	color: $primary;
 	padding-bottom: 62px;
-	border-bottom: 1px solid var(--ultralight-gray);
+	border-bottom: 1px solid $ultralight-gray;
 	.travel-amenities-items {
 		font-size: 16px;
 		margin-top: 16px;
@@ -31,7 +33,7 @@
 				content: '';
 				width: 105%;
 				height: 2px;
-				background-color: var(--gray);
+				background-color: $gray;
 				position: absolute;
 				opacity: .5;
 				top: 50%;
@@ -46,7 +48,7 @@
 	.items-language {
 		display: flex;
 		div {
-			border: 1px solid var(--ultralight-gray);
+			border: 1px solid $ultralight-gray;
 			padding: 5px 10px;
 			border-radius: 100px;
 			display: flex;

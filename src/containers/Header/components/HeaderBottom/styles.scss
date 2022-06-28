@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #header-bottom-form-search {
 	display: flex;
 	height: 0px;
@@ -5,7 +7,7 @@
 	align-items: center;
 	flex-direction: column;
 	position: absolute;
-	background-color: var(--white);
+	background-color: $white;
 	width: 100%;
 	top: 80px;
 	z-index: 3;
@@ -27,7 +29,7 @@
 		right: 0;
 		display: flex;
 		width: 2px;
-		background-color: var(--ultralight-gray);
+		background-color: $ultralight-gray;
 		transition: all 0.3s ease-in-out;
 		z-index: 3;
 		&.hide {
@@ -44,7 +46,7 @@
 		right: 0;
 		display: flex;
 		width: 2px;
-		background-color: var(--ultralight-gray);
+		background-color: $ultralight-gray;
 		transition: all 0.3s ease-in-out;
 		z-index: 3;
 		&.hide {
@@ -69,17 +71,17 @@
 			background-color: rgb(224, 224, 224);
 		}
 		&.active {
-			background-color: var(--white);
-			box-shadow: 0px 6px 20px var(--ultralight-gray);
+			background-color: $white;
+			box-shadow: 0px 6px 20px $ultralight-gray;
 		}
 		label {
 			font-size: 10px;
 			font-weight: 800;
-			color: var(--gray);
+			color: $gray;
 			margin-bottom: 2px;
 		}
 		input {
-			color: var(--gray);
+			color: $gray;
 		}
 	}
 
@@ -120,18 +122,18 @@
 			}
 
 			&.active {
-				background-color: var(--white);
-				box-shadow: 0px 6px 20px var(--ultralight-gray);
+				background-color: $white;
+				box-shadow: 0px 6px 20px $ultralight-gray;
 			}
 			#input-people {
 				font-size: 14px;
 				font-weight: 300;
-				color: var(--light-gray);
+				color: $light-gray;
 			}
 			label {
 				font-size: 10px;
 				font-weight: 800;
-				color: var(--gray);
+				color: $gray;
 				margin-bottom: 2px;
 			}
 		}
@@ -156,18 +158,18 @@
 				}
 			}
 			&.active {
-				background-color: var(--white);
-				box-shadow: 0px 6px 20px var(--ultralight-gray);
+				background-color: $white;
+				box-shadow: 0px 6px 20px $ultralight-gray;
 			}
 			#input-date {
 				font-size: 14px;
 				font-weight: 300;
-				color: var(--light-gray);
+				color: $light-gray;
 			}
 			label {
 				font-size: 10px;
 				font-weight: 800;
-				color: var(--gray);
+				color: $gray;
 				margin-bottom: 2px;
 			}
 		}

@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 .nav-side-bar {
 	.nsb-btn {
 		display: flex;
@@ -5,7 +7,7 @@
 		margin-bottom: 1.25rem;
 		font-weight: 400;
 		font-size: 1rem;
-		color: var(--light-gray);
+		color: $light-gray;
 		.nsb-icon {
 			display: flex;
 			align-items: center;

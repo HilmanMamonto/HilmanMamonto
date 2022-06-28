@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 button {
 	cursor: pointer;
 	border: none;
@@ -9,49 +11,49 @@ button {
 // background colors
 
 .btn-primary {
-	background-color: var(--black);
+	background-color: $primary;
 }
 
 .btn-secondary {
-	background-color: var(--red);
+	background-color: $secondary;
 }
 
 .btn-gray {
-	background-color: var(--gray);
+	background-color: $gray;
 }
 .btn-light-gray {
-	background-color: var(--light-gray);
+	background-color: $light-gray;
 }
 .btn-ultralight-gray {
-	background-color: var(--ultralight-gray);
+	background-color: $ultralight-gray;
 }
 
 .btn-white {
-	background-color: var(--white);
+	background-color: $white;
 }
 
 // text colors
 
 .btn-txt-primary {
-	color: var(--black);
+	color: $primary;
 }
 
 .btn-txt-secondary {
-	color: var(--red);
+	color: $secondary;
 }
 
 .btn-txt-gray {
-	color: var(--gray);
+	color: $gray;
 }
 .btn-txt-light-gray {
-	color: var(--light-gray);
+	color: $light-gray;
 }
 .btn-txt-ultralight-gray {
-	color: var(--ultralight-gray);
+	color: $ultralight-gray;
 }
 
 .btn-txt-white {
-	color: var(--white);
+	color: $white;
 }
 
 .btn-rounded {
@@ -59,7 +61,7 @@ button {
 }
 
 .btn-bordered {
-	border: 1px solid var(--gray);
+	border: 1px solid $gray;
 }
 
 // underline

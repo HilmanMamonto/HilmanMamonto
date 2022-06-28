@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 .dashboard-avatar {
 	display: flex;
 	justify-content: space-between;
@@ -13,7 +15,7 @@
 			flex-direction: column;
 			margin-left: 1rem;
 			.da-name {
-				color: var(--gray);
+				color: $gray;
 				font-size: 1rem;
 				font-weight: 500;
 				max-width: 120px;
@@ -22,7 +24,7 @@
 				white-space: nowrap;
 			}
 			.da-tittle {
-				color: var(--light-gray);
+				color: $light-gray;
 				font-size: .75rem;
 			}
 		}

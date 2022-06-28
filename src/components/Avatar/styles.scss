@@ -1,8 +1,10 @@
+@import '/src/assets/styles/styles.scss';
+
 .avatar {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	background-color: var(--gray);
+	background-color: $gray;
 	border-radius: 100%;
 
 	* {
@@ -24,9 +26,9 @@
 	}
 
 	&.disabeled {
-		color: var(--light-gray);
-		background-color: var(--light-gray);
-		border-color: var(--light-gray);
+		color: $light-gray;
+		background-color: $light-gray;
+		border-color: $light-gray;
 	}
 
 	&.shadow-s {

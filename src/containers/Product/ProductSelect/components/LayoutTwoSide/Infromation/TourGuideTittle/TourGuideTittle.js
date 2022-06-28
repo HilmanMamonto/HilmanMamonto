@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './TourGuideTittle.css';
+import './TourGuideTittle.scss';
 
 const TourGuideTittle = (props) => {
 	return (

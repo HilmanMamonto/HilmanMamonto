@@ -1,8 +1,10 @@
+@import '/src/assets/styles/styles.scss';
+
 .wallet-info-wrapper {
 	display: inline-flex;
 	flex-direction: column;
 	padding: 20px 15px;
-	background-color: var(--white);
+	background-color: $white;
 	border-radius: 14px;
 	box-shadow: 0px 2px 40px rgb(211 211 211 / 50%);
 	.wallet-info {
@@ -16,13 +18,13 @@
 
 		label {
 			font-size: 10px;
-			color: var(--light-gray);
+			color: $light-gray;
 			font-weight: 500;
 			margin-bottom: .25rem;
 		}
 		span {
 			font-size: 1.75rem;
-			color: var(--gray);
+			color: $gray;
 			font-weight: 400;
 			max-width: 100%;
 			overflow: hidden;

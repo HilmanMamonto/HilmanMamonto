@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 .img-staycation-choosed {
 	display: grid;
 	grid-template-columns: auto 229px;
@@ -10,10 +12,10 @@
 		height: 100%;
 		width: 100%;
 		margin-right: 12px;
-		background-color: var(--ultralight-gray);
+		background-color: $ultralight-gray;
 	}
 	.right {
 		height: 100%;
-		background-color: var(--ultralight-gray);
+		background-color: $ultralight-gray;
 	}
 }

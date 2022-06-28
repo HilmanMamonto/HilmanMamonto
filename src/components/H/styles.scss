@@ -1,18 +1,20 @@
+@import '/src/assets/styles/styles.scss';
+
 .h {
 	&.primary {
-		color: var(--black);
+		color: $primary;
 	}
 	&.secondary {
-		color: var(--red);
+		color: $secondary;
 	}
 	&.gray {
-		color: var(--gray);
+		color: $gray;
 	}
 	&.light-gray {
-		color: var(--light-gray);
+		color: $light-gray;
 	}
 	&.ultralight-gray {
-		color: var(--ultralight-gray);
+		color: $ultralight-gray;
 	}
 
 	&.regular {

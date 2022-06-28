@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 .loading-wrapper {
 	display: inline-flex;
 	align-items: center;
@@ -77,44 +79,44 @@
 	.loading-primary {
 		@keyframes anm {
 			0% {
-				background-color: var(--black);
+				background-color: $primary;
 			}
 			50%,
 			100% {
-				background-color: var(--ultralight-gray);
+				background-color: $ultralight-gray;
 			}
 		}
 	}
 	@keyframes anm-primary {
 		0% {
-			background-color: var(--black);
+			background-color: $primary;
 		}
 		50%,
 		100% {
-			background-color: var(--ultralight-gray);
+			background-color: $ultralight-gray;
 		}
 	}
 	@keyframes anm-secondary {
 		0% {
-			background-color: var(--red);
+			background-color: $secondary;
 		}
 		50%,
 		100% {
-			background-color: var(--ultralight-gray);
+			background-color: $ultralight-gray;
 		}
 	}
 	@keyframes anm-gray {
 		0% {
-			background-color: var(--gray);
+			background-color: $gray;
 		}
 		50%,
 		100% {
-			background-color: var(--ultralight-gray);
+			background-color: $ultralight-gray;
 		}
 	}
 	@keyframes anm-white {
 		0% {
-			background-color: var(--white);
+			background-color: $white;
 		}
 		50%,
 		100% {

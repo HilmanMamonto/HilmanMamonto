@@ -1,6 +1,8 @@
+@import '/src/assets/styles/styles.scss';
+
 #side-bar {
 	padding: 24px 0;
-	border-right: 1px solid var(--ultralight-gray);
+	border-right: 1px solid $ultralight-gray;
 	position: relative;
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
@@ -24,7 +26,7 @@
 		.tittle {
 			font-size: 14px;
 			font-weight: 600;
-			color: var(--black);
+			color: $primary;
 		}
 		.details {
 			margin-top: 10px;
@@ -42,8 +44,8 @@
 				margin-right: 15px;
 				&::after {
 					content: '';
-					background-color: var(--red);
-					box-shadow: 0px 2px 6px var(--red);
+					background-color: $secondary;
+					box-shadow: 0px 2px 6px $secondary;
 					width: 10px;
 					height: 10px;
 					border-radius: 100px;
@@ -53,12 +55,12 @@
 				display: flex;
 				flex-direction: column;
 				label {
-					color: var(--gray);
+					color: $gray;
 					margin-bottom: 2px;
 					font-size: 14px;
 				}
 				span {
-					color: var(--light-gray);
+					color: $light-gray;
 					font-size: 12px;
 				}
 			}
@@ -69,7 +71,7 @@
 		.tittle {
 			font-size: 14px;
 			font-weight: 600;
-			color: var(--black);
+			color: $primary;
 			display: flex;
 			justify-content: space-between;
 			padding: 0 30px;
@@ -114,7 +116,7 @@
 						width: 6px;
 						height: 100%;
 						border-radius: 0px 2px 2px 0px;
-						background-color: var(--black);
+						background-color: $primary;
 					}
 				}
 			}
@@ -124,7 +126,7 @@
 		.tittle {
 			font-size: 14px;
 			font-weight: 600;
-			color: var(--black);
+			color: $primary;
 			display: flex;
 			justify-content: space-between;
 			padding: 0 30px;
@@ -167,7 +169,7 @@
 				.date {
 					padding: 0px 10px;
 					border-radius: 100px;
-					border: 1px solid var(--ultralight-gray);
+					border: 1px solid $ultralight-gray;
 				}
 				&.active {
 					&::after {
@@ -179,7 +181,7 @@
 						width: 6px;
 						height: 100%;
 						border-radius: 0px 2px 2px 0px;
-						background-color: var(--black);
+						background-color: $primary;
 					}
 				}
 			}
@@ -189,7 +191,7 @@
 		.tittle {
 			font-size: 14px;
 			font-weight: 600;
-			color: var(--black);
+			color: $primary;
 			display: flex;
 			padding: 0 30px;
 			justify-content: space-between;
@@ -233,14 +235,14 @@
 						margin-right: 15px;
 						width: 28px;
 						height: 28px;
-						background-color: var(--ultralight-gray);
+						background-color: $ultralight-gray;
 						border-radius: 100px;
 					}
 				}
 				.count {
 					padding: 0px 6px;
 					border-radius: 100px;
-					border: 1px solid var(--ultralight-gray);
+					border: 1px solid $ultralight-gray;
 				}
 				&.active {
 					&::after {
@@ -250,7 +252,7 @@
 						width: 6px;
 						height: 100%;
 						border-radius: 0px 2px 2px 0px;
-						background-color: var(--black);
+						background-color: $primary;
 					}
 				}
 			}

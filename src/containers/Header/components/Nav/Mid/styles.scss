@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #nav-mid {
 	display: flex;
 	align-items: center;
@@ -11,7 +13,7 @@
 		height: 40px;
 		width: 204px;
 		border-radius: 100px;
-		border: 1px solid var(--ultralight-gray);
+		border: 1px solid $ultralight-gray;
 		cursor: pointer;
 
 		label {
@@ -22,7 +24,7 @@
 	span {
 		height: 12px;
 		width: 2px;
-		background-color: var(--ultralight-gray);
+		background-color: $ultralight-gray;
 		margin: 0 20px;
 	}
 }

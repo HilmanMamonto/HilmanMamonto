@@ -1,11 +1,7 @@
 import React from 'react';
-import './styles.scss';
-import 'chart.js/auto';
-import { Chart } from 'react-chartjs-2';
-import Button from 'components/Button';
 import PropTypes from 'prop-types';
-import 'animate.css';
-import Card from 'components/DataDisplay/Card/Card';
+import { Chart } from 'react-chartjs-2';
+import './styles.scss';
 
 const lineLabels = [
 	1,
@@ -151,68 +147,17 @@ const lineOptions = {
 	}
 };
 
-const Charts = (props) => {
+const LineChart = (props) => {
 	return (
-		<div>
-			<div className="toggle-views-earn">
-				<div className="tittle">{props.toggle ? 'Views' : 'Earn'} Statistics</div>
-				<div className="toggle">
-					<Button
-						type="button"
-						children={'Views'}
-						className={props.toggle ? 'active' : ''}
-						onClick={props.onClickToggle}
-					/>
-					<Button
-						type="button"
-						children={'Earn'}
-						className={!props.toggle ? 'active' : ''}
-						onClick={props.onClickToggle}
-					/>
-				</div>
+		<div className="line-chart">
+			<div className="head">
+				<span className="tittle">Daily Views</span>
 			</div>
-			<div className="charts">
-				<div className="chart-line">
-					<div className="head">
-						<span className="tittle">Daily Views</span>
-						<Button type="button" className="btn" children={'FEB 2022'} />
-					</div>
-					<Chart type="line" options={lineOptions} data={dataLine} />
-				</div>
-				<div className="chart-bar">
-					<div className="chart">
-						{monthsValue ? (
-							monthsValue.map((item, i) => {
-								const heightBar = item.value / maxBar * 100;
-								return (
-									<div key={'bar-' + i}>
-										<span className="month">{item.month}</span>
-										<label style={{ height: heightBar + '%' }} />
-										<span className="value">{item.value}</span>
-									</div>
-								);
-							})
-						) : null}
-					</div>
-				</div>
-				<div className="details">
-					<div className="animate__animated animate__fadeInUp animate__slow">
-						<span>1,200</span>
-						<label>Average</label>
-					</div>
-					<div className="animate__animated animate__fadeInUp animate__slow">
-						<span>4,580</span>
-						<label>Total</label>
-					</div>
-				</div>
-			</div>
+			<Chart type="line" options={lineOptions} data={dataLine} />
 		</div>
 	);
 };
 
-Charts.propTypes = {
-	onClickToggle: PropTypes.func,
-	toggle: PropTypes.bool
-};
+LineChart.propTypes = {};
 
-export default Charts;
+export default LineChart;

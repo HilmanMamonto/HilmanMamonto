@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 span {
 	&.container {
 		line-height: 100%;
@@ -5,7 +7,7 @@ span {
 }
 
 .container {
-	background-color: var(--white);
+	background-color: $white;
 	&.y-scroll {
 		overflow-y: auto;
 	}

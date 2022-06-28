@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 .dashboard-head {
 	display: flex;
 	justify-content: space-between;
@@ -7,11 +9,11 @@
 		flex-direction: column;
 		.dh-label {
 			font-size: 1.5rem;
-			color: var(--gray);
+			color: $gray;
 		}
 		.dh-name {
 			font-size: 0.9rem;
-			color: var(--ultralight-gray);
+			color: $ultralight-gray;
 			max-width: 240px;
 			overflow: hidden;
 			text-overflow: ellipsis;

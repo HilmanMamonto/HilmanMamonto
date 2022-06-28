@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #nav-left {
 	font-size: 24px;
 	display: flex;
@@ -16,7 +18,7 @@
 			width: 8px;
 			height: 8px;
 			border-radius: 100px;
-			background-color: var(--red);
+			background-color: $secondary;
 		}
 	}
 }

@@ -1,8 +1,10 @@
+@import '/src/assets/styles/styles.scss';
+
 #search-pax {
 	width: 0px;
 	height: 0px;
 	position: absolute;
-	background-color: var(--white);
+	background-color: $white;
 	top: 95px;
 	right: 0;
 	padding: 0px 40px;
@@ -35,7 +37,7 @@
 			}
 			span {
 				font-size: 10px;
-				color: var(--light-gray);
+				color: $light-gray;
 			}
 		}
 		.count {
@@ -45,13 +47,13 @@
 			div {
 				width: 24px;
 				height: 24px;
-				border: 1px solid var(--ultralight-gray);
+				border: 1px solid $ultralight-gray;
 				border-radius: 100px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				cursor: pointer;
-				color: var(--light-gray);
+				color: $light-gray;
 			}
 		}
 	}

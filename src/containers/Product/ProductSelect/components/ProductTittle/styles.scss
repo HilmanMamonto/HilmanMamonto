@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #product-tittle {
 	display: flex;
 	flex-direction: row;
@@ -10,7 +12,7 @@
 			margin-bottom: 4px;
 			display: flex;
 			align-items: center;
-			color: var(--black);
+			color: $primary;
 			font-weight: 500;
 			.tittle {
 				font-size: 24px;
@@ -22,12 +24,12 @@
 				border-radius: 100px;
 				width: 6px;
 				height: 6px;
-				background-color: var(--gray);
+				background-color: $gray;
 			}
 		}
 		.product-tittle-foot {
 			font-size: 14px;
-			color: var(--gray);
+			color: $gray;
 			display: flex;
 			label {
 				margin-right: 15px;

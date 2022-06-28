@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #staycation-aminities {
 	.h {
 		margin-bottom: 24px;
@@ -9,7 +11,7 @@
 		row-gap: 16px;
 		.item {
 			display: flex;
-			color: var(--light-gray);
+			color: $light-gray;
 		}
 		margin-bottom: 42px;
 	}

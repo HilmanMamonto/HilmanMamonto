@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #more-things {
 	margin-top: 42px;
 	margin-bottom: 62px;
@@ -7,7 +9,7 @@
 	.more-things {
 		margin-bottom: 30px;
 		span {
-			color: var(--light-gray);
+			color: $light-gray;
 		}
 	}
 }

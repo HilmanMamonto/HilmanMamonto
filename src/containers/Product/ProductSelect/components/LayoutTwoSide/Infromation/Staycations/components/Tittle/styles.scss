@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #tittle-staycation-choosed {
 	display: flex;
 	justify-content: space-between;
@@ -10,13 +12,13 @@
 		}
 		div {
 			font-size: 24px;
-			color: var(--gray);
+			color: $gray;
 		}
 		span {
 			display: flex;
 			width: 6px;
 			height: 6px;
-			background-color: var(--gray);
+			background-color: $gray;
 			border-radius: 100px;
 			margin-left: 20px;
 		}
@@ -30,7 +32,7 @@
 		justify-content: flex-end;
 		label {
 			font-size: 24px;
-			color: var(--gray);
+			color: $gray;
 			span {
 				font-size: 16px;
 			}

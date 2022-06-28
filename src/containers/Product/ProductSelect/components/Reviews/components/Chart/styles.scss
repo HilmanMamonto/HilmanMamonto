@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #rate-chart {
 	display: grid;
 	grid-template-rows: auto auto auto;
@@ -16,20 +18,20 @@
 			margin-bottom: auto;
 			margin-right: 33px;
 			font-weight: 400;
-			color: var(--gray);
+			color: $gray;
 		}
 		.rate {
 			margin-top: auto;
 			margin-bottom: auto;
 			font-weight: 600;
-			color: var(--gray);
+			color: $gray;
 		}
 		div {
 			margin: auto 0px;
 			border-radius: 100px;
 			width: 200px;
 			height: 6px;
-			background-color: var(--ultralight-gray);
+			background-color: $ultralight-gray;
 			position: relative;
 			margin-right: 21px;
 			span {
@@ -40,7 +42,7 @@
 				width: 80%;
 				height: 100%;
 				border-radius: 100px;
-				background-color: var(--black);
+				background-color: $primary;
 			}
 		}
 	}

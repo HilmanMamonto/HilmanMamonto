@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 // size
 .input {
 	&.small {
@@ -34,11 +36,11 @@
 // basic
 .input {
 	.input-wrapper {
-		border: 1px solid var(--ultralight-gray);
+		border: 1px solid $ultralight-gray;
 		border-radius: 4px;
 		&.focus {
-			outline: 2px solid var(--gray);
-			border-color: var(--white) !important;
+			outline: 2px solid $gray;
+			border-color: $white !important;
 		}
 		&.error {
 			border: 1px solid var(--error);

@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 #reviewer {
 	display: grid;
 	grid-template-columns: 419px 419px;
@@ -14,7 +16,7 @@
 				height: 68px;
 				border: none;
 				border-radius: 100px;
-				background-color: var(--ultralight-gray);
+				background-color: $ultralight-gray;
 			}
 			.details {
 				display: flex;

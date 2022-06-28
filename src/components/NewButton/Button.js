@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import Loading from 'components/Loading/Loading';
-import Icons from 'components/Icons';
 
 const variants = {
 	contained: 'btn-contained ',
@@ -12,9 +11,11 @@ const variants = {
 };
 
 const shadows = {
+	xsmall: 'shadow-xs',
 	small: 'shadow-s ',
 	medium: 'shadow-m ',
 	large: 'shadow-l ',
+	xlarge: 'shadow-xl ',
 	undefined: ''
 };
 

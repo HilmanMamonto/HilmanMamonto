@@ -1,3 +1,5 @@
+@import '/src/assets/styles/styles.scss';
+
 h1 {
 	font-size: 28px;
 	line-height: 42px;
@@ -47,18 +49,18 @@ p.typography {
 		line-height: 100%;
 	}
 	&.text-black {
-		color: var(--black);
+		color: $primary;
 	}
 	&.text-red {
 		color: var(--error);
 	}
 	&.text-gray {
-		color: var(--gray);
+		color: $gray;
 	}
 	&.text-light-gray {
-		color: var(--light-gray);
+		color: $light-gray;
 	}
 	&.text-ultralight-gray {
-		color: var(--ultralight-gray);
+		color: $ultralight-gray;
 	}
 }

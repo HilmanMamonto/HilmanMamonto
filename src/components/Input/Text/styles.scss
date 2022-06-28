@@ -1,5 +1,7 @@
+@import '/src/assets/styles/styles.scss';
+
 .input {
-	color: var(--gray);
+	color: $gray;
 
 	input[type=text] {
 		background-color: transparent;
@@ -56,7 +58,7 @@
 				height: 60%;
 				width: 1px;
 				right: 0;
-				background-color: var(--light-gray);
+				background-color: $light-gray;
 			}
 		}
 	}

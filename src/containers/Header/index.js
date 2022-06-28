@@ -6,7 +6,6 @@ import NavLeft from './components/Nav/Left';
 import NavRight from './components/Nav/Right';
 import NavMid from './components/Nav/Mid';
 import PropTypes from 'prop-types';
-import BackgroundTransparent from 'components/BackgroundTransparent';
 
 const Header = (props) => {
 	const [ isShowed, setIsShowed ] = useState(false);
@@ -66,7 +65,6 @@ const Header = (props) => {
 				<HeaderBottom ref={refInput} isActive={isShowed} />
 			</header>
 			{props.hasCategories && <HeaderCategories hasShadow={catShadow} />}
-			{isShowed && <BackgroundTransparent />}
 		</div>
 	);
 };
