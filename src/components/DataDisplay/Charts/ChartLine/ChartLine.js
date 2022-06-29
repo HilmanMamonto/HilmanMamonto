@@ -147,17 +147,17 @@ const lineOptions = {
 	}
 };
 
-const LineChart = (props) => {
+const ChartLine = (props) => {
 	return (
-		<div className="line-chart">
-			<div className="head">
-				<span className="tittle">Daily Views</span>
+		<div className="chart-line">
+			<div className="cl-head">
+				<span className="cl-tittle">Daily Views</span>
 			</div>
-			<Chart type="line" options={lineOptions} data={dataLine} />
+			{/* <Chart type="line" options={lineOptions} data={dataLine} /> */}
 		</div>
 	);
 };
 
-LineChart.propTypes = {};
+ChartLine.propTypes = {};
 
-export default LineChart;
+export default ChartLine;

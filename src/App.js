@@ -5,11 +5,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductSelectedPage from 'pages/ProductSelected';
 import DashboardPage from 'pages/Dashboard';
 import WalletInfo from 'components/DataDisplay/WalletInfo/WalletInfo';
-import { Suspense } from 'react';
+import Statistic from 'containers/Statistic/Statistic';
+import ButtonToggle from 'components/ButtonToggle/ButtonToggle';
+import AddPackage from 'containers/AddPackage';
 
 const button = (
 	<div>
 		<WalletInfo />
+		<AddPackage />
 	</div>
 );
 

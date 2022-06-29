@@ -16,7 +16,7 @@ const DasboardHead = ({ name }) => {
 	return (
 		<header className="dashboard-head">
 			<div className="dh-left">
-				<label className="dh-label">{label}</label>
+				<H as="h2" weight="600" childrend={label} />
 				<span className="dh-name">Welcome Back, {name}</span>
 			</div>
 			<div className="dh-right">

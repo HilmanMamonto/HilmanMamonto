@@ -12,17 +12,18 @@ const variants = {
 	prev: '/icons/arrow-left.svg'
 };
 
-const ButtonRounded = ({ size, className, onClick }) => {
+const ButtonRounded = ({ variant, size, className, onClick }) => {
 	const cName = 'btn-rounded ' + sizes[size] + className;
 	return (
 		<button className={cName} onClick={onClick}>
-			'-'
+			<img className="btn-rounded-icon" src={variants[variant]} alt="btn-rounded" />
 		</button>
 	);
 };
 
 ButtonRounded.defaultProps = {
-	size: 'medium'
+	size: 'medium',
+	variant: 'next'
 };
 
 ButtonRounded.propTypes = {

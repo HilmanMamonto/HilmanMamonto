@@ -4,6 +4,7 @@
 	display: inline-block;
 	width: fit-content;
 	border-radius: 6px;
+	height: fit-content;
 	box-shadow: $ultralight-gray-shadow-small;
 	background-color: $white;
 
@@ -67,7 +68,6 @@
 		.cdp-btn-prev {
 			position: absolute;
 			left: 0;
-			margin-right: .5rem;
 			opacity: 0%;
 			visibility: hidden;
 			transition: all .3s ease-in-out;
@@ -120,6 +120,15 @@
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			font-weight: 600;
+		}
+		.cdp-rate {
+			display: flex;
+			align-items: center;
+			.cdp-rate-label {
+				margin-left: 2px;
+				line-height: 0%;
+				font-weight: 600;
+			}
 		}
 	}
 	.cdp-sub-tittle {

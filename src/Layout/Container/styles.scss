@@ -15,7 +15,7 @@ span {
 		overflow-x: auto;
 	}
 
-	&.black-transparent {
+	&.c-bg-transparent {
 		background-color: rgba(33, 33, 33, 0.5);
 	}
 	&.height-100vh {
@@ -24,58 +24,6 @@ span {
 	&.width-100vw {
 		width: 100vw;
 	}
-	&.flex {
-		display: flex;
-	}
-	&.row {
-		flex-direction: column;
-	}
-	&.column {
-		flex-direction: column;
-	}
-	&.space-betwen {
-		justify-content: space-between;
-	}
-
-	&.jc-center {
-		justify-content: center;
-	}
-
-	&.jc-space-betwen {
-		justify-content: space-between;
-	}
-
-	&.jc-space-around {
-		justify-content: space-around;
-	}
-
-	&.jc-flex-start {
-		justify-content: flex-start;
-	}
-
-	&.jc-flex-end {
-		justify-content: flex-end;
-	}
-
-	&.ai-center {
-		align-items: center;
-	}
-
-	&.ai-space-betwen {
-		align-items: space-between;
-	}
-
-	&.ai-space-around {
-		align-items: space-around;
-	}
-
-	&.ai-flex-start {
-		align-items: flex-start;
-	}
-
-	&.ai-flex-end {
-		align-items: flex-end;
-	}
 
 	&.position-absolute {
 		position: absolute;
@@ -83,83 +31,7 @@ span {
 		top: 0;
 	}
 
-	&.bg-transparent {
+	&.c-bg-transparent {
 		background-color: transparent;
-	}
-
-	&.mt-xs {
-		margin-top: 0.5rem;
-	}
-	&.mt-s {
-		margin-top: 1rem;
-	}
-	&.mt-m {
-		margin-top: 1.5rem;
-	}
-	&.mt-l {
-		margin-top: 2rem;
-	}
-	&.mt-xl {
-		margin-top: 2.5rem;
-	}
-
-	&.mb-xs {
-		margin-bottom: 0.5rem;
-	}
-	&.mb-s {
-		margin-bottom: 1rem;
-	}
-	&.mb-m {
-		margin-bottom: 1.5rem;
-	}
-	&.mb-l {
-		margin-bottom: 2rem;
-	}
-	&.mb-xl {
-		margin-bottom: 2.5rem;
-	}
-
-	&.ml-xs {
-		margin-left: 0.5rem;
-	}
-	&.ml-s {
-		margin-left: 1rem;
-	}
-	&.ml-m {
-		margin-left: 1.5rem;
-	}
-	&.ml-l {
-		margin-left: 2rem;
-	}
-	&.ml-xl {
-		margin-left: 2.5rem;
-	}
-
-	&.mr-xs {
-		margin-right: 0.5rem;
-	}
-	&.mr-s {
-		margin-right: 1rem;
-	}
-	&.mr-m {
-		margin-right: 1.5rem;
-	}
-	&.mr-l {
-		margin-right: 2rem;
-	}
-	&.mr-xl {
-		margin-right: 2.5rem;
-	}
-	&.mt-auto {
-		margin-top: auto;
-	}
-	&.mb-auto {
-		margin-bottom: auto;
-	}
-	&.ml-auto {
-		margin-left: auto;
-	}
-	&.mr-auto {
-		margin-right: auto;
 	}
 }

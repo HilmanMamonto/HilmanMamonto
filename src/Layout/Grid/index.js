@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const Grid = ({ children, ...props }) => {
+const Grid = ({ children, direction, colGap, rowGap, itemWidth, templateRows, templateColumns }) => {
 	const length = children.length;
-	const cGap = props.colGap;
-	const rGap = props.rowGap;
+	const cGap = colGap;
+	const rGap = rowGap;
+	const tempRows = templateRows ? templateRows.join(' ') : 'repeat(' + length + ', ' + itemWidth + '  )';
+	const tempCol = templateColumns ? templateColumns.join(' ') : 'repeat(' + length + ', ' + itemWidth + '  )';
 
 	const styles = {
-		gridTemplateRows: props.direction === 'row' ? 'repeat(' + length + ', ' + props.itemWidth + '  )' : '',
-		gridTemplateColumns: props.direction === 'col' ? 'repeat(' + length + ', ' + props.itemWidth + '  )' : '',
+		gridTemplateRows: direction === 'row' ? tempRows : '',
+		gridTemplateColumns: direction === 'col' ? tempCol : '',
 		columnGap: cGap,
 		rowGap: rGap
 	};
@@ -36,7 +38,9 @@ Grid.propTypes = {
 	colGap: PropTypes.number,
 	rowGap: PropTypes.number,
 	itemWidth: PropTypes.string,
-	direction: PropTypes.string
+	direction: PropTypes.string,
+	templateColumns: PropTypes.array,
+	templateRows: PropTypes.array
 };
 
 export default Grid;

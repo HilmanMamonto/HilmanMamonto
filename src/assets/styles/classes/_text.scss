@@ -1,0 +1,50 @@
+@import '../variabels/colors';
+
+.text-primary {
+	color: $primary;
+}
+.text-secondary {
+	color: $secondary;
+}
+.text-gray {
+	color: $gray;
+}
+.text-light-gray {
+	color: $light-gray;
+}
+.text-ultralight-gray {
+	color: $ultralight-gray;
+}
+
+.text-regular {
+	font-weight: normal;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.text-100 {
+	font-weight: 100;
+}
+.text-200 {
+	font-weight: 200;
+}
+.text-300 {
+	font-weight: 300;
+}
+.text-400 {
+	font-weight: 400;
+}
+.text-500 {
+	font-weight: 500;
+}
+.text-600 {
+	font-weight: 600;
+}
+.text-700 {
+	font-weight: 700;
+}
+.text-800 {
+	font-weight: 800;
+}

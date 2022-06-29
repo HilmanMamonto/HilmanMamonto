@@ -1,11 +1,60 @@
-.font-small {
-	font-size: 0.75rem;
-}
+@import '/src/assets/styles/styles.scss';
 
-.font-medium {
-	font-size: 1rem;
-}
+.stepper {
+	display: flex;
+	justify-content: center;
 
-.font-large {
-	font-size: 1.5rem;
+	.st-items {
+		display: flex;
+		align-items: center;
+	}
+	.st-line {
+		display: inline-flex;
+		align-items: center;
+		width: 2rem;
+		height: 100%;
+		&::after {
+			content: '';
+			border-bottom: 1px solid $ultralight-gray;
+			width: 100%;
+			margin: 0 4px;
+		}
+	}
+
+	.st-item {
+		padding: 0 1px;
+		&.active {
+			.st-number {
+				background-color: $gray;
+			}
+		}
+	}
+
+	.st-number {
+		background-color: $ultralight-gray;
+		border-radius: 100px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		color: $white;
+		line-height: 100%;
+	}
+	.st-tittle {
+		color: $ultralight-gray;
+		font-weight: 400;
+	}
+	&.st-small {
+		font-size: 0.75rem;
+		.st-number {
+			width: 1rem;
+			height: 1rem;
+			margin-right: 0.25rem;
+		}
+	}
+	&.st-medium {
+		font-size: 1rem;
+	}
+	&.st-large {
+		font-size: 1.25rem;
+	}
 }

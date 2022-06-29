@@ -6,6 +6,7 @@ import ButtonRounded from 'components/ButtonRounded/ButtonRounded';
 import { useRef } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import Icons from 'components/Icons';
 
 const sizes = {
 	small: 'cdp-small ',
@@ -18,21 +19,22 @@ const Card = ({ size }) => {
 	const [ btnPrev, setBtnPrev ] = useState('');
 	const [ btnNext, setBtnNext ] = useState('');
 
-	useEffect(() => {
-		const maxPos = refItems.current.children.length;
-		if (position === 1) {
-			setBtnPrev('');
-		} else {
-			setBtnPrev('active');
-		}
-		if (position === maxPos) {
-			setBtnNext('');
-		} else {
-			setBtnNext('active');
-		}
-
-		console.log(position);
-	});
+	useEffect(
+		() => {
+			const maxPos = refItems.current.children.length;
+			if (position === 1) {
+				setBtnPrev('');
+			} else {
+				setBtnPrev('active');
+			}
+			if (position === maxPos) {
+				setBtnNext('');
+			} else {
+				setBtnNext('active');
+			}
+		},
+		[ position ]
+	);
 
 	const handleClick = (param) => {
 		const interval = refItems.current.offsetWidth;
@@ -56,12 +58,23 @@ const Card = ({ size }) => {
 					<img className="cdp-image" src="/andy/andy-bromo-1.jpg" alt="" />
 					<img className="cdp-image" src="/andy/andy-bromo-1.jpg" alt="" />
 				</div>
-				<ButtonRounded onClick={async () => handleClick('prev')} className={'cdp-btn-prev ' + btnPrev} />
-				<ButtonRounded onClick={async () => handleClick('next')} className={'cdp-btn-next ' + btnNext} />
+				<ButtonRounded
+					variant="prev"
+					onClick={async () => handleClick('prev')}
+					className={'cdp-btn-prev ' + btnPrev}
+				/>
+				<ButtonRounded
+					variant="next"
+					onClick={async () => handleClick('next')}
+					className={'cdp-btn-next ' + btnNext}
+				/>
 			</div>
 			<div className="cdp-head-tittle">
 				<span className="cdp-tittle">Bromo Tengger Semeru</span>
-				<span className="cdp-rate">4.0</span>
+				<span className="cdp-rate">
+					<Icons variant="star-fill" />
+					<span className="cdp-rate-label">4.8</span>
+				</span>
 			</div>
 			<div className="cdp-sub-tittle">Sub tittle</div>
 			<div className="cdp-foot">

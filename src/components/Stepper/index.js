@@ -4,32 +4,34 @@ import Grid from 'Layout/Grid';
 import Container from 'Layout/Container';
 import './styles.scss';
 
-const Stepper = (props) => {
-	const arrClass = [ props.className ];
-	if (props.size === 'small') arrClass.push('font-small');
-	if (props.size === 'medium') arrClass.push('font-medium');
+const sizes = {
+	small: 'st-small ',
+	medium: 'st-medium ',
+	large: 'st-large ',
+	undefined: ''
+};
 
-	const clasName = arrClass.join(' ');
-
-	const Items = () => {
-		const result = props.data.map((item, i) => {
-			return (
-				<Container flex key={'step-item' + i}>
-					<Container right="xsmall">
-						<span>{i + 1}</span>
-					</Container>
-					<span>{item.tittle}</span>
-				</Container>
-			);
-		});
-
-		return result;
-	};
+const Stepper = ({ size, data }) => {
+	const className = 'stepper ' + sizes[size];
 
 	return (
-		<Container className={clasName} flex justifyContent="space-betwen">
-			<Items />
-		</Container>
+		<div className={className}>
+			{data.map((item, i) => {
+				const line = i != data.length - 1 ? <div className="st-line" /> : null;
+				const activate = item.status === 'active' || item.status === 'checkmark' ? 'active' : 'disabeled';
+				const active = (<span className="st-number">{i + 1}</span><span className="st-tittle">{item.tittle}</span>)
+				const content = 
+				return (
+					<div key={'step-item' + i} className="st-items">
+						<div className={'st-item ' + activate}>
+							<span className="st-number">{i + 1}</span>
+							<span className="st-tittle">{item.tittle}</span>
+						</div>
+						{line}
+					</div>
+				);
+			})}
+		</div>
 	);
 };
 

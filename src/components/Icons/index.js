@@ -17,7 +17,8 @@ const variants = {
 	dashboard: '/icons/dashboard.svg',
 	bell: '/icons/bell.svg',
 	bag: '/icons/bag.svg',
-	'plus-background-rounded': '/icons/plus-background-rounded.svg'
+	'plus-background-rounded': '/icons/plus-background-rounded.svg',
+	'star-fill': '/icons/star-fill.svg'
 };
 
 const Icons = ({ size, variant, onClick, style, className }) => {

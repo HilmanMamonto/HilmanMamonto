@@ -67,7 +67,7 @@ const ProductCard = (props) => {
 			</div>
 			<div className="description">
 				<div className="description-head">
-					<H type="4" text600 className="tittle" childrend={props.tittle} />
+					<H as="h4" weight="600" className="tittle" childrend={props.tittle} />
 					<div>{props.rate}</div>
 				</div>
 				<div className="location">{props.location}</div>

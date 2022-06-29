@@ -12,9 +12,15 @@
 	&.btn-rounded-small {
 		width: .75rem;
 		height: .75rem;
+		.btn-rounded-icon {
+			width: .5rem;
+		}
 	}
 	&.btn-rounded-medium {
 		width: 1.75rem;
 		height: 1.75rem;
+		.btn-rounded-icon {
+			width: .75rem;
+		}
 	}
 }

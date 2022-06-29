@@ -1,25 +1,25 @@
 import FormWrapper from 'components/FormWrapper';
-import H from 'components/H';
 import Stepper from 'components/Stepper';
 import Typography from 'components/Typography';
 import Container from 'Layout/Container';
 import React from 'react';
 import Desc from './Desc';
 import Line from 'components/Line';
+import H from 'components/H';
 
 const Header = () => (
 	<Container flex justifyContent="center" bottom="small">
-		<Typography variant="header" children={'Add Travel Package'} />
+		<H as="h2" childrend={'Add New Travel Package'} />
 	</Container>
 );
 
 const StepperItems = () => {
 	const stepperData = [
-		{ tittle: 'Desc' },
-		{ tittle: 'Availability' },
-		{ tittle: 'Photos' },
-		{ tittle: 'Stay' },
-		{ tittle: 'Review' }
+		{ tittle: 'Desc', status: 'checkmark' },
+		{ tittle: 'Availability', status: 'active' },
+		{ tittle: 'Photos', status: 'disabled' },
+		{ tittle: 'Stay', status: 'disabled' },
+		{ tittle: 'Review', status: 'disabled' }
 	];
 	return (
 		<Container bottom="small">
@@ -33,22 +33,24 @@ const StepperItems = () => {
 
 const AddPackage = () => {
 	return (
-		<FormWrapper>
-			<Container
-				height="auto"
-				flex
-				padding={'1.5rem 1rem'}
-				direction="column"
-				left="small"
-				right="small"
-				borderRadius={14}
-				maxWidth="460px"
-			>
-				<Header />
-				<StepperItems />
-				<Desc />
-			</Container>
-		</FormWrapper>
+		<div className="add-package">
+			<FormWrapper>
+				<Container
+					height="auto"
+					flex
+					padding={'1.5rem 1rem'}
+					direction="column"
+					left="small"
+					right="small"
+					borderRadius={14}
+					maxWidth="660px"
+				>
+					<Header />
+					<StepperItems />
+					<Desc />
+				</Container>
+			</FormWrapper>
+		</div>
 	);
 };
 
