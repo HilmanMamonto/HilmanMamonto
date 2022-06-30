@@ -1,4 +1,3 @@
-import Input from 'components/Input/Text';
 import React, { useState } from 'react';
 import Button from 'components/Button';
 import './styles.scss';
@@ -85,7 +84,7 @@ const HeaderBottom = (props, ref) => {
 					onMouseOut={() => (!locationIsShowed ? _leftSetIsShowed(true) : '')}
 				>
 					<label>Location</label>
-					<Input
+					<input
 						id="input-location"
 						placeholder="Where are you going?"
 						onChange={handleChange}

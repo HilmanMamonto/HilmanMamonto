@@ -8,19 +8,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	input {
-		border: none;
-		padding: 0;
-		display: block;
-	}
-	input::-webkit-outer-spin-button,
-	input::-webkit-inner-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-	input:focus {
-		outline: none;
-	}
 
 	&.small {
 		* {
@@ -53,17 +40,7 @@
 		.time {
 			font-size: 2rem;
 		}
-		.left,
-		.right {
-			display: flex;
-			align-items: center;
-			div {
-				max-width: 40px;
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-			}
-		}
+
 		span {
 			margin: 0 10px;
 		}

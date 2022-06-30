@@ -7,7 +7,14 @@ import '../main_styles.scss';
 import Icon from 'components/Icons';
 import { useState } from 'react';
 
-const InputCheckBox = (props) => {
+const sizes = {
+	small: 'icb-small ',
+	medium: 'icb-medium ',
+	large: 'icb-large ',
+	undefined: ''
+};
+
+const InputCheckBox = ({ size, ...props }) => {
 	const [ toggle, setToggle ] = useState(false);
 
 	const items = props.data.map((item, i) => {
@@ -19,29 +26,23 @@ const InputCheckBox = (props) => {
 		);
 	});
 
-	const size = props.size;
-	const topClass = ' input ' + size;
-	const wrapClass = ' input-wrapper ' + size;
-	const label = props.label ? (
-		<Container bottom="xsmall">
-			<label>{props.label}</label>
-		</Container>
-	) : null;
+	const container = 'input-select-checkbox ' + sizes[size];
+	const wrapClass = ' isc-wrapper ' + sizes[size];
 	const iconClassName = toggle ? 'ic active' : 'ic';
 	const itemsClassName = toggle ? 'items active' : 'items';
 
 	return (
-		<div className={topClass}>
-			{label}
+		<div className={container}>
+			<label className="icb-label">Max Pax</label>
 			<div className={wrapClass}>
 				<div className="select-checkbox">
 					<div className="head" onClick={() => setToggle(!toggle)}>
 						<span>items</span>
 						<Icon variant="arrow-up" className={iconClassName} />
 					</div>
-					<div className={itemsClassName}>{items}</div>
 				</div>
 			</div>
+			<div className={itemsClassName}>{items}</div>
 		</div>
 	);
 };

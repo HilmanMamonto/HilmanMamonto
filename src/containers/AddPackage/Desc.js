@@ -1,25 +1,27 @@
 import InputCheckBox from 'components/Input/CheckBox/CheckBox';
-import Input from 'components/Input/Text';
-import TextArea from 'components/Input/TextArea';
+
+import TextArea from 'components/Input/TextArea/TextArea';
 import TimePicker from 'components/TimePicker';
 import Container from 'Layout/Container';
 import Grid from 'Layout/Grid';
 import React from 'react';
+import InputBudget from 'components/Input/Budget/InputBudget';
 import { useState } from 'react';
+import InputText from 'components/Input/Text/InputText';
 
 const InputTittle = () => {
 	const [ value, setValue ] = useState();
-	return <Input label="Tittle" status="error" />;
+	return <InputText label="Tittle" />;
 };
 
-const InputBudget = () => {
+const Budget = () => {
 	const [ value, setValue ] = useState();
-	return <Input label="Budget / Pax" variant="budget" status="error" />;
+	return <InputBudget />;
 };
 
 const InputDesc = () => {
 	const [ value, setValue ] = useState();
-	return <TextArea label="Place Descrition" />;
+	return <TextArea min={10} label="Place Descrition" />;
 };
 
 const InputAmenites = () => {
@@ -43,7 +45,7 @@ const Desc = () => {
 			</Container>
 			<Container bottom="medium">
 				<Grid colGap={20}>
-					<InputBudget />
+					<Budget />
 					<InputAmenites />
 				</Grid>
 			</Container>

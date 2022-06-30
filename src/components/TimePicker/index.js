@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Container from 'Layout/Container';
+import TimeCounter from './TimeCounter/TimeCounter';
 
 const TimePicker = (props) => {
 	const [ leftHour, setLeftHour ] = useState(0);
 	const [ leftMinutes, setLeftMinutes ] = useState(0);
 
 	const size = props.size;
-	const className = ' time-picker ' + size;
+	const className = 'time-picker ' + size;
 
 	useEffect(() => {
 		if (leftHour && leftHour < 1) setLeftHour(0);
@@ -24,42 +24,16 @@ const TimePicker = (props) => {
 	};
 
 	return (
-		<Container className={className} fullWidth aliginItems="center" direction="column">
+		<div className={className}>
 			<div className="items">
 				<div className="left">
-					<div>
-						<button onClick={() => setLeftHour(valid(leftHour + 1) ? leftHour + 1 : leftHour)}>+</button>
-						<input
-							name="start_hour"
-							type="number"
-							max={24}
-							onChange={(e) => setLeftHour(e.target.value)}
-							value={leftHour}
-							size={2}
-						/>
-						<button onClick={() => setLeftHour(valid(leftHour - 1) ? leftHour - 1 : leftHour)}>-</button>
-					</div>
+					<TimeCounter />
 					<span>:</span>
-					<div>
-						<button onClick={() => setLeftHour(valid(leftMinutes + 1) ? leftMinutes + 1 : leftMinutes)}>
-							+
-						</button>
-						<input
-							name="start_hour"
-							type="number"
-							max={24}
-							onChange={(e) => setLeftMinutes(e.target.value)}
-							value={leftMinutes}
-						/>
-						<button onClick={() => setLeftHour(valid(leftMinutes - 1) ? leftMinutes - 1 : leftMinutes)}>
-							-
-						</button>
-					</div>
 				</div>
 				<div className="center">-</div>
-				<div className="right">00 : 00</div>
+				<div className="right">-</div>
 			</div>
-		</Container>
+		</div>
 	);
 };
 

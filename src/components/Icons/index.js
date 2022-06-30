@@ -18,7 +18,9 @@ const variants = {
 	bell: '/icons/bell.svg',
 	bag: '/icons/bag.svg',
 	'plus-background-rounded': '/icons/plus-background-rounded.svg',
-	'star-fill': '/icons/star-fill.svg'
+	'star-fill': '/icons/star-fill.svg',
+	'checkmark-single': '/icons/checkmark-single.svg',
+	'checkmark-single-green': '/icons/checkmark-single-green.svg'
 };
 
 const Icons = ({ size, variant, onClick, style, className }) => {
@@ -41,7 +43,8 @@ Icons.propTypes = {
 	variant: PropTypes.string.isRequired,
 	style: PropTypes.string,
 	onClick: PropTypes.func,
-	fullHeight: PropTypes.bool
+	fullHeight: PropTypes.bool,
+	className: PropTypes.string
 };
 
 export default Icons;

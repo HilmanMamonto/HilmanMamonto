@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Grid from 'Layout/Grid';
 import Container from 'Layout/Container';
 import './styles.scss';
+import Icons from 'components/Icons';
 
 const sizes = {
 	small: 'st-small ',
@@ -18,15 +19,30 @@ const Stepper = ({ size, data }) => {
 		<div className={className}>
 			{data.map((item, i) => {
 				const line = i != data.length - 1 ? <div className="st-line" /> : null;
-				const activate = item.status === 'active' || item.status === 'checkmark' ? 'active' : 'disabeled';
-				const active = (<span className="st-number">{i + 1}</span><span className="st-tittle">{item.tittle}</span>)
-				const content = 
+				const activate =
+					item.status === 'active' ? 'active' : item.status === 'checkmark' ? 'checkmark' : 'disabled';
+				const activeAndDisabeled = (
+					<div className={'st-item ' + activate}>
+						<span className="st-atribute">{i + 1}</span>
+						<span className="st-tittle">{item.tittle}</span>
+					</div>
+				);
+				const checkmark = (
+					<div className={'st-item ' + activate}>
+						<span className="st-atribute">
+							<Icons className="st-icon-chekmark" variant="checkmark-single-green" />
+						</span>
+						<span className="st-tittle">{item.tittle}</span>
+					</div>
+				);
+
+				const result =
+					item.status === 'active' || item.status === 'disabled'
+						? activeAndDisabeled
+						: item.status === 'checkmark' ? checkmark : '';
 				return (
 					<div key={'step-item' + i} className="st-items">
-						<div className={'st-item ' + activate}>
-							<span className="st-number">{i + 1}</span>
-							<span className="st-tittle">{item.tittle}</span>
-						</div>
+						{result}
 						{line}
 					</div>
 				);

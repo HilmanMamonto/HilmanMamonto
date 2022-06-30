@@ -1,8 +1,6 @@
 @import '/src/assets/styles/styles.scss';
 
-.input {
-	color: $gray;
-
+.input-text {
 	input[type=text] {
 		background-color: transparent;
 		width: 100%;
@@ -11,55 +9,57 @@
 		padding: 0;
 	}
 
-	input[type=checkbox] {
-		cursor: pointer;
-
-		border: none;
-	}
-
-	input[type=number]::-webkit-inner-spin-button {
-		display: none;
-	}
-
 	input[type=text]:focus {
 		outline-color: transparent;
 	}
 
-	textarea {
-		border: none;
-		resize: none;
-		width: 100%;
-		height: 200px;
+	.it-label {
+		margin-bottom: .5rem;
+		display: block;
+	}
+	.it-wrapper {
 		display: flex;
-		font-family: inherit;
-	}
-
-	textarea:focus {
-		outline-color: transparent;
-	}
-
-	.input-wrapper {
-		.status {
-			width: 20px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			line-height: 100%;
+		align-items: center;
+		border: 1px solid $ultralight-gray;
+		border-radius: 4px;
+		&.focus {
+			outline: 2px solid $gray;
+			border-color: $white !important;
 		}
-		.money {
-			position: relative;
-			padding-right: 10px;
-			margin-right: 10px;
-			display: flex;
-			align-items: center;
-			&::after {
-				content: '';
-				position: absolute;
-				height: 60%;
-				width: 1px;
-				right: 0;
-				background-color: $light-gray;
-			}
+		&.error {
+			border: 1px solid $error;
+		}
+	}
+	img {
+		margin-left: .5rem;
+	}
+	&.it-small {
+		* {
+			font-size: 0.75rem;
+		}
+
+		.it-wrapper {
+			padding: 5px 10px;
+		}
+	}
+
+	&.it-medium {
+		* {
+			font-size: 1rem;
+		}
+
+		.it-wrapper {
+			padding: 8px 10px;
+		}
+	}
+
+	&.it-large {
+		* {
+			font-size: 1.5rem;
+		}
+
+		.it-wrapper {
+			padding: 10px 15px;
 		}
 	}
 }

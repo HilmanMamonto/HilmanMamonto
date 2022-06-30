@@ -2,7 +2,7 @@
 
 // size
 .input {
-	&.small {
+	&.input-small {
 		* {
 			font-size: 0.75rem;
 		}
@@ -12,7 +12,7 @@
 		}
 	}
 
-	&.medium {
+	&.input-medium {
 		* {
 			font-size: 1rem;
 		}
@@ -22,7 +22,7 @@
 		}
 	}
 
-	&.large {
+	&.input-large {
 		* {
 			font-size: 1.5rem;
 		}
@@ -43,7 +43,7 @@
 			border-color: $white !important;
 		}
 		&.error {
-			border: 1px solid var(--error);
+			border: 1px solid $error;
 		}
 	}
 }

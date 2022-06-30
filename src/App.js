@@ -8,10 +8,10 @@ import WalletInfo from 'components/DataDisplay/WalletInfo/WalletInfo';
 import Statistic from 'containers/Statistic/Statistic';
 import ButtonToggle from 'components/ButtonToggle/ButtonToggle';
 import AddPackage from 'containers/AddPackage';
+import InputBudget from 'components/Input/Budget/InputBudget';
 
 const button = (
 	<div>
-		<WalletInfo />
 		<AddPackage />
 	</div>
 );
