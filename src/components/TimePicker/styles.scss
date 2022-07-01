@@ -9,6 +9,18 @@
 	align-items: center;
 	justify-content: center;
 
+	.tp-left,
+	.tp-right {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		column-gap: .5rem;
+	}
+	.tp-center {
+		display: flex;
+		align-items: center;
+		color: $ultralight-gray;
+	}
+
 	&.small {
 		* {
 			font-size: 0.75rem;
@@ -30,19 +42,20 @@
 		display: flex;
 	}
 
-	.items {
+	.tp-items {
 		display: grid;
 		grid-template-columns: auto auto auto;
-		column-gap: 20px;
+		column-gap: 1rem;
 		.btn {
 			font-size: 2rem;
 		}
 		.time {
 			font-size: 2rem;
 		}
-
-		span {
-			margin: 0 10px;
+		.tp-gap {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 }

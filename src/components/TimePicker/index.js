@@ -25,13 +25,18 @@ const TimePicker = (props) => {
 
 	return (
 		<div className={className}>
-			<div className="items">
-				<div className="left">
+			<div className="tp-items">
+				<div className="tp-left">
 					<TimeCounter />
-					<span>:</span>
+					<span className="tp-gap">:</span>
+					<TimeCounter variant="minutes" />
 				</div>
-				<div className="center">-</div>
-				<div className="right">-</div>
+				<div className="tp-center">-</div>
+				<div className="tp-right">
+					<TimeCounter />
+					<span className="tp-gap">:</span>
+					<TimeCounter variant="minutes" />
+				</div>
 			</div>
 		</div>
 	);

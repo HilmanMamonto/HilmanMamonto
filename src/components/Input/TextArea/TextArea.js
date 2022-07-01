@@ -20,28 +20,31 @@ const Icon = ({ status }) => {
 };
 
 const TextArea = ({ size, label, placeholder, min }) => {
-	const ref = useRef();
+	const refTextArea = useRef();
 	const [ focus, setFocus ] = useState('');
 	const [ val, setVal ] = useState('');
 
 	useEffect(() => {
-		if (ref && focus === 'focus') {
-			ref.current.focus();
+		if (refTextArea && focus === 'focus') {
+			refTextArea.current.focus();
 		}
 	});
 
 	const container = 'input-text-area ' + sizes[size] + focus;
 	const wrapClass = 'ita-wrapper ' + focus;
-	const alert = val.length < min ? 'Opps! least than ' + min + ' charachter' : 'Yupss!';
-	const status = val.length < min ? 'error' : val.length > min ? 'success' : '';
+	const alert =
+		val.length === 0
+			? 'Input must more than ' + min + ' characters'
+			: val.length < min ? 'Opps! description atleast more than than ' + min + ' charachters' : 'Yupss!';
+	const status = val.length === 0 ? '' : val.length < min ? 'error' : val.length >= min ? 'success' : '';
 
 	const statusClass = 'ita-status-alert ' + status;
 	return (
 		<div className={container}>
-			<label className="ita-label">Place Description</label>
+			{label && <label className="ita-label">{label}</label>}
 			<div className={wrapClass}>
 				<textarea
-					ref={ref}
+					ref={refTextArea}
 					placeholder={placeholder}
 					onFocus={() => setFocus('focus')}
 					onBlur={() => setFocus('')}

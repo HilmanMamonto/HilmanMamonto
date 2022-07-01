@@ -16,12 +16,12 @@ const Header = (props) => {
 	const refInput = useRef(null);
 
 	useEffect(() => {
-		window.addEventListener('click', handleClickOutside);
-		window.addEventListener('scroll', handleScroll);
+		document.addEventListener('click', handleClickOutside);
+		document.addEventListener('scroll', handleScroll);
 
 		return () => {
 			document.removeEventListener('click', handleClickOutside);
-			window.removeEventListener('scroll', handleScroll);
+			document.removeEventListener('scroll', handleScroll);
 		};
 	});
 

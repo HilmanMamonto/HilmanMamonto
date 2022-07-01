@@ -1,0 +1,71 @@
+@import '/src/assets/styles/styles.scss';
+.input-itinerary {
+	.iit-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: .5rem;
+	}
+
+	.iit-item {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.btn-iit {
+		text-decoration: underline;
+		display: flex;
+		align-items: center;
+	}
+
+	.iit-item-left {
+		display: flex;
+		span {
+			font-size: .75rem;
+			margin-left: .25rem;
+		}
+
+		.iit-dot {
+			margin-top: .5rem;
+			display: grid;
+			grid-template-rows: .5rem auto;
+			row-gap: .25rem;
+			margin-right: 1rem;
+			&::before {
+				content: '';
+				width: .5rem;
+				height: .5rem;
+				background-color: $gray;
+				border-radius: 100px;
+			}
+			&::after {
+				content: '';
+				width: 0px;
+				display: flex;
+				justify-self: center;
+				height: 100%;
+				border-left: 2px dashed $ultralight-gray;
+			}
+			&.iit-dot-last {
+				&::after {
+					content: '';
+					display: none;
+				}
+			}
+		}
+
+		.iit-label {
+			white-space: nowrap;
+		}
+		.iit-desc {
+			display: inline-block;
+			white-space: normal;
+			max-width: 296px;
+			font-size: .75rem;
+			label {
+				font-size: 1rem;
+				margin-right: .5rem;
+			}
+		}
+	}
+}

@@ -5,7 +5,8 @@ import './styles.scss';
 const sizes = {
 	small: 'icon-small ',
 	medium: 'icon-medium ',
-	large: 'icon-large '
+	large: 'icon-large ',
+	xlarge: 'icon-xlarge '
 };
 
 const variants = {
@@ -13,6 +14,8 @@ const variants = {
 	checkmark: '/icons/checkmark-alert.svg',
 	dollar: '/icons/dollar.svg',
 	'arrow-up': '/icons/arrow-up.svg',
+	'arrow-right': '/icons/arrow-right.svg',
+	'arrow-right-white-rounded': '/icons/arrow-right-white-rounded.svg',
 	home: '/icons/home.svg',
 	dashboard: '/icons/dashboard.svg',
 	bell: '/icons/bell.svg',
