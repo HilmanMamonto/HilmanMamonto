@@ -1,7 +1,7 @@
 import InputCheckBox from 'components/Input/CheckBox/CheckBox';
 
 import TextArea from 'components/Input/TextArea/TextArea';
-import TimePicker from 'components/TimePicker';
+import TimePicker from 'components/TimePicker/TimePicker';
 import Container from 'Layout/Container';
 import Grid from 'Layout/Grid';
 import React from 'react';
@@ -14,6 +14,7 @@ import InputItinerary from 'components/DataDisplay/InputItinerary/InputItinerary
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import Ta from 'components/Input/TA/Ta';
+import './styles.scss';
 
 const InputTittle = () => {
 	const [ value, setValue ] = useState();
@@ -31,31 +32,47 @@ const InputDesc = () => {
 };
 
 const InputScheduleTA = () => {
-	const [ val, setValue ] = useState('');
+	const [ val, setVal ] = useState({ schedule: '' });
 
 	useEffect(() => {
 		console.log(val);
 	});
-	return (
-		<Container bottom="medium">
-			{/* <TextArea min={20} value={val} onChange={(e) => setValue(e.target.value)} /> */}
-			<Ta value={val} onChange={(e) => setValue(e.target.value)} />
-		</Container>
-	);
+
+	return <TextArea value={val.schedule} name="input-ta" onChange={(e) => setVal({ schedule: e.target.value })} />;
 };
 
 const InputSchedule = () => {
+	const [ val, setVal ] = useState({ timeSchedlue: '', schedule: '' });
+	const itineraryFormData = new FormData();
+
+	useEffect(() => {
+		// itineraryFormData.append('schedule', val.schedule);
+		// itineraryFormData.append('timeSchedule', val.timeSchedlue);
+		// itineraryFormData.get('timeSchedule');
+		console.log(val);
+	});
+
 	return (
-		<Container bottom="medium">
-			<Container bottom="small">
-				<Container bottom="small">
+		<div className="mb-m">
+			<div className="mb-s">
+				<div className="mb-s">
 					<InputItinerary />
-				</Container>
-				<TimePicker size="large" />
-			</Container>
-			<InputScheduleTA />
+				</div>
+				<TimePicker
+					size="large"
+					onChange={(obj) => setVal((p) => ({ ...p, timeSchedlue: obj.tpStart + ' - ' + obj.tpEnd }))}
+				/>
+			</div>
+			<div className="mb-s">
+				<TextArea
+					value={val.schedule}
+					min={50}
+					name="shcedule"
+					onChange={(e) => setVal((p) => ({ ...p, schedule: e.target.value }))}
+				/>
+			</div>
 			<Button fullWidth size="large" variant="outline" justifyContent="center" label="Add Schedule" />
-		</Container>
+		</div>
 	);
 };
 

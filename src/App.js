@@ -9,12 +9,20 @@ import Statistic from 'containers/Statistic/Statistic';
 import ButtonToggle from 'components/ButtonToggle/ButtonToggle';
 import AddPackage from 'containers/AddPackage';
 import InputBudget from 'components/Input/Budget/InputBudget';
+import Ta from 'components/Input/TA/Ta';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import Container from 'Layout/Container';
 
-const button = (
-	<div>
-		<AddPackage />
-	</div>
-);
+const Test = () => {
+	const [ val, setVal ] = useState('');
+
+	useEffect(() => {
+		console.log(val);
+	});
+
+	return <AddPackage />;
+};
 
 function App() {
 	return (
@@ -24,7 +32,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/product/:id" element={<ProductSelectedPage />} />
 					<Route path="dashboard/*" element={<DashboardPage />} />
-					<Route path="test" element={button} />
+					<Route path="test" element={<Test />} />
 				</Routes>
 			</Router>
 		</Provider>

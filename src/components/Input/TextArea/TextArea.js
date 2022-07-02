@@ -19,7 +19,7 @@ const Icon = ({ status }) => {
 	return status === 'error' ? <Icons variant="warning" /> : status === 'success' ? <Icons variant="checkmark" /> : '';
 };
 
-const TextArea = ({ size, label, placeholder, min }) => {
+const TextArea = ({ size, label, placeholder, min, name, onChange, value }) => {
 	const refTextArea = useRef();
 	const [ focus, setFocus ] = useState('');
 	const [ val, setVal ] = useState('');
@@ -33,23 +33,24 @@ const TextArea = ({ size, label, placeholder, min }) => {
 	const container = 'input-text-area ' + sizes[size] + focus;
 	const wrapClass = 'ita-wrapper ' + focus;
 	const alert =
-		val.length === 0
+		value.length === 0
 			? 'Input must more than ' + min + ' characters'
-			: val.length < min ? 'Opps! description atleast more than than ' + min + ' charachters' : 'Yupss!';
-	const status = val.length === 0 ? '' : val.length < min ? 'error' : val.length >= min ? 'success' : '';
-
+			: value.length < min ? 'Opps! description atleast more than than ' + min + ' charachters' : 'Yupss!';
+	const status = value.length === 0 ? '' : value.length < min ? 'error' : value.length >= min ? 'success' : '';
 	const statusClass = 'ita-status-alert ' + status;
+
 	return (
 		<div className={container}>
 			{label && <label className="ita-label">{label}</label>}
 			<div className={wrapClass}>
 				<textarea
 					ref={refTextArea}
+					name={name}
 					placeholder={placeholder}
 					onFocus={() => setFocus('focus')}
 					onBlur={() => setFocus('')}
-					onChange={(e) => setVal(e.target.value)}
-					value={val}
+					onChange={(e) => onChange(e)}
+					value={value}
 				/>
 				<Line />
 				<div className="ita-status-wrapper">
@@ -63,13 +64,15 @@ const TextArea = ({ size, label, placeholder, min }) => {
 
 TextArea.defaultProps = {
 	size: 'medium',
-	min: 0
+	min: 0,
+	value: ''
 };
 
 TextArea.propTypes = {
 	label: PropTypes.string,
 	size: PropTypes.string,
-	min: PropTypes.number
+	min: PropTypes.number,
+	name: PropTypes.string
 };
 
 export default TextArea;

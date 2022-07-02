@@ -102,7 +102,7 @@ const Button = ({
 			</a>
 		),
 		button: (
-			<button style={styles} className={className} disabled={disabeled}>
+			<button style={styles} className={className} disabled={disabeled} onClick={onClick}>
 				<div className={itemsClass}>
 					{leftIc}
 					<span>{labelItem}</span>

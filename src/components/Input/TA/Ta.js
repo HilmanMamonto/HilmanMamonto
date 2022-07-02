@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Ta = ({ onChange, value }) => {
+const Ta = ({ onChange, value, id, name }) => {
 	return (
 		<div>
-			<textarea value={value} onChange={onChange} />
+			<textarea id={id} value={value} name={name} onChange={onChange} />
 		</div>
 	);
 };
