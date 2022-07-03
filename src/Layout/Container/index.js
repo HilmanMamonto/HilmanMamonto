@@ -98,7 +98,8 @@ const Container = ({
 	maxWidth,
 	padding,
 	fullWidth,
-	borderRadius
+	borderRadius,
+	className
 }) => {
 	const classTop = topSizes[top];
 	const classBottom = bottomSizes[bottom];
@@ -115,7 +116,7 @@ const Container = ({
 	const classVariant = variants[variant];
 	const classOverFlow = overFlows[overFlow];
 
-	const className =
+	const containerClass =
 		'container ' +
 		classFlex +
 		classAbsoulute +
@@ -130,7 +131,9 @@ const Container = ({
 		class100Vw +
 		classVariant +
 		classOverFlow +
-		classFDirection;
+		classFDirection +
+		' ' +
+		className;
 
 	const styles = {
 		maxWidth: maxWidth,
@@ -144,14 +147,14 @@ const Container = ({
 	const Result = () => {
 		if (as === 'div') {
 			return (
-				<div className={className} style={styles}>
+				<div className={containerClass} style={styles}>
 					{children}
 				</div>
 			);
 		}
 		if (as === 'span') {
 			return (
-				<span className={className} style={styles}>
+				<span className={containerClass} style={styles}>
 					{children}
 				</span>
 			);

@@ -15,10 +15,16 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import Ta from 'components/Input/TA/Ta';
 import './styles.scss';
+import 'animate.css';
 
 const InputTittle = () => {
 	const [ value, setValue ] = useState();
-	return <InputText label="Tittle" />;
+
+	const handleChange = (data) => {
+		// console.log(data);
+	};
+
+	return <InputText label="Tittle" min={2} onChange={handleChange} />;
 };
 
 const Budget = () => {
@@ -28,50 +34,74 @@ const Budget = () => {
 
 const InputDesc = () => {
 	const [ value, setValue ] = useState();
-	return <TextArea min={20} label="Place Descrition" />;
-};
-
-const InputScheduleTA = () => {
-	const [ val, setVal ] = useState({ schedule: '' });
-
-	useEffect(() => {
-		console.log(val);
-	});
-
-	return <TextArea value={val.schedule} name="input-ta" onChange={(e) => setVal({ schedule: e.target.value })} />;
+	return <TextArea min={20} label="Place Descrition" onChange={(values) => setValue(values.value)} />;
 };
 
 const InputSchedule = () => {
-	const [ val, setVal ] = useState({ timeSchedlue: '', schedule: '' });
-	const itineraryFormData = new FormData();
+	const [ values, setValues ] = useState({ time: '', desc: '', status: '' });
+	const [ valid, setValid ] = useState({ time: 'invalid', desc: 'invalid' });
 
-	useEffect(() => {
-		// itineraryFormData.append('schedule', val.schedule);
-		// itineraryFormData.append('timeSchedule', val.timeSchedlue);
-		// itineraryFormData.get('timeSchedule');
-		console.log(val);
-	});
+	const getItinerary = JSON.parse(localStorage.getItem('itinerary'));
+	const [ storage, setStorage ] = useState(getItinerary);
+
+	const handleClick = () => {
+		const getItinerary = JSON.parse(localStorage.getItem('itinerary'));
+		const result = getItinerary && getItinerary.constructor === Array ? [ ...getItinerary, values ] : [ values ];
+
+		if (validation()) {
+			localStorage.setItem('itinerary', JSON.stringify(result));
+			setStorage(result);
+			setValues({ time: '', desc: '', status: '' });
+		} else {
+			alert('Opps! please input itinerary correctly');
+		}
+	};
+
+	const handleChangeTimePicker = (data) => {
+		setValues((p) => ({ ...p, time: data.tpStart + ' - ' + data.tpEnd }));
+		setValid((p) => ({ ...p, time: data.status }));
+	};
+
+	const handleChangeTextArea = (data) => {
+		setValues((p) => ({ ...p, desc: data.value }));
+		setValid((p) => ({ ...p, desc: data.status }));
+	};
+
+	const handleReset = () => {
+		localStorage.removeItem('itinerary');
+		setStorage(null);
+		setValues({ time: '', desc: '', status: '' });
+	};
+
+	const validation = () => {
+		return valid.time === 'valid' && valid.desc === 'valid' ? true : false;
+	};
 
 	return (
 		<div className="mb-m">
 			<div className="mb-s">
 				<div className="mb-s">
-					<InputItinerary />
+					<InputItinerary data={storage} onClickReset={handleReset} />
 				</div>
-				<TimePicker
-					size="large"
-					onChange={(obj) => setVal((p) => ({ ...p, timeSchedlue: obj.tpStart + ' - ' + obj.tpEnd }))}
-				/>
+				<TimePicker size="large" value={values.time} onChange={handleChangeTimePicker} />
 			</div>
 			<div className="mb-s">
 				<TextArea
-					value={val.schedule}
+					placeholder={'Input schedule...'}
+					value={values.desc}
 					min={50}
 					name="shcedule"
-					onChange={(e) => setVal((p) => ({ ...p, schedule: e.target.value }))}
+					onChange={handleChangeTextArea}
 				/>
 			</div>
-			<Button fullWidth size="large" variant="outline" justifyContent="center" label="Add Schedule" />
+			<Button
+				fullWidth
+				size="large"
+				variant="outline"
+				justifyContent="center"
+				label="Add Schedule"
+				onClick={handleClick}
+			/>
 		</div>
 	);
 };
@@ -90,12 +120,15 @@ const InputAmenites = () => {
 };
 
 const MoreThings = () => {
-	return <TextArea min={20} label="More Things Visitors Must To Know" />;
+	const [ value, setValue ] = useState();
+	return (
+		<TextArea min={20} label="More Things Visitors Must To Know" onChange={(values) => setValue(values.value)} />
+	);
 };
 
 const Desc = () => {
 	return (
-		<Container flex direction="column">
+		<Container flex direction="column" className="animate__animated animate__fadeIn">
 			<Container bottom="small">
 				<InputTittle />
 			</Container>

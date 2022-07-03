@@ -16,13 +16,14 @@ const sizes = {
 };
 
 const Icon = ({ status }) => {
-	return status === 'error' ? <Icons variant="warning" /> : status === 'success' ? <Icons variant="checkmark" /> : '';
+	return status === 'invalid' ? <Icons variant="warning" /> : status === 'valid' ? <Icons variant="checkmark" /> : '';
 };
 
 const TextArea = ({ size, label, placeholder, min, name, onChange, value }) => {
 	const refTextArea = useRef();
 	const [ focus, setFocus ] = useState('');
-	const [ val, setVal ] = useState('');
+	const [ values, setValues ] = useState({ value: '', status: '' });
+	const [ alert, setAlert ] = useState('');
 
 	useEffect(() => {
 		if (refTextArea && focus === 'focus') {
@@ -32,12 +33,56 @@ const TextArea = ({ size, label, placeholder, min, name, onChange, value }) => {
 
 	const container = 'input-text-area ' + sizes[size] + focus;
 	const wrapClass = 'ita-wrapper ' + focus;
-	const alert =
-		value.length === 0
-			? 'Input must more than ' + min + ' characters'
-			: value.length < min ? 'Opps! description atleast more than than ' + min + ' charachters' : 'Yupss!';
-	const status = value.length === 0 ? '' : value.length < min ? 'error' : value.length >= min ? 'success' : '';
-	const statusClass = 'ita-status-alert ' + status;
+
+	const statusClass = 'ita-status-alert ' + values.status;
+
+	useEffect(
+		() => {
+			onChange(values);
+		},
+		[ values ]
+	);
+
+	const handleOnChange = (e) => {
+		const val = e.target.value;
+		handleValidation(val);
+		const stat = handleStatus(val);
+		setValues({ value: val, status: stat });
+	};
+
+	const handleValidation = (val) => {
+		let result = '';
+		if (val.length === 0) {
+			result = 'Input must more than ' + min + ' characters';
+		} else if (val.length < min) {
+			result = 'Opps! description atleast more than ' + min + ' characters';
+		} else {
+			result = 'Yupps!';
+		}
+		setAlert(result);
+	};
+
+	const handleStatus = (val) => {
+		let result = '';
+		if (val.length < min) {
+			result = 'invalid';
+		} else {
+			result = 'valid';
+		}
+		return result;
+	};
+
+	const handleReset = () => {
+		setValues({ value: '', status: '' });
+		handleValidation('');
+	};
+
+	useEffect(
+		() => {
+			if (value === '') handleReset();
+		},
+		[ value ]
+	);
 
 	return (
 		<div className={container}>
@@ -49,13 +94,13 @@ const TextArea = ({ size, label, placeholder, min, name, onChange, value }) => {
 					placeholder={placeholder}
 					onFocus={() => setFocus('focus')}
 					onBlur={() => setFocus('')}
-					onChange={(e) => onChange(e)}
+					onChange={handleOnChange}
 					value={value}
 				/>
 				<Line />
 				<div className="ita-status-wrapper">
 					<span className={statusClass}>{alert}</span>
-					<Icon status={status} />
+					<Icon status={values.status} />
 				</div>
 			</div>
 		</div>
@@ -72,7 +117,8 @@ TextArea.propTypes = {
 	label: PropTypes.string,
 	size: PropTypes.string,
 	min: PropTypes.number,
-	name: PropTypes.string
+	name: PropTypes.string,
+	onChange: PropTypes.func.isRequired
 };
 
 export default TextArea;

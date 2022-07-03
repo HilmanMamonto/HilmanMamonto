@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Button from 'components/NewButton/Button';
 import Icons from 'components/Icons';
+import Availability from './Availability';
 
 const Header = () => (
 	<Container flex justifyContent="center" bottom="small">
@@ -17,21 +18,24 @@ const Header = () => (
 	</Container>
 );
 
-const StepperItems = () => {
+const StepperItems = ({ step }) => {
 	const [ items, setItems ] = useState([
-		{ tittle: 'Desc', status: 'active' },
+		{ tittle: 'Desc', status: 'disabled' },
 		{ tittle: 'Availability', status: 'disabled' },
 		{ tittle: 'Photos', status: 'disabled' },
 		{ tittle: 'Stay', status: 'disabled' },
 		{ tittle: 'Review', status: 'disabled' }
 	]);
-	useEffect(
-		() => {
-			localStorage.setItem('stepperAddPackage', JSON.stringify(items));
-		},
-		[ items ]
-	);
-	console.log(localStorage.getItem('item'));
+
+	items.map((item, i) => {
+		if (i === step) {
+			item.status = 'active';
+		}
+		if (i <= step - 1) {
+			item.status = 'checkmark';
+		}
+	});
+
 	return (
 		<Container bottom="small">
 			<Stepper data={items} size="small" />
@@ -43,6 +47,22 @@ const StepperItems = () => {
 };
 
 const AddPackage = () => {
+	const [ step, setStep ] = useState(0);
+
+	const content = step === 0 ? <Desc /> : step === 1 ? <Availability /> : '';
+	const btnBack =
+		step > 0 ? (
+			<Button
+				fullWidth
+				variant="outline"
+				size="large"
+				justifyContent="space-betwen"
+				label="Back"
+				rightIcon={<Icons size="xlarge" variant="arrow-right-white-rounded" />}
+				onClick={() => setStep(step - 1)}
+			/>
+		) : null;
+
 	return (
 		<div className="add-package">
 			<FormWrapper>
@@ -57,18 +77,20 @@ const AddPackage = () => {
 					maxWidth="500px"
 				>
 					<Header />
-					<StepperItems />
-					<Desc />
-					<Container bottom="medium">
+					<StepperItems step={step} />
+					{content}
+					<Container bottom="small">
 						<Button
 							fullWidth
 							size="large"
-							shadow="small"
+							shadow="medium"
 							justifyContent="space-betwen"
 							label="Add Desc and Next"
 							rightIcon={<Icons size="xlarge" variant="arrow-right-white-rounded" />}
+							onClick={() => setStep(step + 1)}
 						/>
 					</Container>
+					{btnBack}
 				</Container>
 			</FormWrapper>
 		</div>

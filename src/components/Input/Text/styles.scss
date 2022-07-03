@@ -16,6 +16,10 @@
 	.it-label {
 		margin-bottom: .5rem;
 		display: block;
+		small {
+			font-size: .75rem;
+			color: $light-gray;
+		}
 	}
 	.it-wrapper {
 		display: flex;
@@ -26,7 +30,7 @@
 			outline: 2px solid $gray;
 			border-color: $white !important;
 		}
-		&.error {
+		&.invalid {
 			border: 1px solid $error;
 		}
 	}

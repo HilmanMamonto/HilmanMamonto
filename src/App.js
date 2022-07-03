@@ -15,12 +15,6 @@ import { useEffect } from 'react';
 import Container from 'Layout/Container';
 
 const Test = () => {
-	const [ val, setVal ] = useState('');
-
-	useEffect(() => {
-		console.log(val);
-	});
-
 	return <AddPackage />;
 };
 

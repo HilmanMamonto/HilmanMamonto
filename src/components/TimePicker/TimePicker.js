@@ -10,32 +10,50 @@ const sizes = {
 	large: 'tp-large '
 };
 
-const TimePicker = ({ size, onChange }) => {
-	const [ val, setVal ] = useState({ tpStart: '', tpEnd: '' });
+const TimePicker = ({ size, onChange, value }) => {
+	const [ values, setValues ] = useState({ tpStart: '', tpEnd: '', status: 'invalid' });
 
 	const className = 'time-picker ' + sizes[size];
 
 	useEffect(
 		() => {
-			onChange(val);
+			onChange(values);
 		},
-		[ val ]
+		[ values ]
 	);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setVal((p) => ({ ...p, [name]: value }));
+		setValues((p) => ({ ...p, [name]: value }));
+		validation();
 	};
+
+	const validation = () => {
+		if (values.tpStart && values.tpStart) {
+			setValues((p) => ({ ...p, status: 'valid' }));
+		}
+	};
+
+	const reset = () => {
+		setValues({ tpStart: values.tpEnd, tpEnd: '', status: 'invalid' });
+	};
+
+	useEffect(
+		() => {
+			if (value === '') reset();
+		},
+		[ value ]
+	);
 
 	return (
 		<div className={className}>
 			<div className="tp-items">
 				<div className="tp-left">
-					<input type="time" name="tpStart" value={val.start} onChange={handleChange} />
+					<input type="time" name="tpStart" value={values.tpStart} onChange={handleChange} />
 				</div>
 				<div className="tp-center">-</div>
 				<div className="tp-right">
-					<input type="time" name="tpEnd" value={val.start} onChange={handleChange} />
+					<input type="time" name="tpEnd" value={values.tpEnd} onChange={handleChange} />
 				</div>
 			</div>
 		</div>
