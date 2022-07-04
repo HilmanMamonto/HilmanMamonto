@@ -1,1 +1,29 @@
 @import '/src/assets/styles/styles.scss';
+
+.ap-image-list {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	.ap-image-wrapper {
+		display: inline-flex;
+		position: relative;
+		.ap-image {
+			width: 100%;
+			border-radius: 6px;
+			overflow: hidden;
+		}
+		.btn-close-ap-image {
+			position: absolute;
+			right: 0;
+			margin-top: .5rem;
+			margin-right: .5rem;
+		}
+	}
+}
+.ap-stays {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+	margin-bottom: 2rem;
+	overflow: hidden;
+}

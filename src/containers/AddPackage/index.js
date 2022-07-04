@@ -11,6 +11,8 @@ import { useState } from 'react';
 import Button from 'components/NewButton/Button';
 import Icons from 'components/Icons';
 import Availability from './Availability';
+import Images from './Images';
+import Stays from './Stays';
 
 const Header = () => (
 	<Container flex justifyContent="center" bottom="small">
@@ -49,7 +51,8 @@ const StepperItems = ({ step }) => {
 const AddPackage = () => {
 	const [ step, setStep ] = useState(0);
 
-	const content = step === 0 ? <Desc /> : step === 1 ? <Availability /> : '';
+	const content =
+		step === 0 ? <Desc /> : step === 1 ? <Availability /> : step === 2 ? <Images /> : step === 3 ? <Stays /> : '';
 	const btnBack =
 		step > 0 ? (
 			<Button

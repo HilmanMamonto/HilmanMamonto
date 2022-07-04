@@ -26,15 +26,15 @@ const colors = {
 	undefined: ''
 };
 
-const H = ({ weight, color, as, childrend }) => {
-	const className = 'h ' + weights[weight] + colors[color];
+const H = ({ weight, color, as, childrend, className }) => {
+	const classContainer = 'h ' + weights[weight] + colors[color] + className;
 
 	const elements = {
-		h1: <h1 className={className}>{childrend}</h1>,
-		h2: <h2 className={className}>{childrend}</h2>,
-		h3: <h3 className={className}>{childrend}</h3>,
-		h4: <h4 className={className}>{childrend}</h4>,
-		h5: <h5 className={className}>{childrend}</h5>,
+		h1: <h1 className={classContainer}>{childrend}</h1>,
+		h2: <h2 className={classContainer}>{childrend}</h2>,
+		h3: <h3 className={classContainer}>{childrend}</h3>,
+		h4: <h4 className={classContainer}>{childrend}</h4>,
+		h5: <h5 className={classContainer}>{childrend}</h5>,
 		undefined: ''
 	};
 

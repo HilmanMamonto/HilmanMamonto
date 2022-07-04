@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { Calendar } from 'react-date-range';
 import format from 'date-fns/format';
 import { useState } from 'react';
@@ -8,12 +8,15 @@ import './styles.scss';
 
 const DatePicker = (props) => {
 	let arr = [];
+	const storage = localStorage.getItem('addPackageAvailability');
+	if (storage) arr = JSON.parse(storage);
+
 	const handleSelect = (date) => {
 		const newDate = format(date, 'yyy-MM-dd');
 		const found = arr.find((item) => item === newDate);
 		const result = arr.filter((item) => item != found);
-		// found ? setDays([ ...result ]) : setDays((p) => [ ...p, newDate ]);
 		found ? (arr = [ ...result ]) : (arr = [ ...arr, newDate ]);
+		localStorage.setItem('addPackageAvailability', JSON.stringify(arr));
 	};
 
 	const handleDay = (date) => {

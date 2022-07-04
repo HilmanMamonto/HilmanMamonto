@@ -1,0 +1,47 @@
+[
+	{
+		"id": "st0001",
+		"imageUrl": "/staycations/villa-bromo.jpg",
+		"tittle": "Villa Tengger Semeru",
+		"location": "Malang , East Java",
+		"budget": 20,
+		"rate": 4.8,
+		"reviews": 20
+	},
+	{
+		"id": "st0002",
+		"imageUrl": "/staycations/villa-bromo.jpg",
+		"tittle": "Villa Tengger Semeru",
+		"location": "Malang , East Java",
+		"budget": 20,
+		"rate": 4.8,
+		"reviews": 20
+	},
+	{
+		"id": "st0003",
+		"imageUrl": "/staycations/villa-bromo.jpg",
+		"tittle": "Villa Tengger Semeru",
+		"location": "Malang , East Java",
+		"budget": 20,
+		"rate": 4.8,
+		"reviews": 20
+	},
+	{
+		"id": "st0004",
+		"imageUrl": "/staycations/villa-bromo.jpg",
+		"tittle": "Villa Tengger Semeru",
+		"location": "Malang , East Java",
+		"budget": 20,
+		"rate": 4.8,
+		"reviews": 20
+	},
+	{
+		"id": "st0005",
+		"imageUrl": "/staycations/villa-bromo.jpg",
+		"tittle": "Villa Tengger Semeru",
+		"location": "Malang , East Java",
+		"budget": 20,
+		"rate": 4.8,
+		"reviews": 20
+	}
+]
