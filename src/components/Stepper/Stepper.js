@@ -4,6 +4,8 @@ import Grid from 'Layout/Grid';
 import Container from 'Layout/Container';
 import './styles.scss';
 import Icons from 'components/Icons';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const sizes = {
 	small: 'st-small ',
@@ -12,12 +14,30 @@ const sizes = {
 	undefined: ''
 };
 
-const Stepper = ({ size, data }) => {
+const Stepper = ({ size, data, currentStep }) => {
 	const className = 'stepper ' + sizes[size];
+	const [ items, setItems ] = useState();
 
-	return (
-		<div className={className}>
-			{data.map((item, i) => {
+	if (!items) {
+		const newItems = data.map((item) => {
+			return new Object({ tittle: item, status: 'disabled' });
+		});
+		setItems(newItems);
+	}
+
+	if (items) {
+		items.map((item, i) => {
+			if (i === currentStep) {
+				item.status = 'active';
+			}
+			if (i <= currentStep - 1) {
+				item.status = 'checkmark';
+			}
+		});
+	}
+
+	const result = items
+		? items.map((item, i) => {
 				const line = i != data.length - 1 ? <div className="st-line" /> : null;
 				const activate =
 					item.status === 'active' ? 'active' : item.status === 'checkmark' ? 'checkmark' : 'disabled';
@@ -46,14 +66,16 @@ const Stepper = ({ size, data }) => {
 						{line}
 					</div>
 				);
-			})}
-		</div>
-	);
+			})
+		: null;
+
+	return <div className={className}>{result}</div>;
 };
 
 Stepper.propTypes = {
 	data: PropTypes.array.isRequired,
-	size: PropTypes.string
+	size: PropTypes.string,
+	currentStep: PropTypes.number
 };
 
 export default Stepper;

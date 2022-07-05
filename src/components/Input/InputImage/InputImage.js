@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import './styles.scss';
 
-const InputImage = ({ onChange }) => {
+const InputImage = ({ onChange, className }) => {
 	const [ value, setValue ] = useState();
 
 	useEffect(
@@ -24,15 +25,23 @@ const InputImage = ({ onChange }) => {
 		}
 	};
 
+	const classContainer = 'input-image-wrapper ' + className;
 	return (
-		<div>
-			<input type="file" onChange={handleChange} />
+		<div className={classContainer}>
+			<input
+				id="image"
+				className="input-image"
+				type="file"
+				accept="image/png, image/jpeg"
+				onChange={handleChange}
+			/>
 		</div>
 	);
 };
 
 InputImage.propTypes = {
-	onChange: PropTypes.func.isRequired
+	onChange: PropTypes.func.isRequired,
+	className: PropTypes.string
 };
 
 export default InputImage;

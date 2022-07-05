@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useRef } from 'react';
 import './styles.scss';
 import Icons from 'components/Icons';
+import { blockInvalidChar } from './blockInvalidChar';
 
 const sizes = {
 	small: 'ib-small ',
@@ -28,7 +29,7 @@ const InputBudget = ({ size, status }) => {
 
 	const container = 'input-budget ' + sizes[size];
 	const wrapper = 'ib-wrapper ' + status + ' ' + focus;
-	const iconStatus = <Icons variant="checkmark" />;
+
 	return (
 		<div className={container}>
 			<label className="ib-label">Budget / Pax</label>
@@ -36,7 +37,14 @@ const InputBudget = ({ size, status }) => {
 				<div className="ib-icon-dollar">
 					<Icons variant="dollar" />
 				</div>
-				<input type={'number'} ref={refInput} onFocus={() => setFocus('focus')} onBlur={() => setFocus('')} />
+				<input
+					ref={refInput}
+					type="number"
+					onKeyDown={blockInvalidChar}
+					onFocus={() => setFocus('focus')}
+					onBlur={() => setFocus('')}
+					required
+				/>
 				<IconStatus status={status} />
 			</div>
 		</div>

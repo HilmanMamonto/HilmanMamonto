@@ -13,21 +13,59 @@
 		font-family: 'Poppins', sans-serif;
 		border: none;
 		color: $gray;
-		width: 150px;
+		overflow: visible;
+		padding-inline-start: 0px;
+		width: fit-content;
+		display: block;
+
+		&::-webkit-calendar-picker-indicator {
+			cursor: pointer;
+			min-width: fit-content;
+		}
+		&::-webkit-datetime-edit-hour-field,
+		&::-webkit-datetime-edit-minute-field,
+		&::-webkit-datetime-edit-ampm-field {
+			display: inline-flex;
+			justify-content: center;
+			width: 2.8rem;
+		}
+
+		&::-webkit-datetime-edit {
+			display: inline-flex;
+			justify-content: center;
+			flex: unset;
+			min-width: fit-content;
+		}
+
+		&::-webkit-datetime-edit-fields-wrapper {
+			display: inline-flex;
+			white-space: normal;
+			padding: 0;
+		}
 	}
 
 	input[type=time]:focus {
 		outline: none;
 	}
 
+	input[type=time]:disabled {
+		color: $gray;
+		opacity: .5;
+		cursor: not-allowed;
+		&::-webkit-calendar-picker-indicator {
+			visibility: visible;
+		}
+	}
+
 	.tp-left,
 	.tp-right {
-		display: inline-flex;
+		display: block;
 	}
 	.tp-center {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
-		color: $ultralight-gray;
+		justify-content: center;
+		color: $gray;
 	}
 
 	&.tp-small {
@@ -47,24 +85,9 @@
 			font-size: 1.5rem;
 		}
 	}
-	.buttons_plus {
-		display: flex;
-	}
 
 	.tp-items {
-		display: grid;
-		grid-template-columns: auto auto auto;
-		column-gap: 1rem;
-		.btn {
-			font-size: 2rem;
-		}
-		.time {
-			font-size: 2rem;
-		}
-		.tp-gap {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+		display: flex;
+		gap: 1rem;
 	}
 }

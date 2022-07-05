@@ -45,7 +45,7 @@ const Images = () => {
 	return (
 		<div>
 			<div className="ap-image-list">{items}</div>
-			<InputImage onChange={(data) => setImages((p) => [ ...p, data ])} />
+			<InputImage className="mt-s mb-l" onChange={(data) => setImages((p) => [ ...p, data ])} />
 		</div>
 	);
 };

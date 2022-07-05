@@ -1,5 +1,5 @@
 import FormWrapper from 'components/FormWrapper';
-import Stepper from 'components/Stepper';
+import Stepper from 'components/Stepper/Stepper';
 import Typography from 'components/Typography';
 import Container from 'Layout/Container';
 import React from 'react';
@@ -20,27 +20,12 @@ const Header = () => (
 	</Container>
 );
 
-const StepperItems = ({ step }) => {
-	const [ items, setItems ] = useState([
-		{ tittle: 'Desc', status: 'disabled' },
-		{ tittle: 'Availability', status: 'disabled' },
-		{ tittle: 'Photos', status: 'disabled' },
-		{ tittle: 'Stay', status: 'disabled' },
-		{ tittle: 'Review', status: 'disabled' }
-	]);
-
-	items.map((item, i) => {
-		if (i === step) {
-			item.status = 'active';
-		}
-		if (i <= step - 1) {
-			item.status = 'checkmark';
-		}
-	});
+const StepperItems = ({ currentStep }) => {
+	const data = [ 'Desc', 'Availability', 'Photos', 'Stay', 'Review' ];
 
 	return (
 		<Container bottom="small">
-			<Stepper data={items} size="small" />
+			<Stepper data={data} currentStep={currentStep} size="small" />
 			<Container top="small">
 				<Line />
 			</Container>
@@ -52,7 +37,17 @@ const AddPackage = () => {
 	const [ step, setStep ] = useState(0);
 
 	const content =
-		step === 0 ? <Desc /> : step === 1 ? <Availability /> : step === 2 ? <Images /> : step === 3 ? <Stays /> : '';
+		step === 0 ? (
+			<Desc onStatus={() => ''} />
+		) : step === 1 ? (
+			<Availability />
+		) : step === 2 ? (
+			<Images />
+		) : step === 3 ? (
+			<Stays />
+		) : (
+			''
+		);
 	const btnBack =
 		step > 0 ? (
 			<Button
@@ -80,7 +75,7 @@ const AddPackage = () => {
 					maxWidth="500px"
 				>
 					<Header />
-					<StepperItems step={step} />
+					<StepperItems currentStep={step} />
 					{content}
 					<Container bottom="small">
 						<Button

@@ -10,8 +10,10 @@ const sizes = {
 	large: 'tp-large '
 };
 
-const TimePicker = ({ size, onChange, value }) => {
-	const [ values, setValues ] = useState({ tpStart: '', tpEnd: '', status: 'invalid' });
+const TimePicker = ({ size, onChange, value, disabled, timeStart }) => {
+	const initialStart = timeStart ? timeStart : '';
+
+	const [ values, setValues ] = useState({ tpStart: initialStart, tpEnd: '', status: 'invalid' });
 
 	const className = 'time-picker ' + sizes[size];
 
@@ -49,7 +51,13 @@ const TimePicker = ({ size, onChange, value }) => {
 		<div className={className}>
 			<div className="tp-items">
 				<div className="tp-left">
-					<input type="time" name="tpStart" value={values.tpStart} onChange={handleChange} />
+					<input
+						type="time"
+						name="tpStart"
+						value={values.tpStart}
+						onChange={handleChange}
+						disabled={disabled}
+					/>
 				</div>
 				<div className="tp-center">-</div>
 				<div className="tp-right">
@@ -65,7 +73,8 @@ TimePicker.defaultProps = {
 };
 
 TimePicker.propTypes = {
-	className: PropTypes.string
+	className: PropTypes.string,
+	timeStart: PropTypes.string
 };
 
 export default TimePicker;

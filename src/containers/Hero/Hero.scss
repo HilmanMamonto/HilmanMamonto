@@ -3,19 +3,13 @@
 	justify-content: center;
 	position: relative;
 	margin: (160px + 30px) 120px 42px 120px;
-	figure {
-		width: 100%;
-		height: 360px;
-		border-radius: 15px;
-		position: relative;
-		overflow: hidden;
 
-		img {
-			width: 100%;
-			height: 100%;
-			border-radius: 14px;
-			border: none;
-			object-fit: cover;
-		}
+	img {
+		height: 360px;
+		width: 100%;
+		height: 100%;
+		border-radius: 14px;
+		border: none;
+		object-fit: cover;
 	}
 }

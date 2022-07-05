@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import Ta from 'components/Input/TA/Ta';
 import './styles.scss';
 import 'animate.css';
+import InputNumber from 'components/Input/InputNumber/InputNumber';
 
 const InputTittle = () => {
 	const [ value, setValue ] = useState();
@@ -34,15 +35,15 @@ const Budget = () => {
 
 const InputDesc = () => {
 	const [ value, setValue ] = useState();
-	return <TextArea min={20} label="Place Descrition" onChange={(values) => setValue(values.value)} />;
+	return <TextArea min={20} label="Place Descrition" value={value} onChange={(values) => setValue(values.value)} />;
 };
 
 const InputSchedule = () => {
-	const [ values, setValues ] = useState({ time: '', desc: '', status: '' });
-	const [ valid, setValid ] = useState({ time: 'invalid', desc: 'invalid' });
-
 	const getItinerary = JSON.parse(localStorage.getItem('itinerary'));
 	const [ storage, setStorage ] = useState(getItinerary);
+	const initialTime = storage ? storage[storage.length - 1].time.split(' - ')[1] : '';
+	const [ values, setValues ] = useState({ time: initialTime, desc: '', status: '' });
+	const [ valid, setValid ] = useState({ time: 'invalid', desc: 'invalid' });
 
 	const handleClick = () => {
 		const getItinerary = JSON.parse(localStorage.getItem('itinerary'));
@@ -52,8 +53,6 @@ const InputSchedule = () => {
 			localStorage.setItem('itinerary', JSON.stringify(result));
 			setStorage(result);
 			setValues({ time: '', desc: '', status: '' });
-		} else {
-			alert('Opps! please input itinerary correctly');
 		}
 	};
 
@@ -74,6 +73,10 @@ const InputSchedule = () => {
 	};
 
 	const validation = () => {
+		if (valid.time != 'valid' && valid.desc != 'valid') alert('Input itinerary time and schedule please');
+		if (valid.time != 'valid' && valid.desc === 'valid') alert('Input itinerary time please');
+		if (valid.time === 'valid' && valid.desc != 'valid') alert('Input schedule please');
+
 		return valid.time === 'valid' && valid.desc === 'valid' ? true : false;
 	};
 
@@ -83,7 +86,13 @@ const InputSchedule = () => {
 				<div className="mb-s">
 					<InputItinerary data={storage} onClickReset={handleReset} />
 				</div>
-				<TimePicker size="large" value={values.time} onChange={handleChangeTimePicker} />
+				<TimePicker
+					timeStart={initialTime}
+					size="large"
+					value={values.time}
+					onChange={handleChangeTimePicker}
+					disabled={storage && storage.length > 0}
+				/>
 			</div>
 			<div className="mb-s">
 				<TextArea
@@ -108,44 +117,80 @@ const InputSchedule = () => {
 
 const InputAmenites = () => {
 	const [ value, setValue ] = useState();
-	const data = [
-		{ name: 'sun screen' },
-		{ name: 'lunch' },
-		{ name: 'lunch' },
-		{ name: 'lunch' },
-		{ name: 'lunch' },
-		{ name: 'lunch' }
-	];
-	return <InputCheckBox label="Travel Amenities" data={data} />;
+	const data = [ 'sun screen', 'lunch', 'mineral water' ];
+	return <InputCheckBox label="Amenities" data={data} />;
 };
 
-const MoreThings = () => {
+const NotInclude = () => {
 	const [ value, setValue ] = useState();
+	const data = [ 'sun screen', 'lunch', 'mineral water' ];
+
+	return <InputCheckBox label="Not Include" data={data} />;
+};
+
+const MaxPax = () => {
+	const [ values, setValue ] = useState({ value: '', status: '' });
+
 	return (
-		<TextArea min={20} label="More Things Visitors Must To Know" onChange={(values) => setValue(values.value)} />
+		<InputNumber
+			max={5}
+			label="Max Pax"
+			value={values.value}
+			onChange={(values) => setValue({ value: values.value, status: values.status })}
+		/>
 	);
 };
 
-const Desc = () => {
+const MoreThings = () => {
+	const [ values, setValue ] = useState({ value: '', status: '' });
+
 	return (
-		<Container flex direction="column" className="animate__animated animate__fadeIn">
-			<Container bottom="small">
+		<TextArea
+			min={20}
+			label="More Things Visitors Must To Know"
+			value={values.value}
+			onChange={(values) => setValue({ value: values.value, status: values.status })}
+		/>
+	);
+};
+
+const Desc = ({ onStatus }) => {
+	const [ status, setStatus ] = useState({
+		tittle: false,
+		budget: false,
+		maxPax: false,
+		amenities: false,
+		notInclude: false,
+		description: false,
+		itinerary: false,
+		moreThings: false
+	});
+
+	return (
+		<div className="animate__animated animate__fadeIn">
+			<div className="mb-s">
 				<InputTittle />
-			</Container>
-			<Container bottom="small">
+			</div>
+			<div className="mb-s">
 				<Grid colGap={20}>
 					<Budget />
-					<InputAmenites />
+					<MaxPax />
 				</Grid>
-			</Container>
-			<Container bottom="medium">
+			</div>
+			<div className="mb-s">
+				<Grid colGap={20}>
+					<InputAmenites />
+					<NotInclude />
+				</Grid>
+			</div>
+			<div className="mb-m">
 				<InputDesc />
-			</Container>
+			</div>
 			<InputSchedule />
-			<Container bottom="medium">
+			<div className="mb-m">
 				<MoreThings />
-			</Container>
-		</Container>
+			</div>
+		</div>
 	);
 };
 

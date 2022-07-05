@@ -1,0 +1,17 @@
+@import '/src/assets/styles/styles.scss';
+.input-image-wrapper {
+	.input-image {
+		width: 100%;
+		cursor: pointer;
+		border: 1px dashed $ultralight-gray;
+		color: $gray;
+	}
+	input[type=file]::file-selector-button {
+		border: none;
+		padding: 1rem 1rem;
+		background-color: $primary;
+		color: $white;
+		cursor: pointer;
+		margin-right: 1.5rem;
+	}
+}
