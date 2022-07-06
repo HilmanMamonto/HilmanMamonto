@@ -201,9 +201,12 @@
 		}
 	}
 
-	&.disabeled {
-		color: $light-gray;
-		background-color: $light-gray;
-		border-color: $light-gray;
+	&:disabled {
+		opacity: .1;
+		cursor: not-allowed;
+	}
+
+	&:active {
+		filter: contrast(.8);
 	}
 }

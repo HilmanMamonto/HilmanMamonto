@@ -14,12 +14,15 @@ const sizes = {
 	undefined: ''
 };
 
-const IconStatus = ({ status }) => {
-	return status === 'success' ? <Icons variant="checkmark" /> : status === 'error' ? <Icons variant="warning" /> : '';
+const iconStatus = {
+	success: <Icons className="ml-xs" variant="checkmark" />,
+	warning: <Icons className="ml-xs" variant="warning" />
 };
 
-const InputBudget = ({ size, status }) => {
+const InputBudget = ({ size, max, required, onChange, value, label, min }) => {
 	const [ focus, setFocus ] = useState('');
+	const [ status, setStatus ] = useState('');
+
 	const refInput = useRef();
 	useEffect(() => {
 		if (refInput && focus === 'focus') {
@@ -27,12 +30,35 @@ const InputBudget = ({ size, status }) => {
 		}
 	});
 
+	const handleChange = (e) => {
+		if (e.target.value <= max) {
+			onChange(e.target.value);
+			checkValidity();
+		}
+	};
+
+	// set value to 1 if input value is blank when unfocus
+	useEffect(
+		() => {
+			if (!focus && value === '') onChange('0');
+		},
+		[ focus ]
+	);
+
+	const checkValidity = () => {
+		if (!refInput.current.checkValidity()) setStatus('warning');
+		if (refInput.current.checkValidity()) setStatus('success');
+	};
+
 	const container = 'input-budget ' + sizes[size];
 	const wrapper = 'ib-wrapper ' + status + ' ' + focus;
 
+	const labelDisplay =
+		label && required ? <label className="ib-label">{label} *</label> : label ? <label>{label}</label> : '';
+
 	return (
 		<div className={container}>
-			<label className="ib-label">Budget / Pax</label>
+			{labelDisplay}
 			<div className={wrapper}>
 				<div className="ib-icon-dollar">
 					<Icons variant="dollar" />
@@ -43,9 +69,13 @@ const InputBudget = ({ size, status }) => {
 					onKeyDown={blockInvalidChar}
 					onFocus={() => setFocus('focus')}
 					onBlur={() => setFocus('')}
-					required
+					max={max}
+					min={min}
+					required={required}
+					onChange={handleChange}
+					value={value}
 				/>
-				<IconStatus status={status} />
+				{iconStatus[status]}
 			</div>
 		</div>
 	);
@@ -53,12 +83,20 @@ const InputBudget = ({ size, status }) => {
 
 InputBudget.defaultProps = {
 	size: 'medium',
-	status: ''
+	status: '',
+	min: 1
 };
 
 InputBudget.propTypes = {
 	size: PropTypes.string,
-	status: PropTypes.string
+	status: PropTypes.string,
+	max: PropTypes.number,
+	min: PropTypes.number,
+	required: PropTypes.bool,
+	status: PropTypes.string,
+	value: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
+	label: PropTypes.string
 };
 
 export default InputBudget;

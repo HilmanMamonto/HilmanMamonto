@@ -13,14 +13,14 @@ const sizes = {
 	undefined: ''
 };
 
-const IconStatus = ({ status }) => {
-	return status === 'valid' ? <Icons variant="checkmark" /> : status === 'invalid' ? <Icons variant="warning" /> : '';
+const iconStatus = {
+	success: <Icons className="ml-xs" variant="checkmark" />,
+	warning: <Icons className="ml-xs" variant="warning" />
 };
 
-const InputText = ({ size, name, min, onChange }) => {
+const InputText = ({ size, name, minLength, onChange, required, label, value, maxLength }) => {
 	const [ focus, setFocus ] = useState('');
-	const [ values, setValues ] = useState({ value: '', status: '' });
-	const [ alert, setAlert ] = useState('');
+	const [ status, setStatus ] = useState('');
 
 	const refInput = useRef();
 	useEffect(() => {
@@ -29,54 +29,42 @@ const InputText = ({ size, name, min, onChange }) => {
 		}
 	});
 
-	useEffect(
-		() => {
-			onChange(values);
-		},
-		[ values ]
-	);
-
 	const handleChange = (e) => {
-		const val = e.target.value;
-		setValues((p) => ({ ...p, value: val }));
-		handleValid(val);
-		handleAlert(val);
+		if (e.target.value.length <= maxLength) {
+			onChange(e);
+			checkValidity();
+		}
 	};
 
-	const handleValid = (val) => {
-		let result = '';
-		if (val.length < min) result = 'invalid';
-		if (val.length > min) result = 'valid';
-		if (val.length === 0) result = '';
-		setValues((p) => ({ ...p, status: result }));
+	const checkValidity = () => {
+		if (!refInput.current.checkValidity()) setStatus('warning');
+		if (refInput.current.checkValidity()) setStatus('success');
 	};
 
-	const handleAlert = (val) => {
-		let result = '';
-		if (val.length != 0 && val.length < min) result = '(min ' + min + ' characters)';
-		setAlert(result);
-	};
-
-	const wrapper = 'it-wrapper ' + values.status + ' ' + focus;
+	const wrapper = 'it-wrapper ' + 'valid' + ' ' + focus;
 	const container = 'input-text ' + sizes[size];
 
 	return (
 		<div className={container}>
 			<label htmlFor={name} className="it-label">
-				Tittle <small>{alert}</small>
+				{label}
+				{required && <span> *</span>}
+				<small />
 			</label>
 			<div className={wrapper}>
 				<input
 					type="text"
 					ref={refInput}
+					onKeyUp={() => checkValidity}
 					onChange={handleChange}
 					onFocus={() => setFocus('focus')}
 					onBlur={() => setFocus('')}
-					value={values.value}
-					required
+					value={value}
+					required={required}
+					minLength={minLength}
 					name={name}
 				/>
-				<IconStatus status={values.status} />
+				{iconStatus[status]}
 			</div>
 		</div>
 	);
@@ -84,15 +72,18 @@ const InputText = ({ size, name, min, onChange }) => {
 
 InputText.defaultProps = {
 	size: 'medium',
-	min: 0
+	minLength: 1
 };
 
 InputText.propTypes = {
 	size: PropTypes.string,
 	status: PropTypes.string,
 	name: PropTypes.string,
-	min: PropTypes.number,
-	onChange: PropTypes.func.isRequired
+	minLength: PropTypes.number,
+	maxLength: PropTypes.number,
+	onChange: PropTypes.func.isRequired,
+	value: PropTypes.string.isRequired,
+	required: PropTypes.bool
 };
 
 export default InputText;

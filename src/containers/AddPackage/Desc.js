@@ -13,25 +13,9 @@ import Icons from 'components/Icons';
 import InputItinerary from 'components/DataDisplay/InputItinerary/InputItinerary';
 import { useRef } from 'react';
 import { useEffect } from 'react';
-import Ta from 'components/Input/TA/Ta';
 import './styles.scss';
 import 'animate.css';
 import InputNumber from 'components/Input/InputNumber/InputNumber';
-
-const InputTittle = () => {
-	const [ value, setValue ] = useState();
-
-	const handleChange = (data) => {
-		// console.log(data);
-	};
-
-	return <InputText label="Tittle" min={2} onChange={handleChange} />;
-};
-
-const Budget = () => {
-	const [ value, setValue ] = useState();
-	return <InputBudget />;
-};
 
 const InputDesc = () => {
 	const [ value, setValue ] = useState();
@@ -115,7 +99,7 @@ const InputSchedule = () => {
 	);
 };
 
-const InputAmenites = () => {
+const InputAmenities = () => {
 	const [ value, setValue ] = useState();
 	const data = [ 'sun screen', 'lunch', 'mineral water' ];
 	return <InputCheckBox label="Amenities" data={data} />;
@@ -155,31 +139,49 @@ const MoreThings = () => {
 };
 
 const Desc = ({ onStatus }) => {
-	const [ status, setStatus ] = useState({
-		tittle: false,
-		budget: false,
-		maxPax: false,
-		amenities: false,
-		notInclude: false,
-		description: false,
-		itinerary: false,
-		moreThings: false
-	});
+	const initial = { tittle: '', maxPax: '0', budget: '0' };
+	const [ values, setValues ] = useState(initial);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	};
 
 	return (
-		<div className="animate__animated animate__fadeIn">
+		<form className="animate__animated animate__fadeIn" onSubmit={handleSubmit}>
 			<div className="mb-s">
-				<InputTittle />
+				<InputText
+					label="Tittle"
+					minLength={5}
+					maxLength={10}
+					value={values.tittle}
+					onChange={(e) => setValues({ ...values, tittle: e.target.value })}
+					required
+				/>
 			</div>
 			<div className="mb-s">
 				<Grid colGap={20}>
-					<Budget />
-					<MaxPax />
+					<InputBudget
+						label="Budget / Pax"
+						max={999}
+						min={1}
+						required
+						onChange={(val) => setValues({ ...values, budget: val })}
+						value={values.budget}
+					/>
+					<InputNumber
+						max={6}
+						min={1}
+						label="Max Pax"
+						name="max pax"
+						required
+						value={values.maxPax}
+						onChange={(val) => setValues({ ...values, maxPax: val })}
+					/>
 				</Grid>
 			</div>
 			<div className="mb-s">
 				<Grid colGap={20}>
-					<InputAmenites />
+					<InputAmenities />
 					<NotInclude />
 				</Grid>
 			</div>
@@ -190,7 +192,16 @@ const Desc = ({ onStatus }) => {
 			<div className="mb-m">
 				<MoreThings />
 			</div>
-		</div>
+			<Button
+				fullWidth
+				buttonType="submit"
+				size="large"
+				shadow="medium"
+				justifyContent="space-betwen"
+				label="Add Desc and Next"
+				rightIcon={<Icons size="xlarge" variant="arrow-right-white-rounded" />}
+			/>
+		</form>
 	);
 };
 

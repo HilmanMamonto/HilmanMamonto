@@ -7,6 +7,10 @@
 		height: 100%;
 		border: none;
 		padding: 0;
+
+		&:-webkit-textfield-decoration-container {
+			cursor: pointer;
+		}
 	}
 
 	input[type=number]:focus {

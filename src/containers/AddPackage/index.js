@@ -34,22 +34,17 @@ const StepperItems = ({ currentStep }) => {
 };
 
 const AddPackage = () => {
-	const [ step, setStep ] = useState(0);
+	const [ current, setCurrent ] = useState(0);
 
-	const content =
-		step === 0 ? (
-			<Desc onStatus={() => ''} />
-		) : step === 1 ? (
-			<Availability />
-		) : step === 2 ? (
-			<Images />
-		) : step === 3 ? (
-			<Stays />
-		) : (
-			''
-		);
+	const contents = {
+		0: <Desc />,
+		1: <Availability />,
+		2: <Images />,
+		3: <Stays />
+	};
+
 	const btnBack =
-		step > 0 ? (
+		current > 0 ? (
 			<Button
 				fullWidth
 				variant="outline"
@@ -57,7 +52,7 @@ const AddPackage = () => {
 				justifyContent="space-betwen"
 				label="Back"
 				rightIcon={<Icons size="xlarge" variant="arrow-right-white-rounded" />}
-				onClick={() => setStep(step - 1)}
+				onClick={() => setCurrent(current - 1)}
 			/>
 		) : null;
 
@@ -75,19 +70,8 @@ const AddPackage = () => {
 					maxWidth="500px"
 				>
 					<Header />
-					<StepperItems currentStep={step} />
-					{content}
-					<Container bottom="small">
-						<Button
-							fullWidth
-							size="large"
-							shadow="medium"
-							justifyContent="space-betwen"
-							label="Add Desc and Next"
-							rightIcon={<Icons size="xlarge" variant="arrow-right-white-rounded" />}
-							onClick={() => setStep(step + 1)}
-						/>
-					</Container>
+					<StepperItems currentStep={current} />
+					{contents[current]}
 					{btnBack}
 				</Container>
 			</FormWrapper>

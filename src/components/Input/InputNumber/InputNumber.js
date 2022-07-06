@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
+import { blockInvalidChar } from './blockInvalidChar';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { blockInvalidChar } from './blockInvalidChar';
+import Icons from 'components/Icons';
 
 const sizes = {
 	small: 'inum-small ',
@@ -12,37 +13,69 @@ const sizes = {
 	undefined: ''
 };
 
-const InputNumber = ({ onChange, label, size, max, value }) => {
-	const [ values, setValues ] = useState({ value: 1, status: 'invalid' });
+const iconStatus = {
+	success: <Icons className="ml-xs" variant="checkmark" />,
+	warning: <Icons className="ml-xs" variant="warning" />
+};
+
+const InputNumber = ({ onChange, label, size, min, max, value, name, required }) => {
+	const [ focus, setFocus ] = useState('');
+	const [ status, setStatus ] = useState('');
+	const refInput = useRef();
+	const classContainer = 'input-number ' + sizes[size];
 
 	useEffect(
 		() => {
-			onChange(values);
+			if (refInput && focus === 'focus') {
+				refInput.current.focus();
+			}
 		},
-		[ values ]
+		[ focus ]
 	);
-
-	const labelDisplay = label ? (
-		<label className="inum-label">
-			{label} <small>(max {max} person )</small>
-		</label>
-	) : null;
-	const classContainer = 'input-number ' + sizes[size];
-
 	const handleChange = (e) => {
-		if (e.target.value > 0 && e.target.value <= max) {
-			setValues((p) => ({ ...p, value: e.target.value }));
-		}
-		if (e.target.value > 0) {
-			setValues((p) => ({ ...p, status: 'valid' }));
+		if (e.target.value <= max) {
+			onChange(e.target.value);
+			validity();
 		}
 	};
 
+	const validity = (val) => {
+		if (!refInput.current.checkValidity()) setStatus('warning');
+		if (refInput.current.checkValidity()) setStatus('success');
+	};
+
+	// set value to 1 if input value is blank when unfocus
+	useEffect(
+		() => {
+			if (!focus && value === '') onChange('0');
+		},
+		[ focus ]
+	);
+
 	return (
 		<div className={classContainer}>
-			{labelDisplay}
+			{label && (
+				<label className="inum-label">
+					{label}
+					{required && <span> *</span>}
+					<small>(max {max} person )</small>
+				</label>
+			)}
 			<div className="inum-wrapper">
-				<input type="number" onKeyDown={blockInvalidChar} value={value} onChange={handleChange} />
+				<input
+					ref={refInput}
+					type="number"
+					onKeyDown={blockInvalidChar}
+					required={required}
+					onFocus={() => setFocus('focus')}
+					onBlur={() => setFocus('')}
+					min={min}
+					max={max}
+					name={name}
+					value={value}
+					onChange={handleChange}
+				/>
+				{iconStatus[status]}
 			</div>
 		</div>
 	);
@@ -50,14 +83,19 @@ const InputNumber = ({ onChange, label, size, max, value }) => {
 
 InputNumber.defaultProps = {
 	size: 'medium',
-	max: 5
+	min: 1
 };
 
 InputNumber.propTypes = {
-	label: PropTypes.string,
-	onChange: PropTypes.func.isRequired,
 	size: PropTypes.string,
-	max: PropTypes.number
+	status: PropTypes.string,
+	max: PropTypes.number,
+	min: PropTypes.number,
+	required: PropTypes.bool,
+	status: PropTypes.string,
+	value: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
+	label: PropTypes.string
 };
 
 export default InputNumber;

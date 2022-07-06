@@ -7,6 +7,9 @@
 	input[type=checkbox] {
 		background-color: $primary;
 		cursor: pointer;
+		&:checked {
+			padding: 2rem;
+		}
 	}
 
 	.icb-label {

@@ -60,18 +60,18 @@ const Button = ({
 	color,
 	leftIcon,
 	rightIcon,
-	disabeled,
+	disabled,
 	fullWidth,
 	loading,
 	justifyContent,
-	loadingIndicator
+	loadingIndicator,
+	buttonType
 }) => {
 	const styles = {
 		width: fullWidth ? '100%' : ''
 	};
-	const disability = disabeled ? 'disabeled ' : '';
 
-	const className = 'btn-wrapper ' + variants[variant] + sizes[size] + shadows[shadow] + disability + colors[color];
+	const className = 'btn-wrapper ' + variants[variant] + sizes[size] + shadows[shadow] + colors[color];
 	const loadingIcLeft = (
 		<div className="left-icon">
 			<Loading size={loadingSizes[size]} color="white" />
@@ -93,7 +93,7 @@ const Button = ({
 
 	const elements = {
 		a: (
-			<a style={styles} className={className} href={href} onClick={onClick} disabeled={disabeled}>
+			<a style={styles} className={className} href={href} onClick={onClick} disabled={disabled}>
 				<div className={itemsClass}>
 					{leftIc}
 					<span>{labelItem}</span>
@@ -102,7 +102,7 @@ const Button = ({
 			</a>
 		),
 		button: (
-			<button style={styles} className={className} disabled={disabeled} onClick={onClick}>
+			<button type={buttonType} style={styles} className={className} onClick={onClick} disabled={disabled}>
 				<div className={itemsClass}>
 					{leftIc}
 					<span>{labelItem}</span>
@@ -120,7 +120,8 @@ Button.defaultProps = {
 	size: 'medium',
 	as: 'button',
 	label: 'button',
-	color: 'primary'
+	color: 'primary',
+	buttonType: 'button'
 };
 
 Button.propTypes = {
@@ -135,7 +136,8 @@ Button.propTypes = {
 	justifyContent: PropTypes.string,
 	leftIcon: PropTypes.object,
 	rightIcon: PropTypes.object,
-	loadingIndicator: PropTypes.string
+	loadingIndicator: PropTypes.string,
+	buttonType: PropTypes.string
 };
 
 export default Button;
