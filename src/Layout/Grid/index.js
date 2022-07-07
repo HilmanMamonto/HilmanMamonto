@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
-const Grid = ({ children, direction, colGap, rowGap, itemWidth, templateRows, templateColumns }) => {
+const Grid = ({ children, direction, colGap, rowGap, itemWidth, templateRows, className, templateColumns }) => {
 	const length = children.length;
 	const cGap = colGap;
 	const rGap = rowGap;
@@ -17,7 +17,7 @@ const Grid = ({ children, direction, colGap, rowGap, itemWidth, templateRows, te
 	};
 
 	return (
-		<div className="grid" style={styles}>
+		<div className={'grid ' + className} style={styles}>
 			{children}
 		</div>
 	);
@@ -37,6 +37,7 @@ Grid.defaultProps = {
 Grid.propTypes = {
 	colGap: PropTypes.number,
 	rowGap: PropTypes.number,
+	itemWidth: PropTypes.string,
 	itemWidth: PropTypes.string,
 	direction: PropTypes.string,
 	templateColumns: PropTypes.array,

@@ -32,33 +32,23 @@ const InputNumber = ({ onChange, label, size, min, max, value, name, required })
 		},
 		[ focus ]
 	);
+
 	const handleChange = (e) => {
-		if (e.target.value <= max) {
-			onChange(e.target.value);
-			validity();
-		}
+		onChange(e.target.value);
+		validity();
 	};
 
-	const validity = (val) => {
+	const validity = () => {
 		if (!refInput.current.checkValidity()) setStatus('warning');
 		if (refInput.current.checkValidity()) setStatus('success');
 	};
-
-	// set value to 1 if input value is blank when unfocus
-	useEffect(
-		() => {
-			if (!focus && value === '') onChange('0');
-		},
-		[ focus ]
-	);
 
 	return (
 		<div className={classContainer}>
 			{label && (
 				<label className="inum-label">
 					{label}
-					{required && <span> *</span>}
-					<small>(max {max} person )</small>
+					{required && <span> * </span>}
 				</label>
 			)}
 			<div className="inum-wrapper">
@@ -73,6 +63,7 @@ const InputNumber = ({ onChange, label, size, min, max, value, name, required })
 					max={max}
 					name={name}
 					value={value}
+					onSubmit={() => console.log('submited')}
 					onChange={handleChange}
 				/>
 				{iconStatus[status]}

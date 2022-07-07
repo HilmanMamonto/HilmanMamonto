@@ -48,8 +48,7 @@ const InputText = ({ size, name, minLength, onChange, required, label, value, ma
 		<div className={container}>
 			<label htmlFor={name} className="it-label">
 				{label}
-				{required && <span> *</span>}
-				<small />
+				{required && <span> * </span>}
 			</label>
 			<div className={wrapper}>
 				<input

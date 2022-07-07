@@ -59,21 +59,10 @@ const AddPackage = () => {
 	return (
 		<div className="add-package">
 			<FormWrapper>
-				<Container
-					height="auto"
-					flex
-					padding={'1.5rem 1rem'}
-					direction="column"
-					left="small"
-					right="small"
-					borderRadius={14}
-					maxWidth="500px"
-				>
-					<Header />
-					<StepperItems currentStep={current} />
-					{contents[current]}
-					{btnBack}
-				</Container>
+				<Header />
+				<StepperItems currentStep={current} />
+				{contents[current]}
+				{btnBack}
 			</FormWrapper>
 		</div>
 	);

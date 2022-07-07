@@ -50,6 +50,7 @@ const justify = {
 };
 
 const Button = ({
+	className,
 	variant,
 	label,
 	as,
@@ -71,7 +72,8 @@ const Button = ({
 		width: fullWidth ? '100%' : ''
 	};
 
-	const className = 'btn-wrapper ' + variants[variant] + sizes[size] + shadows[shadow] + colors[color];
+	const classContainer =
+		'btn-wrapper ' + variants[variant] + sizes[size] + shadows[shadow] + colors[color] + className;
 	const loadingIcLeft = (
 		<div className="left-icon">
 			<Loading size={loadingSizes[size]} color="white" />
@@ -93,7 +95,7 @@ const Button = ({
 
 	const elements = {
 		a: (
-			<a style={styles} className={className} href={href} onClick={onClick} disabled={disabled}>
+			<a style={styles} className={classContainer} href={href} onClick={onClick} disabled={disabled}>
 				<div className={itemsClass}>
 					{leftIc}
 					<span>{labelItem}</span>
@@ -102,7 +104,7 @@ const Button = ({
 			</a>
 		),
 		button: (
-			<button type={buttonType} style={styles} className={className} onClick={onClick} disabled={disabled}>
+			<button type={buttonType} style={styles} className={classContainer} onClick={onClick} disabled={disabled}>
 				<div className={itemsClass}>
 					{leftIc}
 					<span>{labelItem}</span>

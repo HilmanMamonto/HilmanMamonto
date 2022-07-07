@@ -1,0 +1,62 @@
+@import '/src/assets/styles/styles.scss';
+
+.input-control {
+	display: block;
+
+	small {
+		color: $error;
+		font-size: .75rem;
+	}
+	.wrapper {
+		display: flex;
+		align-items: center;
+		gap: .5rem;
+		border: 1px solid $light-gray;
+		padding: .5rem .75rem;
+		border-radius: 4px;
+		&.invalid {
+			border-color: $error;
+		}
+		&.valid {
+			border-color: $light-gray;
+		}
+		&.focus {
+			border-color: transparent;
+			outline: 2px solid $gray;
+		}
+	}
+
+	label {
+		display: flex;
+		align-items: center;
+		gap: .25rem;
+		margin-bottom: .25rem;
+	}
+
+	input {
+		display: block;
+		width: 100%;
+		border: none;
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.icon-dollar {
+		padding-right: inherit;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			display: inline-block;
+			border-right: 1px solid $light-gray;
+			height: 80%;
+		}
+		* {
+			height: 1rem;
+		}
+	}
+}

@@ -8,6 +8,7 @@ import Icon from 'components/Icons';
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
+import Button from 'components/NewButton/Button';
 
 const sizes = {
 	small: 'icb-small ',
@@ -19,11 +20,7 @@ const sizes = {
 const InputCheckBox = ({ size, data, label }) => {
 	const [ toggle, setToggle ] = useState(false);
 
-	const initial = data.map((item) => {
-		const obj = new Object({ name: item, status: '' });
-		return obj;
-	});
-	const [ values, setValues ] = useState(initial);
+	const [ values, setValues ] = useState('');
 
 	const ref = useRef();
 
@@ -43,27 +40,15 @@ const InputCheckBox = ({ size, data, label }) => {
 		return () => document.removeEventListener('click', handleClickOutside);
 	}, []);
 
-	const handleCheck = (e) => {
-		const checked = e.target.checked ? 'checked' : '';
-		const newValues = values.map((item) => {
-			if (e.target.value === item.name) {
-				return { name: item.name, status: checked };
-			} else {
-				return item;
-			}
-		});
-		setValues(newValues);
-	};
-
-	const items = values.map((item, i) => {
+	const items = data.map((item, i) => {
 		return (
 			<div className="item" key={'option-' + i}>
-				<span>{item.name}</span>
-				<input type="checkbox" value={item.name} onChange={handleCheck} />
+				<span>{item}</span>
+				<input name={item} type="checkbox" value={item} />
 			</div>
 		);
 	});
-	const numChecked = values.filter((item) => item.status === 'checked').length;
+	const numChecked = '';
 	const selected =
 		numChecked === 0
 			? 'select items'
@@ -80,7 +65,10 @@ const InputCheckBox = ({ size, data, label }) => {
 					</div>
 				</div>
 			</div>
-			<div className={itemsClassName}>{items}</div>
+			<div className={itemsClassName}>
+				{items}
+				<Button className="mt-xs" shadow="small" fullWidth label="sellect all" justifyContent="center" />
+			</div>
 		</div>
 	);
 };

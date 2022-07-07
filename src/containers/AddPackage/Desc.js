@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import './styles.scss';
 import 'animate.css';
 import InputNumber from 'components/Input/InputNumber/InputNumber';
+import { Input } from 'components/Input/Input/Input';
 
 const InputDesc = () => {
 	const [ value, setValue ] = useState();
@@ -112,19 +113,6 @@ const NotInclude = () => {
 	return <InputCheckBox label="Not Include" data={data} />;
 };
 
-const MaxPax = () => {
-	const [ values, setValue ] = useState({ value: '', status: '' });
-
-	return (
-		<InputNumber
-			max={5}
-			label="Max Pax"
-			value={values.value}
-			onChange={(values) => setValue({ value: values.value, status: values.status })}
-		/>
-	);
-};
-
 const MoreThings = () => {
 	const [ values, setValue ] = useState({ value: '', status: '' });
 
@@ -139,7 +127,7 @@ const MoreThings = () => {
 };
 
 const Desc = ({ onStatus }) => {
-	const initial = { tittle: '', maxPax: '0', budget: '0' };
+	const initial = { tittle: '', maxPax: '', budget: '' };
 	const [ values, setValues ] = useState(initial);
 
 	const handleSubmit = (e) => {
@@ -148,43 +136,23 @@ const Desc = ({ onStatus }) => {
 
 	return (
 		<form className="animate__animated animate__fadeIn" onSubmit={handleSubmit}>
-			<div className="mb-s">
-				<InputText
-					label="Tittle"
-					minLength={5}
-					maxLength={10}
-					value={values.tittle}
-					onChange={(e) => setValues({ ...values, tittle: e.target.value })}
+			<Input type="text" className="mb-s" label="Tittle" required max={100} name="tittle" onChange={() => ''} />
+			<Grid className="mb-s" colGap={20}>
+				<Input
+					leftIcon="budget"
+					type="number"
 					required
+					label={'Tittle'}
+					max={100}
+					name="tittle"
+					onChange={() => ''}
 				/>
-			</div>
-			<div className="mb-s">
-				<Grid colGap={20}>
-					<InputBudget
-						label="Budget / Pax"
-						max={999}
-						min={1}
-						required
-						onChange={(val) => setValues({ ...values, budget: val })}
-						value={values.budget}
-					/>
-					<InputNumber
-						max={6}
-						min={1}
-						label="Max Pax"
-						name="max pax"
-						required
-						value={values.maxPax}
-						onChange={(val) => setValues({ ...values, maxPax: val })}
-					/>
-				</Grid>
-			</div>
-			<div className="mb-s">
-				<Grid colGap={20}>
-					<InputAmenities />
-					<NotInclude />
-				</Grid>
-			</div>
+				<Input required label="Max Pax" type="number" max={6} name="tittle" onChange={() => ''} />
+			</Grid>
+			<Grid className="mb-s" colGap={20}>
+				<InputAmenities />
+				<NotInclude />
+			</Grid>
 			<div className="mb-m">
 				<InputDesc />
 			</div>
