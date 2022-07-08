@@ -1,0 +1,22 @@
+$primary: #141414;
+$secondary: #ef3636;
+$gray: #373737;
+$light-gray: #909090;
+$ultralight-gray: #d3d3d3;
+$white: #fefefe;
+$success: #27ae60;
+$error: #e95e5e;
+
+$colors: (
+
+	(
+		"primary": $blue,
+		"secondary": $indigo,
+		"gray": $purple,
+		"light-gray": $pink,
+		"ultralight-gray": $ultralight-gray,
+		"white": $white,
+		"success": $success,
+		"error": $error
+	)
+);

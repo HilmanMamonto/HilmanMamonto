@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
 import Loading from 'components/Loading/Loading';
 
 const variants = {
@@ -20,16 +19,16 @@ const shadows = {
 };
 
 const sizes = {
-	xsmall: 'btn-xsmall ',
-	small: 'btn-small ',
-	medium: 'btn-medium ',
-	large: 'btn-large ',
+	xsmall: 'btn-xs ',
+	small: 'btn-s ',
+	medium: 'btn-m ',
+	large: 'btn-l ',
 	'': ''
 };
 
 const colors = {
-	primary: 'btn-black ',
-	secondary: 'btn-red ',
+	primary: 'btn-primary ',
+	secondary: 'btn-secondary ',
 	gray: 'btn-gray ',
 	lightGray: 'btn-light-gray',
 	ultraLightGray: 'btn-ultralight-gray',
@@ -44,8 +43,8 @@ const loadingSizes = {
 };
 
 const justify = {
-	center: 'justify-content-center ',
-	'space-betwen': 'justify-content-space-betwen ',
+	center: 'center ',
+	'space-betwen': 'space-betwen ',
 	undefined: ''
 };
 
@@ -72,8 +71,7 @@ const Button = ({
 		width: fullWidth ? '100%' : ''
 	};
 
-	const classContainer =
-		'btn-wrapper ' + variants[variant] + sizes[size] + shadows[shadow] + colors[color] + className;
+	const classContainer = 'btn ' + variants[variant] + sizes[size] + shadows[shadow] + colors[color] + className;
 	const loadingIcLeft = (
 		<div className="left-icon">
 			<Loading size={loadingSizes[size]} color="white" />
@@ -123,7 +121,8 @@ Button.defaultProps = {
 	as: 'button',
 	label: 'button',
 	color: 'primary',
-	buttonType: 'button'
+	buttonType: 'button',
+	className : ''
 };
 
 Button.propTypes = {

@@ -1,0 +1,4 @@
+// shadows
+@mixin shadows ($size , $color) {
+	box-shadow: $size $color;
+}

@@ -26,7 +26,13 @@ const types = {
 };
 
 const patterns = {
-	email: ''
+	email: '',
+	text: /[a-z\d]/i,
+	number: 'a'
+};
+
+const patterEgs = {
+	text: 'Text must be started width A-Z '
 };
 
 export const Input = ({ leftIcon, className, type, label, name, min, placeholder, max, onChange, value, required }) => {
@@ -34,20 +40,27 @@ export const Input = ({ leftIcon, className, type, label, name, min, placeholder
 	const [ validate, setValidate ] = useState('');
 	const [ errInfo, setErrInfo ] = useState('');
 
+	const showValidity = (valid, info) => {
+		setValidate(valid);
+		setErrInfo(info);
+		console.log(info);
+	};
+
 	const handleChange = (e) => {
 		const { value } = e.target;
 		const { valid, valueMissing, tooShort, tooLong, rangeOverflow, rangeUnderflow } = e.target.validity;
 
-		if (valid) setValidate('valid');
-		if (valid) setErrInfo('');
-		if (value === '') setValidate('');
-		if (!valid) setValidate('invalid');
+		// all
+		if (valid) showValidity('valid');
+		if (!valid) showValidity('invalid');
 
-		if (valueMissing) setErrInfo('is required');
-		if (valueMissing) setValidate('invalid');
+		//value missing
+		if (valueMissing) showValidity('invalid', 'Invalid, this field must to fill');
+
 		// for type equal with text
-		if (tooShort) setErrInfo('must more than ' + min + ' characters');
-		if (tooLong) setErrInfo('too long, ' + max + ' characters');
+		if (tooShort) showValidity('valid', 'must more than ' + min + ' characters');
+		if (tooLong) showValidity('valid', 'too long, ' + max + ' characters');
+
 		if (type === 'text' && value.length >= max) {
 			setErrInfo('maximum ' + max + ' characters');
 			const to = setTimeout(() => {
@@ -55,17 +68,18 @@ export const Input = ({ leftIcon, className, type, label, name, min, placeholder
 				clearTimeout(to);
 			}, 2000);
 		}
-
 		// for type equal with number
-		if (rangeUnderflow) setErrInfo('minimum value is ' + min);
-		if (rangeOverflow) setErrInfo('maximum value is ' + max);
+		if (rangeUnderflow) showValidity('invalid', 'Invalid, minimum value is ' + min);
+		if (rangeOverflow) showValidity('invalid', 'Invalid, maximum value is ' + max);
 
 		onChange(e);
 	};
 
 	const handleInvalid = (e) => {
-		const eValidity = e.target.validity;
-		if (eValidity.valueMissing) setErrInfo('is required');
+		const { valueMissing, patternMismatch } = e.target.validity;
+		if (valueMissing) setErrInfo('Invalid, this field must to fill');
+		// patterns
+		if (patternMismatch) setErrInfo('invalid pattern e.g. ' + patterEgs[type]);
 		setValidate('invalid');
 	};
 
@@ -74,8 +88,7 @@ export const Input = ({ leftIcon, className, type, label, name, min, placeholder
 	return (
 		<div className={'input-control ' + className}>
 			<label htmlFor={name}>
-				{label} {required && '*'}
-				{errInfo && <small>{errInfo}</small>}
+				{label} {required ? '*' : '(optional)'}
 			</label>
 			<div className={'wrapper ' + focus + ' ' + validate}>
 				{leftIcons[leftIcon]}
@@ -91,14 +104,20 @@ export const Input = ({ leftIcon, className, type, label, name, min, placeholder
 					maxLength={max}
 					min={min}
 					max={max}
+					// pattern={patterns[type]}
 					placeholder={placeholder}
 					onChange={handleChange}
 					required={required}
 				/>
 				{iconStatus[validate]}
 			</div>
+			{errInfo && <small>{errInfo}</small>}
 		</div>
 	);
+};
+
+Input.defaultProps = {
+	min: 0
 };
 
 Input.propTypes = {

@@ -1,0 +1,9 @@
+// shadows
+
+.shadow-primary-xs {
+	@include shadow($shadow-xs, $box-shadow-primary);
+}
+
+.shadow-primary-s {
+	@include shadow($shadow-s, $box-shadow-primary);
+}

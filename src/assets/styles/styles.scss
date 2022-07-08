@@ -1,8 +1,15 @@
+// variabels
+@import 'variables';
 @import 'variabels/colors';
 @import 'variabels/shadows';
 @import 'classes/flex';
 @import 'classes/margins';
 @import 'classes/shadows';
 @import 'classes/text';
+@import 'mixins/shadows';
+
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+// buttons
+@import 'buttons';

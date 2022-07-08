@@ -4,6 +4,8 @@
 	display: block;
 
 	small {
+		margin-top: .25rem;
+		display: block;
 		color: $error;
 		font-size: .75rem;
 	}
@@ -11,14 +13,14 @@
 		display: flex;
 		align-items: center;
 		gap: .5rem;
-		border: 1px solid $light-gray;
+		border: 1px solid $ultralight-gray;
 		padding: .5rem .75rem;
 		border-radius: 4px;
 		&.invalid {
 			border-color: $error;
 		}
 		&.valid {
-			border-color: $light-gray;
+			border-color: $ultralight-gray;
 		}
 		&.focus {
 			border-color: transparent;

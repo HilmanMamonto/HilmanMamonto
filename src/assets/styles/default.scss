@@ -27,9 +27,3 @@ h6 {
 li {
 	list-style-type: none;
 }
-
-input {
-	&:-internal-autofill-selected {
-		// background-color: red !important;
-	}
-}
