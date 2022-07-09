@@ -46,7 +46,7 @@ const TextArea = ({
     }
   });
 
-  const container = "input-text-area " + sizes[size] + focus + className;
+  const container = "input-text-area " + sizes[size] + focus + " " + className;
   const wrapClass = "ita-wrapper " + focus;
 
   const statusClass = "ita-status-alert " + values.status;

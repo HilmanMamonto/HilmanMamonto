@@ -10,6 +10,7 @@ import InputItinerary from "components/DataDisplay/InputItinerary/InputItinerary
 import "./styles.scss";
 import "animate.css";
 import { Input } from "components/Input/Input/Input";
+import { ANIMATE_FADEIN } from "assets/animate/animate";
 
 const InputSchedule = () => {
   const getItinerary = JSON.parse(localStorage.getItem("itinerary"));
@@ -102,14 +103,6 @@ const InputSchedule = () => {
 
 const dataAmenities = ["sun screen", "lunch", "mineral water"];
 
-const ContainerTwoItems = ({ children }) => {
-  return (
-    <div className="container mb-3">
-      <div className="row gap-3">{children}</div>
-    </div>
-  );
-};
-
 const Desc = () => {
   const initial = { tittle: "", maxPax: "", budget: "" };
   const [values, setValues] = useState(initial);
@@ -119,50 +112,42 @@ const Desc = () => {
   };
 
   return (
-    <form className="animate__animated animate__fadeIn" onSubmit={handleSubmit}>
+    <form className={ANIMATE_FADEIN} onSubmit={handleSubmit}>
       <Input
         type="text"
         className="mb-3"
         label="Tittle"
         required
-        max={100}
+        minLength={20}
+        maxLength={100}
         name="tittle"
         onChange={() => ""}
       />
-      <ContainerTwoItems>
+      <div className="d-flex gap-3 mb-3">
         <Input
-          className="col p-0"
           leftIcon="budget"
           type="number"
           required
+          min={1}
           label="Budget / Pax"
           max={1000}
           name="tittle"
           onChange={() => ""}
         />
         <Input
-          className="col p-0"
-          required
           label="Max Pax"
           type="number"
           min={1}
           max={6}
           name="tittle"
           onChange={() => ""}
+          required
         />
-      </ContainerTwoItems>
-      <ContainerTwoItems>
-        <InputCheckBox
-          className="col p-0"
-          label="Amenities"
-          data={dataAmenities}
-        />
-        <InputCheckBox
-          className="col p-0"
-          label="Amenities"
-          data={dataAmenities}
-        />
-      </ContainerTwoItems>
+      </div>
+      <div className="d-flex gap-3 mb-3">
+        <InputCheckBox label="Amenities" data={dataAmenities} />
+        <InputCheckBox label="Amenities" data={dataAmenities} />
+      </div>
       <TextArea
         className="mb-3"
         min={20}
@@ -185,7 +170,7 @@ const Desc = () => {
         shadow="medium"
         justifyContent="space-betwen"
         label="Add Desc and Next"
-        rightIcon={<Icons size="xlarge" variant="arrow-right-white-rounded" />}
+        rightIcon={"btn-rounded"}
       />
     </form>
   );

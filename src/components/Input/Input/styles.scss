@@ -1,64 +1,65 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/styles.scss";
 
 .input-control {
-	display: block;
+  display: block;
+  width: 100%;
 
-	small {
-		margin-top: .25rem;
-		display: block;
-		color: $error;
-		font-size: .75rem;
-	}
-	.wrapper {
-		display: flex;
-		align-items: center;
-		gap: .5rem;
-		border: 1px solid $ultralight-gray;
-		padding: .5rem .75rem;
-		border-radius: 4px;
-		&.invalid {
-			border-color: $error;
-		}
-		&.valid {
-			border-color: $ultralight-gray;
-		}
-		&.focus {
-			border-color: transparent;
-			outline: 2px solid $gray;
-		}
-	}
+  small {
+    margin-top: 0.25rem;
+    display: block;
+    color: $error;
+    font-size: 0.75rem;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid $ultralight-gray;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    &.invalid {
+      border-color: $error;
+    }
+    &.valid {
+      border-color: $ultralight-gray;
+    }
+    &.focus {
+      border-color: transparent;
+      outline: 2px solid $gray;
+    }
+  }
 
-	label {
-		display: flex;
-		align-items: center;
-		gap: .25rem;
-		margin-bottom: .25rem;
-	}
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
 
-	input {
-		display: block;
-		width: 100%;
-		border: none;
-		&:focus {
-			outline: none;
-		}
-	}
+  input {
+    display: block;
+    width: 100%;
+    border: none;
+    &:focus {
+      outline: none;
+    }
+  }
 
-	.icon-dollar {
-		padding-right: inherit;
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		&::after {
-			content: '';
-			position: absolute;
-			right: 0;
-			display: inline-block;
-			border-right: 1px solid $light-gray;
-			height: 80%;
-		}
-		* {
-			height: 1rem;
-		}
-	}
+  .icon-dollar {
+    padding-right: inherit;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      border-right: 1px solid $light-gray;
+      height: 80%;
+    }
+    * {
+      height: 1rem;
+    }
+  }
 }
