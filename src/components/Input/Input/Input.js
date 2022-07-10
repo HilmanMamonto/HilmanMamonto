@@ -7,7 +7,7 @@ import { blockInvalidChar } from "./blockInvalidChar";
 import { ANIMATE_BOUNCEIN } from "assets/animate/animate";
 import { useError } from "components/utility/inputErrorInfo";
 
-const iconStatus = {
+const iconMessage = {
   valid: <Icons className={ANIMATE_BOUNCEIN} variant="checkmark" />,
   invalid: <Icons className={ANIMATE_BOUNCEIN} variant="warning" />,
 };
@@ -18,12 +18,6 @@ const leftIcons = {
       <Icons variant="dollar" />
     </div>
   ),
-};
-
-const types = {
-  text: "text",
-  number: "number",
-  undefined: "text",
 };
 
 export const Input = ({
@@ -42,25 +36,35 @@ export const Input = ({
   required,
 }) => {
   const [focus, setFocus] = useState("");
-  const [errInfo, setErrInfo] = useError();
+  const [errInput, setErrInput] = useError();
 
   const handleChange = (e) => {
-    setErrInfo(e);
+    setErrInput(e);
     onChange(e);
   };
 
   const invalidChar = type === "number" ? blockInvalidChar : null;
 
+  const classes = {
+    container: "input-control " + className,
+    wrapper:
+      "wrapper border d-flex py-2 px-3 align-items-center gap-2 rounded " +
+      focus +
+      " " +
+      errInput.validity,
+  };
+
   return (
-    <div className={"input-control " + className}>
-      <label htmlFor={name}>
-        {label} {required ? "*" : "(optional)"}
+    <div className={classes.container}>
+      <label className="mb-1" htmlFor={name}>
+        {label} {required && "*"}
       </label>
-      <div className={"wrapper " + focus + " " + errInfo.validity}>
+      <div className={classes.wrapper}>
         {leftIcons[leftIcon]}
         <input
           onKeyDown={invalidChar}
-          type={types[type]}
+          onInvalid={(e) => setErrInput(e)}
+          type={type}
           onFocus={() => setFocus("focus")}
           onBlur={() => setFocus("")}
           name={name}
@@ -73,9 +77,9 @@ export const Input = ({
           onChange={handleChange}
           required={required}
         />
-        {iconStatus[errInfo.validity]}
+        {iconMessage[errInput.validity]}
       </div>
-      {errInfo && <small>{errInfo.info}</small>}
+      {errInput && <small>{errInput.message}</small>}
     </div>
   );
 };

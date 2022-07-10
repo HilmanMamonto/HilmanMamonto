@@ -1,101 +1,85 @@
 import InputCheckBox from "components/Input/CheckBox/CheckBox";
-
 import TextArea from "components/Input/TextArea/TextArea";
 import TimePicker from "components/TimePicker/TimePicker";
 import React from "react";
 import { useState } from "react";
 import Button from "components/NewButton/Button";
-import Icons from "components/Icons";
 import InputItinerary from "components/DataDisplay/InputItinerary/InputItinerary";
 import "./styles.scss";
 import "animate.css";
 import { Input } from "components/Input/Input/Input";
 import { ANIMATE_FADEIN } from "assets/animate/animate";
+import { useEffect } from "react";
+import { useDifferenceTime } from "components/utility/diferenceTime";
 
-const InputSchedule = () => {
+const InputSchedule = ({ onChange }) => {
+  const [difTime, setDifTime] = useDifferenceTime();
+
   const getItinerary = JSON.parse(localStorage.getItem("itinerary"));
-  const [storage, setStorage] = useState(getItinerary);
-  const initialTime = storage
-    ? storage[storage.length - 1].time.split(" - ")[1]
-    : "";
-  const [values, setValues] = useState({
-    time: initialTime,
-    desc: "",
-    status: "",
-  });
-  const [valid, setValid] = useState({ time: "invalid", desc: "invalid" });
+  const initial = {
+    values: {
+      schedule: "",
+      timeStart: "",
+      timeEnd: "",
+      hoursCount: 0,
+    },
+    data: [],
+  };
 
-  const handleClick = () => {
-    const getItinerary = JSON.parse(localStorage.getItem("itinerary"));
-    const result =
-      getItinerary && getItinerary.constructor === Array
-        ? [...getItinerary, values]
-        : [values];
+  const [data, setData] = useState(initial.data);
+  const [values, setValues] = useState(initial.values);
 
-    if (validation()) {
-      localStorage.setItem("itinerary", JSON.stringify(result));
-      setStorage(result);
-      setValues({ time: "", desc: "", status: "" });
+  const handleAdd = () => {
+    if (values.schedule && values.timeStart && values.timeEnd) {
+      setData([...data, values]);
+      setValues({ ...values, schedule: "", timeStart: values.timeEnd });
+      setDifTime(values.timeStart, values.timeEnd);
     }
   };
+  console.log(difTime);
 
-  const handleChangeTimePicker = (data) => {
-    setValues((p) => ({ ...p, time: data.tpStart + " - " + data.tpEnd }));
-    setValid((p) => ({ ...p, time: data.status }));
-  };
+  useEffect(() => {
+    onChange({ target: { name: "itinerary", value: data } });
+  }, [data]);
 
-  const handleChangeTextArea = (data) => {
-    setValues((p) => ({ ...p, desc: data.value }));
-    setValid((p) => ({ ...p, desc: data.status }));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
   };
 
   const handleReset = () => {
-    localStorage.removeItem("itinerary");
-    setStorage(null);
-    setValues({ time: "", desc: "", status: "" });
-  };
-
-  const validation = () => {
-    if (valid.time != "valid" && valid.desc != "valid")
-      alert("Input itinerary time and schedule please");
-    if (valid.time != "valid" && valid.desc === "valid")
-      alert("Input itinerary time please");
-    if (valid.time === "valid" && valid.desc != "valid")
-      alert("Input schedule please");
-
-    return valid.time === "valid" && valid.desc === "valid" ? true : false;
+    setValues(initial.values);
+    setData(initial.data);
   };
 
   return (
     <div className="mb-3">
-      <InputItinerary
-        className="mb-2"
-        data={storage}
-        onClickReset={handleReset}
-      />
+      <InputItinerary onClickReset={handleReset} className="mb-3" data={data} />
       <TimePicker
+        value={{ timeStart: values.timeStart, timeEnd: values.timeEnd }}
+        required={data.length < 2}
+        startDisabled={data.length > 0}
         className="mb-4"
-        timeStart={initialTime}
         size="large"
-        value={values.time}
-        onChange={handleChangeTimePicker}
-        disabled={storage && storage.length > 0}
+        onChange={handleChange}
       />
       <TextArea
         className="mb-3"
-        placeholder={"Input schedule..."}
-        value={values.desc}
+        placeholder="Input schedule..."
         min={50}
-        name="shcedule"
-        onChange={handleChangeTextArea}
+        name="schedule"
+        required={data.length < 2}
+        value={values.schedule}
+        onChange={handleChange}
       />
       <Button
         fullWidth
+        type="button"
         size="large"
         variant="outline"
         justifyContent="center"
         label="Add Schedule"
-        onClick={handleClick}
+        onClick={handleAdd}
       />
     </div>
   );
@@ -104,11 +88,22 @@ const InputSchedule = () => {
 const dataAmenities = ["sun screen", "lunch", "mineral water"];
 
 const Desc = () => {
-  const initial = { tittle: "", maxPax: "", budget: "" };
+  const initial = {
+    tittle: "",
+    maxPax: "",
+    budget: "",
+    placeDesc: "",
+    itinerary: {},
+  };
   const [values, setValues] = useState(initial);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
   };
 
   return (
@@ -121,7 +116,7 @@ const Desc = () => {
         minLength={20}
         maxLength={100}
         name="tittle"
-        onChange={() => ""}
+        onChange={handleChange}
       />
       <div className="d-flex gap-3 mb-3">
         <Input
@@ -131,16 +126,16 @@ const Desc = () => {
           min={1}
           label="Budget / Pax"
           max={1000}
-          name="tittle"
-          onChange={() => ""}
+          name="budget"
+          onChange={handleChange}
         />
         <Input
           label="Max Pax"
           type="number"
           min={1}
           max={6}
-          name="tittle"
-          onChange={() => ""}
+          name="maxPax"
+          onChange={handleChange}
           required
         />
       </div>
@@ -150,15 +145,18 @@ const Desc = () => {
       </div>
       <TextArea
         className="mb-3"
-        min={20}
+        minLength={20}
+        required
+        name="place description"
         label="Place Descrition"
-        value={""}
-        onChange={() => ""}
+        value={values.value}
+        onChange={(e) => setValues({ ...values, placeDesc: e.target.value })}
       />
-      <InputSchedule />
+      <InputSchedule onChange={handleChange} />
       <TextArea
         className="mb-3"
         min={20}
+        name="more"
         label="More Things Visitors Must To Know"
         value={""}
         onChange={() => ""}
@@ -170,7 +168,7 @@ const Desc = () => {
         shadow="medium"
         justifyContent="space-betwen"
         label="Add Desc and Next"
-        rightIcon={"btn-rounded"}
+        rightIcon="btn-rounded"
       />
     </form>
   );

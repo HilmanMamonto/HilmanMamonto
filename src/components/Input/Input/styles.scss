@@ -11,29 +11,21 @@
     font-size: 0.75rem;
   }
   .wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
     border: 1px solid $ultralight-gray;
     padding: 0.5rem 0.75rem;
     border-radius: 4px;
-    &.invalid {
-      border-color: $error;
+    &.border {
+      &.invalid {
+        border-color: $error !important;
+      }
+      &.valid {
+        border-color: $ultralight-gray !important;
+      }
+      &.focus {
+        border-color: transparent !important;
+        outline: 2px solid $gray;
+      }
     }
-    &.valid {
-      border-color: $ultralight-gray;
-    }
-    &.focus {
-      border-color: transparent;
-      outline: 2px solid $gray;
-    }
-  }
-
-  label {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
   }
 
   input {

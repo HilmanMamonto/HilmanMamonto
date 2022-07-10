@@ -1,134 +1,92 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import Line from "components/Line";
-import Typography from "components/Typography";
-import { useRef } from "react";
 import Icons from "components/Icons";
 import { useState } from "react";
 import "./styles.scss";
-import "../main_styles.scss";
+import { useError } from "components/utility/inputErrorInfo";
+import { ANIMATE_BOUNCEIN } from "assets/animate/animate";
 
-const sizes = {
-  small: "ita-small ",
-  medium: "ita-medium ",
-  large: "ita-large ",
-  undefined: "",
-};
-
-const Icon = ({ status }) => {
-  return status === "invalid" ? (
-    <Icons variant="warning" />
-  ) : status === "valid" ? (
-    <Icons variant="checkmark" />
-  ) : (
-    ""
-  );
+const iconMessage = {
+  valid: <Icons className={ANIMATE_BOUNCEIN} variant="checkmark" />,
+  invalid: <Icons className={ANIMATE_BOUNCEIN} variant="warning" />,
 };
 
 const TextArea = ({
-  size,
+  className,
   label,
-  placeholder,
-  min,
   name,
+  min,
+  max,
+  minLength,
+  maxLength,
+  placeholder,
   onChange,
   value,
-  className,
+  required,
 }) => {
-  const refTextArea = useRef();
+  const [errInput, setErrInput] = useError();
   const [focus, setFocus] = useState("");
-  const [values, setValues] = useState({ value: "", status: "" });
-  const [alert, setAlert] = useState("");
 
-  useEffect(() => {
-    if (refTextArea && focus === "focus") {
-      refTextArea.current.focus();
-    }
-  });
-
-  const container = "input-text-area " + sizes[size] + focus + " " + className;
-  const wrapClass = "ita-wrapper " + focus;
-
-  const statusClass = "ita-status-alert " + values.status;
-
-  useEffect(() => {
-    onChange(values);
-  }, [values]);
-
-  const handleOnChange = (e) => {
-    const val = e.target.value;
-    handleValidation(val);
-    const stat = handleStatus(val);
-    setValues({ value: val, status: stat });
+  const handleChange = (e) => {
+    setErrInput(e);
+    onChange(e);
   };
 
-  const handleValidation = (val) => {
-    let result = "";
-    if (val.length === 0) {
-      result = "Input must more than " + min + " characters";
-    } else if (val.length < min) {
-      result = "Opps! description atleast more than " + min + " characters";
-    } else {
-      result = "Yupps!";
-    }
-    setAlert(result);
+  const classes = {
+    container: "text-area-control " + className,
+    wrapper: "px-3 py-2 border rounded " + focus,
+    message:
+      "d-flex justify-content-between align-items-center border-top pt-1 text-black-50",
+    errMessage: { valid: "", invalid: "text-danger" },
+    errBorder: { valid: "", invalid: " border-danger" },
   };
-
-  const handleStatus = (val) => {
-    let result = "";
-    if (val.length < min) {
-      result = "invalid";
-    } else {
-      result = "valid";
-    }
-    return result;
-  };
-
-  const handleReset = () => {
-    setValues({ value: "", status: "" });
-    handleValidation("");
-  };
-
-  useEffect(() => {
-    if (value === "") handleReset();
-  }, [value]);
 
   return (
-    <div className={container}>
-      {label && <label className="ita-label">{label}</label>}
-      <div className={wrapClass}>
+    <div className={classes.container}>
+      {label && <label className="mb-1">{label}</label>}
+      <div className={classes.wrapper + classes.errBorder[errInput.validity]}>
         <textarea
-          ref={refTextArea}
-          name={name}
-          placeholder={placeholder}
+          onInvalid={(e) => setErrInput(e)}
           onFocus={() => setFocus("focus")}
           onBlur={() => setFocus("")}
-          onChange={handleOnChange}
+          name={name}
           value={value}
+          minLength={minLength}
+          maxLength={maxLength}
+          min={min}
+          max={max}
+          placeholder={placeholder}
+          onChange={handleChange}
+          required={required}
         />
-        <Line />
-        <div className="ita-status-wrapper">
-          <span className={statusClass}>{alert}</span>
-          <Icon status={values.status} />
+        <div className={classes.message}>
+          <small className={classes.errMessage[errInput.validity]}>
+            {value != "" && errInput.validity === "valid" && "yupss!!"}
+            {errInput.validity === "invalid" && errInput.message}
+            {!errInput.validity && required && "required"}
+            {!errInput.validity &&
+              value === "" &&
+              !required &&
+              "you can added new " + name}
+          </small>
+          {iconMessage[errInput.validity]}
         </div>
       </div>
     </div>
   );
 };
 
-TextArea.defaultProps = {
-  size: "medium",
-  min: 0,
-  value: "",
-};
-
 TextArea.propTypes = {
-  label: PropTypes.string,
-  size: PropTypes.string,
-  min: PropTypes.number,
-  name: PropTypes.string,
-  className: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  leftIcon: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  className: PropTypes.string,
+  required: PropTypes.bool,
+  min: PropTypes.number,
+  max: PropTypes.number,
 };
 
 export default TextArea;

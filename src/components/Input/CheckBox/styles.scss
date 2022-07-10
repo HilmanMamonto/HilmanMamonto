@@ -1,109 +1,51 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/styles.scss";
 
 .input-select-checkbox {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
 
-	input[type=checkbox] {
-		background-color: $primary;
-		cursor: pointer;
-		margin: 0;
-		&:checked {
-			padding: 2rem;
-		}
-	}
+  .wrapper {
+    cursor: pointer;
+  }
 
-	.icb-label {
-		display: block;
-		margin-bottom: .5rem;
-	}
+  input {
+    cursor: pointer;
+  }
 
-	.isc-wrapper {
-		padding: 5px 10px;
-		border: 1px solid $ultralight-gray;
-		border-radius: 4px;
-	}
-	.head {
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+  .ic {
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+    &.active {
+      transition: all 0.3s ease-in-out;
+      transform: rotate(180deg);
+    }
+  }
 
-		.ic {
-			transform: rotate(0deg);
-			transition: all 0.3s ease-in-out;
-			&.active {
-				transition: all 0.3s ease-in-out;
-				transform: rotate(180deg);
-			}
-		}
-	}
+  .items {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    border: 1px solid $ultralight-gray;
+    background-color: $white;
+    padding: 0.5rem 0.75rem 1.25rem 0.75rem;
+    border-radius: 4px;
+    box-shadow: $ultralight-gray-shadow-small;
+    z-index: 1;
 
-	&.icb-small {
-		* {
-			font-size: 0.75rem;
-		}
-
-		.icb-wrapper {
-			padding: 5px 10px;
-		}
-		.icb-icon-dollar {
-			img {
-				height: 0.75rem;
-			}
-		}
-	}
-
-	&.icb-medium {
-		* {
-			font-size: 1rem;
-		}
-
-		.icb-wrapper {
-			padding: 8px 10px;
-		}
-		.icb-icon-dollar {
-			img {
-				height: 1rem;
-			}
-		}
-	}
-
-	&.icb-large {
-		* {
-			font-size: 1.5rem;
-		}
-
-		.icb-wrapper {
-			padding: 10px 15px;
-		}
-	}
-
-	.items {
-		position: absolute;
-		top: 80px;
-		width: 100%;
-		border: 1px solid $ultralight-gray;
-		background-color: $white;
-		padding: .5rem .75rem 1.25rem .75rem;
-		border-radius: 4px;
-		box-shadow: $ultralight-gray-shadow-small;
-		z-index: 1;
-
-		overflow: hidden;
-		visibility: hidden;
-		transition: all 0.1s ease-in-out;
-		opacity: 0%;
-		&.active {
-			transition: all 0.1s ease-in-out;
-			visibility: visible;
-			opacity: 100%;
-		}
-		.item {
-			line-height: normal;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-	}
+    overflow: hidden;
+    visibility: hidden;
+    transition: all 0.1s ease-in-out;
+    opacity: 0%;
+    &.active {
+      transition: all 0.1s ease-in-out;
+      visibility: visible;
+      opacity: 100%;
+    }
+    .item {
+      line-height: normal;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }

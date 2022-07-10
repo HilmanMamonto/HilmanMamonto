@@ -1,36 +1,31 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/styles.scss";
 
-.input-text-area {
-	.ita-label {
-		display: block;
-		margin-bottom: .5rem;
-	}
-	.ita-wrapper {
-		padding: 8px 10px;
-		border: 1px solid $ultralight-gray;
-		border-radius: 4px;
-		textarea {
-			width: 100%;
-			border: 0;
-			resize: none;
-			font-family: inherit;
-			&:focus {
-				outline: none;
-			}
-		}
+.text-area-control {
+  textarea {
+    width: 100%;
+    border: 0;
+    resize: none;
+    padding: 0;
+    font-family: inherit;
+    &:focus {
+      outline: none;
+    }
+  }
 
-		.ita-status-wrapper {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding-top: .5rem;
+  small {
+    font-size: 0.75rem;
+  }
 
-			.ita-status-alert {
-				font-size: 10px;
-				&.invalid {
-					color: $error;
-				}
-			}
-		}
-	}
+  .border {
+    &.invalid {
+      border-color: $error !important;
+    }
+    &.valid {
+      border-color: $ultralight-gray !important;
+    }
+    &.focus {
+      border-color: transparent !important;
+      outline: 2px solid $gray;
+    }
+  }
 }

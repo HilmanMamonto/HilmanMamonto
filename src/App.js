@@ -11,9 +11,9 @@ function App() {
     <Provider store={store}>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductSelectedPage />} />
-          <Route path="dashboard/*" element={<DashboardPage />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          {/* <Route path="/product/:id" element={<ProductSelectedPage />} /> */}
+          {/* <Route path="dashboard/*" element={<DashboardPage />} /> */}
           <Route path="test" element={<AddPackage />} />
         </Routes>
       </Router>

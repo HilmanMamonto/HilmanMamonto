@@ -2,7 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
 
-const InputItinerary = ({ data, onClickReset, className }) => {
+const InputItinerary = ({
+  data,
+  onClickReset,
+  className,
+  currentHours = 0,
+}) => {
   const items = data
     ? data.map((item, i) => {
         const dotClass =
@@ -12,8 +17,10 @@ const InputItinerary = ({ data, onClickReset, className }) => {
             <div className="iit-item-left">
               <div className={dotClass} />
               <label className="iit-desc">
-                <label>{item.time}</label>
-                {item.desc}
+                <label>
+                  {item.timeStart} - {item.timeEnd}
+                </label>
+                {item.schedule}
               </label>
             </div>
           </div>
@@ -24,8 +31,13 @@ const InputItinerary = ({ data, onClickReset, className }) => {
   return (
     <div className={"input-itinerary " + className}>
       <div className="iit-head">
-        <label>Itinerary</label>
-        <button className="btn-iit" onClick={onClickReset}>
+        <label>
+          Itinerary{" "}
+          <small className="text-black-50">
+            (minimum 8 hours) current hours {currentHours}
+          </small>
+        </label>
+        <button type="button" className="btn-iit" onClick={onClickReset}>
           Reset
         </button>
       </div>
@@ -33,7 +45,5 @@ const InputItinerary = ({ data, onClickReset, className }) => {
     </div>
   );
 };
-
-InputItinerary.propTypes = {};
 
 export default InputItinerary;

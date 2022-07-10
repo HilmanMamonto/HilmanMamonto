@@ -1,12 +1,7 @@
 import FormWrapper from "components/FormWrapper";
 import Stepper from "components/Stepper/Stepper";
-import Typography from "components/Typography";
-import Container from "Layout/Container";
 import React from "react";
 import Desc from "./Desc";
-import Line from "components/Line";
-import H from "components/H";
-import { useEffect } from "react";
 import { useState } from "react";
 import Button from "components/NewButton/Button";
 import Icons from "components/Icons";
