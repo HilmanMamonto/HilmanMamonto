@@ -10,42 +10,54 @@ import "animate.css";
 import { Input } from "components/Input/Input/Input";
 import { ANIMATE_FADEIN } from "assets/animate/animate";
 import { useEffect } from "react";
-import { useDifferenceTime } from "components/utility/diferenceTime";
+import { useDifferenceTime } from "components/utility/differenceTime";
 
 const InputSchedule = ({ onChange }) => {
-  const [difTime, setDifTime] = useDifferenceTime();
-
   const getItinerary = JSON.parse(localStorage.getItem("itinerary"));
   const initial = {
     values: {
       schedule: "",
       timeStart: "",
       timeEnd: "",
-      hoursCount: 0,
+      validity: "",
     },
     data: [],
   };
 
   const [data, setData] = useState(initial.data);
   const [values, setValues] = useState(initial.values);
+  const [difTime, setDifTime] = useDifferenceTime();
 
   const handleAdd = () => {
-    if (values.schedule && values.timeStart && values.timeEnd) {
+    if (
+      values.schedule &&
+      values.timeStart &&
+      values.timeEnd &&
+      values.validity === "valid"
+    ) {
       setData([...data, values]);
       setValues({ ...values, schedule: "", timeStart: values.timeEnd });
-      setDifTime(values.timeStart, values.timeEnd);
     }
   };
-  console.log(difTime);
 
   useEffect(() => {
     onChange({ target: { name: "itinerary", value: data } });
   }, [data]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, validity } = e.target;
     setValues({ ...values, [name]: value });
+
+    type === "time" &&
+      setValues({ ...values, [name]: value, validity: validity });
   };
+
+  useEffect(() => {
+    setDifTime(values.timeStart, values.timeEnd);
+
+    data.length > 0 &&
+      setDifTime(data[0].timeStart, data[data.length - 1].timeEnd);
+  }, [values]);
 
   const handleReset = () => {
     setValues(initial.values);
@@ -54,7 +66,12 @@ const InputSchedule = ({ onChange }) => {
 
   return (
     <div className="mb-3">
-      <InputItinerary onClickReset={handleReset} className="mb-3" data={data} />
+      <InputItinerary
+        numOfTime={difTime}
+        onClickReset={handleReset}
+        className="mb-3"
+        data={data}
+      />
       <TimePicker
         value={{ timeStart: values.timeStart, timeEnd: values.timeEnd }}
         required={data.length < 2}
@@ -95,6 +112,7 @@ const Desc = () => {
     placeDesc: "",
     itinerary: {},
   };
+
   const [values, setValues] = useState(initial);
 
   const handleSubmit = (e) => {

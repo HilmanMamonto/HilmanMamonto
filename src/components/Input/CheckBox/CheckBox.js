@@ -9,14 +9,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import Button from "components/NewButton/Button";
 
-const sizes = {
-  small: "icb-small ",
-  medium: "icb-medium ",
-  large: "icb-large ",
-  undefined: "",
-};
-
-const InputCheckBox = ({ size, data, label, className }) => {
+const InputCheckBox = ({ data, label, className }) => {
   const [toggle, setToggle] = useState(false);
 
   const ref = useRef();
@@ -76,10 +69,6 @@ const InputCheckBox = ({ size, data, label, className }) => {
 InputCheckBox.propTypes = {
   data: PropTypes.array,
   className: PropTypes.string,
-};
-
-InputCheckBox.defaultProps = {
-  size: "medium",
 };
 
 export default InputCheckBox;

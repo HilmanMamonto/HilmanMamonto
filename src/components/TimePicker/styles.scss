@@ -1,5 +1,11 @@
 @import "/src/assets/styles/styles.scss";
 
+.time-picker-validity {
+  small {
+    font-size: 0.75rem;
+  }
+}
+
 .time-picker {
   background-color: $white;
   box-shadow: 0px 2px 6px rgba(33, 33, 33, 0.1);

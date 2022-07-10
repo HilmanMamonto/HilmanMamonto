@@ -84,10 +84,6 @@ export const Input = ({
   );
 };
 
-Input.defaultProps = {
-  min: 0,
-};
-
 Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,

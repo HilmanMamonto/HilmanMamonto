@@ -2,12 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
 
-const InputItinerary = ({
-  data,
-  onClickReset,
-  className,
-  currentHours = 0,
-}) => {
+const InputItinerary = ({ data, onClickReset, className, numOfTime = 0 }) => {
   const items = data
     ? data.map((item, i) => {
         const dotClass =
@@ -34,7 +29,7 @@ const InputItinerary = ({
         <label>
           Itinerary{" "}
           <small className="text-black-50">
-            (minimum 8 hours) current hours {currentHours}
+            (minimum 8 hours) current num of time is {numOfTime}
           </small>
         </label>
         <button type="button" className="btn-iit" onClick={onClickReset}>
@@ -44,6 +39,10 @@ const InputItinerary = ({
       <div className="iit-items">{data ? items : "There is no items"}</div>
     </div>
   );
+};
+
+InputItinerary.propTypes = {
+  data: PropTypes.array,
 };
 
 export default InputItinerary;
