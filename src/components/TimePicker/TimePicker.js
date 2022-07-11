@@ -17,7 +17,9 @@ const TimePicker = ({
   startDisabled,
   value,
   required,
+  disabled,
   className,
+  onValidate,
 }) => {
   const [difTime, setDifTime] = useDifferenceTime();
   const [validate, setValidate] = useState({ validity: "", message: "" });
@@ -38,7 +40,7 @@ const TimePicker = ({
     valid: {
       validity: "valid",
       message:
-        "yuppss, your time picker is correct. Current num of time " + difTime,
+        "Yuppss!, your time picker is correct. Current num of time " + difTime,
     },
     vallueMissing: {
       validity: "invalid",
@@ -63,6 +65,10 @@ const TimePicker = ({
     if (hours >= 3) setValidate(allValidate.toLong);
   }, [value.timeStart, value.timeEnd, difTime]);
 
+  useEffect(() => {
+    onValidate(validate.validity);
+  }, [validate]);
+
   const handleChange = (e) => {
     const { type, name, value } = e.target;
     onChange({
@@ -77,6 +83,16 @@ const TimePicker = ({
 
   return (
     <div className={className}>
+      {difTime !== "00:00" && (
+        <span className="time-picker-validity mb-2 d-flex justify-content-between align-items-center">
+          <small
+            className={validate.validity === "invalid" ? "text-danger" : ""}
+          >
+            {value.timeStart && value.timeEnd && validate.message}
+          </small>
+          {value.timeStart && value.timeEnd && icons[validate.validity]}
+        </span>
+      )}
       <div className="time-picker">
         <div className="tp-items">
           <div className="tp-left">
@@ -95,19 +111,13 @@ const TimePicker = ({
               type="time"
               name="timeEnd"
               value={value.timeEnd}
-              disabled={!value.timeStart}
+              disabled={!value.timeStart || disabled}
               required={required}
               onChange={handleChange}
             />
           </div>
         </div>
       </div>
-      <span className="time-picker-validity mt-2 d-flex justify-content-between align-items-center">
-        <small className={validate.validity === "invalid" ? "text-danger" : ""}>
-          {value.timeStart && value.timeEnd && validate.message}
-        </small>
-        {value.timeStart && value.timeEnd && icons[validate.validity]}
-      </span>
     </div>
   );
 };

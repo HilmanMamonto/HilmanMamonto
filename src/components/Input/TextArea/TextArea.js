@@ -23,6 +23,7 @@ const TextArea = ({
   onChange,
   value,
   required,
+  disabled,
 }) => {
   const [errInput, setErrInput] = useError();
   const [focus, setFocus] = useState("");
@@ -55,22 +56,25 @@ const TextArea = ({
           maxLength={maxLength}
           min={min}
           max={max}
+          disabled={disabled}
           placeholder={placeholder}
           onChange={handleChange}
           required={required}
         />
-        <div className={classes.message}>
-          <small className={classes.errMessage[errInput.validity]}>
-            {value != "" && errInput.validity === "valid" && "yupss!!"}
-            {errInput.validity === "invalid" && errInput.message}
-            {!errInput.validity && required && "required"}
-            {!errInput.validity &&
-              value === "" &&
-              !required &&
-              "you can added new " + name}
-          </small>
-          {iconMessage[errInput.validity]}
-        </div>
+        {errInput.message && (
+          <div className={classes.message}>
+            <small className={classes.errMessage[errInput.validity]}>
+              {value != "" && errInput.validity === "valid" && "yupss!!"}
+              {errInput.validity === "invalid" && errInput.message}
+              {!errInput.validity && required && "required"}
+              {!errInput.validity &&
+                value === "" &&
+                !required &&
+                "you can added new " + name}
+            </small>
+            {iconMessage[errInput.validity]}
+          </div>
+        )}
       </div>
     </div>
   );

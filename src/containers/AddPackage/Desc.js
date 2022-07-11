@@ -47,7 +47,6 @@ const InputSchedule = ({ onChange }) => {
   const handleChange = (e) => {
     const { name, value, type, validity } = e.target;
     setValues({ ...values, [name]: value });
-
     type === "time" &&
       setValues({ ...values, [name]: value, validity: validity });
   };
@@ -55,14 +54,16 @@ const InputSchedule = ({ onChange }) => {
   useEffect(() => {
     setDifTime(values.timeStart, values.timeEnd);
 
-    data.length > 0 &&
+    if (data.length > 0)
       setDifTime(data[0].timeStart, data[data.length - 1].timeEnd);
-  }, [values]);
+  }, [data]);
 
   const handleReset = () => {
     setValues(initial.values);
     setData(initial.data);
   };
+
+  const currentHour = parseInt(difTime.split(":")[0]);
 
   return (
     <div className="mb-3">
@@ -73,9 +74,11 @@ const InputSchedule = ({ onChange }) => {
         data={data}
       />
       <TimePicker
+        onValidate={(v) => setValues({ ...values, validity: v })}
         value={{ timeStart: values.timeStart, timeEnd: values.timeEnd }}
-        required={data.length < 2}
+        required={currentHour < 8}
         startDisabled={data.length > 0}
+        disabled={currentHour >= 8}
         className="mb-4"
         size="large"
         onChange={handleChange}
@@ -84,8 +87,9 @@ const InputSchedule = ({ onChange }) => {
         className="mb-3"
         placeholder="Input schedule..."
         min={50}
+        disabled={currentHour >= 8}
         name="schedule"
-        required={data.length < 2}
+        required={currentHour < 8}
         value={values.schedule}
         onChange={handleChange}
       />

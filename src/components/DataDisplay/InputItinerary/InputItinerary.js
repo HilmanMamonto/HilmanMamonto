@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
+import { useEffect } from "react";
 
 const InputItinerary = ({ data, onClickReset, className, numOfTime = 0 }) => {
+  const ref = useRef();
+
   const items = data
     ? data.map((item, i) => {
         const dotClass =
@@ -23,13 +26,19 @@ const InputItinerary = ({ data, onClickReset, className, numOfTime = 0 }) => {
       })
     : null;
 
+  // const
+
+  const classes = {
+    container: "input-itinerary " + className,
+  };
+
   return (
-    <div className={"input-itinerary " + className}>
+    <div className={classes.container}>
       <div className="iit-head">
         <label>
-          Itinerary{" "}
-          <small className="text-black-50">
-            (minimum 8 hours) current num of time is {numOfTime}
+          Itinerary
+          <small className="text-black-50 ms-1">
+            (Min and max are 8 hours), current num of time is {numOfTime}
           </small>
         </label>
         <button type="button" className="btn-iit" onClick={onClickReset}>
