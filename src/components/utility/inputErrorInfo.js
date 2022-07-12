@@ -26,7 +26,7 @@ export const useInputValidate = () => {
         validity: "invalid",
         message: "invalid, too long " + maxLength + " characters",
       },
-      rangeUnderFlow: {
+      rangeUnderflow: {
         validity: "invalid",
         message: "Invalid, minimum value is " + min,
       },
@@ -56,7 +56,7 @@ export const useInputValidate = () => {
     if (tooShort) setValidate(allValidate.tooShort);
     if (tooLong) setValidate(allValidate.tooLong);
     // for number
-    if (rangeUnderflow) setValidate(allValidate.rangeOverFlow);
+    if (rangeUnderflow) setValidate(allValidate.rangeUnderflow);
     if (rangeOverflow) setValidate(allValidate.rangeOverFlow);
     // // for regex
     if (value && value.match(regexp[type])) e.target.setCustomValidity("");

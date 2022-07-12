@@ -1,21 +1,44 @@
 .select-control {
   position: relative;
-  select {
-    position: absolute;
-    width: 100%;
-    // border: none;
-    top: 120%;
-    display: inline-block;
-    height: fit-content;
+
+  span {
+    cursor: pointer;
+  }
+
+  input {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
     &:focus {
       outline: none;
     }
-    option {
-      &.bg-light {
-        &::after {
-          content: " V";
-        }
+  }
+
+  .wrapper {
+    cursor: pointer;
+
+    .ic-arrow {
+      transform: rotate(0deg);
+      transition: all 0.3s ease-in-out;
+      &.active {
+        transform: rotate(180deg);
+        transition: all 0.3s ease-in-out;
       }
+    }
+  }
+
+  .items {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    visibility: hidden;
+    overflow-y: auto;
+    max-height: 250px;
+    &.active {
+      visibility: visible;
+    }
+    div {
+      cursor: pointer;
     }
   }
 }
