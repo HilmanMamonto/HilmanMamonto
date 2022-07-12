@@ -1,4 +1,3 @@
-import InputCheckBox from "components/Input/CheckBox/CheckBox";
 import TextArea from "components/Input/TextArea/TextArea";
 import TimePicker from "components/TimePicker/TimePicker";
 import React from "react";
@@ -11,9 +10,10 @@ import { Input } from "components/Input/Input/Input";
 import { ANIMATE_FADEIN } from "assets/animate/animate";
 import { useEffect } from "react";
 import { useDifferenceTime } from "components/utility/differenceTime";
+import { SelectMultiple } from "components/Input/SelectMultiple/SelectMultiple";
+import { InputCheckbox } from "components/Input/CheckBox/InputCheckbox";
 
-const InputSchedule = ({ onChange }) => {
-  const getItinerary = JSON.parse(localStorage.getItem("itinerary"));
+const InputSchedule = ({ onChange, value }) => {
   const initial = {
     values: {
       schedule: "",
@@ -24,7 +24,7 @@ const InputSchedule = ({ onChange }) => {
     data: [],
   };
 
-  const [data, setData] = useState(initial.data);
+  const [data, setData] = useState(value ? value : initial.data);
   const [values, setValues] = useState(initial.values);
   const [difTime, setDifTime] = useDifferenceTime();
 
@@ -85,7 +85,7 @@ const InputSchedule = ({ onChange }) => {
       />
       <TextArea
         className="mb-3"
-        placeholder="Input schedule..."
+        placeholder="schedule..."
         min={50}
         disabled={currentHour >= 8}
         name="schedule"
@@ -106,8 +106,6 @@ const InputSchedule = ({ onChange }) => {
   );
 };
 
-const dataAmenities = ["sun screen", "lunch", "mineral water"];
-
 const Desc = () => {
   const initial = {
     tittle: "",
@@ -116,13 +114,12 @@ const Desc = () => {
     placeDesc: "",
     itinerary: {},
     amenities: [],
+    amenitiesNotInclude: [],
   };
 
-  const [values, setValues] = useState(initial);
+  const localS = JSON.parse(localStorage.getItem("desc"));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const [values, setValues] = useState(localS ? localS : initial);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -130,7 +127,7 @@ const Desc = () => {
   };
 
   return (
-    <form className={ANIMATE_FADEIN} onSubmit={handleSubmit}>
+    <div className={ANIMATE_FADEIN}>
       <Input
         type="text"
         className="mb-3"
@@ -139,6 +136,7 @@ const Desc = () => {
         minLength={20}
         maxLength={100}
         name="tittle"
+        value={values.tittle}
         onChange={handleChange}
       />
       <div className="d-flex gap-3 mb-3">
@@ -149,12 +147,14 @@ const Desc = () => {
           min={1}
           label="Budget / Pax"
           max={1000}
+          value={values.budget}
           name="budget"
           onChange={handleChange}
         />
         <Input
           label="Max Pax"
           type="number"
+          value={values.maxPax}
           min={1}
           max={6}
           name="maxPax"
@@ -163,18 +163,21 @@ const Desc = () => {
         />
       </div>
       <div className="d-flex gap-3 mb-3">
-        <InputCheckBox
-          required
-          onChange={() => ""}
+        <SelectMultiple
           label="Amenities"
-          data={dataAmenities}
           name="amenities"
+          required
+          value={values.amenities}
+          min={5}
+          onChange={(e) => setValues({ ...values, amenities: e.target.value })}
         />
-        <InputCheckBox
-          onChange={() => ""}
-          label="Not Includes"
-          data={dataAmenities}
-          name="notIncludes"
+        <SelectMultiple
+          label="Not include"
+          name="amenities"
+          value={values.amenitiesNotInclude}
+          onChange={(e) =>
+            setValues({ ...values, amenitiesNotInclude: e.target.value })
+          }
         />
       </div>
       <TextArea
@@ -183,28 +186,21 @@ const Desc = () => {
         required
         name="place description"
         label="Place Descrition"
-        value={values.value}
+        placeholder="place description..."
+        value={values.placeDesc}
         onChange={(e) => setValues({ ...values, placeDesc: e.target.value })}
       />
-      <InputSchedule onChange={handleChange} />
+      <InputSchedule value={values.itinerary} onChange={handleChange} />
       <TextArea
         className="mb-3"
-        min={20}
         name="more"
+        placeholder="optional..."
         label="More Things Visitors Must To Know"
-        value={""}
-        onChange={() => ""}
+        value={values.more}
+        onChange={(e) => setValues({ ...values, more: e.target.value })}
       />
-      <Button
-        fullWidth
-        buttonType="submit"
-        size="large"
-        shadow="medium"
-        justifyContent="space-betwen"
-        label="Add Desc and Next"
-        rightIcon="btn-rounded"
-      />
-    </form>
+      <InputCheckbox className="mb-3" label="Pick-up services" />
+    </div>
   );
 };
 

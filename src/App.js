@@ -15,7 +15,7 @@ function App() {
           {/* <Route path="/" element={<Home />} /> */}
           {/* <Route path="/product/:id" element={<ProductSelectedPage />} /> */}
           {/* <Route path="dashboard/*" element={<DashboardPage />} /> */}
-          <Route path="test" element={<SelectMultiple onChange={() => ""} />} />
+          <Route path="test" element={<AddPackage />} />
         </Routes>
       </Router>
     </Provider>

@@ -9,7 +9,7 @@ import Availability from "./Availability";
 import Images from "./Images";
 import Stays from "./Stays";
 
-const dataStepper = ["Desc", "Availability", "Photos", "Stay", "Review"];
+const dataStepper = ["Desc", "Availability", "Photos", "Stays", "Review"];
 
 const AddPackage = () => {
   const [current, setCurrent] = useState(0);
@@ -21,18 +21,16 @@ const AddPackage = () => {
     3: <Stays />,
   };
 
-  const btnBack =
-    current > 0 ? (
-      <Button
-        fullWidth
-        variant="outline"
-        size="large"
-        justifyContent="space-betwen"
-        label="Back"
-        rightIcon={<Icons size="xlarge" variant="arrow-right-white-rounded" />}
-        onClick={() => setCurrent(current - 1)}
-      />
-    ) : null;
+  const btnLabels = {
+    0: "Add Desc an Next",
+    1: "Add Availability an Next",
+    2: "Add Images an Next",
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setCurrent(current + 1);
+  };
 
   return (
     <div className="add-package">
@@ -44,8 +42,28 @@ const AddPackage = () => {
           currentStep={current}
           size="small"
         />
-        {contents[current]}
-        {btnBack}
+        <form onSubmit={handleSubmit}>
+          {contents[current]}
+          <Button
+            fullWidth
+            buttonType="submit"
+            size="large"
+            shadow="medium"
+            justifyContent="space-betwen"
+            label={btnLabels[current]}
+            rightIcon="btn-rounded"
+          />
+        </form>
+        <Button
+          hidden={current === 0}
+          fullWidth
+          className="mt-3"
+          variant="outline"
+          size="large"
+          justifyContent="space-betwen"
+          label="Back"
+          onClick={() => setCurrent(current - 1)}
+        />
       </FormWrapper>
     </div>
   );

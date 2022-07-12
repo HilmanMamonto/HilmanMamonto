@@ -1,8 +1,13 @@
 .select-control {
+  width: 100%;
   position: relative;
 
   span {
     cursor: pointer;
+  }
+
+  small {
+    font-size: 0.75rem;
   }
 
   input {
@@ -14,9 +19,32 @@
     }
   }
 
+  input[type="text"] {
+    width: 100%;
+  }
+
+  input[type="number"] {
+    width: 0%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    span {
+      width: 100%;
+    }
+  }
+
   .wrapper {
     cursor: pointer;
 
+    &.active {
+      outline: 2px solid;
+      border-color: transparent !important;
+    }
     .ic-arrow {
       transform: rotate(0deg);
       transition: all 0.3s ease-in-out;
@@ -27,7 +55,12 @@
     }
   }
 
+  .btn-select-all {
+    position: sticky;
+  }
+
   .items {
+    z-index: 2;
     position: absolute;
     width: 100%;
     top: 100%;

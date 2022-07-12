@@ -11,7 +11,7 @@ const variants = {
 };
 
 const shadows = {
-  xsmall: "shadow-xs",
+  xsmall: "shadow-xs ",
   small: "shadow-s ",
   medium: "shadow-m ",
   large: "shadow-l ",
@@ -54,15 +54,16 @@ const rightIcons = {
 };
 
 const Button = ({
-  className,
-  variant,
-  label,
-  as,
+  className = "",
+  variant = "contained",
+  label = "button",
+  as = "button",
+  size = "medium",
+  color = "primary",
+  buttonType = "button",
   href,
   onClick,
-  size,
   shadow,
-  color,
   leftIcon,
   rightIcon,
   disabled,
@@ -70,7 +71,7 @@ const Button = ({
   loading,
   justifyContent,
   loadingIndicator,
-  buttonType,
+  hidden,
 }) => {
   const styles = {
     width: fullWidth ? "100%" : "",
@@ -84,25 +85,20 @@ const Button = ({
     colors[color] +
     className;
 
-  const loadingIcLeft = (
-    <div className="left-icon">
-      <Loading size={loadingSizes[size]} color="white" />
-    </div>
-  );
-
-  const loadingIcRight = (
-    <div className="right-icon">
-      <Loading size={loadingSizes[size]} color="white" />
-    </div>
-  );
+  const loadings = {
+    left: <Loading size={loadingSizes[size]} color="white" />,
+    right: <Loading size={loadingSizes[size]} color="white" />,
+  };
 
   const lIcon = <div className="left-icon">{leftIcon}</div>;
-  const leftIc = leftIcon && loading ? loadingIcLeft : leftIcon ? lIcon : null;
-
-  const rIcon = <div className="right-icon">{rightIcons[rightIcon]}</div>;
+  const leftIc = leftIcon && loading ? loadings.left : leftIcon ? lIcon : null;
 
   const rightIc =
-    rightIcon && loading ? loadingIcRight : rightIcon ? rIcon : null;
+    rightIcon && loading
+      ? loadings.left
+      : rightIcon
+      ? rightIcons[rightIcon]
+      : null;
   const labelItem = loading && loadingIndicator ? loadingIndicator : label;
   const itemsClass = "btn-items " + justify[justifyContent];
 
@@ -114,6 +110,7 @@ const Button = ({
         href={href}
         onClick={onClick}
         disabled={disabled}
+        hidden={hidden}
       >
         <div className={itemsClass}>
           {leftIc}
@@ -129,6 +126,7 @@ const Button = ({
         className={classContainer}
         onClick={onClick}
         disabled={disabled}
+        hidden={hidden}
       >
         <div className={itemsClass}>
           {leftIc}
@@ -140,16 +138,6 @@ const Button = ({
   };
 
   return elements[as];
-};
-
-Button.defaultProps = {
-  variant: "contained",
-  size: "medium",
-  as: "button",
-  label: "button",
-  color: "primary",
-  buttonType: "button",
-  className: "",
 };
 
 Button.propTypes = {

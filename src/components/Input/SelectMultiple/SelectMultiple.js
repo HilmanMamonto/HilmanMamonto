@@ -12,8 +12,15 @@ const icons = {
   invalid: <Icons variant="warning" />,
 };
 
-export const SelectMultiple = ({ onChange, required, label, name, min }) => {
-  const [values, setValues] = useState([]);
+export const SelectMultiple = ({
+  onChange,
+  required,
+  label,
+  name,
+  min,
+  value,
+}) => {
+  const [values, setValues] = useState(value ? value : []);
   const [validate, setValidate] = useInputValidate();
   const [toggle, setToggle] = useState(false);
   const ref = useRef();
@@ -29,7 +36,6 @@ export const SelectMultiple = ({ onChange, required, label, name, min }) => {
     if (!found) {
       setValues([...values, value]);
     }
-    setValidate({ target: ref.current });
   };
 
   const items = [
@@ -46,10 +52,13 @@ export const SelectMultiple = ({ onChange, required, label, name, min }) => {
       ? values.length + " items selected"
       : values.length === 1
       ? values.length + " item selected"
-      : "select min 5 items";
+      : !min && !required
+      ? "optional"
+      : "Select min " + min + " items";
 
   useEffect(() => {
     onChange({ target: { value: values } });
+    if (values.length > 0) setValidate({ target: ref.current });
   }, [values]);
 
   const handleClickOutside = (e) => {
@@ -64,52 +73,50 @@ export const SelectMultiple = ({ onChange, required, label, name, min }) => {
     return () => document.removeEventListener("click", handleClickOutside);
   });
 
-  const handleSelectAll = () => {
-    if (values.length === 0) {
-      setValues(items);
-    } else {
-      setValues([]);
-    }
-    setValidate({ target: ref.current });
-  };
-
   const btnLabel = values.length > 0 ? "unselect" : "select all";
 
   const classes = {
-    items: toggle
-      ? "items d-flex border flex-column mt-2 active"
-      : "items d-flex border flex-column mt-2",
+    items: "items bg-white d-flex border flex-column mt-2 ",
+    wrapper:
+      "wrapper d-flex align-items-center justify-content-between py-2 px-3 rounded ",
+    toggle: toggle ? "active " : "",
+    border:
+      validate.validity === "invalid" ? "border border-danger " : "border ",
   };
 
   return (
     <div ref={refContainer} className="select-control d-flex flex-column">
-      <label htmlFor={name}>
+      <label className="mb-1 d-inline-block" htmlFor={name}>
         {label} {required && " *"}
       </label>
       <div
         onClick={() => setToggle(!toggle)}
-        className="wrapper d-flex align-items-center justify-content-between border py-1 px-2 rounded"
+        className={classes.wrapper + classes.toggle + classes.border}
       >
-        <span>{display}</span>
+        <div className="input-wrapper">
+          <input
+            ref={ref}
+            onInvalid={() => setValidate({ target: ref.current })}
+            min={min}
+            name={name}
+            value={values.length > 0 ? values.length : ""}
+            onChange={() => ""}
+            type="number"
+            required={required}
+          />
+          <span className={values.length > 0 ? "text-body" : "text-black-50"}>
+            {display}
+          </span>
+        </div>
         <span className="d-flex align-item-center gap-2">
-          {icons[validate.validity]}
           <Icons
             className={toggle ? "ic-arrow active" : "ic-arrow"}
             variant="arrow-up"
           />
+          {icons[validate.validity]}
         </span>
       </div>
-      <input
-        ref={ref}
-        min={5}
-        name={name}
-        onChange={() => ""}
-        value={values.length}
-        type="number"
-        required={required}
-        hidden
-      />
-      <div className={classes.items}>
+      <div className={classes.items + classes.toggle}>
         {items.map((item) => {
           return (
             <div
@@ -127,16 +134,15 @@ export const SelectMultiple = ({ onChange, required, label, name, min }) => {
                 onClick={handleClick}
                 type="checkbox"
               />
-              <input readOnly onClick={handleClick} value={item}></input>
+              <input
+                readOnly
+                type="text"
+                onClick={handleClick}
+                value={item}
+              ></input>
             </div>
           );
         })}
-        <Button
-          label={btnLabel}
-          onClick={handleSelectAll}
-          justifyContent="center"
-          className="mt-2"
-        />
       </div>
       <small className="text-danger">{validate.message}</small>
     </div>
@@ -145,5 +151,6 @@ export const SelectMultiple = ({ onChange, required, label, name, min }) => {
 
 SelectMultiple.propTypes = {
   onChange: PropTypes.func.isRequired,
-  //   name : PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  min: PropTypes.number,
 };
