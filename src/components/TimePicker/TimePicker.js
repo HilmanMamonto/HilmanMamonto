@@ -81,18 +81,18 @@ const TimePicker = ({
     });
   };
 
+  const message = (
+    <span className="time-picker-validity mb-2 d-flex justify-content-between align-items-center">
+      <small className={validate.validity === "invalid" ? "text-danger" : ""}>
+        {value.timeStart && value.timeEnd && validate.message}
+      </small>
+      {value.timeStart && value.timeEnd && icons[validate.validity]}
+    </span>
+  );
+
   return (
     <div className={className}>
-      {difTime !== "00:00" && (
-        <span className="time-picker-validity mb-2 d-flex justify-content-between align-items-center">
-          <small
-            className={validate.validity === "invalid" ? "text-danger" : ""}
-          >
-            {value.timeStart && value.timeEnd && validate.message}
-          </small>
-          {value.timeStart && value.timeEnd && icons[validate.validity]}
-        </span>
-      )}
+      {required && message}
       <div className="time-picker">
         <div className="tp-items">
           <div className="tp-left">

@@ -1,0 +1,21 @@
+.select-control {
+  position: relative;
+  select {
+    position: absolute;
+    width: 100%;
+    // border: none;
+    top: 120%;
+    display: inline-block;
+    height: fit-content;
+    &:focus {
+      outline: none;
+    }
+    option {
+      &.bg-light {
+        &::after {
+          content: " V";
+        }
+      }
+    }
+  }
+}

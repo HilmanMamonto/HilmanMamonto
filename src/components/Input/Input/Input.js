@@ -5,7 +5,7 @@ import "./styles.scss";
 import PropTypes from "prop-types";
 import { blockInvalidChar } from "./blockInvalidChar";
 import { ANIMATE_BOUNCEIN } from "assets/animate/animate";
-import { useError } from "components/utility/inputErrorInfo";
+import { useInputValidate } from "components/utility/inputErrorInfo";
 
 const iconMessage = {
   valid: <Icons className={ANIMATE_BOUNCEIN} variant="checkmark" />,
@@ -36,10 +36,10 @@ export const Input = ({
   required,
 }) => {
   const [focus, setFocus] = useState("");
-  const [errInput, setErrInput] = useError();
+  const [validate, setValidate] = useInputValidate();
 
   const handleChange = (e) => {
-    setErrInput(e);
+    setValidate(e);
     onChange(e);
   };
 
@@ -51,7 +51,7 @@ export const Input = ({
       "wrapper border d-flex py-2 px-3 align-items-center gap-2 rounded " +
       focus +
       " " +
-      errInput.validity,
+      validate.validity,
   };
 
   return (
@@ -63,7 +63,7 @@ export const Input = ({
         {leftIcons[leftIcon]}
         <input
           onKeyDown={invalidChar}
-          onInvalid={(e) => setErrInput(e)}
+          onInvalid={(e) => setValidate(e)}
           type={type}
           onFocus={() => setFocus("focus")}
           onBlur={() => setFocus("")}
@@ -77,9 +77,9 @@ export const Input = ({
           onChange={handleChange}
           required={required}
         />
-        {iconMessage[errInput.validity]}
+        {iconMessage[validate.validity]}
       </div>
-      {errInput && <small>{errInput.message}</small>}
+      {validate && <small>{validate.message}</small>}
     </div>
   );
 };

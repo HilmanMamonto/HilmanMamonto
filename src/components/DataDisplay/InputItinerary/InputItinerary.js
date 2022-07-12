@@ -36,7 +36,7 @@ const InputItinerary = ({ data, onClickReset, className, numOfTime = 0 }) => {
     <div className={classes.container}>
       <div className="iit-head">
         <label>
-          Itinerary
+          Itinerary*
           <small className="text-black-50 ms-1">
             (Min and max are 8 hours), current num of time is {numOfTime}
           </small>

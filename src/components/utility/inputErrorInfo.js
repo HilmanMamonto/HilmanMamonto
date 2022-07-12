@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const useError = () => {
+export const useInputValidate = () => {
   const [validate, setValidate] = useState({ validity: "", message: "" });
 
   const setErrInput = (e) => {

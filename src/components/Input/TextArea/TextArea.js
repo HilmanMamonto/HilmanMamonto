@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Icons from "components/Icons";
 import { useState } from "react";
 import "./styles.scss";
-import { useError } from "components/utility/inputErrorInfo";
+import { useInputValidate } from "components/utility/inputErrorInfo";
 import { ANIMATE_BOUNCEIN } from "assets/animate/animate";
 
 const iconMessage = {
@@ -25,7 +25,7 @@ const TextArea = ({
   required,
   disabled,
 }) => {
-  const [errInput, setErrInput] = useError();
+  const [validate, setErrInput] = useInputValidate();
   const [focus, setFocus] = useState("");
 
   const handleChange = (e) => {
@@ -45,7 +45,7 @@ const TextArea = ({
   return (
     <div className={classes.container}>
       {label && <label className="mb-1">{label}</label>}
-      <div className={classes.wrapper + classes.errBorder[errInput.validity]}>
+      <div className={classes.wrapper + classes.errBorder[validate.validity]}>
         <textarea
           onInvalid={(e) => setErrInput(e)}
           onFocus={() => setFocus("focus")}
@@ -61,18 +61,18 @@ const TextArea = ({
           onChange={handleChange}
           required={required}
         />
-        {errInput.message && (
+        {validate.message && (
           <div className={classes.message}>
-            <small className={classes.errMessage[errInput.validity]}>
-              {value != "" && errInput.validity === "valid" && "yupss!!"}
-              {errInput.validity === "invalid" && errInput.message}
-              {!errInput.validity && required && "required"}
-              {!errInput.validity &&
+            <small className={classes.errMessage[validate.validity]}>
+              {value != "" && validate.validity === "valid" && "yupss!!"}
+              {validate.validity === "invalid" && validate.message}
+              {!validate.validity && required && "required"}
+              {!validate.validity &&
                 value === "" &&
                 !required &&
                 "you can added new " + name}
             </small>
-            {iconMessage[errInput.validity]}
+            {iconMessage[validate.validity]}
           </div>
         )}
       </div>

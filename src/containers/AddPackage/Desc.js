@@ -115,6 +115,7 @@ const Desc = () => {
     budget: "",
     placeDesc: "",
     itinerary: {},
+    amenities: [],
   };
 
   const [values, setValues] = useState(initial);
@@ -162,8 +163,19 @@ const Desc = () => {
         />
       </div>
       <div className="d-flex gap-3 mb-3">
-        <InputCheckBox label="Amenities" data={dataAmenities} />
-        <InputCheckBox label="Amenities" data={dataAmenities} />
+        <InputCheckBox
+          required
+          onChange={() => ""}
+          label="Amenities"
+          data={dataAmenities}
+          name="amenities"
+        />
+        <InputCheckBox
+          onChange={() => ""}
+          label="Not Includes"
+          data={dataAmenities}
+          name="notIncludes"
+        />
       </div>
       <TextArea
         className="mb-3"

@@ -9,7 +9,14 @@
   }
 
   input {
+    &.read-only {
+      width: 2rem;
+    }
     cursor: pointer;
+    border: none;
+    &:focus {
+      outline: none;
+    }
   }
 
   .ic {
@@ -23,13 +30,7 @@
 
   .items {
     position: absolute;
-    top: 80px;
-    width: 100%;
-    border: 1px solid $ultralight-gray;
-    background-color: $white;
-    padding: 0.5rem 0.75rem 1.25rem 0.75rem;
-    border-radius: 4px;
-    box-shadow: $ultralight-gray-shadow-small;
+    top: 5rem;
     z-index: 1;
 
     overflow: hidden;
