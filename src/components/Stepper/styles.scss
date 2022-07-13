@@ -1,77 +1,12 @@
-@import '/src/assets/styles/styles.scss';
-
 .stepper {
-	display: flex;
-	justify-content: center;
-
-	.st-items {
-		display: flex;
-		align-items: center;
-	}
-	.st-line {
-		display: inline-flex;
-		align-items: center;
-		width: 2rem;
-		height: 100%;
-		&::after {
-			content: '';
-			border-bottom: 1px solid $ultralight-gray;
-			width: 100%;
-			margin: 0 4px;
-		}
-	}
-
-	.st-item {
-		padding: 0 1px;
-		display: flex;
-		align-items: center;
-		&.active {
-			.st-atribute {
-				background-color: $gray;
-			}
-			.st-tittle {
-				color: $gray;
-				font-weight: 500;
-			}
-		}
-		&.checkmark {
-			.st-atribute {
-				background-color: transparent;
-			}
-			.st-tittle {
-				color: $gray;
-				font-weight: 500;
-			}
-		}
-	}
-
-	.st-atribute {
-		background-color: $ultralight-gray;
-		border-radius: 100px;
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		color: $white;
-		line-height: 100%;
-		display: flex;
-		align-items: center;
-	}
-	.st-tittle {
-		color: $ultralight-gray;
-		font-weight: 400;
-	}
-	&.st-small {
-		font-size: 0.75rem;
-		.st-atribute {
-			width: 1rem;
-			height: 1rem;
-			margin-right: 0.25rem;
-		}
-	}
-	&.st-medium {
-		font-size: 1rem;
-	}
-	&.st-large {
-		font-size: 1.25rem;
-	}
+  display: flex;
+  justify-content: center;
+  .st-small {
+    font-size: 0.75rem;
+  }
+  .st-line {
+    display: block;
+    width: 20px;
+    height: fit-content;
+  }
 }

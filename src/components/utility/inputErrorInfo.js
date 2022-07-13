@@ -14,7 +14,7 @@ export const useInputValidate = () => {
       rangeUnderflow,
     } = e.target.validity;
     const allValidate = {
-      valid: { validity: "valid", message: "" },
+      valid: { validity: "valid", message: "yupps, your input is correct" },
       invalid: { validity: "valid", message: "" },
       required: { validity: "invalid", message: "This field must to fill" },
       valuaMissing: { validity: "invalid", message: "This field must to fill" },

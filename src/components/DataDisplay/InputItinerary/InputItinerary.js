@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 import "./styles.scss";
 import { useEffect } from "react";
 
-const InputItinerary = ({ data, onClickReset, className, numOfTime = 0 }) => {
+const InputItinerary = ({
+  data = [],
+  onClickReset,
+  className,
+  numOfTime = 0,
+}) => {
   const ref = useRef();
 
   const items = data
@@ -25,8 +30,6 @@ const InputItinerary = ({ data, onClickReset, className, numOfTime = 0 }) => {
         );
       })
     : null;
-
-  // const
 
   const classes = {
     container: "input-itinerary " + className,

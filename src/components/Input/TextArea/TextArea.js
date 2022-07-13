@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Icons from "components/Icons";
 import { useState } from "react";
@@ -61,20 +61,21 @@ const TextArea = ({
           onChange={handleChange}
           required={required}
         />
-        {validate.message && (
+        <div hidden={validate.validity === "" || validate.message === ""}>
           <div className={classes.message}>
             <small className={classes.errMessage[validate.validity]}>
-              {value != "" && validate.validity === "valid" && "yupss!!"}
+              {/* {value !== "" && validate.validity === "valid" && "yupss!!"}
               {validate.validity === "invalid" && validate.message}
               {!validate.validity && required && "required"}
               {!validate.validity &&
                 value === "" &&
                 !required &&
-                "you can added new " + name}
+                "you can added new " + name} */}
+              {validate.message}
             </small>
             {iconMessage[validate.validity]}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

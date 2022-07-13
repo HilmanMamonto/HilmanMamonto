@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./styles.scss";
 import Icons from "components/Icons";
-import Button from "components/NewButton/Button";
 
 const icons = {
   valid: <Icons variant="checkmark" />,
@@ -72,8 +71,6 @@ export const SelectMultiple = ({
 
     return () => document.removeEventListener("click", handleClickOutside);
   });
-
-  const btnLabel = values.length > 0 ? "unselect" : "select all";
 
   const classes = {
     items: "items bg-white d-flex border flex-column mt-2 ",
@@ -144,7 +141,9 @@ export const SelectMultiple = ({
           );
         })}
       </div>
-      <small className="text-danger">{validate.message}</small>
+      <small className={"text-danger"}>
+        {validate.validity === "invalid" && validate.message}
+      </small>
     </div>
   );
 };

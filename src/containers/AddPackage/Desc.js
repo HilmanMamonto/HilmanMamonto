@@ -20,6 +20,7 @@ const InputSchedule = ({ onChange, value }) => {
       timeStart: "",
       timeEnd: "",
       validity: "",
+      pickUpServices: "",
     },
     data: [],
   };
@@ -112,8 +113,9 @@ const Desc = () => {
     maxPax: "",
     budget: "",
     placeDesc: "",
-    itinerary: {},
+    itinerary: [],
     amenities: [],
+    pickUpServices: false,
     amenitiesNotInclude: [],
   };
 
@@ -122,9 +124,13 @@ const Desc = () => {
   const [values, setValues] = useState(localS ? localS : initial);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setValues({ ...values, [name]: value });
+    if (type === "checkbox") setValues({ ...values, [name]: checked });
   };
+  useEffect(() => {
+    localStorage.setItem("desc", JSON.stringify(values));
+  }, [values]);
 
   return (
     <div className={ANIMATE_FADEIN}>
@@ -169,26 +175,24 @@ const Desc = () => {
           required
           value={values.amenities}
           min={5}
-          onChange={(e) => setValues({ ...values, amenities: e.target.value })}
+          onChange={handleChange}
         />
         <SelectMultiple
           label="Not include"
           name="amenities"
           value={values.amenitiesNotInclude}
-          onChange={(e) =>
-            setValues({ ...values, amenitiesNotInclude: e.target.value })
-          }
+          onChange={handleChange}
         />
       </div>
       <TextArea
         className="mb-3"
         minLength={20}
         required
-        name="place description"
+        name="placeDescription"
         label="Place Descrition"
         placeholder="place description..."
         value={values.placeDesc}
-        onChange={(e) => setValues({ ...values, placeDesc: e.target.value })}
+        onChange={handleChange}
       />
       <InputSchedule value={values.itinerary} onChange={handleChange} />
       <TextArea
@@ -197,9 +201,15 @@ const Desc = () => {
         placeholder="optional..."
         label="More Things Visitors Must To Know"
         value={values.more}
-        onChange={(e) => setValues({ ...values, more: e.target.value })}
+        onChange={handleChange}
       />
-      <InputCheckbox className="mb-3" label="Pick-up services" />
+      <InputCheckbox
+        name="pickUpServices"
+        className="mb-3"
+        label="Pick-up services"
+        defaultChecked={values.pickUpServices}
+        onChange={handleChange}
+      />
     </div>
   );
 };

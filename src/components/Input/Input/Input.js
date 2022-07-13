@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { blockInvalidChar } from "./blockInvalidChar";
 import { ANIMATE_BOUNCEIN } from "assets/animate/animate";
 import { useInputValidate } from "components/utility/inputErrorInfo";
+import { useEffect } from "react";
 
 const iconMessage = {
   valid: <Icons className={ANIMATE_BOUNCEIN} variant="checkmark" />,
