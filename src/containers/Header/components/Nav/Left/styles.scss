@@ -1,24 +1,24 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/styles.scss";
 
-#nav-left {
-	font-size: 24px;
-	display: flex;
-	align-items: center;
-	label {
-		display: flex;
-		flex-direction: row;
-		font-weight: bold;
-		cursor: pointer;
-		letter-spacing: -0.5px;
-		span {
-			display: flex;
-			margin-top: auto;
-			margin-left: 3px;
-			margin-bottom: 9px;
-			width: 8px;
-			height: 8px;
-			border-radius: 100px;
-			background-color: $secondary;
-		}
-	}
+.nav-left {
+  font-size: 24px;
+  display: inline-block;
+  align-items: center;
+  label {
+    display: inline-flex;
+    flex-direction: row;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: -0.5px;
+    span {
+      display: flex;
+      margin-top: auto;
+      margin-left: 3px;
+      margin-bottom: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 100px;
+      background-color: $secondary;
+    }
+  }
 }

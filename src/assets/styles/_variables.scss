@@ -17,6 +17,11 @@ $shadow-m: 0px 2px 10px;
 $shadow-l: 0px 2px 20px;
 $shadow-xl: 0px 2px 40px;
 
+//shadow colors
+$shadow-primary: rgba(33, 33, 33, 0.5);
+$shadow-light-gray: rgba(55, 55, 55, 0.5);
+$shadow-ultralight-gray: #d3d3d3;
+
 // shadow colors
 $box-shadow-primary: rgba(33, 33, 33, 0.5);
 $box-shadow-secondary: rgba(239, 54, 54, 0.5);
@@ -55,20 +60,25 @@ $ultralight-gray-shadow-large: 0px 2px 20px rgba(211, 211, 211, 0.5);
 $ultralight-gray-shadow-xlarge: 0px 2px 40px rgba(211, 211, 211, 0.5);
 
 // sizes
-$box-xs: .5rem;
-$box-s: .75rem;
+$box-xs: 0.5rem;
+$box-s: 0.75rem;
 $box-m: 1rem;
 $box-l: 1.25rem;
 $box-xl: 1.5rem;
 $box-xxl: 2rem;
 
-$box-sizes : (
-    xs  : $box-xs, 
-    s   : $box-s,
-    m   : $box-m,
-    l   : $box-xl,
-    xxl : $box-xxl
+$box-sizes: (
+  xs: $box-xs,
+  s: $box-s,
+  m: $box-m,
+  l: $box-xl,
+  xxl: $box-xxl,
 );
 
-
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;

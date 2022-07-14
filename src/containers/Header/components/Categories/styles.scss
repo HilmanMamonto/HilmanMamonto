@@ -1,82 +1,64 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/styles.scss";
 
-#header-categories {
-	justify-content: space-between;
-	width: 100%;
-	position: absolute;
-	z-index: 2;
-	top: 80px;
-	background-color: $white;
-	height: 80px;
+.header-categories {
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 80px;
+  height: 80px;
 
-	&.box-shadow {
-		box-shadow: 0px 1px 2px rgba(211, 211, 211, 0.6);
-	}
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    .btn-arrow {
+      position: absolute;
+      &.left {
+        left: 0;
+      }
+      &.right {
+        right: 0;
+      }
+    }
+  }
 
-	// button
-	.button-wraper-left {
-		position: absolute;
-		height: 100%;
-		width: 60px;
-		display: flex;
-		align-items: center;
-		margin-left: 120px;
-		z-index: 3;
-		background-image: linear-gradient(to right, $white, $white, transparent);
+  .categories-items {
+    position: relative;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    z-index: -1;
+    height: 100%;
+    align-items: center;
 
-		#btn-categories-left {
-			border: 1px solid $light-gray;
-			width: 30px;
-			height: 30px;
-		}
-	}
-	.button-wraper-right {
-		position: absolute;
-		height: 100%;
-		width: 60px;
-		display: flex;
-		right: 0px;
-		align-items: center;
-		justify-content: flex-end;
-		margin-right: 120px;
-		z-index: 3;
-		background-image: linear-gradient(to left, $white, $white, transparent);
-
-		#btn-categories-right {
-			border: 1px solid $light-gray;
-			width: 30px;
-			height: 30px;
-		}
-	}
-
-	// categories items
-	.categories-items {
-		display: flex;
-		align-items: center;
-		height: 100%;
-		overflow-x: scroll;
-		margin: 0 120px;
-		scroll-behavior: smooth;
-		&::-webkit-scrollbar {
-			height: 0px;
-		}
-		.item {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin: 0 20px;
-			color: $gray;
-			cursor: pointer;
-
-			img {
-				height: 22px;
-				width: 22px;
-				margin-bottom: 6px;
-			}
-			label {
-				font-size: 12px;
-				cursor: pointer;
-			}
-		}
-	}
+    &::-webkit-scrollbar {
+      height: 0px;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 100%;
+      cursor: pointer;
+      font-size: 0.75rem;
+      img {
+        height: 22px;
+        width: 22px;
+        margin-bottom: 6px;
+      }
+      &:hover {
+        &::after {
+          content: "";
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          height: 0.2rem;
+          border-radius: 100px;
+          background-color: $gray;
+        }
+      }
+    }
+  }
 }

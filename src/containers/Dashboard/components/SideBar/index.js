@@ -6,7 +6,6 @@ import React from "react";
 import "./styles.scss";
 import SideBarList from "components/DataDisplay/SideBarList/SideBarList";
 import NavSideBar from "components/Navigations/NavSideBar/NavSideBar";
-import Line from "components/Line";
 
 const packagesItems = [
   { id: "abcdabcd001", name: "Fushimi Inari Taisha" },
@@ -20,55 +19,19 @@ const orderedItems = [
   { name: "Tokyo" },
   { name: "Kyoto" },
 ];
-const massagesItems = [
-  { name: "Dani Setiawan" },
-  { name: "Veronika Mark" },
-  { name: "Joe Winata" },
-];
-
-const topNav = (
-  <Container left="medium" right="medium" bottom="medium">
-    <NavSideBar />
-    <Line />
-  </Container>
-);
-
-const avatar = (
-  <Container left="medium" right="medium" bottom="medium">
-    <DashboardAvatar
-      name="Andy Mahendra"
-      imgUrl="/andy/andy.jpg"
-      tittle="Tour Guide"
-    />
-  </Container>
-);
-
-const wallet = (
-  <Container flex justifyContent="center" bottom="medium">
-    <WalletInfo label={10} />
-  </Container>
-);
-
-const packages = (
-  <Container left="medium" right="medium">
-    <SideBarList data={packagesItems} label="Packages" />
-  </Container>
-);
-
-const ordered = (
-  <Container top="xsmall" left="medium" right="medium">
-    <SideBarList data={orderedItems} label="Ordered" />
-  </Container>
-);
 
 const SideBar = () => {
   return (
-    <div id="side-bar">
-      {avatar}
-      {wallet}
-      {topNav}
-      {packages}
-      {ordered}
+    <div id="side-bar" className="d-flex flex-column gap-4 px-3">
+      <DashboardAvatar
+        name="Andy Mahendra"
+        imgUrl="/andy/andy.jpg"
+        tittle="Tour Guide"
+      />
+      <WalletInfo className="mx-4" label={10} />
+      <NavSideBar />
+      <SideBarList data={packagesItems} label="Packages" />
+      <SideBarList data={orderedItems} label="Ordered" />
     </div>
   );
 };

@@ -1,169 +1,105 @@
-import React, { useState } from 'react';
-import Button from 'components/Button';
-import './styles.scss';
-import _countriesData from 'json/countries.json';
-import PropTypes from 'prop-types';
-import SearchDate from '../Form/Date/SearchDate';
-import SearchPax from '../Form/Pax/SearchPax';
-import SearchLocationRecomended from '../Form/Location/Recomended';
-import SearchLocationManual from '../Form/Location/Manual';
-import _dataVacStay from 'json/vacations-staycations-recomendation.json';
-import { useDispatch, useSelector } from 'react-redux';
-import { changeLocation } from 'redux/features/searchInputLocation';
+import React, { useState } from "react";
+import "./styles.scss";
+import _countriesData from "json/countries.json";
+import PropTypes from "prop-types";
+import _dataVacStay from "json/vacations-staycations-recomendation.json";
+import Recomended from "../Form/Location/Recomended/Recomended";
 
-const HeaderBottom = (props, ref) => {
-	const [ locationIsShowed, locSetIsShowed ] = useState(true);
-	const [ dateIsShowed, dateSetIsShowed ] = useState(false);
-	const [ peopleIsShowed, peopleSetIsShowed ] = useState(false);
-	const [ _leftIsShowed, _leftSetIsShowed ] = useState(false);
-	const [ _rightIsShowed, _rightSetIsShowed ] = useState(false);
-	const [ locationType, setLocationType ] = useState('recomended');
-	const [ manualInputLocation, setManualInputLocation ] = useState([]);
-	const [ inputLocationVal, setInputLocationVal ] = useState('');
-	const [ inputDateVal, setInputDateVal ] = useState('');
-	const [ isCount, setIsCount ] = useState(0);
-	const [ vacStay, setVacStay ] = useState('Vacations');
-	const isActive = props.isActive ? 'active' : 'hide';
-	const dateValue = useSelector((state) => state.searchInputDate.value);
-	const locationValue = useSelector((state) => state.searchInputLocation.value);
-	const [ _dataVS, setDataVs ] = useState(_dataVacStay.vacations);
-	const dispatch = useDispatch();
+const HeaderBottom = ({ isActive }) => {
+  const [active, setActive] = useState("left");
+  const [values, setValues] = useState({ location: "", date: "", people: "" });
 
-	const handleClick = (param) => {
-		locSetIsShowed(false);
-		dateSetIsShowed(false);
-		peopleSetIsShowed(false);
-		_leftSetIsShowed(false);
-		_rightSetIsShowed(false);
+  const classes = {
+    left: active === "left" ? "active " : "",
+    mid: active === "mid" ? "active " : "",
+    right: active === "right" ? "active " : "",
+    activate: isActive && "active ",
+  };
 
-		if (param === 'location') {
-			locSetIsShowed(true);
-			_leftSetIsShowed(false);
-			_rightSetIsShowed(true);
-		}
-		if (param === 'date') dateSetIsShowed(true);
-		if (param === 'people') {
-			peopleSetIsShowed(true);
-			_leftSetIsShowed(true);
-			_rightSetIsShowed(false);
-		}
-	};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
 
-	const handleClickLocation = () => {
-		console.log('cek');
-	};
+  const lineLeft = document.querySelector(".line-left");
+  const lineRight = document.querySelector(".line-right");
 
-	const handleChange = (e) => {
-		dispatch(changeLocation(e.target.value));
-		if (e.target.value) {
-			setLocationType('manual');
-		} else {
-			setLocationType('recomended');
-		}
+  const hidden = {
+    line: {
+      left: active === "left" || active === "mid",
+      right: active === "mid" || active === "right",
+    },
+  };
 
-		let regex = new RegExp(e.target.value, 'i');
-		const regexResult = _countriesData.filter((item) => {
-			return item.capital.match(regex) ? item : null;
-		});
-		setManualInputLocation(regexResult);
-	};
-
-	const handleCount = (e) => {
-		if (e.target.className === 'btn-plus') setIsCount(isCount + 1);
-		if (e.target.className === 'btn-min' && isCount > 0) setIsCount(isCount - 1);
-	};
-
-	return (
-		<div id="header-bottom-form-search" className={isActive} onClick={props.onClick}>
-			<form className={isActive} ref={ref}>
-				<div
-					id="search-input-location"
-					className={locationIsShowed ? 'active' : ''}
-					onClick={() => handleClick('location')}
-					onMouseOver={() => _leftSetIsShowed(false)}
-					onMouseOut={() => (!locationIsShowed ? _leftSetIsShowed(true) : '')}
-				>
-					<label>Location</label>
-					<input
-						id="input-location"
-						placeholder="Where are you going?"
-						onChange={handleChange}
-						style={{ fontSize: '14px' }}
-						autoFocus
-						value={locationValue}
-					/>
-				</div>
-				<div
-					id="search-input-date"
-					className={dateIsShowed ? 'active' : ''}
-					onClick={() => handleClick('date')}
-				>
-					<span className={_leftIsShowed ? '_left' : '_left hide'} />
-					<label>Date</label>
-					<div id="input-date">{dateValue}</div>
-					<span className={_rightIsShowed ? '_right' : '_right hide'} />
-				</div>
-				<div
-					id="search-input-people"
-					className={peopleIsShowed ? 'active' : ''}
-					onClick={() => handleClick('people')}
-					onMouseOver={() => _rightSetIsShowed(false)}
-					onMouseOut={() => (!peopleIsShowed ? _rightSetIsShowed(true) : '')}
-				>
-					<div className="input-people">
-						<label>Who</label>
-						<div id="input-people">{isCount ? isCount : 'Add'} people you love</div>
-					</div>
-					<Button type="button" isPrimary isRounded style={{ width: '42px', height: '42px' }} />
-				</div>
-				{locationType === 'recomended' && (
-					<SearchLocationRecomended
-						className={locationIsShowed && isActive === 'active' ? 'active' : ''}
-						items={_dataVS.map((item, i) => {
-							return (
-								<div
-									key={'vr' + i}
-									className="item"
-									onClick={() => setInputLocationVal(vacStay + ' ' + item.tittle)}
-								>
-									<figure>
-										<img src={item.image} alt="" />
-									</figure>
-									<label>{item.tittle}</label>
-								</div>
-							);
-						})}
-						onClickVacatons={() => {
-							setVacStay('Vacations');
-							setDataVs(_dataVacStay.vacations);
-						}}
-						onClickStaycations={() => {
-							setVacStay('Staycations');
-							setDataVs(_dataVacStay.staycations);
-						}}
-						vacStay={vacStay}
-					/>
-				)}
-				{locationType === 'manual' && (
-					<SearchLocationManual
-						data={manualInputLocation}
-						className={locationIsShowed && isActive === 'active' ? 'active' : ''}
-						onClick={handleClickLocation}
-					/>
-				)}
-				<SearchDate className={dateIsShowed && isActive === 'active' ? 'active' : ''} />
-				<SearchPax
-					onClick={handleCount}
-					value={isCount}
-					className={peopleIsShowed && isActive === 'active' ? 'active' : ''}
-				/>
-			</form>
-		</div>
-	);
+  return (
+    <div className={"header-bottom " + classes.activate}>
+      <form action="search">
+        <button
+          onClick={() => setActive("left")}
+          type="button"
+          className={"item " + classes.left}
+          onMouseOver={() => (lineLeft.className = "line-left hide")}
+          onMouseOut={() => (lineLeft.className = "line-left ")}
+        >
+          <span>Location</span>
+          <input
+            onChange={handleChange}
+            name="location"
+            value={values.location}
+            placeholder="Location"
+          />
+          <Recomended />
+        </button>
+        <button
+          onClick={() => setActive("mid")}
+          type="button"
+          className={"item " + classes.mid}
+          onMouseOver={() => {
+            lineLeft.className = "line-left hide";
+            lineRight.className = "line-right hide";
+          }}
+          onMouseOut={() => {
+            lineLeft.className = "line-left";
+            lineRight.className = "line-right";
+          }}
+        >
+          <label hidden={hidden.line.left} className="line-left" />
+          <span>Date</span>
+          <input
+            readOnly
+            onChange={handleChange}
+            name="date"
+            value={values.date}
+            placeholder="make your day"
+          />
+          <label hidden={hidden.line.right} className="line-right" />
+        </button>
+        <button
+          onClick={() => setActive("right")}
+          type="button"
+          className={"item " + classes.right}
+          onMouseOver={() => (lineRight.className = "line-right hide")}
+          onMouseOut={() => (lineRight.className = "line-right ")}
+        >
+          <div>
+            <span>People who you love</span>
+            <input
+              readOnly
+              onChange={handleChange}
+              name="people"
+              value={values.people}
+              placeholder="add peopple who you love"
+            />
+          </div>
+          <button type="submit"></button>
+        </button>
+      </form>
+    </div>
+  );
 };
 
 HeaderBottom.prototype = {
-	isActive: PropTypes.bool
+  isActive: PropTypes.bool,
 };
 
 export default React.forwardRef(HeaderBottom);

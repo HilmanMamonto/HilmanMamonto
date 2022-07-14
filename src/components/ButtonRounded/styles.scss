@@ -1,26 +1,20 @@
-@import '/src/assets/styles/styles.scss';
-
 .btn-rounded {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 1px solid $ultralight-gray;
-	background-color: $white;
-	&:hover {
-		box-shadow: $primary-shadow-medium;
-	}
-	&.btn-rounded-small {
-		width: .75rem;
-		height: .75rem;
-		.btn-rounded-icon {
-			width: .5rem;
-		}
-	}
-	&.btn-rounded-medium {
-		width: 1.75rem;
-		height: 1.75rem;
-		.btn-rounded-icon {
-			width: .75rem;
-		}
-	}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.btn-rounded-small {
+    width: 0.75rem;
+    height: 0.75rem;
+    .btn-rounded-icon {
+      width: 0.5rem;
+    }
+  }
+  &.btn-rounded-medium {
+    width: 1.75rem;
+    height: 1.75rem;
+    .btn-rounded-icon {
+      width: 0.75rem;
+    }
+  }
 }

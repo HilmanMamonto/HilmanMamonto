@@ -1,114 +1,124 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
-import './styles.scss';
-import Button from 'components/Button';
+import React, { useRef } from "react";
+import PropTypes from "prop-types";
+import "./styles.scss";
+import Button from "components/Button";
+import ButtonRounded from "components/ButtonRounded/ButtonRounded";
+import { useEffect } from "react";
+import { useState } from "react";
 
-const HeaderCategories = (props) => {
-	const dataRef = useRef(null);
-	const handleScroll = (param) => {
-		if (param === 'next') dataRef.current.scrollLeft += 200;
-		if (param === 'prev') dataRef.current.scrollLeft -= 200;
-	};
+const shadows = {
+  small: "shadow-sm ",
+  medium: "shadow-md ",
+  large: "shadow-lg ",
+  undefined: " ",
+};
 
-	const arrClass = [ props.className ];
-	if (props.hasShadow) arrClass.push('box-shadow');
+const HeaderCategories = ({ className = "", shadow, shadowYShowed }) => {
+  const ref = useRef(null);
+  const [scrollPos, setScrollPos] = useState(0);
 
-	return (
-		<div id="header-categories" className={arrClass.join(' ')}>
-			<div className="button-wraper-left">
-				<Button
-					id="btn-categories-left"
-					type={'button'}
-					isBgWhite
-					isRounded
-					borderedLigthGray
-					children={'<'}
-					onClick={() => handleScroll('prev')}
-				/>
-			</div>
-			<div className="button-wraper-right">
-				<Button
-					id="btn-categories-right"
-					type="button"
-					isBgWhite
-					isRounded
-					borderedUltraLightGray
-					children={'>'}
-					onClick={() => handleScroll('next')}
-				/>
-			</div>
-			<div className="categories-items" ref={dataRef}>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="balloon.svg" alt="" />
-					<label>ballon</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-				<div className="item">
-					<img src="booating.svg" alt="" />
-					<label>Booating</label>
-				</div>
-			</div>
-		</div>
-	);
+  const handleScroll = (param) => {
+    if (param === "next") ref.current.scrollLeft += 200;
+    if (param === "prev") ref.current.scrollLeft -= 200;
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      setScrollPos(window.scrollY);
+    });
+    return () => document.removeEventListener("scroll", () => {});
+  }, []);
+
+  const classes = {
+    shadow: scrollPos >= shadowYShowed && shadows[shadow],
+  };
+
+  return (
+    <div className={"header-categories bg-white " + classes.shadow + className}>
+      <div className="wrapper container d-flex align-items-center">
+        <ButtonRounded
+          onClick={() => handleScroll("prev")}
+          className="btn-arrow left ms-2"
+          variant="prev"
+        />
+        <ButtonRounded
+          onClick={() => handleScroll("next")}
+          className="btn-arrow right me-2"
+          variant="next"
+        />
+        <div className="container categories-items d-flex p-0  gap-5" ref={ref}>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="balloon.svg" alt="" />
+            <span>ballon</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+          <div className="item">
+            <img src="booating.svg" alt="" />
+            <span>Booating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 HeaderCategories.propTypes = {
-	isActive: PropTypes.bool
+  isActive: PropTypes.bool,
 };
 
 export default HeaderCategories;

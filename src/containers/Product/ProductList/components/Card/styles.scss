@@ -1,132 +1,89 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/styles.scss";
 
 #product-card {
-	width: 100%;
+  width: 100%;
 
-	.pictures {
-		display: flex;
-		justify-content: center;
-		cursor: pointer;
-		position: relative;
-		padding-top: 100%;
-		overflow: hidden;
-		.btn-next {
-			position: absolute;
-			right: 0;
-			margin-right: 10px;
-			top: 45%;
-			z-index: 2;
-			border-radius: 100px;
-			width: 28px;
-			height: 28px;
-			background-color: $white;
-			opacity: 0%;
-			transition: opacity .3s ease-in-out;
-			&.active {
-				opacity: 70%;
-				transition: opacity .3s ease-in-out;
-				box-shadow: 0px 2px 6px $ultralight-gray;
-				&:hover {
-					box-shadow: 0px 4px 10px $ultralight-gray;
-					opacity: 100%;
-				}
-			}
-		}
-		.btn-prev {
-			position: absolute;
-			left: 0;
-			margin-left: 10px;
-			top: 45%;
-			z-index: 2;
-			border-radius: 100px;
-			width: 28px;
-			height: 28px;
-			background-color: $white;
-			opacity: 0%;
-			transition: opacity .1s ease-in-out;
-			&.active {
-				opacity: 70%;
-				transition: opacity .1s ease-in-out;
-				box-shadow: 0px 2px 6px $ultralight-gray;
-				&:hover {
-					box-shadow: 0px 4px 10px $ultralight-gray;
-					opacity: 100%;
-				}
-			}
-		}
-		.images {
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			border-radius: 6px;
-			overflow-x: scroll;
-			scroll-behavior: smooth;
-			display: flex;
-			&::-webkit-scrollbar {
-				height: 0px;
-			}
+  .pictures {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+    .btn-next {
+      position: absolute;
+      right: 0;
+      margin-right: 10px;
+      top: 45%;
+      z-index: 2;
+      border-radius: 100px;
+      width: 28px;
+      height: 28px;
+      opacity: 0%;
+      transition: opacity 0.3s ease-in-out;
+      &.active {
+        opacity: 70%;
+        transition: opacity 0.3s ease-in-out;
+        &:hover {
+          opacity: 100%;
+        }
+      }
+    }
+    .btn-prev {
+      position: absolute;
+      left: 0;
+      margin-left: 10px;
+      top: 45%;
+      z-index: 2;
+      border-radius: 100px;
+      width: 28px;
+      height: 28px;
+      opacity: 0%;
+      transition: opacity 0.1s ease-in-out;
+      &.active {
+        opacity: 70%;
+        transition: opacity 0.1s ease-in-out;
+        &:hover {
+          opacity: 100%;
+        }
+      }
+    }
+    .images {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border-radius: 6px;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      display: flex;
+      &::-webkit-scrollbar {
+        height: 0px;
+      }
 
-			img {
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-			}
-		}
-	}
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 
-	.card-dots {
-		margin-bottom: 22px;
-		display: flex;
-		align-items: center;
-		position: absolute;
-		bottom: 0;
-		.dot {
-			width: 6px;
-			height: 6px;
-			border-radius: 100px;
-			margin-left: 6px;
-			background-color: $white;
-			opacity: 70%;
-			&.active {
-				opacity: 100%;
-			}
-		}
-	}
-
-	.description {
-		display: flex;
-		flex-direction: column;
-
-		div {
-			display: flex;
-			justify-content: space-between;
-			&.budget {
-				display: block;
-			}
-		}
-
-		.description-head {
-			margin-top: 15px;
-			margin-bottom: 5px;
-		}
-	}
-
-	.location {
-		margin-bottom: 2px;
-		font-size: 14px;
-		color: gray;
-	}
-
-	.date {
-		margin-bottom: 10px;
-		font-size: 14px;
-		color: gray;
-	}
-
-	.budget {
-		span {
-			font-size: 12px;
-		}
-	}
+  .card-dots {
+    margin-bottom: 22px;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 100px;
+      opacity: 70%;
+      &.active {
+        opacity: 100%;
+      }
+    }
+  }
 }
