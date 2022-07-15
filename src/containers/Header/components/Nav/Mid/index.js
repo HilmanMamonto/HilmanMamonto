@@ -1,16 +1,17 @@
 import React from "react";
 import "./styles.scss";
 
-const NavMid = ({ className, onClick }) => {
+const NavMid = ({ id, className, onClick }) => {
   return (
-    <div className={"nav-mid " + className}>
+    <div id={id} className={"nav-mid " + className}>
       <button
         type="button"
         className="btn-search"
-        children={"Where are you going?"}
         textLightGray
         onClick={onClick}
-      />
+      >
+        Where are you going?
+      </button>
       <span />
       <button
         type="button"
@@ -19,10 +20,11 @@ const NavMid = ({ className, onClick }) => {
           width: "30px",
           height: "30px",
         }}
-        children={<img src="search.svg" alt="" />}
-      />
+      >
+        <img src="search.svg" alt="" />
+      </button>
     </div>
   );
 };
 
-export default React.forwardRef(NavMid);
+export default NavMid;

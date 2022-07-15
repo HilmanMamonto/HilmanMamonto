@@ -7,10 +7,9 @@ import NavMid from "./components/Nav/Mid";
 import PropTypes from "prop-types";
 import "./styles.scss";
 
-const Header = ({ hasCategories }) => {
-  const [isShowed, setIsShowed] = useState(false);
-  const refHeader = useRef(null);
-  const refInput = useRef(null);
+const Header = ({ hasCategories, className }) => {
+  const [show, setShow] = useState(false);
+  const ref = useRef(null);
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
@@ -21,34 +20,45 @@ const Header = ({ hasCategories }) => {
   });
 
   const handleClickOutside = (e) => {
-    if (
-      refHeader &&
-      !refHeader.current.contains(e.target) &&
-      !refInput.current.contains(e.target)
-    ) {
-      setIsShowed(false);
+    const { className } = e.target;
+
+    if (className === "bg-black-transparent") {
+      setShow(false);
     }
   };
 
+  const classes = {
+    activate: show ? "active " : "",
+    navLeft: "col d-flex align-items-center",
+    navMid: "col-mid col d-flex justify-content-center align-items-center",
+  };
+
   return (
-    <div className="headers">
+    <div ref={ref} className={"headers " + className}>
       <header className="d-flex align-items-center bg-white">
         <nav className="container ">
           <div className="row">
-            <div className="col">
+            <div className={classes.navLeft}>
               <NavLeft />
             </div>
-            <div className="col">
-              <NavMid ref={refHeader} onClick={() => setIsShowed(!isShowed)} />
+            <div className={classes.navMid}>
+              <h5 className={"mid-search-tittle fw-bold " + classes.activate}>
+                Start Your Search
+              </h5>
+              <NavMid
+                className={"mid " + classes.activate}
+                onClick={() => setShow(!show)}
+              />
             </div>
-            <div className="col">
+            <div className="col d-lg-block d-sm-none ">
               <NavRight />
             </div>
           </div>
         </nav>
-        <HeaderBottom isActive />
+        <HeaderBottom isActive={show} />
       </header>
       {hasCategories && <HeaderCategories />}
+      {show && <div className="bg-black-transparent" />}
     </div>
   );
 };

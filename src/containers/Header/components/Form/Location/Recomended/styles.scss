@@ -24,11 +24,10 @@
     margin-top: 24px;
     margin-bottom: 24px;
 
-    label {
+    .btn-nav {
       position: relative;
       display: flex;
-      font-size: 14px;
-      cursor: pointer;
+      font-size: 0.9rem;
       &:hover {
         opacity: 80%;
       }
@@ -84,9 +83,11 @@
       cursor: pointer;
       &.btn-prev {
         left: -15px;
+        z-index: 1;
       }
       &.btn-next {
         right: -15px;
+        z-index: 1;
       }
     }
     .items {
@@ -107,8 +108,7 @@
             border-radius: 6px;
           }
         }
-        label {
-          cursor: pointer;
+        span {
           font-size: 12px;
           display: flex;
           justify-content: flex-start;
