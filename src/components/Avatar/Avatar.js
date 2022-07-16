@@ -21,25 +21,27 @@ const sizes = {
 };
 
 const Avatar = ({
-  variant,
-  text,
-  href,
   onClick,
-  size,
   shadow,
-  color,
   disabeled,
   src,
-  alt,
-  as,
   className,
+  variant = "image",
+  size = "medium",
+  as = "button",
+  alt = "",
+  text = "",
+  href = "/",
+  style,
 }) => {
-  const styles = {
-    backgroundColor: color ? color : "gray",
-  };
   const disability = disabeled ? "disabeled " : "";
   const classes =
-    "avatar " + variants[variant] + sizes[size] + shadows[shadow] + disability;
+    "avatar " +
+    variants[variant] +
+    sizes[size] +
+    shadows[shadow] +
+    disability +
+    className;
 
   const item =
     variant === "image" ? (
@@ -52,14 +54,14 @@ const Avatar = ({
 
   const elements = {
     a: (
-      <a onClick={onClick} style={styles} className={classes} href={href}>
+      <a onClick={onClick} style={style} className={classes} href={href}>
         {item}
       </a>
     ),
     button: (
       <button
         className={classes}
-        style={styles}
+        style={style}
         disabled={disabeled}
         onClick={onClick}
       >
@@ -67,22 +69,13 @@ const Avatar = ({
       </button>
     ),
     link: (
-      <Link className={classes} style={styles} to={href}>
+      <Link className={classes} style={style} to={href}>
         {item}
       </Link>
     ),
   };
 
   return elements[as];
-};
-
-Avatar.defaultProps = {
-  variant: "image",
-  size: "medium",
-  as: "button",
-  alt: "",
-  text: "",
-  href: "/",
 };
 
 Avatar.propTypes = {

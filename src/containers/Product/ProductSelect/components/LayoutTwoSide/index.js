@@ -1,47 +1,31 @@
-import React from 'react';
-import Itinerary from './Infromation/Itinerary/Itinerary';
+import React from "react";
+import Itinerary from "./Infromation/Itinerary/Itinerary";
 
-import TravelAmenities from './Infromation/TravelAmenities/TravelAmenities';
-import TourGuideTittle from './Infromation/TourGuideTittle/TourGuideTittle';
-import './styles.scss';
-import Staycations from './Infromation/Staycations';
-import BookCard from './BookCard';
-import MoreThings from './Infromation/MoreThings';
-import PropTypes from 'prop-types';
+import TravelAmenities from "./Infromation/TravelAmenities/TravelAmenities";
+import TourGuideTittle from "./Infromation/TourGuideTittle/TourGuideTittle";
+import "./styles.scss";
+import Staycations from "./Infromation/Staycations";
+import BookCard from "./BookCard";
+import MoreThings from "./Infromation/MoreThings";
 
 const LayoutTwoSide = (props) => {
-	return (
-		<div id="product-body">
-			<div className="body-left">
-				<TourGuideTittle
-					tourGuideName={props.tourGuideName}
-					freePickup={props.freePickup}
-					tourGuidePhoto={props.tourGuidePhoto}
-				/>
-				<TravelAmenities
-					travelAmenities={props.travelAmenities}
-					travelAmenitiesNot={props.travelAmenitiesNot}
-					language={props.language}
-				/>
-				<Itinerary itinerary={props.itinerary} />
-				<Staycations />
-				<MoreThings />
-			</div>
-			<div className="body-right">
-				<BookCard />
-			</div>
-		</div>
-	);
-};
-
-LayoutTwoSide.propTypes = {
-	tourGuideName: PropTypes.string.isRequired,
-	freePickup: PropTypes.bool.isRequired,
-	travelAmenities: PropTypes.array.isRequired,
-	travelAmenitiesNot: PropTypes.array.isRequired,
-	language: PropTypes.array.isRequired,
-	itinerary: PropTypes.array.isRequired,
-	tourGuidePhoto: PropTypes.string.isRequired
+  return (
+    <div
+      id="product-body"
+      className="flex-column flex-xl-row gap-5 container mt-5"
+    >
+      <div className="body-left">
+        <TourGuideTittle {...props} />
+        <TravelAmenities {...props} />
+        <Itinerary {...props} />
+        <Staycations />
+        <MoreThings />
+      </div>
+      <div className="body-right d-sm-none d-md-flex">
+        <BookCard />
+      </div>
+    </div>
+  );
 };
 
 export default LayoutTwoSide;

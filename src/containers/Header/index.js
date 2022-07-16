@@ -29,8 +29,8 @@ const Header = ({ hasCategories, className }) => {
 
   const classes = {
     activate: show ? "active " : "",
-    navLeft: "col d-flex align-items-center",
-    navMid: "col-mid col d-flex justify-content-center align-items-center",
+    navLeft: "col d-flex col-sm-1 col-md-2 col-lg align-items-center",
+    navMid: "col-mid  col d-flex justify-content-center align-items-center ",
   };
 
   return (
@@ -41,16 +41,13 @@ const Header = ({ hasCategories, className }) => {
             <div className={classes.navLeft}>
               <NavLeft />
             </div>
-            <div className={classes.navMid}>
-              <h5 className={"mid-search-tittle fw-bold " + classes.activate}>
-                Start Your Search
-              </h5>
+            <div className={classes.navMid + classes.activate}>
               <NavMid
                 className={"mid " + classes.activate}
                 onClick={() => setShow(!show)}
               />
             </div>
-            <div className="col d-lg-block d-sm-none ">
+            <div className="col">
               <NavRight />
             </div>
           </div>

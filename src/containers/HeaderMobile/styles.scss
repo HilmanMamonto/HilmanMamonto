@@ -1,0 +1,32 @@
+@import "/src/assets/styles/variables";
+
+.header-mobile-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  .header-mobile {
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    .items {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-radius: 100px;
+      height: 60px;
+
+      .dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 100px;
+        background-color: $light-gray;
+      }
+      small {
+        font-size: 0.75rem;
+        color: $light-gray;
+      }
+    }
+  }
+}

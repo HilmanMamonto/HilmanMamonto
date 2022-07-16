@@ -4,7 +4,6 @@ import PlaceDesc from "./components/PlaceDesc";
 import ProductPictures from "./components/ProductPictures";
 import ProductTittle from "./components/ProductTittle";
 import Reviews from "./components/Reviews";
-import "./styles.scss";
 import _dataProduct from "json/products.json";
 import { useParams } from "react-router-dom";
 
@@ -13,7 +12,7 @@ const ProductSelected = () => {
   let dataProduct = _dataProduct.filter((item) => item.id === id);
 
   return dataProduct.map((item, i) => (
-    <div key={"ps" + i} id="product-selected">
+    <div key={"ps" + i}>
       <ProductTittle
         tourName={item.tourName}
         maxPax={item.maxPax}

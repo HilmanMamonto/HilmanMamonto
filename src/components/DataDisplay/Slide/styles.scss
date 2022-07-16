@@ -1,0 +1,29 @@
+@import "/src/assets/styles/variables";
+
+.slide {
+  position: relative;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+
+  .sl-items {
+    height: fit-content;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      height: 0px;
+    }
+  }
+
+  .btn-arrow {
+    position: absolute;
+    &.right {
+      right: 0;
+    }
+
+    &.left {
+      left: 0;
+    }
+  }
+}

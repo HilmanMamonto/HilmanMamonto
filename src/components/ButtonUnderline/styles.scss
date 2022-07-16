@@ -1,0 +1,40 @@
+@import "/src/assets/styles/variables";
+
+.btn-has-underline {
+  position: relative;
+  display: flex;
+  font-size: 0.9rem;
+  &:hover {
+    opacity: 80%;
+  }
+  &::after {
+    content: "";
+    display: flex;
+    width: 100%;
+    position: absolute;
+    height: 2px;
+    bottom: -2px;
+    background-color: $gray;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  &.active {
+    &::after {
+      content: "";
+      display: flex;
+      width: 100%;
+      position: absolute;
+      height: 2px;
+      bottom: -2px;
+      background-color: $gray;
+      transform: scaleX(1);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}

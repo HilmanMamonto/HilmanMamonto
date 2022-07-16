@@ -1,13 +1,8 @@
-@import '/src/assets/styles/styles.scss';
-
 #product-body {
-	display: grid;
-	grid-template-columns: auto auto;
-	flex-direction: row;
-	justify-content: space-between;
-	margin: 0px 120px;
-	margin-top: 42px;
-	.body-left {
-		max-width: 686px;
-	}
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .body-left {
+    min-width: 400px;
+  }
 }

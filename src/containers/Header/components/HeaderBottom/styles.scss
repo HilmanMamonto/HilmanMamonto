@@ -1,4 +1,5 @@
 @import "/src/assets/styles/variables";
+@import "/src/assets/scss/mixins/breakpoints";
 
 .header-bottom {
   position: absolute;
@@ -16,17 +17,156 @@
 
   &.active {
     visibility: visible;
-    height: 80px;
+    height: 160px;
     transition: all 0.3s ease-in-out;
   }
 
-  form {
-    background-color: #f4f4f4;
-    display: flex;
-    border-radius: 100px;
-    display: flex;
-    height: 60px;
+  .form-search-wrapper {
+    height: fit-content;
     position: relative;
+    display: flex;
+    justify-content: center;
+
+    h5 {
+      height: 80px;
+      width: 100%;
+      bottom: 100%;
+    }
+
+    form {
+      background-color: #f4f4f4;
+      display: flex;
+      border-radius: 100px;
+      display: flex;
+      height: 60px;
+      position: relative;
+
+      .item-search {
+        border-radius: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1.5rem;
+        span {
+          font-size: 0.75rem;
+          font-weight: 600;
+          white-space: nowrap;
+        }
+        input {
+          border: none;
+          padding: 0;
+          width: 100%;
+          background-color: transparent;
+          &:focus {
+            outline: none;
+          }
+          &:read-only {
+            cursor: pointer;
+          }
+        }
+        &.active {
+          background-color: $white;
+        }
+        &.location,
+        &.date,
+        &.people {
+          position: relative;
+          &.item-search {
+            &:not(.active) {
+              &:hover {
+                background-color: $ultralight-gray;
+              }
+            }
+            &.active {
+              box-shadow: $shadow-m $shadow-ultralight-gray;
+            }
+          }
+        }
+
+        .line-left,
+        .line-right {
+          height: 50%;
+          width: 2px;
+          background-color: $ultralight-gray;
+          position: absolute;
+          &.hide {
+            visibility: hidden;
+          }
+        }
+        .line-left {
+          left: -1px;
+        }
+        .line-right {
+          right: -1px;
+        }
+
+        &:nth-child(3) {
+          flex-direction: row;
+          padding-right: 0;
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            height: 100%;
+          }
+        }
+      }
+
+      button[type="submit"] {
+        background-color: $gray;
+        width: 50px;
+        height: 50px;
+        border-radius: 100px;
+        margin: auto 0;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .header-bottom {
+    &.active {
+      height: 160px;
+    }
+  }
+  .form-search-wrapper {
+    h5 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .header-bottom {
+    &.active {
+      height: 160px;
+    }
+  }
+
+  .form-search-wrapper {
+    transform: translateX(-200px) translateY(-200px) scale(0.1);
+    transition: all 0.4s ease-in-out;
+    opacity: 0%;
+
+    &.active {
+      transform: translateX(0px) translateY(0px) scale(1);
+      transition: all 0.4s ease-in-out;
+      opacity: 100%;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .header-bottom {
+    &.active {
+      height: 80px;
+    }
+  }
+
+  .form-search-wrapper {
     transform: translateY(-200px) scale(0.1);
     transition: all 0.4s ease-in-out;
     opacity: 0%;
@@ -37,86 +177,9 @@
       opacity: 100%;
     }
 
-    .item-search {
-      border-radius: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 1.5rem;
-      span {
-        font-size: 0.75rem;
-        font-weight: 600;
-        white-space: nowrap;
-      }
-      input {
-        border: none;
-        padding: 0;
-        width: 100%;
-        background-color: transparent;
-        &:focus {
-          outline: none;
-        }
-        &:read-only {
-          cursor: pointer;
-        }
-      }
-      &.active {
-        background-color: $white;
-      }
-      &.location,
-      &.date,
-      &.people {
-        position: relative;
-        &.item-search {
-          &:not(.active) {
-            &:hover {
-              background-color: $ultralight-gray;
-            }
-          }
-          &.active {
-            box-shadow: $shadow-m $shadow-ultralight-gray;
-          }
-        }
-      }
-
-      .line-left,
-      .line-right {
-        height: 50%;
-        width: 2px;
-        background-color: $ultralight-gray;
-        position: absolute;
-        &.hide {
-          visibility: hidden;
-        }
-      }
-      .line-left {
-        left: -1px;
-      }
-      .line-right {
-        right: -1px;
-      }
-
-      &:nth-child(3) {
-        flex-direction: row;
-        padding-right: 0;
-        div {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: center;
-          height: 100%;
-        }
-      }
-    }
-
-    button[type="submit"] {
-      background-color: $gray;
-      width: 50px;
-      height: 50px;
-      border-radius: 100px;
-      margin: auto 0;
-      margin-right: 0.5rem;
-      margin-left: 0.5rem;
+    h5 {
+      position: absolute;
+      margin-bottom: 10px;
     }
   }
 }

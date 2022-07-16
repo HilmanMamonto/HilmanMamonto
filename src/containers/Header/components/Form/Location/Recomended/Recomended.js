@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import _dataVacStay from "json/vacations-staycations-recomendation.json";
 import ButtonRounded from "components/ButtonRounded/ButtonRounded";
 import { ANIMATE_FADEIN_RIGHT } from "assets/animate/animate";
+import SimpleCard from "components/DataDisplay/SimpleCard/SimpleCard";
+import ButtonUnderlline from "components/ButtonUnderline/ButtonUnderlline";
 
 const Recomended = ({ className = "", isActive, onChange }) => {
   const refItems = useRef(null);
@@ -36,20 +38,16 @@ const Recomended = ({ className = "", isActive, onChange }) => {
       className={"search-location-recomended " + classes.activate + className}
     >
       <div className="search-location-tittle d-flex gap-4">
-        <button
-          type="button"
-          className={"btn-nav " + classes.vacationsLabel}
+        <ButtonUnderlline
+          isActive={vacStay === "Vacations"}
           onClick={() => setVacStay("Vacations")}
-        >
-          Vacations
-        </button>
-        <button
-          type="button"
-          className={"btn-nav " + classes.staycationsLabel}
+          label="Vacations"
+        />
+        <ButtonUnderlline
+          isActive={vacStay === "Staycations"}
           onClick={() => setVacStay("Staycations")}
-        >
-          Staycations
-        </button>
+          label="Staycations"
+        />
       </div>
       <div className="location-categories">
         <ButtonRounded
@@ -68,14 +66,11 @@ const Recomended = ({ className = "", isActive, onChange }) => {
               <button
                 key={"vr" + i}
                 type="button"
-                className={"item " + ANIMATE_FADEIN_RIGHT}
+                className={"item-recomended " + ANIMATE_FADEIN_RIGHT}
                 onClick={() => setValue(item.tittle)}
                 style={{ animationDelay: 0.2 * i + "s" }}
               >
-                <figure className="mb-2">
-                  <img src={item.image} alt="" />
-                </figure>
-                <span className="fw-semibold">{item.tittle}</span>
+                <SimpleCard tittle={item.tittle} imageUrl={item.image} />
               </button>
             );
           })}

@@ -1,3 +1,4 @@
+import Icons from "components/Icons";
 import React from "react";
 import "./styles.scss";
 
@@ -6,7 +7,7 @@ const NavMid = ({ id, className, onClick }) => {
     <div id={id} className={"nav-mid " + className}>
       <button
         type="button"
-        className="btn-search"
+        className="btn-search fw-semibold"
         textLightGray
         onClick={onClick}
       >
@@ -21,7 +22,7 @@ const NavMid = ({ id, className, onClick }) => {
           height: "30px",
         }}
       >
-        <img src="search.svg" alt="" />
+        <Icons size="md" variant="search" />
       </button>
     </div>
   );

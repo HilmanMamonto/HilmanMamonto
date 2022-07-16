@@ -40,7 +40,7 @@ const Manual = ({ value, className = "", isActive }) => {
 };
 
 Manual.propTypes = {
-  onChange: PropTypes.func.isRequired,
+  // onChange: PropTypes.func.isRequired,
   isActive: PropTypes.bool,
 };
 

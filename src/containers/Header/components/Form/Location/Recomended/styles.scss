@@ -23,45 +23,6 @@
     display: flex;
     margin-top: 24px;
     margin-bottom: 24px;
-
-    .btn-nav {
-      position: relative;
-      display: flex;
-      font-size: 0.9rem;
-      &:hover {
-        opacity: 80%;
-      }
-      &::after {
-        content: "";
-        display: flex;
-        width: 100%;
-        position: absolute;
-        height: 2px;
-        bottom: -2px;
-        background-color: $gray;
-        transform: scaleX(0);
-        transition: transform 0.3s ease-in-out;
-      }
-      &:hover {
-        &::after {
-          transform: scaleX(1);
-          transition: transform 0.3s ease-in-out;
-        }
-      }
-      &.active {
-        &::after {
-          content: "";
-          display: flex;
-          width: 100%;
-          position: absolute;
-          height: 2px;
-          bottom: -2px;
-          background-color: $gray;
-          transform: scaleX(1);
-          transition: transform 0.3s ease-in-out;
-        }
-      }
-    }
   }
 
   .location-categories {
@@ -97,23 +58,6 @@
         -webkit-appearance: none;
       }
       scroll-behavior: smooth;
-      .item {
-        figure {
-          cursor: pointer;
-          width: 128px;
-          height: 190px;
-          border-radius: 6px;
-          img {
-            width: 100%;
-            border-radius: 6px;
-          }
-        }
-        span {
-          font-size: 12px;
-          display: flex;
-          justify-content: flex-start;
-        }
-      }
     }
   }
 

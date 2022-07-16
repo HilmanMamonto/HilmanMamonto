@@ -1,32 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
+import Icons from "components/Icons";
 
 const sizes = {
-  xsmall: "btn-ic-xsmall ",
-  small: "btn-ic-small ",
-  medium: "btn-ic-medium ",
-  large: "btn-ic-large ",
-  xlarge: "btn-ic-xlarge ",
+  xs: "btn-ic-xsmall ",
+  sm: "btn-ic-small ",
+  md: "btn-ic-medium ",
+  lg: "btn-ic-large ",
+  xl: "btn-ic-xlarge ",
   undefined: "",
 };
 
-const variants = {
-  "close-rounded-white": "/icons/close-background-rounded.svg",
-};
-
-const IconButton = ({ type = "button", size, variant, className, onClick }) => {
-  const classContainer = className;
+const IconButton = ({
+  type = "button",
+  size = "md",
+  variant,
+  className,
+  onClick,
+}) => {
+  const classContainer = sizes[size] + className;
 
   return (
     <button type={type} onClick={onClick} className={classContainer}>
-      <img className={sizes[size]} src={variants[variant]} />
+      <Icons variant={variant} />
     </button>
   );
-};
-
-IconButton.defaultProps = {
-  size: "medium",
 };
 
 IconButton.propTypes = {

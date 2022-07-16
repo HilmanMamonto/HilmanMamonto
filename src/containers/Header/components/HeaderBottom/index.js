@@ -18,7 +18,7 @@ const HeaderBottom = ({ className, isActive }) => {
     mid: active === "mid" ? "active " : "",
     right: active === "right" ? "active " : "",
     animate: ANIMATE_BACKINDOWN,
-    activate: isActive ? "active" : "",
+    activate: isActive ? "active " : "",
   };
 
   const handleChange = (e) => {
@@ -54,8 +54,17 @@ const HeaderBottom = ({ className, isActive }) => {
   };
 
   return (
-    <div className={"header-bottom border-bottom " + classes.activate}>
-      <div className={classes.animate}>
+    <div className={"header-bottom border-bottom  " + classes.activate}>
+      <div
+        className={"form-search-wrapper d-flex flex-column " + classes.activate}
+      >
+        <h5
+          className={
+            "fw-bold d-sm-flex justify-content-center align-items-center "
+          }
+        >
+          Start Your Search
+        </h5>
         <form action="search" className={classes.activate}>
           <button
             onClick={() => setActive("left")}
