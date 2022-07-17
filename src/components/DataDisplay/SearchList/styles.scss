@@ -1,0 +1,24 @@
+@import "/src/assets/styles/variables";
+
+.search-list {
+  .sl-items {
+    display: flex;
+    flex-direction: column;
+
+    .sl-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      width: fit-content;
+      .sl-details {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        span,
+        small {
+          text-align: start;
+        }
+      }
+    }
+  }
+}

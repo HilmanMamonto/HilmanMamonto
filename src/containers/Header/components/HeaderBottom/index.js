@@ -107,7 +107,7 @@ const HeaderBottom = ({ className, isActive }) => {
             />
             <label hidden={hidden.line.right} className="line-right" />
           </button>
-          <button
+          <div
             onClick={() => setActive("right")}
             type="button"
             className={"item-search people " + classes.right}
@@ -125,7 +125,7 @@ const HeaderBottom = ({ className, isActive }) => {
               />
             </div>
             <button type="submit"></button>
-          </button>
+          </div>
           {contents[active]}
         </form>
       </div>

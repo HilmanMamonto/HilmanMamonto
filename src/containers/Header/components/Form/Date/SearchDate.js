@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { useDispatch } from "react-redux";
-import { changeDate } from "redux/features/searchInputDate";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
 const SearchDate = ({ isActive, className }) => {
-  const dispatch = useDispatch();
   const dateValue = useSelector((state) => state.searchInputDate.value);
 
   const [dateState, setDateState] = useState([
@@ -20,12 +18,8 @@ const SearchDate = ({ isActive, className }) => {
       key: "selection",
     },
   ]);
-  const [test, setTest] = useState("");
 
   let result = "";
-  useEffect(() => {
-    dispatch(changeDate(result));
-  });
 
   const startDay = format(dateState[0].startDate, "d");
   const endDay = format(dateState[0].endDate, "d");

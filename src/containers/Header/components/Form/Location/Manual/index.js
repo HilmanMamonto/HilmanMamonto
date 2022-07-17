@@ -26,7 +26,6 @@ const Manual = ({ value, className = "", isActive }) => {
         {data.map((item, i) => {
           return (
             <button type="button" className="item" key={"location " + i}>
-              <figure>{/* <img src={item.flag} alt="" /> */}</figure>
               <div className="details">
                 <label>{item.capital}</label>
                 <span>{item.name}</span>
@@ -40,7 +39,6 @@ const Manual = ({ value, className = "", isActive }) => {
 };
 
 Manual.propTypes = {
-  // onChange: PropTypes.func.isRequired,
   isActive: PropTypes.bool,
 };
 

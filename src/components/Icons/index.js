@@ -25,6 +25,12 @@ const variants = {
   "checkmark-single": "/icons/checkmark-single.svg",
   "checkmark-single-green": "/icons/checkmark-single-green.svg",
   search: "/icons/search.svg",
+  plus: "/icons/plus.svg",
+  min: "/icons/min.svg",
+  "close-bg-gray": "/icons/close-bg-gray.svg",
+  "close-white": "/icons/close-white.svg",
+  close: "/icons/close-gray.svg",
+  "location-fill": "/icons/location-fill.svg",
 };
 
 const Icons = ({ size, variant, onClick, style, className }) => {

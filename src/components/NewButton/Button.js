@@ -60,7 +60,7 @@ const Button = ({
   as = "button",
   size = "medium",
   color = "primary",
-  buttonType = "button",
+  type = "button",
   href,
   onClick,
   shadow,
@@ -121,7 +121,7 @@ const Button = ({
     ),
     button: (
       <button
-        type={buttonType}
+        type={type}
         style={styles}
         className={classContainer}
         onClick={onClick}
@@ -153,7 +153,7 @@ Button.propTypes = {
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string,
   loadingIndicator: PropTypes.string,
-  buttonType: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export default Button;

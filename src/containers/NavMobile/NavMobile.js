@@ -20,10 +20,8 @@ const NavMobile = ({ className }) => {
         <Icons variant="search" />
         <span>search</span>
       </button>
-      <button className="d-flex flex-column align-items-center gap-1">
-        <Avatar size="small" />
-        <span>Profile</span>
-      </button>
+      <Avatar size="small" />
+      <span>Profile</span>
     </div>
   );
 };

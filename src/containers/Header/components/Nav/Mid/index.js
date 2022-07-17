@@ -8,7 +8,6 @@ const NavMid = ({ id, className, onClick }) => {
       <button
         type="button"
         className="btn-search fw-semibold"
-        textLightGray
         onClick={onClick}
       >
         Where are you going?
