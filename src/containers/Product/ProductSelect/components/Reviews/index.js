@@ -5,7 +5,7 @@ import Icons from "components/Icons";
 
 const Reviews = ({}) => {
   return (
-    <div className="select-product-reviews border-top border-bottom pt-5">
+    <div className="position border-top border-bottom pt-5">
       <div className="d-flex gap-4">
         <div className="d-flex align-items-center gap-2">
           <Icons variant="star-fill" size="large" />

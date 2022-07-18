@@ -1,54 +1,47 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import H from 'components/H';
-import Button from 'components/Button';
-import './styles.scss';
+import DateRangePicker from "components/Input/DateRangePicker/DateRangePicker";
+import Button from "components/NewButton/Button";
+import { useClickOutside } from "components/utility/clickOutside";
+import React from "react";
+import { useState } from "react";
 
-const CheckIn = (props) => {
-	const [ checkInDate, setCheckInDate ] = useState();
+const CheckIn = ({}) => {
+  const { show, ref, onToggle } = useClickOutside();
+  const [values, setValues] = useState();
 
-	const handleClick = (param) => {
-		if (param === 'checkIn') {
-			console.log('cek in button clicked');
-		}
-		if (param === 'checkOut') {
-			console.log('cek out button clicked');
-		}
-	};
+  const labels = {
+    checkIn: values ? values.startDate : "-",
+    checkOut: values ? values.endDate : "-",
+  };
 
-	return (
-		<div id="check-in">
-			<H type="3" childrend={'Select check-in date'} isGray textRegular />
-			<div className="from-wraper">
-				<div className="form-input">
-					<div className="in">
-						<label>CheckIn</label>
-						<Button
-							type="button"
-							children={'When you want to start?'}
-							textLightGray
-							onClick={() => handleClick('checkIn')}
-						/>
-					</div>
-					<div className="out">
-						<span />
-						<div>
-							<label>CheckOut</label>
-							<Button
-								type="button"
-								children={'When you want to end?'}
-								textLightGray
-								onClick={() => handleClick('checkOut')}
-							/>
-						</div>
-					</div>
-				</div>
-				<Button className={'btn-add-to-list'} type="button" children={'Add To List'} isPrimary textWhite />
-			</div>
-		</div>
-	);
+  return (
+    <div className="d-flex gap-3">
+      <div ref={ref} className="d-flex flex-column w-75 position-relative">
+        <button
+          onClick={onToggle}
+          className="h-100 d-flex px-3 w-100 border rounded"
+        >
+          <div className="w-100 d-flex border-end align-items-start flex-column my-auto">
+            <small className="fw-semibold">check-in</small>
+            <span>{labels.checkIn}</span>
+          </div>
+          <div className="w-100 ps-3 d-flex align-items-start flex-column my-auto">
+            <small className="fw-semibold">check-out</small>
+            <span>{labels.checkOut}</span>
+          </div>
+        </button>
+        <DateRangePicker
+          hidden={!show}
+          className="position-absolute top-100 rounded shadow mt-4"
+          onChange={(data) => setValues({ ...data.formated })}
+        />
+      </div>
+      <Button
+        justifyContent="center"
+        label="add to book"
+        className="py-3 w-50"
+      />
+    </div>
+  );
 };
-
-CheckIn.propTypes = {};
 
 export default CheckIn;

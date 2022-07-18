@@ -1,54 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './styles.scss';
-import H from 'components/H';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Amenities = (props) => {
-	return (
-		<div id="staycation-aminities">
-			<H type="2" childrend={'Amenities'} textBold isPrimary />
-			<div className="items">
-				<div className="item">
-					<img />
-					<label>1</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>2</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>3</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>4</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>5</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>6</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>7</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>8</label>
-				</div>
-				<div className="item">
-					<img />
-					<label>9</label>
-				</div>
-			</div>
-		</div>
-	);
+const Amenities = ({}) => {
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+  return (
+    <div>
+      <h4 className="mb-5">Amenities</h4>
+      <div className="mb-5 row row-cols-3 row-cols-md-4">
+        {arr.map((item) => {
+          return (
+            <div key={item} className="mb-4">
+              <img />
+              <label>1</label>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
-
-Amenities.propTypes = {};
 
 export default Amenities;

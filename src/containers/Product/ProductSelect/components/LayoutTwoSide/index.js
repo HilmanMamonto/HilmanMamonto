@@ -4,7 +4,7 @@ import Itinerary from "./Infromation/Itinerary/Itinerary";
 import TravelAmenities from "./Infromation/TravelAmenities/TravelAmenities";
 import TourGuideTittle from "./Infromation/TourGuideTittle/TourGuideTittle";
 import "./styles.scss";
-import Staycations from "./Infromation/Staycations";
+import Staycations from "./Infromation/Staycations/Staycations";
 import BookCard from "./BookCard";
 import MoreThings from "./Infromation/MoreThings";
 

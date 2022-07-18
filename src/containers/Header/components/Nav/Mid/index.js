@@ -2,9 +2,9 @@ import Icons from "components/Icons";
 import React from "react";
 import "./styles.scss";
 
-const NavMid = ({ id, className, onClick }) => {
+const NavMid = ({ className, hidden, onClick }) => {
   return (
-    <div id={id} className={"nav-mid " + className}>
+    <div hidden={hidden} className={"nav-mid " + className}>
       <button
         type="button"
         className="btn-search fw-semibold"

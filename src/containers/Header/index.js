@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import HeaderBottom from "./components/HeaderBottom/HeaderBottom";
 import HeaderCategories from "./components/Categories";
 import NavLeft from "./components/Nav/Left";
@@ -7,50 +7,32 @@ import NavMid from "./components/Nav/Mid";
 import PropTypes from "prop-types";
 import "./styles.scss";
 import HeaderMobile from "containers/HeaderMobile/HeaderMobile";
+import { useClickOutside } from "components/utility/clickOutside";
 
 const Header = ({ hasCategories, className, hidden }) => {
-  const [show, setShow] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  });
-
-  const handleClickOutside = (e) => {
-    const { className } = e.target;
-
-    if (className === "bg-black-transparent") {
-      setShow(false);
-    }
-  };
+  const { show, ref, onToggle } = useClickOutside();
 
   const classes = {
-    activate: show ? "active " : "",
-    navLeft: "col d-flex col-sm-1 col-md-2 col-lg align-items-center",
-    navMid: "col-mid  col d-flex justify-content-center align-items-center ",
+    navLeft: "d-flex col-sm-1 col-md-2 col-lg align-items-center",
+    navMid: "d-flex col-sm-3 col-md-5 col-lg align-items-center",
+    navRight: "col-sm-5 col-lg-4",
   };
 
   return (
-    <div hidden={hidden} ref={ref} className={"headers " + className}>
-      <header className="d-none d-sm-none d-md-flex align-items-center bg-white">
+    <div hidden={hidden} className={"headers " + className}>
+      <header
+        ref={ref}
+        className="d-none d-sm-none d-md-flex align-items-center bg-white"
+      >
         <nav className="container ">
-          <div className="row">
-            <div className={classes.navLeft}>
-              <NavLeft />
-            </div>
-            <div className={classes.navMid + classes.activate}>
-              <NavMid
-                className={"mid " + classes.activate}
-                onClick={() => setShow(!show)}
-              />
-            </div>
-            <div className="col">
-              <NavRight />
-            </div>
+          <div className="row row-cols-3">
+            <NavLeft className={classes.navLeft} />
+            <NavMid
+              hidden={show}
+              className={classes.navMid}
+              onClick={onToggle}
+            />
+            <NavRight className={classes.navRight} />
           </div>
         </nav>
         <HeaderBottom isActive={show} />

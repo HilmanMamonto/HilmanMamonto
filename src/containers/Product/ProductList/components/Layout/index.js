@@ -3,13 +3,11 @@ import React from "react";
 import ProductCard from "../Card";
 import "./styles.scss";
 
-const ProductListLayout = (props) => {
-  const _data = props.data;
-
+const ProductListLayout = ({ className, data }) => {
   return (
-    <div className="container">
+    <div className={"container " + className}>
       <div id="product-grid">
-        {_data.map((item, i) => {
+        {data.map((item, i) => {
           return (
             <ProductCard
               id={item.id}

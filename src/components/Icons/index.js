@@ -32,6 +32,7 @@ const variants = {
   "close-white": "/icons/close-white.svg",
   close: "/icons/close-gray.svg",
   "location-fill": "/icons/location-fill.svg",
+  burger: "/icons/burger.svg",
 };
 
 const Icons = ({ size, variant, onClick, style, className }) => {

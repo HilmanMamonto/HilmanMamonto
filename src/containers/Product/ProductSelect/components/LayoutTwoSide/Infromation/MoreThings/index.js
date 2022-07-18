@@ -1,21 +1,21 @@
-import H from 'components/H';
-import React from 'react';
-import './styles.scss';
+import React from "react";
 
 const MoreThings = () => {
-	return (
-		<div id="more-things">
-			<div className="more-things">
-				<H type="2" textRegular isGray childrend={'More thing you should know'} />
-				<span>Please bring a mask and a flashlight</span>
-				<span>Please wear shoes instead of sandals</span>
-			</div>
-			<div className="pickup-services">
-				<H type="2" textRegular childrend={'Pick-up services'} />
-				<span>Free Pick-up Available. Malang city area except for the station</span>
-			</div>
-		</div>
-	);
+  return (
+    <div className="d-flex gap-4 flex-column mt-4 mb-5">
+      <div>
+        <h4>More thing you should know</h4>
+        <span>Please bring a mask and a flashlight</span>
+        <span>Please wear shoes instead of sandals</span>
+      </div>
+      <div>
+        <h4>Pick-up services</h4>
+        <span>
+          Free Pick-up Available. Malang city area except for the station
+        </span>
+      </div>
+    </div>
+  );
 };
 
 export default MoreThings;

@@ -6,10 +6,20 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
+const gaps = {
+  0: "gap-0 ",
+  1: "gap-1 ",
+  2: "gap-2 ",
+  3: "gap-3 ",
+  4: "gap-4 ",
+  5: "gap-5 ",
+};
+
 const Slide = ({
   children = <span>add child</span>,
   className,
   interval = "child",
+  gap = 2,
 }) => {
   const ref = useRef(null);
 
@@ -43,7 +53,7 @@ const Slide = ({
         className="btn-arrow left ms-2"
         variant="prev"
       />
-      <div ref={ref} className="sl-items w-100 d-flex gap-2">
+      <div ref={ref} className={"sl-items w-100 d-flex " + gaps[gap]}>
         {children}
       </div>
       <ButtonRounded

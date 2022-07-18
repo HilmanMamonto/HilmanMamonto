@@ -1,0 +1,12 @@
+@import "/src/assets/styles/variables";
+
+.staycations-items {
+  .si-info {
+    display: block;
+    white-space: nowrap;
+  }
+  img {
+    width: 110px;
+    height: 110px;
+  }
+}

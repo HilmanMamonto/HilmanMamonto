@@ -3,9 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";
 
-const NavLeft = () => {
+const NavLeft = ({ className }) => {
   return (
-    <div className="nav-left">
+    <div className={"nav-left " + className}>
       <Link to="/">
         <label>
           Rotate
