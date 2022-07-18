@@ -6,13 +6,14 @@ import ProductTittle from "./components/ProductTittle";
 import Reviews from "./components/Reviews";
 import _dataProduct from "json/products.json";
 import { useParams } from "react-router-dom";
+import NavBottom from "./components/NavBottom/NavBottom";
 
 const ProductSelected = () => {
   let { id } = useParams();
   let dataProduct = _dataProduct.filter((item) => item.id === id);
 
   return dataProduct.map((item, i) => (
-    <div key={"ps" + i}>
+    <div className="container pt-4 pb-5" key={"ps" + i}>
       <ProductTittle
         tourName={item.tourName}
         maxPax={item.maxPax}

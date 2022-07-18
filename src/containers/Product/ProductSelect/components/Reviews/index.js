@@ -1,29 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import H from 'components/H';
-import Chart from './components/Chart';
-import Reviewer from './components/Reviewer';
-import './styles.scss';
+import React from "react";
+import Chart from "./components/Chart/Chart";
+import Reviewer from "./components/Reviewer/Reviewer";
+import Icons from "components/Icons";
 
-const Reviews = (props) => {
-	return (
-		<div id="select-product-reviews">
-			<div className="tittle">
-				<div>
-					<img />
-					<H type="2" childrend={'4.8'} text600 />
-				</div>
-				<div>
-					<img />
-					<H type="2" childrend={'3 reviews'} text600 />
-				</div>
-			</div>
-			<Chart />
-			<Reviewer />
-		</div>
-	);
+const Reviews = ({}) => {
+  return (
+    <div className="select-product-reviews border-top border-bottom pt-5">
+      <div className="d-flex gap-4">
+        <div className="d-flex align-items-center gap-2">
+          <Icons variant="star-fill" size="large" />
+          <h4 className="mb-0">4.8</h4>
+        </div>
+        <div className="d-flex align-items-center gap-2">
+          <Icons variant="person" size="large" />
+          <h4 className="mb-0">3 reviews</h4>
+        </div>
+      </div>
+      <Chart />
+      <Reviewer />
+    </div>
+  );
 };
-
-Reviews.propTypes = {};
 
 export default Reviews;

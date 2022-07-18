@@ -12,6 +12,7 @@ import Counter from "components/Counter/Counter";
 import Button from "components/NewButton/Button";
 import SearchList from "components/DataDisplay/SearchList/SearchList";
 import { useEffect } from "react";
+import { format } from "date-fns";
 
 const Location = ({ isActive, onClick, onStatus }) => {
   const [value, setValue] = useState("");
@@ -20,7 +21,6 @@ const Location = ({ isActive, onClick, onStatus }) => {
 
   const data =
     active === "Vacations" ? _dataVacStay.vacations : _dataVacStay.staycations;
-  console.log(isActive);
 
   useEffect(() => {
     if (!value) setAs("recomendate");
@@ -102,21 +102,36 @@ const Location = ({ isActive, onClick, onStatus }) => {
 };
 
 const Date = ({ isActive, onClick }) => {
-  const [value, setValue] = useState({});
+  const [data, setData] = useState();
+  const [values, setValues] = useState({ startDate: "", endDate: "" });
+
+  useEffect(() => {
+    if (data) {
+      const startDate = format(data.startDate, "MM/dd/yyyy");
+      const endDate = format(data.endDate, "MM/dd/yyyy");
+      setValues({
+        startDate: startDate.split("/").join("-"),
+        endDate: endDate.split("/").join("-"),
+      });
+    }
+  }, [data]);
 
   return (
     <section>
       <div hidden={!isActive} className="items shadow  p-4 ">
         <h5 className="mb-3">When's your trip?</h5>
-        <DateRangePicker onChange={(val) => setValue({ ...val[0] })} />
+        <DateRangePicker onChange={(val) => setData({ ...val[0] })} />
       </div>
       <button
+        type="button"
         onClick={onClick}
         hidden={isActive}
         className="minimize items shadow w-100  px-4 py-3 justify-content-between"
       >
         <span className="fw-semibold">When</span>
-        <span>anytime</span>
+        <span>{values.startDate + " to " + values.endDate}</span>
+        <input type="hidden" name="startDate" value={values.startDate} />
+        <input type="hidden" name="endDate" value={values.endDate} />
       </button>
     </section>
   );
@@ -147,6 +162,7 @@ const Who = ({ isActive, onClick }) => {
       >
         <span className="fw-semibold">People</span>
         <span>{value}</span>
+        <input type="hidden" name="people" value={value} />
       </button>
     </section>
   );
@@ -163,19 +179,11 @@ const Bottom = ({ isActive, onClick }) => {
     if (active === "date") setActive("who");
   };
 
-  const handleSubmit = () => {
-    const request = new XMLHttpRequest();
-    request.open("GET", "/?test=");
-    request.send();
-    console.log(request);
-  };
-
   return (
     <form
       method="GET"
       action="/"
       className={"header-mobile-bottom bg-light " + classes.activate}
-      onSubmit={() => ""}
     >
       <div className="container bg-light hmb-head d-flex pt-4 pb-2 ps-4 align-items-center align-items-center gap-2 mb-2">
         <IconButton
@@ -207,7 +215,7 @@ const Bottom = ({ isActive, onClick }) => {
           skip
         </button>
         <Button
-          onClick={handleSubmit}
+          type="submit"
           className="px-5"
           label="search"
           size="large"

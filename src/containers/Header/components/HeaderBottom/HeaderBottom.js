@@ -137,4 +137,4 @@ HeaderBottom.prototype = {
   isActive: PropTypes.bool,
 };
 
-export default React.forwardRef(HeaderBottom);
+export default HeaderBottom;

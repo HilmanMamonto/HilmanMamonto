@@ -1,0 +1,21 @@
+@import "/src/assets/styles/variables";
+
+.ps-nav-bottom {
+  a {
+    display: block;
+    position: relative;
+    &:-webkit-any-link {
+      color: $gray;
+    }
+    &:hover {
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 4px;
+        top: 0;
+        background-color: $gray;
+      }
+    }
+  }
+}

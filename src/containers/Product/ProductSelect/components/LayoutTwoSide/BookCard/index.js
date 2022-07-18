@@ -2,9 +2,9 @@ import Button from "components/NewButton/Button";
 import React from "react";
 import "./styles.scss";
 
-const BookCard = (props) => {
+const BookCard = ({ className }) => {
   return (
-    <div id="product-card-selected" className="border">
+    <div className={"book-card border " + className}>
       <div className="tittle border-bottom">
         <label className="fs-4 fw-semibold">$32 </label>
         <span>/ pax</span>

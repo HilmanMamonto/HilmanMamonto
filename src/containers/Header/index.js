@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
-import HeaderBottom from "./components/HeaderBottom";
+import HeaderBottom from "./components/HeaderBottom/HeaderBottom";
 import HeaderCategories from "./components/Categories";
 import NavLeft from "./components/Nav/Left";
 import NavRight from "./components/Nav/Right";
 import NavMid from "./components/Nav/Mid";
 import PropTypes from "prop-types";
 import "./styles.scss";
+import HeaderMobile from "containers/HeaderMobile/HeaderMobile";
 
-const Header = ({ hasCategories, className }) => {
+const Header = ({ hasCategories, className, hidden }) => {
   const [show, setShow] = useState(false);
   const ref = useRef(null);
 
@@ -34,8 +35,8 @@ const Header = ({ hasCategories, className }) => {
   };
 
   return (
-    <div ref={ref} className={"headers " + className}>
-      <header className="d-flex align-items-center bg-white">
+    <div hidden={hidden} ref={ref} className={"headers " + className}>
+      <header className="d-none d-sm-none d-md-flex align-items-center bg-white">
         <nav className="container ">
           <div className="row">
             <div className={classes.navLeft}>
@@ -54,6 +55,7 @@ const Header = ({ hasCategories, className }) => {
         </nav>
         <HeaderBottom isActive={show} />
       </header>
+      <HeaderMobile className="d-sm-flex d-md-none" />
       {hasCategories && <HeaderCategories />}
       {show && <div className="bg-black-transparent" />}
     </div>

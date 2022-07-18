@@ -3,7 +3,6 @@ import { DateRange } from "react-date-range";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import "./styles.scss";
-import DatePicker from "../DatePicker/DatePicker";
 import { useEffect } from "react";
 
 const DateRangePicker = ({ className, onChange }) => {
@@ -22,7 +21,6 @@ const DateRangePicker = ({ className, onChange }) => {
       <DateRange
         editableDateInputs={true}
         onChange={(item) => setDates([item.selection])}
-        moveRangeOnFirstSelection={false}
         ranges={dates}
         direction="horizontal"
         rangeColors={["#373737"]}
@@ -32,7 +30,5 @@ const DateRangePicker = ({ className, onChange }) => {
     </div>
   );
 };
-
-DateRangePicker.propTypes = {};
 
 export default DateRangePicker;

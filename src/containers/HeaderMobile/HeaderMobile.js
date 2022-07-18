@@ -38,7 +38,6 @@ const HeaderMobile = ({ className, hasCategories }) => {
           </div>
         </button>
       </div>
-      {hasCategories && <HeaderCategories />}
       <Bottom isActive={active} onClick={() => setActive(false)} />
     </div>
   );

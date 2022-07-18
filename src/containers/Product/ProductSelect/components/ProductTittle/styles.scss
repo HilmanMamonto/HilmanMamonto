@@ -1,57 +1,43 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/styles.scss";
 
-#product-tittle {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin: 0px 120px;
-	margin-top: 30px;
+.product-tittle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
-	.tittle-wraper {
-		.product-tittle-head {
-			margin-bottom: 4px;
-			display: flex;
-			align-items: center;
-			color: $primary;
-			font-weight: 500;
-			.tittle {
-				font-size: 24px;
-				margin-right: 20px;
-			}
-			.dot {
-				margin-right: 20px;
-				display: block;
-				border-radius: 100px;
-				width: 6px;
-				height: 6px;
-				background-color: $gray;
-			}
-		}
-		.product-tittle-foot {
-			font-size: 14px;
-			color: $gray;
-			display: flex;
-			label {
-				margin-right: 15px;
-				display: flex;
-				align-items: center;
-				img {
-					width: 14px;
-					height: 14px;
-					margin-right: 4px;
-					margin-bottom: 2px;
-				}
-			}
-		}
-	}
-	.btn-save {
-		div {
-			display: flex;
-			align-items: center;
-			img {
-				margin-right: 5px;
-				width: 24px;
-			}
-		}
-	}
+  .tittle-wraper {
+    .dot {
+      display: block;
+      align-self: center;
+      border-radius: 100px;
+      width: 6px;
+      height: 6px;
+      background-color: $gray;
+    }
+
+    .product-tittle-foot {
+      font-size: 0.9rem;
+      color: $gray;
+      display: flex;
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        img {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+  .btn-save {
+    div {
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 5px;
+        width: 24px;
+      }
+    }
+  }
 }

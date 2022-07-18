@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "components/Button";
 import "./styles.scss";
-import PropTypes from "prop-types";
 
 const ProductTittle = ({
   tourName,
@@ -13,16 +12,16 @@ const ProductTittle = ({
 }) => {
   const handleClick = () => {};
   return (
-    <div id="product-tittle">
+    <div className="product-tittle mb-4">
       <div className="tittle-wraper">
-        <div className="product-tittle-head">
-          <label className="tittle">{tourName}</label>
-          <span className="dot" />
-          <label>
+        <div className="mb-2 d-inline-flex gap-2">
+          <h4 className="mb-0">{tourName}</h4>
+          <span className="dot mt-1" />
+          <span className="align-self-end">
             max <span>{maxPax}</span> pax
-          </label>
+          </span>
         </div>
-        <div className="product-tittle-foot">
+        <div className="gap-2 product-tittle-foot">
           <label>
             <img src="/bold-star.svg" alt="" />
             <Button type="a" href="/" children={rate} hasUnderline textGray />

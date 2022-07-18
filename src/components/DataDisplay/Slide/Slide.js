@@ -38,6 +38,7 @@ const Slide = ({
   return (
     <div className={classes.container}>
       <ButtonRounded
+        type="button"
         onClick={() => handleClick("prev")}
         className="btn-arrow left ms-2"
         variant="prev"
@@ -46,6 +47,7 @@ const Slide = ({
         {children}
       </div>
       <ButtonRounded
+        type="button"
         onClick={() => handleClick("next")}
         id="next"
         className="btn-arrow right me-2"

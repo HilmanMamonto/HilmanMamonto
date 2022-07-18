@@ -27,6 +27,7 @@ const variants = {
   search: "/icons/search.svg",
   plus: "/icons/plus.svg",
   min: "/icons/min.svg",
+  person: "/icons/person.svg",
   "close-bg-gray": "/icons/close-bg-gray.svg",
   "close-white": "/icons/close-white.svg",
   close: "/icons/close-gray.svg",

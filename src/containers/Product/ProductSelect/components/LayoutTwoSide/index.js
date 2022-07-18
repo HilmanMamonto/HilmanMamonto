@@ -12,7 +12,7 @@ const LayoutTwoSide = (props) => {
   return (
     <div
       id="product-body"
-      className="flex-column flex-xl-row gap-5 container mt-5"
+      className="flex-column flex-xl-row gap-lg-5 gap-sm-0 mt-5"
     >
       <div className="body-left">
         <TourGuideTittle {...props} />
@@ -22,7 +22,7 @@ const LayoutTwoSide = (props) => {
         <MoreThings />
       </div>
       <div className="body-right d-sm-none d-md-flex">
-        <BookCard />
+        <BookCard className="d-none d-lg-block" />
       </div>
     </div>
   );
