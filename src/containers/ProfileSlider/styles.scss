@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap");
+
+.profile-slider {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .ps-btn {
+    top: 35%;
+  }
+
+  .ps-items {
+    .ps-item {
+      width: 320px;
+      img {
+        border-radius: 1rem;
+        width: inherit;
+        aspect-ratio: 1/1;
+        background-color: gray;
+      }
+      span {
+        font-family: "Grape Nuts", cursive;
+      }
+    }
+  }
+}

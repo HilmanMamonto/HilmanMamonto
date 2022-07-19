@@ -14,8 +14,10 @@ const variants = {
   checkmark: "/icons/checkmark-alert.svg",
   dollar: "/icons/dollar.svg",
   "arrow-up": "/icons/arrow-up.svg",
+  "arrow-down-white": "/icons/arrow-down-white.svg",
   "arrow-right": "/icons/arrow-right.svg",
   "arrow-right-white-rounded": "/icons/arrow-right-white-rounded.svg",
+  "arrow-down": "/icons/arrow-down.svg",
   home: "/icons/home.svg",
   dashboard: "/icons/dashboard.svg",
   bell: "/icons/bell.svg",
@@ -33,6 +35,7 @@ const variants = {
   close: "/icons/close-gray.svg",
   "location-fill": "/icons/location-fill.svg",
   burger: "/icons/burger.svg",
+  "logo-white": "/icons/logo.svg",
 };
 
 const Icons = ({ size, variant, onClick, style, className }) => {

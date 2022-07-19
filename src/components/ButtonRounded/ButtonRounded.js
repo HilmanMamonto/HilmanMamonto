@@ -20,6 +20,7 @@ const ButtonRounded = ({
   className,
   onClick,
   id,
+  style,
 }) => {
   const classes = "btn-rounded bg-white border " + sizes[size] + className;
   return (
@@ -29,6 +30,7 @@ const ButtonRounded = ({
       type={type}
       className={classes}
       onClick={onClick}
+      style={style}
     >
       <img
         className="btn-rounded-icon"

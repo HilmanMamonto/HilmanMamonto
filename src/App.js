@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductSelectedPage from "pages/ProductSelected";
 import DashboardPage from "pages/Dashboard";
 import AddPackage from "containers/AddPackage";
+import TourGuide from "pages/TourGuide/TourGuide";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="tour-guide" element={<TourGuide />} />
           <Route path="/product/:id" element={<ProductSelectedPage />} />
           <Route path="dashboard/*" element={<DashboardPage />} />
           <Route path="test" element={<AddPackage />} />

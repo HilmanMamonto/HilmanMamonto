@@ -20,6 +20,7 @@ const Slide = ({
   className,
   interval = "child",
   gap = 2,
+  buttonClass,
 }) => {
   const ref = useRef(null);
 
@@ -50,7 +51,7 @@ const Slide = ({
       <ButtonRounded
         type="button"
         onClick={() => handleClick("prev")}
-        className="btn-arrow left ms-2"
+        className={"btn-arrow left ms-2 " + buttonClass}
         variant="prev"
       />
       <div ref={ref} className={"sl-items w-100 d-flex " + gaps[gap]}>
@@ -60,7 +61,7 @@ const Slide = ({
         type="button"
         onClick={() => handleClick("next")}
         id="next"
-        className="btn-arrow right me-2"
+        className={"btn-arrow right me-2 " + buttonClass}
         variant="next"
       />
     </div>

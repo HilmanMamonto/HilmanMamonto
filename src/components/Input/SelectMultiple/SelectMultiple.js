@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./styles.scss";
 import Icons from "components/Icons";
+import { useClickOutside } from "components/utility/clickOutside";
 
 const icons = {
   valid: <Icons variant="checkmark" />,
@@ -24,6 +25,7 @@ export const SelectMultiple = ({
   const [toggle, setToggle] = useState(false);
   const ref = useRef();
   const refContainer = useRef();
+  // const {ref} = useClickOutside();
 
   const handleClick = (e) => {
     const { value } = e.target;
