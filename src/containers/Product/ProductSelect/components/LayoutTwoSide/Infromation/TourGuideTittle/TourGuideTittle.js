@@ -1,9 +1,9 @@
 import React from "react";
-import "./TourGuideTittle.scss";
+import "./styles.scss";
 
 const TourGuideTittle = ({ tourGuideName, freePickup, tourGuidePhoto }) => {
   return (
-    <div id="tour-guide-tittle">
+    <div className="tour-guide-tittle">
       <div>
         <label className="tittle">
           Travel Package By <span>{tourGuideName}</span>

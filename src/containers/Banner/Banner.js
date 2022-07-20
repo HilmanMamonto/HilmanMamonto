@@ -18,7 +18,7 @@ const Banner = () => {
             style={{ fontSize: "3.5rem" }}
             className="text-white text-center  px-lg-5 mx-lg-4 mb-5"
           >
-            Open World to Journies
+            Open World For Journeys
           </h1>
           <Button
             label="Join"
@@ -50,8 +50,8 @@ const Banner = () => {
             <span className="bn-r-b-top position-absolute" />
             <div style={{ zIndex: 1 }} className="bg-white pb-4">
               <h1 className=" px-3 text-primary fw-semibold">
-                Open World to
-                <br /> Journies
+                Open World For
+                <br /> Journeys
               </h1>
               <span className="d-flex justify-content-center w-100">
                 <IconButton

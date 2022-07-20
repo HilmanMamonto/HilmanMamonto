@@ -35,10 +35,24 @@ const variants = {
   close: "/icons/close-gray.svg",
   "location-fill": "/icons/location-fill.svg",
   burger: "/icons/burger.svg",
-  "logo-white": "/icons/logo.svg",
+  "logo-white": "/icons/logo-white.svg",
+  "logo-primary": "/icons/logo-primary.svg",
+  "logo-secondary": "/icons/logo-secondary.svg",
+  pool: "/icons/pool.svg",
+  boat: "/icons/boat.svg",
+  mountain: "/icons/mountain.svg",
+  beach: "/icons/beach.svg",
+  dive: "/icons/dive.svg",
+  "watter-fall": "/icons/watter-fall.svg",
 };
 
-const Icons = ({ size, variant, onClick, style, className }) => {
+const Icons = ({
+  size = "medium",
+  variant,
+  onClick,
+  style,
+  className = "",
+}) => {
   const sizeClass = sizes[size];
   const clickAbility = onClick ? "icon-clickable " : "";
   const classIcon = "icon " + sizeClass + clickAbility + className;
@@ -56,14 +70,9 @@ const Icons = ({ size, variant, onClick, style, className }) => {
   );
 };
 
-Icons.defaultProps = {
-  size: "medium",
-  url: "",
-};
-
 Icons.propTypes = {
   size: PropTypes.string,
-  variant: PropTypes.string.isRequired,
+  variant: PropTypes.string,
   style: PropTypes.string,
   onClick: PropTypes.func,
   fullHeight: PropTypes.bool,

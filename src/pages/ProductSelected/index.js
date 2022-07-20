@@ -1,35 +1,26 @@
+import { useScrollPos } from "components/utility/scrollPos";
 import Header from "containers/Header";
 import ProductSelected from "containers/Product/ProductSelect";
 import NavBottom from "containers/Product/ProductSelect/components/NavBottom/NavBottom";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 
 const ProductSelectedPage = () => {
-  const [scrollPos, setScrollPos] = useState();
+  const { scrollPos } = useScrollPos();
 
+  console.log(scrollPos);
   const classes = {
-    shadow: scrollPos > 40 ? "shadow-sm " : "",
-    border: scrollPos < 40 ? "border-bottom " : "",
+    shadow: scrollPos >= 28 ? "shadow-sm" : "",
+    border: scrollPos < 25 ? "border-bottom" : "",
   };
-
-  const handleScroll = () => {
-    setScrollPos(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="position-relative">
       <Header
-        hidden={window.scrollY === 200}
+        hidden={scrollPos > 200}
         className={classes.shadow + classes.border}
       />
       <ProductSelected />
-      <NavBottom hidden={window.scrollY < 3212} />
+      <NavBottom hidden={scrollPos < 2461} />
     </div>
   );
 };

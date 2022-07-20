@@ -18,6 +18,7 @@
 
   .btn-arrow {
     position: absolute;
+    z-index: 1;
     &.right {
       right: 0;
     }

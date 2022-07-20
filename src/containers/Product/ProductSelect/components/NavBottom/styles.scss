@@ -4,9 +4,6 @@
   a {
     display: block;
     position: relative;
-    &:-webkit-any-link {
-      color: $gray;
-    }
     &:hover {
       &::before {
         position: absolute;

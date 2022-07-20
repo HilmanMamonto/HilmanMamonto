@@ -10,10 +10,7 @@ import MoreThings from "./Infromation/MoreThings";
 
 const LayoutTwoSide = (props) => {
   return (
-    <div
-      id="product-body"
-      className="flex-column flex-xl-row gap-lg-5 gap-sm-0 mt-5"
-    >
+    <div className="product-body flex-column flex-xl-row gap-lg-5 gap-sm-0 mt-5">
       <div className="body-left">
         <TourGuideTittle {...props} />
         <TravelAmenities {...props} />

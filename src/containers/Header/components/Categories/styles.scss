@@ -1,64 +1,57 @@
-@import "/src/assets/styles/styles.scss";
+@import "/src/assets/styles/variables";
 
 .header-categories {
-  justify-content: space-between;
   width: 100%;
   position: absolute;
-  z-index: -1;
-  top: 80px;
+  z-index: 0;
+  top: 100%;
   height: 80px;
-
-  .wrapper {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    .btn-arrow {
-      position: absolute;
-      &.left {
-        left: 0;
-      }
-      &.right {
-        right: 0;
-      }
-    }
-  }
+  background-color: $white;
 
   .categories-items {
     position: relative;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    z-index: -1;
+    z-index: 0;
     height: 100%;
     align-items: center;
 
-    &::-webkit-scrollbar {
-      height: 0px;
-    }
-    .item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      height: 100%;
+    .hc-item {
+      opacity: 0.7;
       cursor: pointer;
-      font-size: 0.75rem;
-      img {
-        height: 22px;
-        width: 22px;
-        margin-bottom: 6px;
+      position: relative;
+      z-index: 0;
+      transition: all 0.3s ease-in-out;
+      .hc-icon {
+        transition: all 0.3s ease-in-out;
+        transform: scale(1);
       }
+
+      small {
+        white-space: nowrap;
+      }
+
       &:hover {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        .hc-icon {
+          transition: all 0.3s ease-in-out;
+          transform: scale(0.9);
+        }
         &::after {
           content: "";
-          width: 100%;
           position: absolute;
+          width: 100%;
+          transition: all 0.3s ease-in-out;
+          height: 3px;
           bottom: 0;
-          height: 0.2rem;
-          border-radius: 100px;
           background-color: $gray;
         }
       }
+    }
+
+    &::-webkit-scrollbar {
+      height: 0px;
     }
   }
 }

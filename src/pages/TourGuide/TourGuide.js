@@ -2,6 +2,7 @@ import Button from "components/NewButton/Button";
 import { useScrollPos } from "components/utility/scrollPos";
 import Banner from "containers/Banner/Banner";
 import HeaderTourGuide from "containers/HeaderTourGuide/HeaderTourGuide";
+import LearnMore from "containers/LearnMore/LearnMore";
 import ProfileSlider from "containers/ProfileSlider/ProfileSlider";
 import React from "react";
 import { useState } from "react";
@@ -16,6 +17,7 @@ const TourGuide = () => {
       <div className="container-fluid">
         <Banner />
         <ProfileSlider />
+        <LearnMore />
         {/* footer */}
       </div>
       <div

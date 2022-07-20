@@ -9,18 +9,18 @@ const NavBottom = ({ hidden }) => {
       style={{ zIndex: 2 }}
       className="ps-nav-bottom border-top w-100 position-sticky bottom-0 bg-white"
     >
-      <div className="container align-items-center d-flex justify-content-between pb-4">
+      <div className="container align-items-center d-flex justify-content-between pb-2">
         <div className="d-flex h-100 gap-4 gap-md-5">
-          <a className="py-4" href="#">
+          <a className="py-4" href="#photos">
             Photos
           </a>
-          <a className="py-4" href="#">
+          <a className="py-4" href="#amenities">
             Amenities
           </a>
-          <a className="py-4" href="#">
-            Vacations
+          <a className="py-4" href="#staycations">
+            Staycations
           </a>
-          <a className="py-4" href="#">
+          <a className="py-4" href="#reviews">
             Reviews
           </a>
         </div>

@@ -5,7 +5,7 @@ import "./styles.scss";
 
 const ProductListLayout = ({ className, data }) => {
   return (
-    <div className={"container " + className}>
+    <div className={"container " + className} style={{ marginTop: "160px" }}>
       <div id="product-grid">
         {data.map((item, i) => {
           return (

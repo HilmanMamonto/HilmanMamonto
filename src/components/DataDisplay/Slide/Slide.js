@@ -20,7 +20,7 @@ const Slide = ({
   className,
   interval = "child",
   gap = 2,
-  buttonClass,
+  buttonClass = "",
 }) => {
   const ref = useRef(null);
 
@@ -54,7 +54,7 @@ const Slide = ({
         className={"btn-arrow left ms-2 " + buttonClass}
         variant="prev"
       />
-      <div ref={ref} className={"sl-items w-100 d-flex " + gaps[gap]}>
+      <div ref={ref} className={"sl-items h-100 w-100 d-flex " + gaps[gap]}>
         {children}
       </div>
       <ButtonRounded

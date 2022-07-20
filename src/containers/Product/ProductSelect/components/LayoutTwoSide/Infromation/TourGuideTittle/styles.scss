@@ -1,0 +1,38 @@
+@import "/src/assets/styles/variables";
+
+.tour-guide-tittle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $ultralight-gray;
+  padding-bottom: 24px;
+  width: 100%;
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: $ultralight-gray;
+  }
+  .tittle {
+    font-size: 20px;
+    color: $primary;
+    font-weight: 500;
+  }
+  .sub-tittle {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: $gray;
+    label {
+      margin-right: 10px;
+    }
+    span {
+      display: block;
+      border-radius: 100px;
+      margin-right: 10px;
+      width: 4px;
+      height: 4px;
+      background-color: $gray;
+    }
+  }
+}

@@ -8,7 +8,6 @@ export const useClickOutside = () => {
   const handleClick = (e) => {
     if (ref && !ref.current.contains(e.target)) {
       setShow(false);
-      console.log("outside");
     }
   };
 

@@ -4,7 +4,7 @@ import "./styles.scss";
 
 const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
   return (
-    <div id="travel-amenities">
+    <section id="amenities" className="amenities">
       <h4 className="mb-5">Amenities</h4>
       <div className="travel-amenities-items">
         <div className="items">
@@ -34,7 +34,7 @@ const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

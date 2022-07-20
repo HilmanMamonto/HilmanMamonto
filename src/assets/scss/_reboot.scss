@@ -233,6 +233,9 @@ a {
   // text-decoration: $link-decoration;
   text-decoration: none;
 
+  &:-webkit-any-link {
+    color: inherit;
+  }
   // &:hover {
   //   color: var(--#{$prefix}link-hover-color);
   //   text-decoration: $link-hover-decoration;

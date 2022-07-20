@@ -1,9 +1,9 @@
 import Slide from "components/DataDisplay/Slide/Slide";
 import React from "react";
 import "./styles.scss";
+import tourGuideReviews from "json/tourGuideReviews.json";
 
 const ProfileSlider = () => {
-  const arr = [0, 1, 2, 3, 4, 5];
   return (
     <div className="profile-slider py-5">
       <h1 className="text-center fw-bold mb-5">
@@ -11,17 +11,18 @@ const ProfileSlider = () => {
       </h1>
 
       <Slide buttonClass={"ps-btn"} gap={3} className="ms-3 ms-lg-5 ps-items">
-        {arr.map((item) => {
+        {tourGuideReviews.map((item) => {
           return (
             <figure
               key={item}
               className="ps-item d-inline-flex flex-column gap-3"
             >
-              <img></img>
-              <label className="mb-2 fs-4">
-                “Beautiful day on my life is when I can make other people happy”
-              </label>
-              <span className="fs-1">Ahmed</span>
+              <img style={{ objectFit: "cover" }} src={item.imgUrl}></img>
+              <label className="mb-2 fs-4">“{item.review}”</label>
+              <div className="d-flex justify-content-between align-items-center pe-4">
+                <span className="fs-1">{item.name}</span>
+                <small className="text-black-50">- {item.country}</small>
+              </div>
             </figure>
           );
         })}

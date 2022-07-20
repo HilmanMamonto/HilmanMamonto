@@ -13,7 +13,11 @@ const ProductSelected = () => {
   let dataProduct = _dataProduct.filter((item) => item.id === id);
 
   return dataProduct.map((item, i) => (
-    <div className="container pt-4 pb-5" key={"ps" + i}>
+    <div
+      className="container pt-4"
+      style={{ marginTop: "80px" }}
+      key={"ps" + i}
+    >
       <ProductTittle
         tourName={item.tourName}
         maxPax={item.maxPax}

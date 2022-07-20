@@ -8,7 +8,7 @@ import Items from "./components/Items/Items";
 
 const Staycations = () => {
   return (
-    <div className="mt-4 pb-5 border-bottom">
+    <div id="staycations" className="mt-4 pb-5 border-bottom">
       <h5 className="mb-3">Staycations Thats Offers</h5>
       <Items />
       <TittleSelectedStaycations />

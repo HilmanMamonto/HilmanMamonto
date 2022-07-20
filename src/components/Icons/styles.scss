@@ -1,22 +1,17 @@
 .icon {
-	&.icon-clickable {
-		&:hover {
-			cursor: pointer;
-		}
-	}
-	&.icon-small {
-		height: 0.75rem;
-	}
+  &.icon-small {
+    height: 0.75rem;
+  }
 
-	&.icon-medium {
-		height: 1rem;
-	}
+  &.icon-medium {
+    height: 1rem;
+  }
 
-	&.icon-large {
-		height: 1.25rem;
-	}
+  &.icon-large {
+    height: 1.5rem;
+  }
 
-	&.icon-xlarge {
-		height: 2rem;
-	}
+  &.icon-xlarge {
+    height: 2rem;
+  }
 }
