@@ -31,22 +31,18 @@ const BookCard = ({ className }) => {
       </div>
       <div className="more-information">
         <div className="sub-information">
-          <div className="inf">
-            <label>Free Cancellation</label>
-            <label>Rescheduleable</label>
-          </div>
           <div>
             <label>2 pax (tour)</label>
-            <span>$64</span>
+            <span className="fw-semibold">$64</span>
           </div>
           <div>
             <label>staycation</label>
-            <span>$145</span>
+            <span className="fw-semibold">$145</span>
           </div>
         </div>
         <div className="total">
           <label>Total</label>
-          <span>$209</span>
+          <span className="fw-semibold">$209</span>
         </div>
       </div>
       <Button
@@ -54,6 +50,7 @@ const BookCard = ({ className }) => {
         color="secondary"
         size="large"
         rightIcon="btn-rounded"
+        justifyContent="space-between"
       />
     </div>
   );

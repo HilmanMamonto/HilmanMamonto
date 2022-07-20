@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "components/Button";
 import "./styles.scss";
+import Icons from "components/Icons";
 
 const ProductTittle = ({
   tourName,
@@ -9,10 +10,11 @@ const ProductTittle = ({
   sumOfReviews,
   locationSrc,
   location,
+  id = "",
 }) => {
   const handleClick = () => {};
   return (
-    <div className="product-tittle mb-4">
+    <div id={id} className="d-none d-md-flex product-tittle mb-4">
       <div className="tittle-wraper">
         <div className="mb-2 d-inline-flex gap-2">
           <h4 className="mb-0">{tourName}</h4>
@@ -49,18 +51,13 @@ const ProductTittle = ({
           <span>Only you and your group</span>
         </div>
       </div>
-      <Button
-        className="btn-save mt-auto"
-        type="button"
-        isBgWhite
-        children={
-          <div>
-            <img src="/love-checked.svg" />
-            <span>save</span>
-          </div>
-        }
+      <button
+        className="d-flex align-items-center btn-save px-2 py-1 mt-auto"
         onClick={() => handleClick}
-      />
+      >
+        <Icons variant="heart-fill" />
+        <small className="ms-2">save</small>
+      </button>
     </div>
   );
 };

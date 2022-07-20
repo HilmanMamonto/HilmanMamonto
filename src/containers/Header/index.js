@@ -19,27 +19,29 @@ const Header = ({ hasCategories, className, hidden }) => {
   };
 
   return (
-    <div hidden={hidden} className={"headers " + className}>
-      <header
-        ref={ref}
-        className="d-none d-sm-none d-md-flex align-items-center bg-white"
-      >
-        <nav className="container ">
-          <div className="row row-cols-3">
-            <NavLeft className={classes.navLeft} />
-            <NavMid
-              hidden={show}
-              className={classes.navMid}
-              onClick={onToggle}
-            />
-            <NavRight className={classes.navRight} />
-          </div>
-        </nav>
-        <HeaderBottom isActive={show} />
-      </header>
-      <HeaderMobile className="d-sm-flex d-md-none" />
-      {hasCategories && <HeaderCategories />}
-      {show && <div className="bg-black-transparent" />}
+    <div hidden={hidden}>
+      <div className={"headers " + className}>
+        <header
+          ref={ref}
+          className="d-none d-sm-none d-md-flex align-items-center bg-white"
+        >
+          <nav className="container ">
+            <div className="row row-cols-3">
+              <NavLeft className={classes.navLeft} />
+              <NavMid
+                hidden={show}
+                className={classes.navMid}
+                onClick={onToggle}
+              />
+              <NavRight className={classes.navRight} />
+            </div>
+          </nav>
+          <HeaderBottom isActive={show} />
+        </header>
+        <HeaderMobile className="d-sm-flex d-md-none" />
+        {hasCategories && <HeaderCategories />}
+        {show && <div className="bg-black-transparent" />}
+      </div>
     </div>
   );
 };

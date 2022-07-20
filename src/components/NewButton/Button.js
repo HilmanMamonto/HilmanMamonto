@@ -45,8 +45,7 @@ const loadingSizes = {
 
 const justify = {
   center: "center ",
-  "space-betwen": "space-betwen ",
-  undefined: "",
+  "space-between": "justify-content-between ",
 };
 
 const rightIcons = {
@@ -69,7 +68,7 @@ const Button = ({
   disabled,
   fullWidth,
   loading,
-  justifyContent,
+  justifyContent = "",
   loadingIndicator,
   hidden,
 }) => {

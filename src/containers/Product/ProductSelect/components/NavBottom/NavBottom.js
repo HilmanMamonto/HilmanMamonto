@@ -11,7 +11,7 @@ const NavBottom = ({ hidden }) => {
     >
       <div className="container align-items-center d-flex justify-content-between pb-2">
         <div className="d-flex h-100 gap-4 gap-md-5">
-          <a className="py-4" href="#photos">
+          <a className="py-4" href="#head">
             Photos
           </a>
           <a className="py-4" href="#amenities">

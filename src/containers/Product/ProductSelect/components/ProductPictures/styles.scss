@@ -1,29 +1,80 @@
 @import "/src/assets/styles/variables";
+@import "/src/assets/scss/mixins/breakpoints";
 
 .product-pictures {
-  position: relative;
-  height: 310px;
-
-  img {
-    object-fit: cover;
+  .pp-mobile {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 380px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    img {
+      object-fit: cover;
+    }
   }
+  .product-pictures-wrapper {
+    position: relative;
+    height: 310px;
+    column-gap: 0.5rem;
+    overflow: hidden;
+    border-radius: 12px;
 
-  .pp-left {
-    background-color: gray;
-    height: 100%;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: inherit;
+    }
+
+    .pp-left {
+      width: 100%;
+      height: inherit;
+    }
+
+    .pp-right {
+      width: 100%;
+      height: inherit;
+    }
+
+    .btn-see-all-photos {
+      position: absolute;
+      border: 1px solid $ultralight-gray;
+      padding: 5px 10px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.2);
+      right: 20px;
+      bottom: 20px;
+    }
   }
+}
 
-  .pp-right {
-    background-color: gray;
+@include media-breakpoint-up(xs) {
+  .product-pictures-wrapper {
+    display: none;
   }
+}
 
-  .btn-see-all-photos {
-    position: absolute;
-    border: 1px solid $ultralight-gray;
-    padding: 5px 10px;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.2);
-    right: 20px;
-    bottom: 20px;
+@include media-breakpoint-up(md) {
+  .product-pictures-wrapper {
+    position: relative;
+    height: 380px;
+    display: grid;
+    grid-template-columns: 400px auto;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .product-pictures-wrapper {
+    position: relative;
+    height: 310px;
+    display: grid;
+    grid-template-columns: 600px auto;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .product-pictures-wrapper {
+    position: relative;
+    height: 310px;
+    display: grid;
+    grid-template-columns: 800px auto;
   }
 }

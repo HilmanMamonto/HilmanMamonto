@@ -1,4 +1,4 @@
-@import "/src/assets/styles/styles.scss";
+@import "/src/assets/styles/variables";
 
 .product-tittle {
   display: flex;
@@ -31,12 +31,13 @@
     }
   }
   .btn-save {
-    div {
-      display: flex;
-      align-items: center;
-      img {
-        margin-right: 5px;
-        width: 24px;
+    &:hover {
+      background-color: rgb(242, 242, 242);
+      border-radius: 8px;
+    }
+    &:active {
+      * {
+        transform: scale(0.9);
       }
     }
   }

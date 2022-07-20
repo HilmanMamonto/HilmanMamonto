@@ -1,6 +1,7 @@
 import { useScrollPos } from "components/utility/scrollPos";
 import Header from "containers/Header";
 import ProductSelected from "containers/Product/ProductSelect";
+import HeaderMobile from "containers/Product/ProductSelect/components/HeaderMobile/HeaderMobile";
 import NavBottom from "containers/Product/ProductSelect/components/NavBottom/NavBottom";
 import React from "react";
 
@@ -14,13 +15,14 @@ const ProductSelectedPage = () => {
   };
 
   return (
-    <div className="position-relative">
+    <div id="head" className="position-relative">
+      <HeaderMobile />
       <Header
         hidden={scrollPos > 200}
-        className={classes.shadow + classes.border}
+        className={"d-none d-md-block " + classes.shadow + classes.border}
       />
       <ProductSelected />
-      <NavBottom hidden={scrollPos < 2461} />
+      <NavBottom hidden={scrollPos < 2761} />
     </div>
   );
 };
