@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles.scss";
-import Button from "components/Button";
 import Slide from "components/DataDisplay/Slide/Slide";
 
 const ProductPictures = ({ imagesUrl, sumOfPictures }) => {
@@ -19,14 +18,7 @@ const ProductPictures = ({ imagesUrl, sumOfPictures }) => {
         <div className="pp-right">
           <img src={imagesUrl[1].url} alt="" />
         </div>
-        <Button
-          className="btn-see-all-photos"
-          type="a"
-          href="/"
-          textWhite
-          stye={{ fontSize: "14px" }}
-          children={"see all photos"}
-        />
+        <button className="btn-see-all-photos">see all photos</button>
       </div>
     </div>
   );

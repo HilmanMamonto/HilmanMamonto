@@ -11,10 +11,10 @@ const ProfileSlider = () => {
       </h1>
 
       <Slide buttonClass={"ps-btn"} gap={3} className="ms-3 ms-lg-5 ps-items">
-        {tourGuideReviews.map((item) => {
+        {tourGuideReviews.map((item, i) => {
           return (
             <figure
-              key={item}
+              key={i}
               className="ps-item d-inline-flex flex-column gap-3"
             >
               <img style={{ objectFit: "cover" }} src={item.imgUrl}></img>

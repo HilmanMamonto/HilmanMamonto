@@ -86,7 +86,7 @@ const lineOptions = {
 
 const ChartLine = ({ className }) => {
   return (
-    <div className={"chart-line shadow py-4 px-3 " + className}>
+    <div className={"chart-line py-4 px-3 " + className}>
       <Chart type="line" options={lineOptions} data={dataLine} />
     </div>
   );

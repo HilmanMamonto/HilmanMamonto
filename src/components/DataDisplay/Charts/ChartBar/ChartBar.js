@@ -11,7 +11,7 @@ const maxBar = Math.max(...monthsValue.map((item) => item.value));
 
 const ChartBar = ({ className }) => {
   return (
-    <div className={"chart-bar shadow px-3 py-4 " + className}>
+    <div className={"chart-bar px-3 py-4 " + className}>
       <div className="chart">
         {monthsValue.map((item, i) => {
           const heightBar = (item.value / maxBar) * 100;

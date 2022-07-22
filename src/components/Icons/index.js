@@ -11,6 +11,7 @@ const sizes = {
 
 const variants = {
   warning: "/icons/warning-alert.svg",
+  eye: "/icons/eye.svg",
   checkmark: "/icons/checkmark-alert.svg",
   dollar: "/icons/dollar.svg",
   "arrow-left": "/icons/arrow-left.svg",

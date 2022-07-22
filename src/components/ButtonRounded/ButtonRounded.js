@@ -22,7 +22,8 @@ const ButtonRounded = ({
   id,
   style,
 }) => {
-  const classes = "btn-rounded bg-white border " + sizes[size] + className;
+  const classes =
+    "btn-rounded rounded-pill bg-white border " + sizes[size] + className;
   return (
     <button
       id={id}

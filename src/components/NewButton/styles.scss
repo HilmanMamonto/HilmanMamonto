@@ -1,0 +1,18 @@
+@import "/src/assets/styles/variables";
+
+.btn {
+  border-radius: 4px;
+
+  &.btn-primary {
+    background-color: $primary;
+    color: $white;
+  }
+  &.btn-secondary {
+    background-color: $secondary;
+    color: $white;
+  }
+  &.btn-lightgray {
+    background-color: $light-gray;
+    color: $white;
+  }
+}

@@ -9,3 +9,4 @@ export const ANIMATE_BOUNCE =
 
 export const ANIMATE_HEARTBEAT =
   "animate__animated animate__heartBeat animate__slower animate__repeat-2";
+export const ANIMATE_FADEINDOWN = "animate__animated animate__fadeInDown ";

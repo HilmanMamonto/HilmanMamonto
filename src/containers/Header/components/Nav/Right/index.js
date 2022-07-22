@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "components/Button";
 import Avatar from "components/Avatar/Avatar";
 import IconButton from "components/IconButton/IconButton";
 import { useClickOutside } from "components/utility/clickOutside";

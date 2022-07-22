@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "components/Button";
 import "./styles.scss";
 import Icons from "components/Icons";
 
@@ -26,27 +25,15 @@ const ProductTittle = ({
         <div className="gap-2 product-tittle-foot">
           <label>
             <img src="/bold-star.svg" alt="" />
-            <Button type="a" href="/" children={rate} hasUnderline textGray />
+            <a href="#reviews">{rate}</a>
           </label>
           <label>
             <img src="/person.svg" alt="" />
-            <Button
-              type="a"
-              href="/"
-              textGray
-              children={"Reviews (" + sumOfReviews + ")"}
-              hasUnderline
-            />
+            <a href="#reviews">Reviews ( {sumOfReviews} )</a>
           </label>
           <label>
             <img src="/location.svg" alt="" />
-            <Button
-              type="a"
-              href={locationSrc}
-              textGray
-              children={location}
-              hasUnderline
-            />
+            <a href={locationSrc}>{location}</a>
           </label>
           <span>Only you and your group</span>
         </div>

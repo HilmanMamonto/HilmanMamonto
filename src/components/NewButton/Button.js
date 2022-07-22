@@ -2,28 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import Loading from "components/Loading/Loading";
 import Icons from "components/Icons";
+import "./styles.scss";
 
 const variants = {
   contained: "btn-contained ",
-  outline: "btn-outline ",
+  outline: "border ",
   text: "btn-text ",
   "": "",
 };
 
-const shadows = {
-  xsmall: "shadow-xs ",
-  small: "shadow-s ",
-  medium: "shadow-m ",
-  large: "shadow-l ",
-  xlarge: "shadow-xl ",
-  undefined: "",
-};
-
 const sizes = {
-  xsmall: "btn-xs ",
-  small: "btn-s ",
-  medium: "btn-m ",
-  large: "btn-l ",
+  xsmall: "px-3 py-1 ",
+  small: "px-3 py-1 fs-6 ",
+  medium: "px-5 py-1 fs-5 ",
+  large: "px-4 py-2 fs-5 ",
 };
 
 const colors = {
@@ -31,7 +23,6 @@ const colors = {
   secondary: "btn-secondary ",
   gray: "btn-gray ",
   lightGray: "btn-light-gray",
-  ultraLightGray: "btn-ultralight-gray",
 };
 
 const loadingSizes = {
@@ -42,12 +33,14 @@ const loadingSizes = {
 };
 
 const justify = {
-  center: "center ",
+  center: "justify-content-center ",
   "space-between": "justify-content-between ",
 };
 
-const rightIcons = {
-  "btn-rounded": <Icons size="xlarge" variant="arrow-right-white-rounded" />,
+const iconSizes = {
+  small: "large",
+  medium: "large",
+  large: "xlarge",
 };
 
 const Button = ({
@@ -60,7 +53,6 @@ const Button = ({
   type = "button",
   href,
   onClick,
-  shadow,
   leftIcon,
   rightIcon,
   disabled,
@@ -78,9 +70,15 @@ const Button = ({
     "btn d-flex gap-2 " +
     variants[variant] +
     sizes[size] +
-    shadows[shadow] +
     colors[color] +
+    justify[justifyContent] +
     className;
+
+  const rightIcons = {
+    "btn-rounded": (
+      <Icons size={iconSizes[size]} variant="arrow-right-white-rounded" />
+    ),
+  };
 
   const loadings = {
     left: <Loading size={loadingSizes[size]} color="white" />,
@@ -97,7 +95,8 @@ const Button = ({
       ? rightIcons[rightIcon]
       : null;
   const labelItem = loading && loadingIndicator ? loadingIndicator : label;
-  const itemsClass = "btn-items d-flex gap-2 " + justify[justifyContent];
+  const itemsClass =
+    "d-flex align-items-center gap-2 w-100 " + justify[justifyContent];
 
   const elements = {
     a: (

@@ -1,11 +1,8 @@
-import AddPackage from 'containers/AddPackage';
-import Dashboard from 'containers/Dashboard';
-import Container from 'Layout/Container';
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import Dashboard from "containers/Dashboard";
+import React from "react";
 
 const DashboardPage = () => {
-	return <Dashboard />;
+  return <Dashboard />;
 };
 
 export default DashboardPage;

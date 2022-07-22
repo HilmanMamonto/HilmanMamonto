@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
-import Button from "components/Button";
 import ButtonRounded from "components/ButtonRounded/ButtonRounded";
 import { Link } from "react-router-dom";
 

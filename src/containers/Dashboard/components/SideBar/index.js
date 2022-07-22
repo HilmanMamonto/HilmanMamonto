@@ -1,26 +1,8 @@
-import DashboardAvatar from "components/DataDisplay/DashboradAvatar/DashboardAvatar";
-import WalletInfo from "components/DataDisplay/WalletInfo/WalletInfo";
-import Container from "Layout/Container";
 import React from "react";
 
 import "./styles.scss";
-import SideBarList from "components/DataDisplay/SideBarList/SideBarList";
-import NavSideBar from "components/Navigations/NavSideBar/NavSideBar";
 import IconButton from "components/IconButton/IconButton";
 import Avatar from "components/Avatar/Avatar";
-
-const packagesItems = [
-  { id: "abcdabcd001", name: "Fushimi Inari Taisha" },
-  { id: "abcdabcd002", name: "Sibuya" },
-  { id: "abcdabcd003", name: "Tokyo" },
-  { id: "abcdabcd004", name: "Kyoto" },
-];
-const orderedItems = [
-  { name: "Fushimi Inari Taisha" },
-  { name: "Sibuya" },
-  { name: "Tokyo" },
-  { name: "Kyoto" },
-];
 
 const SideBar = ({ className }) => {
   return (

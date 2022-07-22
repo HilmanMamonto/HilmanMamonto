@@ -13,20 +13,14 @@ const Banner = () => {
         <div className="d-flex w-100 px-5">
           <IconButton size="xlarge" variant="logo-white" />
         </div>
-        <div className="text-center">
+        <div className="d-flex flex-column align-items-center">
           <h1
             style={{ fontSize: "3.5rem" }}
             className="text-white text-center  px-lg-5 mx-lg-4 mb-5"
           >
             Open World For Journeys
           </h1>
-          <Button
-            label="Join"
-            className="pt-2 px-5"
-            justifyContent="center"
-            color="secondary"
-            shadow="medium"
-          />
+          <Button label="Join" justifyContent="center" color="secondary" />
         </div>
         <span>
           <IconButton
