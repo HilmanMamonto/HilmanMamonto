@@ -1,54 +1,54 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/variables";
 
 .btn-toggle {
-	display: inline-flex;
-	justify-content: space-between;
-	align-items: center;
-	color: $gray;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $gray;
 
-	&.btn-toggle-xsmall {
-		button {
-			font-size: .5rem;
-		}
-	}
-	&.btn-toggle-small {
-		button {
-			font-size: .75rem;
-		}
-	}
-	&.btn-toggle-medium {
-		button {
-			font-size: 1rem;
-		}
-	}
-	&.btn-toggle-large {
-		button {
-			font-size: 1.25rem;
-		}
-	}
-	.toggle {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		border-radius: 100px;
-		background-color: #fafafa;
-		padding: 5px;
-		div {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			color: $gray;
-		}
-		button {
-			padding: 5px 10px;
-			color: $light-gray;
-			font-weight: 400;
+  &.btn-toggle-xsmall {
+    button {
+      font-size: 0.5rem;
+    }
+  }
+  &.btn-toggle-small {
+    button {
+      font-size: 0.75rem;
+    }
+  }
+  &.btn-toggle-medium {
+    button {
+      font-size: 1rem;
+    }
+  }
+  &.btn-toggle-large {
+    button {
+      font-size: 1.25rem;
+    }
+  }
+  .toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 100px;
+    background-color: #fafafa;
+    padding: 5px;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $gray;
+    }
+    button {
+      padding: 5px 10px;
+      color: $light-gray;
+      font-weight: 400;
 
-			&.active {
-				color: $gray;
-				background-color: $white;
-				border-radius: 100px;
-				box-shadow: $ultralight-gray-shadow-small;
-			}
-		}
-	}
+      &.active {
+        color: $gray;
+        background-color: $white;
+        border-radius: 100px;
+        box-shadow: $ultralight-gray-shadow-small;
+      }
+    }
+  }
 }

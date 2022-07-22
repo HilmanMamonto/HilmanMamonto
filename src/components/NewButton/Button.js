@@ -24,7 +24,6 @@ const sizes = {
   small: "btn-s ",
   medium: "btn-m ",
   large: "btn-l ",
-  "": "",
 };
 
 const colors = {
@@ -33,7 +32,6 @@ const colors = {
   gray: "btn-gray ",
   lightGray: "btn-light-gray",
   ultraLightGray: "btn-ultralight-gray",
-  undefined: "",
 };
 
 const loadingSizes = {
@@ -77,7 +75,7 @@ const Button = ({
   };
 
   const classContainer =
-    "btn " +
+    "btn d-flex gap-2 " +
     variants[variant] +
     sizes[size] +
     shadows[shadow] +
@@ -99,7 +97,7 @@ const Button = ({
       ? rightIcons[rightIcon]
       : null;
   const labelItem = loading && loadingIndicator ? loadingIndicator : label;
-  const itemsClass = "btn-items " + justify[justifyContent];
+  const itemsClass = "btn-items d-flex gap-2 " + justify[justifyContent];
 
   const elements = {
     a: (

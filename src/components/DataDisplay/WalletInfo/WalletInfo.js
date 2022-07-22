@@ -4,21 +4,20 @@ import "./styles.scss";
 import Button from "components/NewButton/Button";
 import Icons from "components/Icons";
 
-const WalletInfo = ({ label = 0, className }) => {
+const WalletInfo = ({ value = 0, className }) => {
   return (
-    <div className={"wallet-info-wrapper"}>
-      <div className="wallet-info">
+    <div className={"wallet-info-wrapper " + className}>
+      <div className="wallet-info d-flex justify-content-center w-100">
         <label>Total Earn</label>
-        <span>${label}</span>
+        <h2 className="mb-0">${value}</h2>
       </div>
-      <div className="btn-wallet">
+      <div className="mt-4">
         <Button
-          justifyContent="space-betwen"
+          justifyContent="space-between"
           color="primary"
-          rightIcon={<Icons variant="checkmark" />}
+          rightIcon="btn-rounded"
           fullWidth
           label="witdraw"
-          loading
         />
       </div>
     </div>

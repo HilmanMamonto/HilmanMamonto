@@ -1,9 +1,11 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/variables";
 
 .chart-line {
-	width: 540px;
-	border-radius: 6px;
-	box-shadow: $ultralight-gray-shadow-small;
-	background-color: $white;
-	padding: 10px 20px;
+  border-radius: 6px;
+  background-color: $white;
+  height: 100%;
+  width: 100%;
+  canvas {
+    max-width: 100%;
+  }
 }

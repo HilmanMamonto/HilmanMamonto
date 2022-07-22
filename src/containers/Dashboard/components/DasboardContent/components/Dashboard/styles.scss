@@ -1,0 +1,22 @@
+@import "/src/assets/scss/bootstrap-utilities.scss";
+
+.dashboard-items {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.dahsboard-charts {
+  display: grid;
+}
+
+@include media-breakpoint-up(lg) {
+  .dashboard-items {
+    grid-template-columns: 200px auto;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .dahsboard-charts {
+    grid-template-columns: 3fr 1fr;
+  }
+}

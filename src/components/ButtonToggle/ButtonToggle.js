@@ -10,7 +10,12 @@ const sizes = {
   large: "btn-toggle-large ",
 };
 
-const ButtonToggle = ({ defaultValue, leftLabel, rightLabel, size }) => {
+const ButtonToggle = ({
+  defaultValue,
+  leftLabel = "leftLabel",
+  rightLabel = "rightLabel",
+  size,
+}) => {
   const [toggle, setToggle] = useState(defaultValue);
 
   const className = "btn-toggle " + sizes[size];

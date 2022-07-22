@@ -12,18 +12,19 @@ const shadows = {
   small: "shadow-s ",
   medium: "shadow-m ",
   large: "shadow-l ",
+  "": "",
 };
 
 const sizes = {
   small: "avatar-small ",
   medium: "avatar-medium ",
   large: "avatar-large ",
+  undefined: "",
 };
 
 const Avatar = ({
   onClick,
-  shadow,
-  disabeled,
+  shadow = "",
   src,
   className,
   variant = "image",
@@ -34,14 +35,8 @@ const Avatar = ({
   href = "/",
   style,
 }) => {
-  const disability = disabeled ? "disabeled " : "";
   const classes =
-    "avatar " +
-    variants[variant] +
-    sizes[size] +
-    shadows[shadow] +
-    disability +
-    className;
+    "avatar " + variants[variant] + sizes[size] + shadows[shadow] + className;
 
   const item =
     variant === "image" ? (
@@ -59,12 +54,7 @@ const Avatar = ({
       </a>
     ),
     button: (
-      <button
-        className={classes}
-        style={style}
-        disabled={disabeled}
-        onClick={onClick}
-      >
+      <button className={classes} style={style} onClick={onClick}>
         {item}
       </button>
     ),

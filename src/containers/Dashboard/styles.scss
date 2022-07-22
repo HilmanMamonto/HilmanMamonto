@@ -1,11 +1,17 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/scss/bootstrap-utilities.scss";
 
-.dashboard-wrapper {
-	position: relative;
+.dashboard {
+  .sidebar {
+    position: absolute !important;
+  }
 }
 
-#dashboard {
-	display: grid;
-	grid-template-columns: 260px 1fr;
-	height: 100vh;
+@include media-breakpoint-up(md) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    .sidebar {
+      position: static !important;
+    }
+  }
 }

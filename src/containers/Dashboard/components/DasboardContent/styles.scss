@@ -1,8 +1,7 @@
-@import '/src/assets/styles/styles.scss';
+@import "/src/assets/styles/variables";
 
-#dashboard-content {
-	position: relative;
-	padding: 24px 30px 42px 30px;
-	height: 100vh;
-	overflow-y: scroll;
+.dashboard-content {
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
 }
