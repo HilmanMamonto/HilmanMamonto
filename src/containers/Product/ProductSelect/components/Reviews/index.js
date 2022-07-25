@@ -3,7 +3,7 @@ import Chart from "./components/Chart/Chart";
 import Reviewer from "./components/Reviewer/Reviewer";
 import Icons from "components/Icons";
 
-const Reviews = ({}) => {
+const Reviews = (props) => {
   return (
     <div className="position border-top border-bottom pt-5">
       <div className="d-flex gap-4">
@@ -16,8 +16,8 @@ const Reviews = ({}) => {
           <h4 className="mb-0">3 reviews</h4>
         </div>
       </div>
-      <Chart />
-      <Reviewer />
+      <Chart {...props} />
+      <Reviewer {...props} />
     </div>
   );
 };

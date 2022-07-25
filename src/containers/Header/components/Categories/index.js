@@ -30,7 +30,12 @@ const HeaderCategories = ({ className = "" }) => {
 
   return (
     <div className={"header-categories " + classes.shadow + className}>
-      <Slide interval="sm" gap={5} className="container categories-items">
+      <Slide
+        onChange={() => ""}
+        interval="sm"
+        gap={5}
+        className="container categories-items"
+      >
         {arr.map((item) => {
           return (
             <a

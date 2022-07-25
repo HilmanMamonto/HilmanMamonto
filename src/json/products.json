@@ -12,11 +12,11 @@
     "imagesUrl": [
       {
         "id": "abcdabcd001",
-        "url": "/andy/andy-bromo-1.jpg"
+        "url": "/abdullah/abdullah-1.jpg"
       },
       {
         "id": "abcdabcd001",
-        "url": "/andy/andy-bromo-2.jpg"
+        "url": "/abdullah/abdullah-2.jpg"
       },
       {
         "id": "abcdabcd001",
@@ -59,8 +59,8 @@
         "iconUrl": "/no-smoking.svg"
       },
       {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
+        "name": "Sunscreen",
+        "iconUrl": "/sunscreen.svg"
       }
     ],
     "language": [
@@ -69,104 +69,146 @@
     ],
     "itinerary": [
       {
-        "time": "00:15 - 00:30",
-        "do": "Pick up in Malang areas (can be done to hotels)"
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
       },
       {
-        "time": "00:30 - 03:30",
-        "do": "Go to View Point Sunrise (hiking point/Kingkong Hill/other situational alternatives)"
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
       },
       {
-        "time": "06:00 - 07:00",
-        "do": "Go to Love Hill, Widodaren, then go exploring and hunting for photos"
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
       },
       {
-        "time": "07:00 - 09:00",
-        "do": "Explore Bromo Crater & Pura Luhur Poten, trekking, and photo hunting"
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
       },
       {
-        "time": "09:00 - 10:00",
-        "do": "Explore Whispering Sand, Savanah, and Teletubbies Hill"
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
       },
       {
-        "time": "10:00 - 11:00",
-        "do": "Return back to Malang, Bonus Coban Pelangi Waterfall (situational, depends on participants' choice) "
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
       }
     ],
     "staycations": [
       {
-        "name": "Cemara Indah Hotel",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Located in Bromo, 1.7 km from Mount Bromo, Cemara Indah Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free",
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
         "amenities": [
-          {
-            "name": "Pool",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Parking Area",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Parking Area",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Hot Tub",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Lauch",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Iron",
-            "iconUrl": "Icon/..."
-          }
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
         ]
       }
     ],
     "additionalInformation": [
-      "Please bring a mask and a flashlight",
+      "Please bring a mask",
       "Please wear shoes instead of sandals"
     ],
     "pickUpServices": [
-      "Free Pick-up Available. Malang city area except for the station"
+      "Free Pick-up Available. Airplane area except for the pick-up point"
     ],
-    "rateDetails": {
-      "comunication": 4.8,
-      "value": 5.0,
-      "location": 5.0,
-      "accuracy": 5.0
-    },
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
+    ],
     "reviews": [
       {
         "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
         "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
       },
       {
         "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
         "review": "Interesting, nice place, good experiance!"
       },
       {
         "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
       },
       {
         "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
         "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
       }
     ],
-    "placeDescription": "Begin your day with a breathtaking sunrise over the majestic Mount Bromo. Find the best spot at the View Point Penanjakan and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the national park has to offer. Make way to many more photogenic spots, such as Bukit Cinta, Mount Bromo and its crater, the stunning vastness of Pasir Bercepat and the savanna. Don't forget to see the picturesque Bukit Teletubbies that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to the Coban Pelangi Waterfall to your itinerary! "
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
   },
   {
     "id": "abcdabcd002",
@@ -179,11 +221,11 @@
     "imagesUrl": [
       {
         "id": "abcdabcd002",
-        "url": "products-images/abcdabcd002/kyoto-bamboo"
+        "url": "/yamen/yamen-1.jpg"
       },
       {
         "id": "abcdabcd002",
-        "url": "products-images/abcdabcd002/kyoto-bamboo-forest"
+        "url": "/yamen/yamen-2.jpg"
       },
       {
         "id": "abcdabcd002",
@@ -227,6 +269,169 @@
         "name": "Snacks",
         "iconUrl": "/Icon/donuts"
       }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconUrl": "/no-smoking.svg"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/..."
+      }
+    ],
+    "language": [
+      { "name": "English", "iconUrl": "/flag-english.png" },
+      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
+      },
+      {
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
+      },
+      {
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
+      },
+      {
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
+      },
+      {
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
+      },
+      {
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
+      }
+    ],
+    "staycations": [
+      {
+        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
+        "budget": 32,
+        "rate": 5.0,
+        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "amenities": [
+          {
+            "name": "Wifi",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Bath",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Air conditioning",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Heater",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Smoke alarams",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Security alaram",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Laundry",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "24-hour security",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Restaurant",
+            "iconUrl": "Icon/..."
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ]
+  },
+  {
+    "id": "abcdabcd003",
+    "tourName": "One Day Bycicle In Kyoto",
+    "location": "Kyoto, Japan",
+    "tourGuideName": "Makoto Hirata",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd003",
+        "url": "/ahmad/ahmad-1.jpg"
+      },
+      {
+        "id": "abcdabcd003",
+        "url": "/ahmad/ahmad-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Bycicle",
+        "iconUrl": "/Icon/bycicle"
+      },
+      {
+        "name": "Helmet",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Bottled Water",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Admission Ticket",
+        "iconUrl": "/Icon/ticket"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/burger"
+      },
+      {
+        "name": "Snacks",
+        "iconUrl": "/Icon/donuts"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconUrl": "/no-smoking.svg"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/..."
+      }
+    ],
+    "language": [
+      { "name": "English", "iconUrl": "/flag-english.png" },
+      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
     ],
     "itinerary": [
       {
@@ -302,6 +507,789 @@
             "iconUrl": "Icon/..."
           }
         ]
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ]
+  },
+  {
+    "id": "abcdabcd004",
+    "tourName": "One Day Bycicle In Kyoto",
+    "location": "Kyoto, Japan",
+    "tourGuideName": "Makoto Hirata",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd004",
+        "url": "/niki/niki-1.jpg"
+      },
+      {
+        "id": "abcdabcd004",
+        "url": "/niki/niki-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Bycicle",
+        "iconUrl": "/Icon/bycicle"
+      },
+      {
+        "name": "Helmet",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Bottled Water",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Admission Ticket",
+        "iconUrl": "/Icon/ticket"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/burger"
+      },
+      {
+        "name": "Snacks",
+        "iconUrl": "/Icon/donuts"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconUrl": "/no-smoking.svg"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/..."
+      }
+    ],
+    "language": [
+      { "name": "English", "iconUrl": "/flag-english.png" },
+      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "07:00 - 7:30",
+        "do": "Pick up in Kyoto areas"
+      },
+      {
+        "time": "70:30 - 08:00",
+        "do": "Start biking at Saga-Arashiyama Station"
+      },
+      {
+        "time": "08:00 - 08:30",
+        "do": "Bamboo forest street"
+      },
+      {
+        "time": "08:30 - 09:00",
+        "do": "Fushimi Inari-taisha Shrine"
+      },
+      {
+        "time": "09:00 - 10:00",
+        "do": "Gion District"
+      },
+      {
+        "time": "10:00 - 11:00",
+        "do": "Kiyomizu-dera Temple"
+      },
+      {
+        "time": "11:00 - 12:00",
+        "do": "Kinkakuji Temple"
+      }
+    ],
+    "staycations": [
+      {
+        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
+        "budget": 32,
+        "rate": 5.0,
+        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "amenities": [
+          {
+            "name": "Wifi",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Bath",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Air conditioning",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Heater",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Smoke alarams",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Security alaram",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Laundry",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "24-hour security",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Restaurant",
+            "iconUrl": "Icon/..."
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ]
+  },
+  {
+    "id": "abcdabcd005",
+    "tourName": "One Day Bycicle In Kyoto",
+    "location": "Kyoto, Japan",
+    "tourGuideName": "Makoto Hirata",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd005",
+        "url": "/yusuf/yusuf-1.jpg"
+      },
+      {
+        "id": "abcdabcd005",
+        "url": "/yusuf/yusuf-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Bycicle",
+        "iconUrl": "/Icon/bycicle"
+      },
+      {
+        "name": "Helmet",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Bottled Water",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Admission Ticket",
+        "iconUrl": "/Icon/ticket"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/burger"
+      },
+      {
+        "name": "Snacks",
+        "iconUrl": "/Icon/donuts"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconUrl": "/no-smoking.svg"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/..."
+      }
+    ],
+    "language": [
+      { "name": "English", "iconUrl": "/flag-english.png" },
+      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "07:00 - 7:30",
+        "do": "Pick up in Kyoto areas"
+      },
+      {
+        "time": "70:30 - 08:00",
+        "do": "Start biking at Saga-Arashiyama Station"
+      },
+      {
+        "time": "08:00 - 08:30",
+        "do": "Bamboo forest street"
+      },
+      {
+        "time": "08:30 - 09:00",
+        "do": "Fushimi Inari-taisha Shrine"
+      },
+      {
+        "time": "09:00 - 10:00",
+        "do": "Gion District"
+      },
+      {
+        "time": "10:00 - 11:00",
+        "do": "Kiyomizu-dera Temple"
+      },
+      {
+        "time": "11:00 - 12:00",
+        "do": "Kinkakuji Temple"
+      }
+    ],
+    "staycations": [
+      {
+        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
+        "budget": 32,
+        "rate": 5.0,
+        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "amenities": [
+          {
+            "name": "Wifi",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Bath",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Air conditioning",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Heater",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Smoke alarams",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Security alaram",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Laundry",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "24-hour security",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Restaurant",
+            "iconUrl": "Icon/..."
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ]
+  },
+  {
+    "id": "abcdabcd006",
+    "tourName": "One Day Bycicle In Kyoto",
+    "location": "Kyoto, Japan",
+    "tourGuideName": "Makoto Hirata",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd006",
+        "url": "/gopal/gopal-1.jpg"
+      },
+      {
+        "id": "abcdabcd006",
+        "url": "/gopal/gopal-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Bycicle",
+        "iconUrl": "/Icon/bycicle"
+      },
+      {
+        "name": "Helmet",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Bottled Water",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Admission Ticket",
+        "iconUrl": "/Icon/ticket"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/burger"
+      },
+      {
+        "name": "Snacks",
+        "iconUrl": "/Icon/donuts"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconUrl": "/no-smoking.svg"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/..."
+      }
+    ],
+    "language": [
+      { "name": "English", "iconUrl": "/flag-english.png" },
+      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "07:00 - 7:30",
+        "do": "Pick up in Kyoto areas"
+      },
+      {
+        "time": "70:30 - 08:00",
+        "do": "Start biking at Saga-Arashiyama Station"
+      },
+      {
+        "time": "08:00 - 08:30",
+        "do": "Bamboo forest street"
+      },
+      {
+        "time": "08:30 - 09:00",
+        "do": "Fushimi Inari-taisha Shrine"
+      },
+      {
+        "time": "09:00 - 10:00",
+        "do": "Gion District"
+      },
+      {
+        "time": "10:00 - 11:00",
+        "do": "Kiyomizu-dera Temple"
+      },
+      {
+        "time": "11:00 - 12:00",
+        "do": "Kinkakuji Temple"
+      }
+    ],
+    "staycations": [
+      {
+        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
+        "budget": 32,
+        "rate": 5.0,
+        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "amenities": [
+          {
+            "name": "Wifi",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Bath",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Air conditioning",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Heater",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Smoke alarams",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Security alaram",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Laundry",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "24-hour security",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Restaurant",
+            "iconUrl": "Icon/..."
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ]
+  },
+  {
+    "id": "abcdabcd007",
+    "tourName": "One Day Bycicle In Kyoto",
+    "location": "Kyoto, Japan",
+    "tourGuideName": "Makoto Hirata",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd007",
+        "url": "/martin/martin-1.jpg"
+      },
+      {
+        "id": "abcdabcd007",
+        "url": "/martin/martin-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Bycicle",
+        "iconUrl": "/Icon/bycicle"
+      },
+      {
+        "name": "Helmet",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Bottled Water",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Admission Ticket",
+        "iconUrl": "/Icon/ticket"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/burger"
+      },
+      {
+        "name": "Snacks",
+        "iconUrl": "/Icon/donuts"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconUrl": "/no-smoking.svg"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/..."
+      }
+    ],
+    "language": [
+      { "name": "English", "iconUrl": "/flag-english.png" },
+      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "07:00 - 7:30",
+        "do": "Pick up in Kyoto areas"
+      },
+      {
+        "time": "70:30 - 08:00",
+        "do": "Start biking at Saga-Arashiyama Station"
+      },
+      {
+        "time": "08:00 - 08:30",
+        "do": "Bamboo forest street"
+      },
+      {
+        "time": "08:30 - 09:00",
+        "do": "Fushimi Inari-taisha Shrine"
+      },
+      {
+        "time": "09:00 - 10:00",
+        "do": "Gion District"
+      },
+      {
+        "time": "10:00 - 11:00",
+        "do": "Kiyomizu-dera Temple"
+      },
+      {
+        "time": "11:00 - 12:00",
+        "do": "Kinkakuji Temple"
+      }
+    ],
+    "staycations": [
+      {
+        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
+        "budget": 32,
+        "rate": 5.0,
+        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "amenities": [
+          {
+            "name": "Wifi",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Bath",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Air conditioning",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Heater",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Smoke alarams",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Security alaram",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Laundry",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "24-hour security",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Restaurant",
+            "iconUrl": "Icon/..."
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ]
+  },
+  {
+    "id": "abcdabcd008",
+    "tourName": "One Day Bycicle In Kyoto",
+    "location": "Kyoto, Japan",
+    "tourGuideName": "Makoto Hirata",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd008",
+        "url": "/saj/saj-1.jpg"
+      },
+      {
+        "id": "abcdabcd008",
+        "url": "/saj/saj-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Bycicle",
+        "iconUrl": "/Icon/bycicle"
+      },
+      {
+        "name": "Helmet",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Bottled Water",
+        "iconUrl": "/Icon/..."
+      },
+      {
+        "name": "Admission Ticket",
+        "iconUrl": "/Icon/ticket"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/burger"
+      },
+      {
+        "name": "Snacks",
+        "iconUrl": "/Icon/donuts"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconUrl": "/no-smoking.svg"
+      },
+      {
+        "name": "Launch",
+        "iconUrl": "/Icon/..."
+      }
+    ],
+    "language": [
+      { "name": "English", "iconUrl": "/flag-english.png" },
+      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "07:00 - 7:30",
+        "do": "Pick up in Kyoto areas"
+      },
+      {
+        "time": "70:30 - 08:00",
+        "do": "Start biking at Saga-Arashiyama Station"
+      },
+      {
+        "time": "08:00 - 08:30",
+        "do": "Bamboo forest street"
+      },
+      {
+        "time": "08:30 - 09:00",
+        "do": "Fushimi Inari-taisha Shrine"
+      },
+      {
+        "time": "09:00 - 10:00",
+        "do": "Gion District"
+      },
+      {
+        "time": "10:00 - 11:00",
+        "do": "Kiyomizu-dera Temple"
+      },
+      {
+        "time": "11:00 - 12:00",
+        "do": "Kinkakuji Temple"
+      }
+    ],
+    "staycations": [
+      {
+        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
+        "budget": 32,
+        "rate": 5.0,
+        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "amenities": [
+          {
+            "name": "Wifi",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Bath",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Air conditioning",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Heater",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Smoke alarams",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Security alaram",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Laundry",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "24-hour security",
+            "iconUrl": "Icon/..."
+          },
+          {
+            "name": "Restaurant",
+            "iconUrl": "Icon/..."
+          }
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
       }
     ]
   }

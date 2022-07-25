@@ -30,8 +30,16 @@ const SideBar = ({ className }) => {
         className="d-flex sb-ic-item active"
         variant="dashboard"
         size="large"
+        as="link"
+        to="/dashboard"
       />
-      <IconButton className="d-flex sb-ic-item" variant="bell" size="large" />
+      <IconButton
+        className="d-flex sb-ic-item"
+        variant="bell"
+        as="link"
+        to="notifications"
+        size="large"
+      />
       <IconButton className="d-flex sb-ic-item" variant="bag" size="large" />
       <div className="d-flex justify-content-center">
         <Avatar src={"/andy/andy.jpg"} size="small" />

@@ -1,17 +1,18 @@
 import React from "react";
 import "./styles.scss";
 import Icons from "components/Icons";
+import Reviewer from "../Reviews/components/Reviewer/Reviewer";
+import Reviews from "../Reviews";
 
 const ProductTittle = ({
   tourName,
   maxPax,
   rate,
-  sumOfReviews,
   locationSrc,
   location,
   id = "",
+  reviews,
 }) => {
-  const handleClick = () => {};
   return (
     <div id={id} className="d-none d-md-flex product-tittle mb-4">
       <div className="tittle-wraper">
@@ -29,7 +30,7 @@ const ProductTittle = ({
           </label>
           <label>
             <img src="/person.svg" alt="" />
-            <a href="#reviews">Reviews ( {sumOfReviews} )</a>
+            <a href="#reviews">Reviews ( {reviews.length} )</a>
           </label>
           <label>
             <img src="/location.svg" alt="" />
@@ -40,7 +41,7 @@ const ProductTittle = ({
       </div>
       <button
         className="d-flex align-items-center btn-save px-2 py-1 mt-auto"
-        onClick={() => handleClick}
+        onClick={() => ""}
       >
         <Icons variant="heart-fill" />
         <small className="ms-2">save</small>

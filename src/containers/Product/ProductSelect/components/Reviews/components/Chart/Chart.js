@@ -1,19 +1,17 @@
 import React from "react";
 import "./styles.scss";
 
-const Chart = () => {
-  const arr = [0, 1, 2, 3, 4, 5];
-
+const Chart = ({ rateDetails = [] }) => {
   return (
     <div className="rate-chart row row-cols-md-2 my-4">
-      {arr.map((item, i) => {
+      {rateDetails.map((item, i) => {
         return (
           <div key={i} className="item mb-3">
-            <label className="tittle">Comunication</label>
+            <label className="tittle">{item.name}</label>
             <div>
-              <span />
+              <span style={{ width: (item.value * 100) / 5 + "%" }} />
             </div>
-            <label className="rate">4.8</label>
+            <label className="rate">{item.value}</label>
           </div>
         );
       })}

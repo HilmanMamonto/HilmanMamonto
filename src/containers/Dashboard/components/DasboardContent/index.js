@@ -1,11 +1,12 @@
 import React from "react";
 import { useMatch } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Notifications from "./components/Notifications/Notifications";
 import "./styles.scss";
 
 const DashboardContent = ({ className }) => {
   const matchDashboard = useMatch("/dashboard");
-  const matchPackages = useMatch("/dashboard/packages/*");
+  const matchNotifications = useMatch("/dashboard/notifications");
 
   const classContent = "dashboard-content py-5 px-2 p-md-5 " + className;
 
@@ -16,8 +17,12 @@ const DashboardContent = ({ className }) => {
       </div>
     );
   }
-  if (matchPackages) {
-    return <div className={classContent}>{/* <Package /> */}</div>;
+  if (matchNotifications) {
+    return (
+      <div className={classContent}>
+        <Notifications />
+      </div>
+    );
   }
 };
 

@@ -7,15 +7,25 @@ const DahsboardList = ({
   name = "name",
   mid = "mid",
   right = "right",
+  className = "",
+  style = {},
 }) => {
   return (
-    <button className="dashboard-list w-100 d-flex align-items-center justify-content-between px-4 py-3 rounded-pill bg-white">
+    <button
+      style={style}
+      className={
+        "dashboard-list row row-cols-2 d-flex align-items-center px-4 py-3 mx-0 rounded-pill bg-white " +
+        className
+      }
+    >
       <div className="d-flex gap-3 align-items-center">
         <Avatar src={src} />
-        <span>{name}</span>
+        <span className="text-truncate">{name}</span>
       </div>
-      <span>{mid}</span>
-      <span>{right}</span>
+      <div className="d-flex justify-content-between">
+        <span>{mid}</span>
+        <span className="text-end">{right}</span>
+      </div>
     </button>
   );
 };

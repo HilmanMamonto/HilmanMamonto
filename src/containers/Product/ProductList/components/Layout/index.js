@@ -1,16 +1,16 @@
 import React from "react";
 import ProductCard from "../Card";
-import "./styles.scss";
 
 const ProductListLayout = ({ className, data }) => {
   return (
     <div className={"container " + className} style={{ marginTop: "160px" }}>
-      <div id="product-grid">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
         {data.map((item, i) => {
           return (
             <ProductCard
               id={item.id}
               key={"product-list" + i}
+              className="mb-4"
               tittle={item.tourName}
               rate={4.8}
               location={item.location}

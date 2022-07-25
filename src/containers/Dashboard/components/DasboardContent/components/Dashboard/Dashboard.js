@@ -1,4 +1,4 @@
-import { ANIMATE_FADEINDOWN } from "assets/animate/animate";
+import { ANIMATE_FADEINDOWN, ANIMATE_FADEINUP } from "assets/animate/animate";
 import ButtonToggle from "components/ButtonToggle/ButtonToggle";
 import ChartBar from "components/DataDisplay/Charts/ChartBar/ChartBar";
 import ChartLine from "components/DataDisplay/Charts/ChartLine/ChartLine";
@@ -10,9 +10,24 @@ import "./styles.scss";
 
 const Dashboard = () => {
   const arr = [
-    { name: "Fushimi inari taisha", trafic: "high", value: "+ 52.2%" },
-    { name: "Fushimi inari taisha", trafic: "low", value: "+ 52.2%" },
-    { name: "Fushimi inari taisha", trafic: "high", value: "+ 52.2%" },
+    {
+      name: "Dubai",
+      trafic: "high",
+      value: "+ 52.2%",
+      imageUrl: "/product-list/dubai.jpg",
+    },
+    {
+      name: "Giza",
+      trafic: "low",
+      value: "- 52.2%",
+      imageUrl: "/product-list/giza.jpg",
+    },
+    {
+      name: "Petra",
+      trafic: "high",
+      value: "+ 52.2%",
+      imageUrl: "/product-list/petra.jpg",
+    },
   ];
 
   return (
@@ -23,9 +38,14 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-items gap-4">
         <div className="w-100 d-flex flex-column gap-3 col col-sm-2">
-          <WalletInfo value={500} className="w-100" />
-          <div className="db-item-wrapper db-item-left d-flex flex-column gap-2 px-3 py-3 h-100 bg-white">
-            {/* <Icons className="mb-2" variant="middle east" size="xlarge" /> */}
+          <WalletInfo className={"w-100 " + ANIMATE_FADEINUP} value={500} />
+          <div
+            className={
+              "db-item-wrapper db-item-left d-flex flex-column gap-2 px-3 py-3 h-100 bg-white " +
+              ANIMATE_FADEINUP
+            }
+            style={{ animationDelay: "0.3s" }}
+          >
             <img src="/illustrations/illustration-hands.svg" alt="" />
             <span className="text-primary">
               Invite your friends and gets
@@ -40,7 +60,7 @@ const Dashboard = () => {
             <ChartBar className="db-item-wrapper" />
           </div>
           <div className="d-flex gap-3 flex-column">
-            {arr.map((item) => {
+            {arr.map((item, i) => {
               const trafic =
                 item.trafic === "high"
                   ? "text-success"
@@ -49,9 +69,11 @@ const Dashboard = () => {
                   : "";
               return (
                 <DahsboardList
-                  key={item}
+                  key={i}
                   name={item.name}
-                  src="andy/andy.jpg"
+                  src={item.imageUrl}
+                  style={{ animationDelay: i * 0.3 + "s" }}
+                  className={ANIMATE_FADEINUP}
                   mid={
                     <span className="d-flex align-items-center gap-2">
                       <Icons

@@ -6,6 +6,7 @@ import ButtonRounded from "components/ButtonRounded/ButtonRounded";
 import { ANIMATE_FADEIN_RIGHT } from "assets/animate/animate";
 import SimpleCard from "components/DataDisplay/SimpleCard/SimpleCard";
 import ButtonUnderlline from "components/ButtonUnderline/ButtonUnderlline";
+import Slide from "components/DataDisplay/Slide/Slide";
 
 const Recomended = ({ className = "", isActive, onChange }) => {
   const refItems = useRef(null);
@@ -50,23 +51,13 @@ const Recomended = ({ className = "", isActive, onChange }) => {
         />
       </div>
       <div className="location-categories">
-        <ButtonRounded
-          variant="prev"
-          className="btn btn-prev"
-          onClick={() => handleClick("btn-prev")}
-        />
-        <ButtonRounded
-          variant="next"
-          className="btn btn-next"
-          onClick={() => handleClick("btn-next")}
-        />
-        <div className="items gap-3" ref={refItems}>
+        <Slide gap={2} className="w-100">
           {data.map((item, i) => {
             return (
               <button
                 key={"vr" + i}
                 type="button"
-                className={"item-recomended " + ANIMATE_FADEIN_RIGHT}
+                className={"item-recomended px-0 " + ANIMATE_FADEIN_RIGHT}
                 onClick={() => setValue(item.tittle)}
                 style={{ animationDelay: 0.2 * i + "s" }}
               >
@@ -74,7 +65,7 @@ const Recomended = ({ className = "", isActive, onChange }) => {
               </button>
             );
           })}
-        </div>
+        </Slide>
       </div>
 
       <div className="recent">

@@ -56,6 +56,13 @@ const variants = {
   fruity: "/icons/fruity.svg",
   "middle east": "/icons/middle-east.svg",
   "watter fall": "/icons/watter-fall.svg",
+  lunch: "/icons/lunch.svg",
+  bathtub: "/icons/bathtub.svg",
+  "mineral water": "/icons/mineral-water.svg",
+  smoking: "/icons/smoking.svg",
+  parking: "/icons/parking-area.svg",
+  "wi-fi": "/icons/wi-fi.svg",
+  ac: "/icons/ac.svg",
 };
 
 const Icons = ({

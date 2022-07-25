@@ -1,72 +1,27 @@
-@import "/src/assets/styles/styles.scss";
+@import "/src/assets/styles/variables";
 
 #product-card {
-  width: 100%;
-
   .pictures {
     display: flex;
     justify-content: center;
     cursor: pointer;
     position: relative;
-    padding-top: 100%;
+    border-radius: 8px;
     overflow: hidden;
-    .btn-next {
-      position: absolute;
-      right: 0;
-      margin-right: 10px;
-      top: 45%;
-      z-index: 2;
-      border-radius: 100px;
-      width: 28px;
-      height: 28px;
-      opacity: 0%;
-      transition: opacity 0.3s ease-in-out;
-      &.active {
-        opacity: 70%;
-        transition: opacity 0.3s ease-in-out;
-        &:hover {
-          opacity: 100%;
-        }
-      }
-    }
-    .btn-prev {
-      position: absolute;
-      left: 0;
-      margin-left: 10px;
-      top: 45%;
-      z-index: 2;
-      border-radius: 100px;
-      width: 28px;
-      height: 28px;
-      opacity: 0%;
-      transition: opacity 0.1s ease-in-out;
-      &.active {
-        opacity: 70%;
-        transition: opacity 0.1s ease-in-out;
-        &:hover {
-          opacity: 100%;
-        }
-      }
-    }
-    .images {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      border-radius: 6px;
-      overflow-x: scroll;
-      scroll-behavior: smooth;
-      display: flex;
-      &::-webkit-scrollbar {
-        height: 0px;
-      }
 
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
+    a {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
     }
+  }
+  .picture {
+    width: inherit;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
   }
 
   .card-dots {

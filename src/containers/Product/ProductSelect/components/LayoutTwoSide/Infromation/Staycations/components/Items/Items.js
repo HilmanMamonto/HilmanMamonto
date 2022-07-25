@@ -1,31 +1,45 @@
 import Slide from "components/DataDisplay/Slide/Slide";
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import "./styles.scss";
 
-const Items = () => {
-  const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const Items = ({ staycations, onChange = () => "" }) => {
+  const [id, setId] = useState(staycations[0].id);
+
+  useEffect(() => {
+    onChange(id);
+  }, [id]);
 
   return (
     <div className="staycations-items mb-4">
       <Slide gap={4}>
-        {arr.map((item) => {
+        {staycations.map((item, i) => {
           return (
-            <div key={item} className="d-flex gap-4 align-items-center">
+            <button
+              onClick={() => setId(item.id)}
+              key={i}
+              className="d-flex gap-3 align-items-center"
+            >
               <figure className="mb-0">
-                <img className="rounded" />
+                <img
+                  src={item.imagesUrl[0]}
+                  alt={item.name}
+                  className="rounded"
+                />
               </figure>
               <div className="si-info">
-                <label>
-                  <span className="fw-semibold">$32 /</span>
+                <span className="d-flex">
+                  <span className="fw-semibold">${item.budget} /</span>
                   <span>night</span>
-                </label>
-                <h6>Villa Tengger Semeru</h6>
-                <label>
-                  <span className="me-2">5.0</span>
-                  <span>Reviews (100)</span>
-                </label>
+                </span>
+                <h6 className="text-start">{item.name}</h6>
+                <span>
+                  <span className="me-2">{item.rate}</span>
+                  <span>Reviews ({item.reviews})</span>
+                </span>
               </div>
-            </div>
+            </button>
           );
         })}
       </Slide>

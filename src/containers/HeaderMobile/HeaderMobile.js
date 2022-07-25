@@ -18,7 +18,7 @@ const HeaderMobile = ({ className, hasCategories }) => {
   }, [active]);
 
   return (
-    <div className={"header-mobile-wrapper " + className}>
+    <div className={"header-mobile-wrapper bg-white " + className}>
       <div className="container header-mobile">
         <button
           type="button"

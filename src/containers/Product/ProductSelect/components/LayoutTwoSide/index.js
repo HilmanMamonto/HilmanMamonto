@@ -15,7 +15,7 @@ const LayoutTwoSide = (props) => {
         <TourGuideTittle {...props} />
         <TravelAmenities {...props} />
         <Itinerary {...props} />
-        <Staycations />
+        <Staycations {...props} />
         <MoreThings />
       </div>
       <div className="body-right d-sm-none d-md-flex">
