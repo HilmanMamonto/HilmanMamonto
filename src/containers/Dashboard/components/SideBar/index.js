@@ -1,10 +1,17 @@
 import React from "react";
-
 import "./styles.scss";
 import IconButton from "components/IconButton/IconButton";
 import Avatar from "components/Avatar/Avatar";
+import { useMatch } from "react-router-dom";
 
 const SideBar = ({ className }) => {
+  const matchDashboard = useMatch("/dashboard/main/*");
+  const matchNotifications = useMatch("/dashboard/notifications");
+
+  const activate = {
+    dashboard: matchDashboard ? "active " : "",
+    notifications: matchNotifications ? "active " : "",
+  };
   return (
     <div
       className={
@@ -22,19 +29,19 @@ const SideBar = ({ className }) => {
       <IconButton
         as="link"
         to="/"
-        className="d-flex sb-ic-item d-none d-md-flex"
+        className="d-flex sb-ic-item d-none d-md-flex "
         variant="home"
         size="large"
       />
       <IconButton
-        className="d-flex sb-ic-item active"
+        className={"d-flex sb-ic-item " + activate.dashboard}
         variant="dashboard"
         size="large"
         as="link"
-        to="/dashboard"
+        to="main"
       />
       <IconButton
-        className="d-flex sb-ic-item"
+        className={"d-flex sb-ic-item " + activate.notifications}
         variant="bell"
         as="link"
         to="notifications"

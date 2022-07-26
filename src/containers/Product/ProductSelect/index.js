@@ -14,7 +14,7 @@ const ProductSelected = () => {
 
   return dataProduct.map((item, i) => (
     <div
-      className="container pt-4"
+      className="container pt-4 mb-5"
       style={{ marginTop: "80px" }}
       key={"ps" + i}
     >

@@ -29,23 +29,37 @@
 
       small {
         white-space: nowrap;
+        color: $gray;
       }
 
-      &:hover {
-        transition: all 0.3s ease-in-out;
+      &.active {
         opacity: 1;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transition: all 0.3s ease-in-out;
+          height: 2px;
+          bottom: 0;
+          background-color: $gray;
+        }
+      }
+
+      &:hover:not(.active) {
+        transition: all 0.3s ease-in-out;
+        opacity: 0.5;
         .hc-icon {
           transition: all 0.3s ease-in-out;
-          transform: scale(0.9);
+          transform: scale(0.95);
         }
         &::after {
           content: "";
           position: absolute;
           width: 100%;
           transition: all 0.3s ease-in-out;
-          height: 3px;
+          height: 2px;
           bottom: 0;
-          background-color: $gray;
+          background-color: $light-gray;
         }
       }
     }

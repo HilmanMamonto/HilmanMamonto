@@ -94,15 +94,17 @@ const InputSchedule = ({ onChange, value }) => {
         value={values.schedule}
         onChange={handleChange}
       />
-      <Button
-        fullWidth
-        type="button"
-        size="large"
-        variant="outline"
-        justifyContent="center"
-        label="Add Schedule"
-        onClick={handleAdd}
-      />
+      {currentHour < 8 && (
+        <Button
+          fullWidth
+          type="button"
+          size="large"
+          variant="outline"
+          justifyContent="center"
+          label="Add Schedule"
+          onClick={handleAdd}
+        />
+      )}
     </div>
   );
 };

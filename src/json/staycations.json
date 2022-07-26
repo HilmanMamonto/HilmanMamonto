@@ -1,47 +1,29 @@
 [
-	{
-		"id": "st0001",
-		"imageUrl": "/staycations/villa-bromo.jpg",
-		"tittle": "Villa Tengger Semeru",
-		"location": "Malang , East Java",
-		"budget": 20,
-		"rate": 4.8,
-		"reviews": 20
-	},
-	{
-		"id": "st0002",
-		"imageUrl": "/staycations/villa-bromo.jpg",
-		"tittle": "Villa Tengger Semeru",
-		"location": "Malang , East Java",
-		"budget": 20,
-		"rate": 4.8,
-		"reviews": 20
-	},
-	{
-		"id": "st0003",
-		"imageUrl": "/staycations/villa-bromo.jpg",
-		"tittle": "Villa Tengger Semeru",
-		"location": "Malang , East Java",
-		"budget": 20,
-		"rate": 4.8,
-		"reviews": 20
-	},
-	{
-		"id": "st0004",
-		"imageUrl": "/staycations/villa-bromo.jpg",
-		"tittle": "Villa Tengger Semeru",
-		"location": "Malang , East Java",
-		"budget": 20,
-		"rate": 4.8,
-		"reviews": 20
-	},
-	{
-		"id": "st0005",
-		"imageUrl": "/staycations/villa-bromo.jpg",
-		"tittle": "Villa Tengger Semeru",
-		"location": "Malang , East Java",
-		"budget": 20,
-		"rate": 4.8,
-		"reviews": 20
-	}
+  {
+    "id": "st0001",
+    "imageUrl": "/staycations/high-days-hotel-1.jpg",
+    "tittle": "High Days Hotel",
+    "location": "Near travel point",
+    "budget": 20,
+    "rate": 4.8,
+    "reviews": 80
+  },
+  {
+    "id": "st0002",
+    "imageUrl": "/staycations/less-hotel-1.jpg",
+    "tittle": "Less Hotel",
+    "location": "Near travel point",
+    "budget": 20,
+    "rate": 4.8,
+    "reviews": 65
+  },
+  {
+    "id": "st0003",
+    "imageUrl": "/staycations/white-box-hotel-1.jpg",
+    "tittle": "White Box Hotel",
+    "location": "Near travel point",
+    "budget": 20,
+    "rate": 4.8,
+    "reviews": 72
+  }
 ]

@@ -3,9 +3,9 @@ import { Provider } from "react-redux";
 import store from "redux/store";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductSelectedPage from "pages/ProductSelected";
-import DashboardPage from "pages/Dashboard";
-import AddPackage from "containers/AddPackage";
+import DashboardPage from "pages/Dashboard/Dashboard";
 import TourGuide from "pages/TourGuide/TourGuide";
+import NotFound from "pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="tour-guide" element={<TourGuide />} />
           <Route path="/product/:id" element={<ProductSelectedPage />} />
           <Route path="dashboard/*" element={<DashboardPage />} />
-          <Route path="test" element={<AddPackage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </Provider>

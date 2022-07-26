@@ -40,6 +40,8 @@ const Stays = () => {
               location={item.location}
               budget={item.budget}
               rate={item.rate}
+              src={item.imageUrl}
+              reviews={item.reviews}
               defaultChecked={values.includes(item.id)}
               onChange={handleChange}
             />

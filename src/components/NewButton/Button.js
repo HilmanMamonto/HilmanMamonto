@@ -6,7 +6,7 @@ import "./styles.scss";
 
 const variants = {
   contained: "btn-contained ",
-  outline: "border ",
+  outline: "btn-outline ",
   text: "btn-text ",
   "": "",
 };
@@ -14,7 +14,7 @@ const variants = {
 const sizes = {
   xsmall: "px-3 py-1 ",
   small: "px-3 py-1 fs-6 ",
-  medium: "px-5 py-1 fs-5 ",
+  medium: "px-4 py-1 fs-5 ",
   large: "px-4 py-2 fs-5 ",
 };
 
@@ -35,6 +35,7 @@ const loadingSizes = {
 const justify = {
   center: "justify-content-center ",
   "space-between": "justify-content-between ",
+  "": "",
 };
 
 const iconSizes = {
@@ -67,7 +68,7 @@ const Button = ({
   };
 
   const classContainer =
-    "btn d-flex gap-2 " +
+    "btn d-flex align-items-center gap-2 " +
     variants[variant] +
     sizes[size] +
     colors[color] +

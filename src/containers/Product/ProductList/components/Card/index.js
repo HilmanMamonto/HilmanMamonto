@@ -17,14 +17,16 @@ const ProductCard = ({
   const [current, setCurrent] = useState(0);
 
   return (
-    <div id="product-card" className={className}>
+    <div className={"product-card " + className}>
       <div className="pictures ">
-        <a href={"/product/" + id} />
         <SliderCard variant="counter" onChange={(c) => setCurrent(c)} gap={0}>
-          <img className="picture" src={imagesUrl[0].url} alt="" />
-          <img className="picture" src={imagesUrl[0].url} alt="" />
-          <img className="picture" src={imagesUrl[0].url} alt="" />
-          <img className="picture" src={imagesUrl[0].url} alt="" />
+          {imagesUrl.map((item, i) => {
+            return (
+              <a key={i} className="picture" href={"/product/" + id}>
+                <img src={item.url} alt={item.url}></img>
+              </a>
+            );
+          })}
         </SliderCard>
         <div className="card-dots">
           {imagesUrl.length > 1 &&

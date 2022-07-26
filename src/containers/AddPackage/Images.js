@@ -41,7 +41,7 @@ const Images = () => {
         <img className="ap-image" src={item} />
         <IconButton
           onClick={() => handleDelete(i)}
-          variant="close-rounded-white"
+          variant="close-white"
           size="xlarge"
           className="btn-close-ap-image"
         />

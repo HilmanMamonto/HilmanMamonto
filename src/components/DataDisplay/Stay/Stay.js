@@ -23,7 +23,7 @@ const Stay = ({
           <label>${budget} / night</label>
           <div className="st-foot">
             <span className="me-2">{rate}</span>
-            <span>Reviews({reviews})</span>
+            <span>Reviews ({reviews})</span>
           </div>
         </div>
       </div>

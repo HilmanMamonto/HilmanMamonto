@@ -22,14 +22,19 @@ const NavRight = ({ className }) => {
           hidden={!show}
           className="burger-wrapper border d-flex flex-column gap-2 bg-white position-absolute py-3 mt-2 end-0 px-3 rounded shadow-sm"
         >
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/dashboard/main">Dashboard</Link>
           <Link to="/">Wish lists</Link>
           <Link to="/" className="border-top mt-3 pt-2">
             Logout
           </Link>
         </div>
       </div>
-      <Avatar size="large" as="link" href="/dashboard" src="/andy/andy.jpg" />
+      <Avatar
+        size="large"
+        as="link"
+        href="/dashboard/main"
+        src="/andy/andy.jpg"
+      />
     </div>
   );
 };

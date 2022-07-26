@@ -1,27 +1,22 @@
 @import "/src/assets/styles/variables";
 
-#product-card {
+.product-card {
   .pictures {
     display: flex;
     justify-content: center;
-    cursor: pointer;
     position: relative;
+    cursor: pointer;
     border-radius: 8px;
     overflow: hidden;
-
-    a {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      z-index: 1;
+    .picture {
+      width: inherit;
+      aspect-ratio: 1/1;
+      background-color: gray;
+      img {
+        width: inherit;
+        aspect-ratio: 1/1;
+      }
     }
-  }
-  .picture {
-    width: inherit;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
   }
 
   .card-dots {

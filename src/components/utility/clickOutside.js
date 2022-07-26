@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
-export const useClickOutside = () => {
+export const useClickOutside = (initial = undefined) => {
   const ref = useRef();
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(initial ? initial : false);
 
   const handleClick = (e) => {
     if (ref && !ref.current.contains(e.target)) {

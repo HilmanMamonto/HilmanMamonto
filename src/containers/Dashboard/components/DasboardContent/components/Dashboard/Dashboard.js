@@ -1,11 +1,12 @@
 import { ANIMATE_FADEINDOWN, ANIMATE_FADEINUP } from "assets/animate/animate";
-import ButtonToggle from "components/ButtonToggle/ButtonToggle";
 import ChartBar from "components/DataDisplay/Charts/ChartBar/ChartBar";
 import ChartLine from "components/DataDisplay/Charts/ChartLine/ChartLine";
 import DahsboardList from "components/DataDisplay/DahsboardList/DahsboardList";
 import WalletInfo from "components/DataDisplay/WalletInfo/WalletInfo";
 import Icons from "components/Icons";
+import Button from "components/NewButton/Button";
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.scss";
 
 const Dashboard = () => {
@@ -32,11 +33,13 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="d-flex justify-content-between mb-5">
+      <div className="d-flex flex-column flex-lg-row gap-3 justify-content-between mb-5">
         <h1 className={"mb-0 " + ANIMATE_FADEINDOWN}>Welcome back, William</h1>
-        <ButtonToggle leftLabel="Earn" rightLabel="Views" />
+        <Link to={"main/add-package"}>
+          <Button fullWidth label="add a package" color="secondary" />
+        </Link>
       </div>
-      <div className="dashboard-items gap-4">
+      <div className="dashboard-items gap-4 mb-5 mb-lg-0">
         <div className="w-100 d-flex flex-column gap-3 col col-sm-2">
           <WalletInfo className={"w-100 " + ANIMATE_FADEINUP} value={500} />
           <div
@@ -46,8 +49,12 @@ const Dashboard = () => {
             }
             style={{ animationDelay: "0.3s" }}
           >
-            <img src="/illustrations/illustration-hands.svg" alt="" />
-            <span className="text-primary">
+            <img
+              className="db-illustration"
+              src="/illustrations/illustration-hands.svg"
+              alt=""
+            />
+            <span className="text-primary mx-auto mx-lg-0">
               Invite your friends and gets
               <span className="fw-semibold fs-5"> $25</span> to get gift
               together!
