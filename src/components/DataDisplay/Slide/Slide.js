@@ -44,7 +44,7 @@ const Slide = ({
       md: 400,
       lg: 600,
     };
-    if (btn === "next" && scrollPos < width) {
+    if (btn === "next" && ref.current.scrollLeft < width) {
       ref.current.scrollLeft += intervals[interval];
       setScrollPos((p) => p + intervals[interval]);
     }

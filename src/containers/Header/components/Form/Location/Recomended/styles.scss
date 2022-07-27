@@ -72,16 +72,11 @@
       margin-top: 10px;
       .item {
         border: 1px solid $ultralight-gray;
-        border-radius: 100px;
+        border-radius: 6px;
         display: flex;
         align-items: center;
         padding: 2px 20px 2px 5px;
-        figure {
-          background-color: $light-gray;
-          width: 32px;
-          height: 32px;
-          border-radius: 100px;
-        }
+
         .details {
           display: flex;
           flex-direction: column;

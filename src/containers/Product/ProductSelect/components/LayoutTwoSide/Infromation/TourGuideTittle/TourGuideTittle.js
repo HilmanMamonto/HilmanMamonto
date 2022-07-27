@@ -1,3 +1,4 @@
+import Avatar from "components/Avatar/Avatar";
 import React from "react";
 import "./styles.scss";
 
@@ -16,7 +17,7 @@ const TourGuideTittle = ({ tourGuideName, freePickup, tourGuidePhoto }) => {
           <label>{freePickup ? "free pick-up services" : ""}</label>
         </div>
       </div>
-      <img src={tourGuidePhoto} />
+      <Avatar size="xlarge" src={tourGuidePhoto} />
     </div>
   );
 };

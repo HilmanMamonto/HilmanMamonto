@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom";
 const ProductSelected = () => {
   let { id } = useParams();
   const dataProduct = _dataProduct.filter((item) => item.id === id);
-  console.log(dataProduct);
 
   return dataProduct.map((item, i) => (
     <div

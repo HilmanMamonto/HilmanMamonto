@@ -11,7 +11,7 @@ const Banner = () => {
     <div className="banner vh-100 row row-cols-md-2 row-cols-1">
       <div className="d-md-flex d-none py-5 flex-column align-items-center justify-content-between gap-5 bg-primary">
         <div className="d-flex w-100 px-5">
-          <IconButton size="xlarge" variant="logo-white" />
+          <IconButton as="link" to="/" size="xlarge" variant="logo-white" />
         </div>
         <div className="d-flex flex-column align-items-center">
           <h1
@@ -38,7 +38,7 @@ const Banner = () => {
             variant="logo-white"
           />
         </Link>
-        <img className="img-banner" src="/banner.jpg" alt=""></img>
+        <img className="img-banner vh-100" src="/banner.jpg" alt=""></img>
         <div className="bn-r-bottom d-block d-md-none position-absolute bottom-0 bg-white w-100">
           <div className="position-relative w-100 d-flex flex-column d-md-none ">
             <span className="bn-r-b-top position-absolute" />

@@ -7,6 +7,7 @@ import { ANIMATE_FADEIN_RIGHT } from "assets/animate/animate";
 import SimpleCard from "components/DataDisplay/SimpleCard/SimpleCard";
 import ButtonUnderlline from "components/ButtonUnderline/ButtonUnderlline";
 import Slide from "components/DataDisplay/Slide/Slide";
+import Icons from "components/Icons";
 
 const Recomended = ({ className = "", isActive, onChange }) => {
   const refItems = useRef(null);
@@ -71,19 +72,15 @@ const Recomended = ({ className = "", isActive, onChange }) => {
       <div className="recent">
         <label>Recent</label>
         <div className="items gap-3">
-          <button type="button" className=" item">
-            <figure className="m-0 me-2">
-              <img src="" alt="" />
-            </figure>
+          <button type="button" className="item gap-2">
+            <Icons variant="location-fill" size="xlarge" />
             <div className="details">
               <label>Mountain</label>
               <span className="text-black-50">2 mei 2022</span>
             </div>
           </button>
-          <button type="button" className="item">
-            <figure className="m-0 me-2">
-              <img src="" alt="" />
-            </figure>
+          <button type="button" className="item gap-2">
+            <Icons variant="location-fill" size="xlarge" />
             <div className="details">
               <label>Mountain</label>
               <span className="text-black-50">2 mei 2022</span>

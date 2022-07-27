@@ -2,7 +2,6 @@ import Icons from "components/Icons";
 import React from "react";
 
 const Amenities = ({ data }) => {
-  console.log(data);
   return (
     <div className="travel-amenities">
       <h4 className="mb-5">Amenities</h4>

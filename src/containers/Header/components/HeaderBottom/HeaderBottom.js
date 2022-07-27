@@ -7,8 +7,10 @@ import { useEffect } from "react";
 import Manual from "../Form/Location/Manual";
 import SearchDate from "../Form/Date/SearchDate";
 import { ANIMATE_BACKINDOWN } from "assets/animate/animate";
+import SearchPax from "../Form/Pax/SearchPax";
+import Icons from "components/Icons";
 
-const HeaderBottom = ({ className, isActive }) => {
+const HeaderBottom = ({ isActive }) => {
   const [active, setActive] = useState("left");
   const [location, setLocation] = useState("recomended");
   const [values, setValues] = useState({ location: "", date: "", people: "" });
@@ -38,19 +40,6 @@ const HeaderBottom = ({ className, isActive }) => {
       left: active === "left" || active === "mid",
       right: active === "mid" || active === "right",
     },
-  };
-
-  const contents = {
-    left: (
-      <>
-        <Recomended
-          onChange={handleChange}
-          isActive={location === "recomended"}
-        />
-        <Manual value={values.location} isActive={location === "manual"} />
-      </>
-    ),
-    mid: <SearchDate isActive />,
   };
 
   return (
@@ -121,12 +110,32 @@ const HeaderBottom = ({ className, isActive }) => {
                 onChange={handleChange}
                 name="people"
                 value={values.people}
-                placeholder="add peopple who you love"
+                placeholder="add them"
               />
             </div>
-            <button type="submit"></button>
+            <button type="submit">
+              <Icons
+                variant="search-white"
+                size="large"
+                style={{ marginBottom: "1px" }}
+              />
+            </button>
           </div>
-          {contents[active]}
+          <div className="hb-left" hidden={active != "left"}>
+            <Recomended
+              onChange={handleChange}
+              isActive={location === "recomended"}
+            />
+            <Manual value={values.location} isActive={location === "manuFal"} />
+          </div>
+          <SearchDate
+            onChange={(date) => setValues({ ...values, date: date })}
+            hidden={active != "mid"}
+          />
+          <SearchPax
+            hidden={active != "right"}
+            onChange={(val) => setValues({ ...values, people: val })}
+          />
         </form>
       </div>
     </div>

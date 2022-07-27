@@ -22,6 +22,21 @@
     transition: all 0.3s ease-in-out;
   }
 
+  .hb-left {
+    transition: all 0.3s ease-in-out;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    &[hidden] {
+      transition: all 0.3s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+      display: block !important;
+      transform: translateY(-50px) !important;
+    }
+  }
+
   .form-search-wrapper {
     height: fit-content;
     position: relative;
@@ -115,7 +130,7 @@
       }
 
       button[type="submit"] {
-        background-color: $gray;
+        background-color: $secondary;
         width: 50px;
         height: 50px;
         border-radius: 100px;

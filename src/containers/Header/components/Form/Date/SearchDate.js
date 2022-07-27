@@ -4,13 +4,9 @@ import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import PropTypes from "prop-types";
+import { useEffect } from "react";
 
-const SearchDate = ({ isActive, className }) => {
-  const dateValue = useSelector((state) => state.searchInputDate.value);
-
+const SearchDate = ({ hidden, className, onChange = () => "" }) => {
   const [dateState, setDateState] = useState([
     {
       startDate: new Date(),
@@ -63,13 +59,13 @@ const SearchDate = ({ isActive, className }) => {
       endYear;
   }
 
-  const classes = {
-    activate: isActive ? "active " : "",
-  };
+  useEffect(() => {
+    onChange(result);
+  }, [result]);
 
   return (
-    <div className={"search-date " + classes.activate + className}>
-      <div className="date-choosed">{dateValue}</div>
+    <div hidden={hidden} className={"search-date " + className}>
+      <div className="date-choosed">{result}</div>
       <DateRange
         editableDateInputs={true}
         onChange={(item) => {
@@ -85,10 +81,6 @@ const SearchDate = ({ isActive, className }) => {
       />
     </div>
   );
-};
-
-SearchDate.prototype = {
-  isActive: PropTypes.bool,
 };
 
 export default SearchDate;

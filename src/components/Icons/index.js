@@ -29,8 +29,16 @@ const variants = {
   "checkmark-single": "/icons/checkmark-single.svg",
   "checkmark-single-green": "/icons/checkmark-single-green.svg",
   search: "/icons/search.svg",
+  "search-white": "/icons/search-white.svg",
   plus: "/icons/plus.svg",
   min: "/icons/min.svg",
+  camera: "/icons/camera.svg",
+  umbrella: "/icons/umbrella.svg",
+  route: "/icons/route.svg",
+  ticket: "/icons/ticket.svg",
+  car: "/icons/car.svg",
+  sunscreen: "/icons/sunscreen.svg",
+  "no-smoking": "/icons/no-smoking.svg",
   person: "/icons/person.svg",
   "close-bg-gray": "/icons/close-bg-gray.svg",
   "close-white": "/icons/close-white.svg",
@@ -87,15 +95,6 @@ const Icons = ({
       alt={alt}
     />
   );
-};
-
-Icons.propTypes = {
-  size: PropTypes.string,
-  variant: PropTypes.string,
-  style: PropTypes.string,
-  onClick: PropTypes.func,
-  fullHeight: PropTypes.bool,
-  className: PropTypes.string,
 };
 
 export default Icons;

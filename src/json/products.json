@@ -1,11 +1,11 @@
 [
   {
     "id": "abcdabcd001",
-    "tourName": "Holiday Package: Bromo",
-    "location": "Malang, Bromo Tengger Semeru, Indonesia",
-    "locationSrc": "https://goo.gl/maps/53u2FjvCqJHAcwpc9",
-    "tourGuideName": "Andy Mahendra",
-    "tourGuidePhoto": "/andy/andy.jpg",
+    "tourName": "Taj Mahal",
+    "location": "Dharmapuri, India",
+    "locationSrc": "https://goo.gl/maps/fwSaQB3Kyr4FXiCj9",
+    "tourGuideName": "Abdullah",
+    "tourGuidePhoto": "/tgr/abdullah-small.jpg",
     "freePickup": true,
     "maxPax": 6,
     "rate": 4.8,
@@ -26,41 +26,1068 @@
     "travelAmenities": [
       {
         "name": "Lunch",
-        "iconUrl": "/spon-fork.svg"
+        "iconName": "lunch"
       },
       {
         "name": "Photograph",
-        "iconUrl": "/camera.svg"
+        "iconName": "camera"
       },
       {
         "name": "Transport",
-        "iconUrl": "/car.svg"
+        "iconName": "car"
       },
       {
         "name": "Free Ticket",
-        "iconUrl": "/ticket.svg"
+        "iconName": "ticket"
       },
       {
         "name": "Best Route",
-        "iconUrl": "/route.svg"
+        "iconName": "route"
       },
       {
         "name": "Umbrella",
-        "iconUrl": "/umbrella.svg"
+        "iconName": "umbrella"
       },
       {
         "name": "Sunscreen",
-        "iconUrl": "/sunscreen.svg"
+        "iconName": "sunscreen"
       }
     ],
     "travelAmenitiesNot": [
       {
         "name": "on car",
-        "iconUrl": "/no-smoking.svg"
+        "iconName": "no-smoking"
+      }
+    ],
+    "language": [
+      { "name": "English", "iconName": "/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
+      },
+      {
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
+      },
+      {
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
+      },
+      {
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
+      },
+      {
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
+      },
+      {
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
+      }
+    ],
+    "staycations": [
+      {
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      }
+    ],
+    "additionalInformation": [
+      "Please bring a mask",
+      "Please wear shoes instead of sandals"
+    ],
+    "pickUpServices": [
+      "Free Pick-up Available. Airplane area except for the pick-up point"
+    ],
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ],
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
+  },
+  {
+    "id": "abcdabcd002",
+    "tourName": "Hawa Mahal",
+    "location": "Jaipur, India",
+    "locationSrc": "https://goo.gl/maps/JrgNF7wZtUDZZFrA7",
+    "tourGuideName": "Yamen",
+    "tourGuidePhoto": "/tgr/yamen-small.jpg",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd002",
+        "url": "/yamen/yamen-1.jpg"
+      },
+      {
+        "id": "abcdabcd002",
+        "url": "/yamen/yamen-2.jpg"
+      },
+      {
+        "id": "abcdabcd002",
+        "url": "products-images/abcdabcd002/kyoto-fushimi-inari"
+      },
+      {
+        "id": "abcdabcd002",
+        "url": "products-images/abcdabcd002/kyoto-gion"
+      },
+      {
+        "id": "abcdabcd002",
+        "url": "products-images/abcdabcd002/kyoto-kiyomizu"
+      },
+      {
+        "id": "abcdabcd002",
+        "url": "products-images/abcdabcd002/kyoto-kinkakuji"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Lunch",
+        "iconName": "lunch"
+      },
+      {
+        "name": "Photograph",
+        "iconName": "camera"
+      },
+      {
+        "name": "Transport",
+        "iconName": "car"
+      },
+      {
+        "name": "Free Ticket",
+        "iconName": "ticket"
+      },
+      {
+        "name": "Best Route",
+        "iconName": "route"
+      },
+      {
+        "name": "Umbrella",
+        "iconName": "umbrella"
       },
       {
         "name": "Sunscreen",
-        "iconUrl": "/sunscreen.svg"
+        "iconName": "sunscreen"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconName": "no-smoking"
+      }
+    ],
+    "language": [
+      { "name": "English", "iconName": "/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
+      },
+      {
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
+      },
+      {
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
+      },
+      {
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
+      },
+      {
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
+      },
+      {
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
+      }
+    ],
+    "staycations": [
+      {
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      }
+    ],
+    "additionalInformation": [
+      "Please bring a mask",
+      "Please wear shoes instead of sandals"
+    ],
+    "pickUpServices": [
+      "Free Pick-up Available. Airplane area except for the pick-up point"
+    ],
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ],
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
+  },
+  {
+    "id": "abcdabcd003",
+    "tourName": "Abu Dhabi",
+    "location": "United Arab Emirates",
+    "locationSrc": "https://goo.gl/maps/9C4WpPspgt67ABcTA",
+    "tourGuideName": "Ahmad",
+    "tourGuidePhoto": "/tgr/ahmad-small.jpg",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd003",
+        "url": "/ahmad/ahmad-1.jpg"
+      },
+      {
+        "id": "abcdabcd003",
+        "url": "/ahmad/ahmad-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Lunch",
+        "iconName": "lunch"
+      },
+      {
+        "name": "Photograph",
+        "iconName": "camera"
+      },
+      {
+        "name": "Transport",
+        "iconName": "car"
+      },
+      {
+        "name": "Free Ticket",
+        "iconName": "ticket"
+      },
+      {
+        "name": "Best Route",
+        "iconName": "route"
+      },
+      {
+        "name": "Umbrella",
+        "iconName": "umbrella"
+      },
+      {
+        "name": "Sunscreen",
+        "iconName": "sunscreen"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconName": "no-smoking"
+      }
+    ],
+    "language": [
+      { "name": "English", "iconName": "/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
+      },
+      {
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
+      },
+      {
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
+      },
+      {
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
+      },
+      {
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
+      },
+      {
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
+      }
+    ],
+    "staycations": [
+      {
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      }
+    ],
+    "additionalInformation": [
+      "Please bring a mask",
+      "Please wear shoes instead of sandals"
+    ],
+    "pickUpServices": [
+      "Free Pick-up Available. Airplane area except for the pick-up point"
+    ],
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ],
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
+  },
+  {
+    "id": "abcdabcd004",
+    "tourName": "Petra",
+    "location": "Jordan",
+    "locationSrc": "https://goo.gl/maps/D1WS4sVMFKzVjtRj9",
+    "tourGuideName": "Niki",
+    "tourGuidePhoto": "/tgr/niki-small.jpg",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd004",
+        "url": "/niki/niki-1.jpg"
+      },
+      {
+        "id": "abcdabcd004",
+        "url": "/niki/niki-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Lunch",
+        "iconName": "lunch"
+      },
+      {
+        "name": "Photograph",
+        "iconName": "camera"
+      },
+      {
+        "name": "Transport",
+        "iconName": "car"
+      },
+      {
+        "name": "Free Ticket",
+        "iconName": "ticket"
+      },
+      {
+        "name": "Best Route",
+        "iconName": "route"
+      },
+      {
+        "name": "Umbrella",
+        "iconName": "umbrella"
+      },
+      {
+        "name": "Sunscreen",
+        "iconName": "sunscreen"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconName": "no-smoking"
+      }
+    ],
+    "language": [
+      { "name": "English", "iconName": "/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
+      },
+      {
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
+      },
+      {
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
+      },
+      {
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
+      },
+      {
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
+      },
+      {
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
+      }
+    ],
+    "staycations": [
+      {
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      }
+    ],
+    "additionalInformation": [
+      "Please bring a mask",
+      "Please wear shoes instead of sandals"
+    ],
+    "pickUpServices": [
+      "Free Pick-up Available. Airplane area except for the pick-up point"
+    ],
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ],
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
+  },
+  {
+    "id": "abcdabcd005",
+    "tourName": "Al-Azhar Mosque",
+    "location": "Cairo, Egypt",
+    "locationSrc": "https://goo.gl/maps/wcTBPRC5cq9bQvYo8",
+    "tourGuideName": "Yusuf",
+    "tourGuidePhoto": "/tgr/yusuf-small.jpg",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd005",
+        "url": "/yusuf/yusuf-1.jpg"
+      },
+      {
+        "id": "abcdabcd005",
+        "url": "/yusuf/yusuf-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Lunch",
+        "iconName": "lunch"
+      },
+      {
+        "name": "Photograph",
+        "iconName": "camera"
+      },
+      {
+        "name": "Transport",
+        "iconName": "car"
+      },
+      {
+        "name": "Free Ticket",
+        "iconName": "ticket"
+      },
+      {
+        "name": "Best Route",
+        "iconName": "route"
+      },
+      {
+        "name": "Umbrella",
+        "iconName": "umbrella"
+      },
+      {
+        "name": "Sunscreen",
+        "iconName": "sunscreen"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconName": "no-smoking"
+      }
+    ],
+    "language": [
+      { "name": "English", "iconName": "/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flag-indonesia.png" }
+    ],
+    "itinerary": [
+      {
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
+      },
+      {
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
+      },
+      {
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
+      },
+      {
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
+      },
+      {
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
+      },
+      {
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
+      }
+    ],
+    "staycations": [
+      {
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      }
+    ],
+    "additionalInformation": [
+      "Please bring a mask",
+      "Please wear shoes instead of sandals"
+    ],
+    "pickUpServices": [
+      "Free Pick-up Available. Airplane area except for the pick-up point"
+    ],
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
+    ],
+    "reviews": [
+      {
+        "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
+        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
+      },
+      {
+        "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
+        "review": "Interesting, nice place, good experiance!"
+      },
+      {
+        "name": "Amanda Hug",
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
+      },
+      {
+        "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
+        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
+      }
+    ],
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
+  },
+  {
+    "id": "abcdabcd006",
+    "tourName": "Giza",
+    "location": "El Omraniya, Egypt",
+    "locationSrc": "https://goo.gl/maps/tdExEX1PdCi34Hkz8",
+    "tourGuideName": "Gopal",
+    "tourGuidePhoto": "/tgr/gopal-small.jpg",
+    "freePickup": true,
+    "maxPax": 3,
+    "rate": 4.8,
+    "imagesUrl": [
+      {
+        "id": "abcdabcd006",
+        "url": "/gopal/gopal-1.jpg"
+      },
+      {
+        "id": "abcdabcd006",
+        "url": "/gopal/gopal-2.jpg"
+      }
+    ],
+    "travelAmenities": [
+      {
+        "name": "Lunch",
+        "iconName": "lunch"
+      },
+      {
+        "name": "Photograph",
+        "iconName": "camera"
+      },
+      {
+        "name": "Transport",
+        "iconName": "car"
+      },
+      {
+        "name": "Free Ticket",
+        "iconName": "ticket"
+      },
+      {
+        "name": "Best Route",
+        "iconName": "route"
+      },
+      {
+        "name": "Umbrella",
+        "iconName": "umbrella"
+      },
+      {
+        "name": "Sunscreen",
+        "iconName": "sunscreen"
+      }
+    ],
+    "travelAmenitiesNot": [
+      {
+        "name": "on car",
+        "iconName": "no-smoking"
       }
     ],
     "language": [
@@ -211,73 +1238,59 @@
     "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
   },
   {
-    "id": "abcdabcd002",
-    "tourName": "One Day Bycicle In Kyoto",
-    "location": "Kyoto, Japan",
-    "tourGuideName": "Makoto Hirata",
+    "id": "abcdabcd007",
+    "tourName": "Dubai",
+    "location": "United Arab Emirates",
+    "locationSrc": "https://goo.gl/maps/t7ksHwKKrqbhZfhL8",
+    "tourGuideName": "Martin",
+    "tourGuidePhoto": "/tgr/martin-small.jpg",
     "freePickup": true,
     "maxPax": 3,
     "rate": 4.8,
     "imagesUrl": [
       {
-        "id": "abcdabcd002",
-        "url": "/yamen/yamen-1.jpg"
+        "id": "abcdabcd007",
+        "url": "/martin/martin-1.jpg"
       },
       {
-        "id": "abcdabcd002",
-        "url": "/yamen/yamen-2.jpg"
-      },
-      {
-        "id": "abcdabcd002",
-        "url": "products-images/abcdabcd002/kyoto-fushimi-inari"
-      },
-      {
-        "id": "abcdabcd002",
-        "url": "products-images/abcdabcd002/kyoto-gion"
-      },
-      {
-        "id": "abcdabcd002",
-        "url": "products-images/abcdabcd002/kyoto-kiyomizu"
-      },
-      {
-        "id": "abcdabcd002",
-        "url": "products-images/abcdabcd002/kyoto-kinkakuji"
+        "id": "abcdabcd007",
+        "url": "/martin/martin-2.jpg"
       }
     ],
     "travelAmenities": [
       {
-        "name": "Bycicle",
-        "iconUrl": "/Icon/bycicle"
+        "name": "Lunch",
+        "iconUrl": "lunch"
       },
       {
-        "name": "Helmet",
-        "iconUrl": "/Icon/..."
+        "name": "Photograph",
+        "iconUrl": "camera"
       },
       {
-        "name": "Bottled Water",
-        "iconUrl": "/Icon/..."
+        "name": "Transport",
+        "iconUrl": "car"
       },
       {
-        "name": "Admission Ticket",
-        "iconUrl": "/Icon/ticket"
+        "name": "Free Ticket",
+        "iconUrl": "ticket"
       },
       {
-        "name": "Launch",
-        "iconUrl": "/Icon/burger"
+        "name": "Best Route",
+        "iconUrl": "route"
       },
       {
-        "name": "Snacks",
-        "iconUrl": "/Icon/donuts"
+        "name": "Umbrella",
+        "iconUrl": "umbrella"
+      },
+      {
+        "name": "Sunscreen",
+        "iconUrl": "sunscreen"
       }
     ],
     "travelAmenitiesNot": [
       {
         "name": "on car",
-        "iconUrl": "/no-smoking.svg"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
+        "iconName": "no-smoking"
       }
     ],
     "language": [
@@ -312,839 +1325,128 @@
     ],
     "staycations": [
       {
-        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
         "amenities": [
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Bath",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Air conditioning",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Smoke alarams",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Security alaram",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Laundry",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "24-hour security",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Restaurant",
-            "iconUrl": "Icon/..."
-          }
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
         ]
       }
+    ],
+    "additionalInformation": [
+      "Please bring a mask",
+      "Please wear shoes instead of sandals"
+    ],
+    "pickUpServices": [
+      "Free Pick-up Available. Airplane area except for the pick-up point"
+    ],
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
     ],
     "reviews": [
       {
         "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
         "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
       },
       {
         "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
         "review": "Interesting, nice place, good experiance!"
       },
       {
         "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
       },
       {
         "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
         "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
       }
-    ]
-  },
-  {
-    "id": "abcdabcd003",
-    "tourName": "One Day Bycicle In Kyoto",
-    "location": "Kyoto, Japan",
-    "tourGuideName": "Makoto Hirata",
-    "freePickup": true,
-    "maxPax": 3,
-    "rate": 4.8,
-    "imagesUrl": [
-      {
-        "id": "abcdabcd003",
-        "url": "/ahmad/ahmad-1.jpg"
-      },
-      {
-        "id": "abcdabcd003",
-        "url": "/ahmad/ahmad-2.jpg"
-      }
     ],
-    "travelAmenities": [
-      {
-        "name": "Bycicle",
-        "iconUrl": "/Icon/bycicle"
-      },
-      {
-        "name": "Helmet",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Bottled Water",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Admission Ticket",
-        "iconUrl": "/Icon/ticket"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/burger"
-      },
-      {
-        "name": "Snacks",
-        "iconUrl": "/Icon/donuts"
-      }
-    ],
-    "travelAmenitiesNot": [
-      {
-        "name": "on car",
-        "iconUrl": "/no-smoking.svg"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
-      }
-    ],
-    "language": [
-      { "name": "English", "iconUrl": "/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
-    ],
-    "itinerary": [
-      {
-        "time": "07:00 - 7:30",
-        "do": "Pick up in Kyoto areas"
-      },
-      {
-        "time": "70:30 - 08:00",
-        "do": "Start biking at Saga-Arashiyama Station"
-      },
-      {
-        "time": "08:00 - 08:30",
-        "do": "Bamboo forest street"
-      },
-      {
-        "time": "08:30 - 09:00",
-        "do": "Fushimi Inari-taisha Shrine"
-      },
-      {
-        "time": "09:00 - 10:00",
-        "do": "Gion District"
-      },
-      {
-        "time": "10:00 - 11:00",
-        "do": "Kiyomizu-dera Temple"
-      },
-      {
-        "time": "11:00 - 12:00",
-        "do": "Kinkakuji Temple"
-      }
-    ],
-    "staycations": [
-      {
-        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
-        "amenities": [
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Bath",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Air conditioning",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Smoke alarams",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Security alaram",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Laundry",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "24-hour security",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Restaurant",
-            "iconUrl": "Icon/..."
-          }
-        ]
-      }
-    ],
-    "reviews": [
-      {
-        "name": "Fran G. Pani",
-        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
-      },
-      {
-        "name": "Simon Sais",
-        "review": "Interesting, nice place, good experiance!"
-      },
-      {
-        "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
-      },
-      {
-        "name": "Manuel Labor",
-        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
-      }
-    ]
-  },
-  {
-    "id": "abcdabcd004",
-    "tourName": "One Day Bycicle In Kyoto",
-    "location": "Kyoto, Japan",
-    "tourGuideName": "Makoto Hirata",
-    "freePickup": true,
-    "maxPax": 3,
-    "rate": 4.8,
-    "imagesUrl": [
-      {
-        "id": "abcdabcd004",
-        "url": "/niki/niki-1.jpg"
-      },
-      {
-        "id": "abcdabcd004",
-        "url": "/niki/niki-2.jpg"
-      }
-    ],
-    "travelAmenities": [
-      {
-        "name": "Bycicle",
-        "iconUrl": "/Icon/bycicle"
-      },
-      {
-        "name": "Helmet",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Bottled Water",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Admission Ticket",
-        "iconUrl": "/Icon/ticket"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/burger"
-      },
-      {
-        "name": "Snacks",
-        "iconUrl": "/Icon/donuts"
-      }
-    ],
-    "travelAmenitiesNot": [
-      {
-        "name": "on car",
-        "iconUrl": "/no-smoking.svg"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
-      }
-    ],
-    "language": [
-      { "name": "English", "iconUrl": "/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
-    ],
-    "itinerary": [
-      {
-        "time": "07:00 - 7:30",
-        "do": "Pick up in Kyoto areas"
-      },
-      {
-        "time": "70:30 - 08:00",
-        "do": "Start biking at Saga-Arashiyama Station"
-      },
-      {
-        "time": "08:00 - 08:30",
-        "do": "Bamboo forest street"
-      },
-      {
-        "time": "08:30 - 09:00",
-        "do": "Fushimi Inari-taisha Shrine"
-      },
-      {
-        "time": "09:00 - 10:00",
-        "do": "Gion District"
-      },
-      {
-        "time": "10:00 - 11:00",
-        "do": "Kiyomizu-dera Temple"
-      },
-      {
-        "time": "11:00 - 12:00",
-        "do": "Kinkakuji Temple"
-      }
-    ],
-    "staycations": [
-      {
-        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
-        "amenities": [
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Bath",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Air conditioning",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Smoke alarams",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Security alaram",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Laundry",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "24-hour security",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Restaurant",
-            "iconUrl": "Icon/..."
-          }
-        ]
-      }
-    ],
-    "reviews": [
-      {
-        "name": "Fran G. Pani",
-        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
-      },
-      {
-        "name": "Simon Sais",
-        "review": "Interesting, nice place, good experiance!"
-      },
-      {
-        "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
-      },
-      {
-        "name": "Manuel Labor",
-        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
-      }
-    ]
-  },
-  {
-    "id": "abcdabcd005",
-    "tourName": "One Day Bycicle In Kyoto",
-    "location": "Kyoto, Japan",
-    "tourGuideName": "Makoto Hirata",
-    "freePickup": true,
-    "maxPax": 3,
-    "rate": 4.8,
-    "imagesUrl": [
-      {
-        "id": "abcdabcd005",
-        "url": "/yusuf/yusuf-1.jpg"
-      },
-      {
-        "id": "abcdabcd005",
-        "url": "/yusuf/yusuf-2.jpg"
-      }
-    ],
-    "travelAmenities": [
-      {
-        "name": "Bycicle",
-        "iconUrl": "/Icon/bycicle"
-      },
-      {
-        "name": "Helmet",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Bottled Water",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Admission Ticket",
-        "iconUrl": "/Icon/ticket"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/burger"
-      },
-      {
-        "name": "Snacks",
-        "iconUrl": "/Icon/donuts"
-      }
-    ],
-    "travelAmenitiesNot": [
-      {
-        "name": "on car",
-        "iconUrl": "/no-smoking.svg"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
-      }
-    ],
-    "language": [
-      { "name": "English", "iconUrl": "/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
-    ],
-    "itinerary": [
-      {
-        "time": "07:00 - 7:30",
-        "do": "Pick up in Kyoto areas"
-      },
-      {
-        "time": "70:30 - 08:00",
-        "do": "Start biking at Saga-Arashiyama Station"
-      },
-      {
-        "time": "08:00 - 08:30",
-        "do": "Bamboo forest street"
-      },
-      {
-        "time": "08:30 - 09:00",
-        "do": "Fushimi Inari-taisha Shrine"
-      },
-      {
-        "time": "09:00 - 10:00",
-        "do": "Gion District"
-      },
-      {
-        "time": "10:00 - 11:00",
-        "do": "Kiyomizu-dera Temple"
-      },
-      {
-        "time": "11:00 - 12:00",
-        "do": "Kinkakuji Temple"
-      }
-    ],
-    "staycations": [
-      {
-        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
-        "amenities": [
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Bath",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Air conditioning",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Smoke alarams",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Security alaram",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Laundry",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "24-hour security",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Restaurant",
-            "iconUrl": "Icon/..."
-          }
-        ]
-      }
-    ],
-    "reviews": [
-      {
-        "name": "Fran G. Pani",
-        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
-      },
-      {
-        "name": "Simon Sais",
-        "review": "Interesting, nice place, good experiance!"
-      },
-      {
-        "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
-      },
-      {
-        "name": "Manuel Labor",
-        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
-      }
-    ]
-  },
-  {
-    "id": "abcdabcd006",
-    "tourName": "One Day Bycicle In Kyoto",
-    "location": "Kyoto, Japan",
-    "tourGuideName": "Makoto Hirata",
-    "freePickup": true,
-    "maxPax": 3,
-    "rate": 4.8,
-    "imagesUrl": [
-      {
-        "id": "abcdabcd006",
-        "url": "/gopal/gopal-1.jpg"
-      },
-      {
-        "id": "abcdabcd006",
-        "url": "/gopal/gopal-2.jpg"
-      }
-    ],
-    "travelAmenities": [
-      {
-        "name": "Bycicle",
-        "iconUrl": "/Icon/bycicle"
-      },
-      {
-        "name": "Helmet",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Bottled Water",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Admission Ticket",
-        "iconUrl": "/Icon/ticket"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/burger"
-      },
-      {
-        "name": "Snacks",
-        "iconUrl": "/Icon/donuts"
-      }
-    ],
-    "travelAmenitiesNot": [
-      {
-        "name": "on car",
-        "iconUrl": "/no-smoking.svg"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
-      }
-    ],
-    "language": [
-      { "name": "English", "iconUrl": "/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
-    ],
-    "itinerary": [
-      {
-        "time": "07:00 - 7:30",
-        "do": "Pick up in Kyoto areas"
-      },
-      {
-        "time": "70:30 - 08:00",
-        "do": "Start biking at Saga-Arashiyama Station"
-      },
-      {
-        "time": "08:00 - 08:30",
-        "do": "Bamboo forest street"
-      },
-      {
-        "time": "08:30 - 09:00",
-        "do": "Fushimi Inari-taisha Shrine"
-      },
-      {
-        "time": "09:00 - 10:00",
-        "do": "Gion District"
-      },
-      {
-        "time": "10:00 - 11:00",
-        "do": "Kiyomizu-dera Temple"
-      },
-      {
-        "time": "11:00 - 12:00",
-        "do": "Kinkakuji Temple"
-      }
-    ],
-    "staycations": [
-      {
-        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
-        "amenities": [
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Bath",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Air conditioning",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Smoke alarams",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Security alaram",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Laundry",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "24-hour security",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Restaurant",
-            "iconUrl": "Icon/..."
-          }
-        ]
-      }
-    ],
-    "reviews": [
-      {
-        "name": "Fran G. Pani",
-        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
-      },
-      {
-        "name": "Simon Sais",
-        "review": "Interesting, nice place, good experiance!"
-      },
-      {
-        "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
-      },
-      {
-        "name": "Manuel Labor",
-        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
-      }
-    ]
-  },
-  {
-    "id": "abcdabcd007",
-    "tourName": "One Day Bycicle In Kyoto",
-    "location": "Kyoto, Japan",
-    "tourGuideName": "Makoto Hirata",
-    "freePickup": true,
-    "maxPax": 3,
-    "rate": 4.8,
-    "imagesUrl": [
-      {
-        "id": "abcdabcd007",
-        "url": "/martin/martin-1.jpg"
-      },
-      {
-        "id": "abcdabcd007",
-        "url": "/martin/martin-2.jpg"
-      }
-    ],
-    "travelAmenities": [
-      {
-        "name": "Bycicle",
-        "iconUrl": "/Icon/bycicle"
-      },
-      {
-        "name": "Helmet",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Bottled Water",
-        "iconUrl": "/Icon/..."
-      },
-      {
-        "name": "Admission Ticket",
-        "iconUrl": "/Icon/ticket"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/burger"
-      },
-      {
-        "name": "Snacks",
-        "iconUrl": "/Icon/donuts"
-      }
-    ],
-    "travelAmenitiesNot": [
-      {
-        "name": "on car",
-        "iconUrl": "/no-smoking.svg"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
-      }
-    ],
-    "language": [
-      { "name": "English", "iconUrl": "/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flag-indonesia.png" }
-    ],
-    "itinerary": [
-      {
-        "time": "07:00 - 7:30",
-        "do": "Pick up in Kyoto areas"
-      },
-      {
-        "time": "70:30 - 08:00",
-        "do": "Start biking at Saga-Arashiyama Station"
-      },
-      {
-        "time": "08:00 - 08:30",
-        "do": "Bamboo forest street"
-      },
-      {
-        "time": "08:30 - 09:00",
-        "do": "Fushimi Inari-taisha Shrine"
-      },
-      {
-        "time": "09:00 - 10:00",
-        "do": "Gion District"
-      },
-      {
-        "time": "10:00 - 11:00",
-        "do": "Kiyomizu-dera Temple"
-      },
-      {
-        "time": "11:00 - 12:00",
-        "do": "Kinkakuji Temple"
-      }
-    ],
-    "staycations": [
-      {
-        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
-        "amenities": [
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Bath",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Air conditioning",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Smoke alarams",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Security alaram",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Laundry",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "24-hour security",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Restaurant",
-            "iconUrl": "Icon/..."
-          }
-        ]
-      }
-    ],
-    "reviews": [
-      {
-        "name": "Fran G. Pani",
-        "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
-      },
-      {
-        "name": "Simon Sais",
-        "review": "Interesting, nice place, good experiance!"
-      },
-      {
-        "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
-      },
-      {
-        "name": "Manuel Labor",
-        "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
-      }
-    ]
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
   },
   {
     "id": "abcdabcd008",
-    "tourName": "One Day Bycicle In Kyoto",
+    "tourName": "Sharjah",
     "location": "Kyoto, Japan",
-    "tourGuideName": "Makoto Hirata",
+    "tourGuideName": "Saj",
+    "locationSrc": "https://goo.gl/maps/rRTiRsm49hfcWRLW7",
+    "tourGuidePhoto": "/tgr/saj-small.jpg",
     "freePickup": true,
     "maxPax": 3,
     "rate": 4.8,
@@ -1160,38 +1462,38 @@
     ],
     "travelAmenities": [
       {
-        "name": "Bycicle",
-        "iconUrl": "/Icon/bycicle"
+        "name": "Lunch",
+        "iconUrl": "lunch"
       },
       {
-        "name": "Helmet",
-        "iconUrl": "/Icon/..."
+        "name": "Photograph",
+        "iconUrl": "camera"
       },
       {
-        "name": "Bottled Water",
-        "iconUrl": "/Icon/..."
+        "name": "Transport",
+        "iconUrl": "car"
       },
       {
-        "name": "Admission Ticket",
-        "iconUrl": "/Icon/ticket"
+        "name": "Free Ticket",
+        "iconUrl": "ticket"
       },
       {
-        "name": "Launch",
-        "iconUrl": "/Icon/burger"
+        "name": "Best Route",
+        "iconUrl": "route"
       },
       {
-        "name": "Snacks",
-        "iconUrl": "/Icon/donuts"
+        "name": "Umbrella",
+        "iconUrl": "umbrella"
+      },
+      {
+        "name": "Sunscreen",
+        "iconUrl": "sunscreen"
       }
     ],
     "travelAmenitiesNot": [
       {
         "name": "on car",
-        "iconUrl": "/no-smoking.svg"
-      },
-      {
-        "name": "Launch",
-        "iconUrl": "/Icon/..."
+        "iconName": "no-smoking"
       }
     ],
     "language": [
@@ -1200,97 +1502,145 @@
     ],
     "itinerary": [
       {
-        "time": "07:00 - 7:30",
-        "do": "Pick up in Kyoto areas"
+        "time": "06:15 - 06:30",
+        "do": "Pick up in airport areas (can be done to hotels)"
       },
       {
-        "time": "70:30 - 08:00",
-        "do": "Start biking at Saga-Arashiyama Station"
+        "time": "06:30 - 10:30",
+        "do": "Go to travel point"
       },
       {
-        "time": "08:00 - 08:30",
-        "do": "Bamboo forest street"
+        "time": "10:30 - 11:00",
+        "do": "Lunch"
       },
       {
-        "time": "08:30 - 09:00",
-        "do": "Fushimi Inari-taisha Shrine"
+        "time": "11:00 - 13:00",
+        "do": "Go to next travel point"
       },
       {
-        "time": "09:00 - 10:00",
-        "do": "Gion District"
+        "time": "13:00 - 14:00",
+        "do": "Go to last travel point"
       },
       {
-        "time": "10:00 - 11:00",
-        "do": "Kiyomizu-dera Temple"
-      },
-      {
-        "time": "11:00 - 12:00",
-        "do": "Kinkakuji Temple"
+        "time": "15:00 - 18:00",
+        "do": "Go to bonus travel point (optional)"
       }
     ],
     "staycations": [
       {
-        "name": "Hotel Resol Kyoto Kawaramachi Sanjo",
-        "budget": 32,
-        "rate": 5.0,
-        "description": "Attractively situated in the Nakagyo Ward district of Kyoto, Hotel Resol Kyoto Kawaramachi Sanjo is situated 700 m from Samurai Kembu Kyoto, 1.3 km from Kyoto International Manga Museum and 1.6 km from Shoren-in Temple. Among the facilities of this property are a restaurant, a 24-hour front desk and a shared lounge, along with free WiFi throughout the property. The property is 2.5 km from the city centre and 2.8 km from Nijo Castle.",
+        "id": "stc0001",
+        "name": "High Days Hotel",
+        "budget": 43,
+        "rate": 4.8,
+        "reviews": 80,
+        "location": "Around in the travel point",
+        "availability": "2-28 mei",
+        "description": "Located in travel point, 1.7 km from travel point, High Days Hotel provides accommodation with a restaurant and free private parking. The accommodation offers a 24-hour front desk and free. Built in 1956 it has old school charm and many rooms still feature high, crown-molded ceilings. A 2012 renovation brought all rooms and services up to modern day scratch and guestrooms come equipped with free Wi-Fi and all the usual amenities required for a comfortable stay.",
+        "imagesUrl": [
+          "/staycations/high-days-hotel-1.jpg",
+          "/staycations/high-days-hotel-2.jpg"
+        ],
         "amenities": [
-          {
-            "name": "Wifi",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Bath",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Air conditioning",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Heater",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Smoke alarams",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Security alaram",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Laundry",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "24-hour security",
-            "iconUrl": "Icon/..."
-          },
-          {
-            "name": "Restaurant",
-            "iconUrl": "Icon/..."
-          }
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" },
+          { "name": "Ac", "iconName": "ac" }
+        ]
+      },
+      {
+        "id": "stc0002",
+        "name": "Less Hotel",
+        "budget": 64,
+        "rate": 4.5,
+        "reviews": 76,
+        "availability": "2-28 april",
+        "location": "Around in the travel point",
+        "description": "Comfortable hotel located near the travel point, an ideal hotel near travel point. in close proximity to several restaurants and activities. All rooms have private bathrooms with hot water. The rooms are cozy, yet elegant, spacious and comfortable. Each room is designed with the environment in mind. For example, strategic windows help to bring the outdoors inside.",
+        "imagesUrl": [
+          "/staycations/less-hotel-1.jpg",
+          "/staycations/less-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
+        ]
+      },
+      {
+        "id": "stc0003",
+        "name": "White Box Hotel",
+        "budget": 32,
+        "rate": "5.0",
+        "reviews": 80,
+        "availability": "2-28 july",
+        "location": "Around in the travel point",
+        "description": "This hotel rooms are air-conditioned with free Wi-Fi access. The guest rooms are equipped with flat-screen TVs with satellite channels and a private bathroom. Each is serviced by a lift. This Hotel has a 24-hour reception, which is hosted by a multilingual team. The hotel serves a buffet breakfast every morning.",
+        "imagesUrl": [
+          "/staycations/white-box-hotel-1.jpg",
+          "/staycations/white-box-hotel-2.jpg"
+        ],
+        "amenities": [
+          { "name": "Pool", "iconName": "pool" },
+          { "name": "Free 1x Food", "iconName": "lunch" },
+          { "name": "Mineral Water", "iconName": "mineral water" },
+          { "name": "Bathtub", "iconName": "bathtub" },
+          { "name": "Ac", "iconName": "ac" },
+          { "name": "Smoking Room", "iconName": "smoking" },
+          { "name": "Parking Area", "iconName": "parking" },
+          { "name": "Free Wi-fi", "iconName": "wi-fi" }
         ]
       }
+    ],
+    "additionalInformation": [
+      "Please bring a mask",
+      "Please wear shoes instead of sandals"
+    ],
+    "pickUpServices": [
+      "Free Pick-up Available. Airplane area except for the pick-up point"
+    ],
+    "rateDetails": [
+      { "name": "Communication", "value": 4.8 },
+      { "name": "Value", "value": 5.0 },
+      { "name": "Location", "value": 4.5 },
+      { "name": "Accuracy", "value": 4.5 },
+      { "name": "Check-in", "value": 4.2 },
+      { "name": "Awesome", "value": 4.7 }
     ],
     "reviews": [
       {
         "name": "Fran G. Pani",
+        "imgUrl": "/reviewer/fran.jpg",
+        "date": "December 2019",
         "review": "A very nice place to visit, also the guide here is very helpful, he recommend a very nice spot to take a picture, and he was good at taking pictures and videos as well. He also took us to a nice place for lunch."
       },
       {
         "name": "Simon Sais",
+        "imgUrl": "/reviewer/simon.jpg",
+        "date": "October 2019",
         "review": "Interesting, nice place, good experiance!"
       },
       {
         "name": "Amanda Hug",
-        "review": "Absolutely worth it! Beautiful view of Bromo during sunrise, after we went down to the sea of sand to visit Bromo from the top. Lifetime experience. "
+        "imgUrl": "/reviewer/amanda.jpg",
+        "date": "October 2019",
+        "review": "Absolutely worth it! Beautiful view during sunrise, after we went down to visit travel point from the top. Lifetime experience. "
       },
       {
         "name": "Manuel Labor",
+        "imgUrl": "/reviewer/manuel.jpg",
+        "date": "October 2019",
         "review": "The moment when The Sunrise up through the horizon is an amazing. You should prepare warm coat and wear enough clothing to withstand the cold."
       }
-    ]
+    ],
+    "placeDescription": "Begin your day with a breathtaking sunrise over the travel point. Find the best spot at the View Point and watch as the sun slowly casts light over its surroundings. If you're lucky, you might even see the Milky Way! Your journey doesn't stop there though, because as you descend the view point, you'll see more gems that the travel point has to offer. Make way to many more photogenic spot. Don't forget to see the bonus travel point that will make you feel like you're in the middle of a fairy tale setting. If you're still up for more adventure, you can add a visit to bonus travel point to your itinerary!"
   }
 ]

@@ -6,8 +6,7 @@ import { useEffect } from "react";
 import "./styles.scss";
 
 const Counter = ({
-  onChange,
-  size = "sm",
+  onChange = () => "",
   initial = 0,
   value,
   max = 10,
@@ -15,7 +14,9 @@ const Counter = ({
 }) => {
   const [count, setCount] = useState(value ? value : initial);
 
-  useEffect(() => onChange(count), [count]);
+  useEffect(() => {
+    onChange(count);
+  }, [count]);
 
   const handleClick = (counter) => {
     if (count >= initial && count < max && counter === "plus") {
@@ -53,10 +54,6 @@ const Counter = ({
       </button>
     </div>
   );
-};
-
-Counter.propTypes = {
-  onChange: PropTypes.func.isRequired,
 };
 
 export default Counter;

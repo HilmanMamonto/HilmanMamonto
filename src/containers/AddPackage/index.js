@@ -26,9 +26,9 @@ const AddPackage = () => {
   };
 
   const btnLabels = {
-    0: "Add Desc an Next",
+    0: "Add Desc and Next",
     1: "Add Availability an Next",
-    2: "Add Images an Next",
+    2: "Add Images and Next",
     3: "CREATE PACKAGE",
   };
 

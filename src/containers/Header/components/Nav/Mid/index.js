@@ -1,3 +1,4 @@
+import IconButton from "components/IconButton/IconButton";
 import Icons from "components/Icons";
 import React from "react";
 import "./styles.scss";
@@ -13,16 +14,7 @@ const NavMid = ({ className, hidden, onClick }) => {
         Where are you going?
       </button>
       <span />
-      <button
-        type="button"
-        onClick={onClick}
-        style={{
-          width: "30px",
-          height: "30px",
-        }}
-      >
-        <Icons size="md" variant="search" />
-      </button>
+      <IconButton onClick={onClick} size="large" variant="search" />
     </div>
   );
 };

@@ -19,6 +19,7 @@ const sizes = {
   small: "avatar-small ",
   medium: "avatar-medium ",
   large: "avatar-large ",
+  xlarge: "avatar-xlarge ",
   undefined: "",
 };
 

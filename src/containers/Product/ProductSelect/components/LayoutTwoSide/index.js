@@ -19,7 +19,7 @@ const LayoutTwoSide = (props) => {
         <MoreThings />
       </div>
       <div className="body-right d-sm-none d-md-flex">
-        <BookCard className="d-none d-lg-block" />
+        <BookCard className="d-none d-xl-block" />
       </div>
     </div>
   );

@@ -49,6 +49,7 @@ const BookCard = ({ className }) => {
         fullWidth
         color="secondary"
         size="large"
+        label="Book"
         rightIcon="btn-rounded"
         justifyContent="space-between"
       />

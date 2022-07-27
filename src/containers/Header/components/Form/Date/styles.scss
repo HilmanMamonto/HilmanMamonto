@@ -6,20 +6,23 @@
   position: absolute;
   background-color: $white;
   top: 95px;
-  padding: 0px 40px;
   display: flex;
   justify-content: center;
   border-radius: 14px;
-  opacity: 0%;
   z-index: 5;
   overflow: hidden;
   flex-direction: column;
-  &.active {
-    padding: 24px 42px;
-    width: 100%;
-    height: auto;
-    opacity: 100%;
-    transition: opacity 0.3s ease-in-out, height 0.2s ease-in-out;
+  padding: 24px 42px;
+  width: 100%;
+  height: fit-content;
+  opacity: 100%;
+  transition: all 0.3s ease-in-out;
+  &[hidden] {
+    transition: all 0.3s ease-in-out;
+    display: flex !important;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-50px);
   }
 
   .date-choosed {

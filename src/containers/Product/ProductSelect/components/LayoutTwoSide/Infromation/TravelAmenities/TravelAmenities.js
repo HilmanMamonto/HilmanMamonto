@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
+import Icons from "components/Icons";
 
 const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
+  console.log(travelAmenitiesNot);
   return (
     <section id="amenities" className="amenities">
       <h4 className="mb-5">Amenities</h4>
@@ -10,7 +12,7 @@ const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
         <div className="items">
           {travelAmenities.map((item, i) => (
             <div className="item" key={"am" + i}>
-              <img src={item.iconUrl} />
+              <Icons size="large" variant={item.iconName} />
               <span>{item.name}</span>
             </div>
           ))}
@@ -19,7 +21,7 @@ const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
         <div className="items">
           {travelAmenitiesNot.map((item, i) => (
             <div className="item" key={"amn" + i}>
-              <img src={item.iconUrl} alt="" />
+              <Icons size="large" variant={item.iconName} alt="" />
               <span className="not-include-tittle">{item.name}</span>
             </div>
           ))}
