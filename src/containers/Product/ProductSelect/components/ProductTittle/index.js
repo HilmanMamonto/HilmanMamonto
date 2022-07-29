@@ -24,19 +24,27 @@ const ProductTittle = ({
           </span>
         </div>
         <div className="gap-2 product-tittle-foot">
-          <label>
-            <img src="/bold-star.svg" alt="" />
-            <a href="#reviews">{rate}</a>
+          <label className="d-flex align-items-center">
+            <Icons variant="star-fill" />
+            <a className="fs-6" href="#reviews">
+              {rate}
+            </a>
           </label>
-          <label>
-            <img src="/person.svg" alt="" />
-            <a href="#reviews">Reviews ( {reviews.length} )</a>
+          <label className="d-flex align-items-center">
+            <Icons variant="person" />
+            <a className="fs-6" href="#reviews">
+              Reviews ( {reviews.length} )
+            </a>
           </label>
-          <label>
-            <img src="/location.svg" alt="" />
-            <a href={locationSrc}>{location}</a>
+          <label className="d-flex align-items-center">
+            <Icons variant="location" />
+            <a className="fs-6" href={locationSrc}>
+              {location}
+            </a>
           </label>
-          <span>Only you and your group</span>
+          <span className="fs-6 d-flex align-items-center">
+            | Only you and your group
+          </span>
         </div>
       </div>
       <button

@@ -23,7 +23,9 @@ const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
               key={"amn" + i}
             >
               <Icons size="large" variant={item.iconName} alt="" />
-              <span className="not-include-tittle">{item.name}</span>
+              <span className="text-decoration-line-through fs-6">
+                {item.name}
+              </span>
             </div>
           ))}
         </div>
@@ -34,7 +36,7 @@ const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
           {language.map((item, i) => (
             <div key={"aml" + i}>
               <img src={item.iconName} alt="" />
-              <span>{item.name}</span>
+              <span className="fs-6">{item.name}</span>
             </div>
           ))}
         </div>

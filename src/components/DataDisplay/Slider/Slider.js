@@ -44,10 +44,6 @@ const Slider = ({
       });
   }, [ref]);
 
-  useEffect(() => {
-    if (ref) ref.current.scrollLeft = 0;
-  }, [children]);
-
   const handleClick = (btn) => {
     const intervals = {
       child: scroll.childWidth,

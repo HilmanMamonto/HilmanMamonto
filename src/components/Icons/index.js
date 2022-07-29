@@ -43,6 +43,7 @@ const variants = {
   "close-white": "/icons/close-white.svg",
   close: "/icons/close-gray.svg",
   "location-fill": "/icons/location-fill.svg",
+  location: "/icons/location.svg",
   burger: "/icons/burger.svg",
   "logo-white": "/icons/logo-white.svg",
   "logo-primary": "/icons/logo-primary.svg",
@@ -70,6 +71,8 @@ const variants = {
   parking: "/icons/parking-area.svg",
   "wi-fi": "/icons/wi-fi.svg",
   ac: "/icons/ac.svg",
+  "tour-guide": "/icons/tour-guide.svg",
+  bell: "/icons/bell.svg",
 };
 
 const Icons = ({

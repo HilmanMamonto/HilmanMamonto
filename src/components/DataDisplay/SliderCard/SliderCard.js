@@ -1,6 +1,5 @@
 import ButtonRounded from "components/ButtonRounded/ButtonRounded";
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 import { useRef } from "react";
 import "./styles.scss";
@@ -10,16 +9,9 @@ const SliderCard = ({ children, className = "" }) => {
 
   const [btnActivate, setBtnActivate] = useState(false);
   const [touch, setTouch] = useState({ startingX: 0, movingX: 0 });
-  const [scroll, setScroll] = useState({
-    scrollLeft: undefined,
-    scrollWidth: undefined,
-    offsetWidth: undefined,
-    current: 0,
-  });
+  const [index, setIndex] = useState(0);
 
   const handleTouchStart = (e) => {
-    const { scrollLeft } = e.target;
-    setScroll((p) => ({ ...p, scrollLeft: scrollLeft }));
     setTouch((p) => ({ ...p, startingX: e.touches[0].clientX }));
   };
 
@@ -28,48 +20,38 @@ const SliderCard = ({ children, className = "" }) => {
   };
 
   const handleTouchEnd = () => {
-    if (touch.startingX + 10 < touch.movingX) {
+    if (touch.startingX + 20 < touch.movingX) {
       handlePrev();
-    } else if (touch.startingX - 10 > touch.movingX) {
+    } else if (touch.startingX - 20 > touch.movingX) {
       handleNext();
+    } else {
+      handleReset();
     }
   };
 
+  const handleReset = () => {
+    ref.current.scrollTo(index * ref.current.offsetWidth, 0);
+  };
+
   const handleNext = () => {
-    const counter = ref.current.scrollLeft + ref.current.offsetWidth;
-    ref.current.scrollTo(counter, 0);
-    setScroll((p) => ({ ...p, scrollLeft: counter }));
+    if (index < children.length - 1) {
+      const counter = (index + 1) * ref.current.offsetWidth;
+      ref.current.scrollTo(counter, 0);
+      setIndex(index + 1);
+    }
   };
 
   const handlePrev = () => {
-    const counter = ref.current.scrollLeft - ref.current.offsetWidth;
-    ref.current.scrollTo(counter, 0);
-    setScroll((p) => ({ ...p, scrollLeft: counter }));
+    if (index > 0) {
+      const counter = (index - 1) * ref.current.offsetWidth;
+      ref.current.scrollTo(counter, 0);
+      setIndex(index - 1);
+    }
   };
-
-  useEffect(() => {
-    if (ref)
-      setScroll((p) => ({
-        ...p,
-        offsetWidth: ref.current.offsetWidth,
-        scrollWidth: ref.current.scrollWidth,
-        scrollLeft: ref.current.scrollLeft,
-      }));
-  }, [ref]);
 
   const classes = {
-    btnPrev: scroll.current === 0 ? "opacity-0" : "opacity-100",
-    btnNext:
-      scroll.current === children.length - 1 ? "opacity-0" : "opacity-100",
-  };
-
-  const handleScroll = (e) => {
-    const { scrollLeft, offsetWidth } = e.target;
-    setScroll((p) => ({
-      ...p,
-      offsetWidth: offsetWidth,
-      current: scrollLeft / offsetWidth,
-    }));
+    btnPrev: index === 0 ? "opacity-0" : "opacity-100",
+    btnNext: index === children.length - 1 ? "opacity-0" : "opacity-100",
   };
 
   return (
@@ -96,14 +78,13 @@ const SliderCard = ({ children, className = "" }) => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        onScroll={handleScroll}
         className="ms-items"
       >
         {children}
       </div>
       <div className="position-absolute bottom-0 mb-4 left-0 ms-dots">
         {children.map((item, i) => {
-          const activate = scroll.current === i ? "active" : "";
+          const activate = index === i ? "active" : "";
           return <span key={i} className={"ms-dot " + activate}></span>;
         })}
       </div>

@@ -14,7 +14,7 @@ const NavMobile = ({ className = "" }) => {
         to="/tour-guide"
         className="d-flex flex-column justify-content-center align-items-center gap-1"
       >
-        <Icons size="large" variant="camera" />
+        <Icons size="large" variant="tour-guide" />
         <span className="text-nowrap">Tour Guide</span>
       </Link>
       <Link

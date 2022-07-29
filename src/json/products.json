@@ -1087,8 +1087,8 @@
       }
     ],
     "language": [
-      { "name": "English", "iconUrl": "/flags/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flags/flag-indonesia.png" }
+      { "name": "English", "iconName": "/flags/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flags/flag-indonesia.png" }
     ],
     "itinerary": [
       {
@@ -1256,31 +1256,31 @@
     "travelAmenities": [
       {
         "name": "Lunch",
-        "iconUrl": "lunch"
+        "iconName": "lunch"
       },
       {
         "name": "Photograph",
-        "iconUrl": "camera"
+        "iconName": "camera"
       },
       {
         "name": "Transport",
-        "iconUrl": "car"
+        "iconName": "car"
       },
       {
         "name": "Free Ticket",
-        "iconUrl": "ticket"
+        "iconName": "ticket"
       },
       {
         "name": "Best Route",
-        "iconUrl": "route"
+        "iconName": "route"
       },
       {
         "name": "Umbrella",
-        "iconUrl": "umbrella"
+        "iconName": "umbrella"
       },
       {
         "name": "Sunscreen",
-        "iconUrl": "sunscreen"
+        "iconName": "sunscreen"
       }
     ],
     "travelAmenitiesNot": [
@@ -1290,8 +1290,8 @@
       }
     ],
     "language": [
-      { "name": "English", "iconUrl": "/flags/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flags/flag-indonesia.png" }
+      { "name": "English", "iconName": "/flags/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flags/flag-indonesia.png" }
     ],
     "itinerary": [
       {
@@ -1459,31 +1459,31 @@
     "travelAmenities": [
       {
         "name": "Lunch",
-        "iconUrl": "lunch"
+        "iconName": "lunch"
       },
       {
         "name": "Photograph",
-        "iconUrl": "camera"
+        "iconName": "camera"
       },
       {
         "name": "Transport",
-        "iconUrl": "car"
+        "iconName": "car"
       },
       {
         "name": "Free Ticket",
-        "iconUrl": "ticket"
+        "iconName": "ticket"
       },
       {
         "name": "Best Route",
-        "iconUrl": "route"
+        "iconName": "route"
       },
       {
         "name": "Umbrella",
-        "iconUrl": "umbrella"
+        "iconName": "umbrella"
       },
       {
         "name": "Sunscreen",
-        "iconUrl": "sunscreen"
+        "iconName": "sunscreen"
       }
     ],
     "travelAmenitiesNot": [
@@ -1493,8 +1493,8 @@
       }
     ],
     "language": [
-      { "name": "English", "iconUrl": "/flags/flag-english.png" },
-      { "name": "Indonesia", "iconUrl": "/flags/flag-indonesia.png" }
+      { "name": "English", "iconName": "/flags/flag-english.png" },
+      { "name": "Indonesia", "iconName": "/flags/flag-indonesia.png" }
     ],
     "itinerary": [
       {

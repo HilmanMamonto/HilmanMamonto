@@ -40,7 +40,7 @@ const Dashboard = () => {
         </Link>
       </div>
       <div className="dashboard-items px-4 px-sm-0 gap-4 mb-5 mb-lg-0">
-        <div className="w-100 d-flex flex-column gap-3 col col-sm-2">
+        <div className="w-100 mb-4 mb-lg-0 d-flex flex-column gap-3 col col-sm-2">
           <WalletInfo className={"w-100 " + ANIMATE_FADEINUP} value={500} />
           <div
             className={
