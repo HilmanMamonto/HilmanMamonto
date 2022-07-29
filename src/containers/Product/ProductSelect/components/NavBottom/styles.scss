@@ -1,9 +1,11 @@
 @import "/src/assets/styles/variables";
+@import "/src/assets/scss/mixins/breakpoints";
 
 .ps-nav-bottom {
   a {
     display: block;
     position: relative;
+    font-size: 0.75rem;
     &:hover {
       &::before {
         position: absolute;
@@ -13,6 +15,14 @@
         top: 0;
         background-color: $gray;
       }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .ps-nav-bottom {
+    a {
+      font-size: 1rem;
     }
   }
 }

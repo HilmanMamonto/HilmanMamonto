@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.scss";
 import { useScrollPos } from "components/utility/scrollPos";
-import Slide from "components/DataDisplay/Slide/Slide";
+import Slider from "components/DataDisplay/Slider/Slider";
 import Icons from "components/Icons";
 import { Link, useLocation } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const HeaderCategories = ({ className = "" }) => {
 
   return (
     <div className={"header-categories " + classes.shadow + className}>
-      <Slide
+      <Slider
         onChange={() => ""}
         interval="sm"
         gap={5}
@@ -53,7 +53,7 @@ const HeaderCategories = ({ className = "" }) => {
             </Link>
           );
         })}
-      </Slide>
+      </Slider>
     </div>
   );
 };

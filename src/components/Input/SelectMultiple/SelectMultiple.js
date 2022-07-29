@@ -103,7 +103,13 @@ export const SelectMultiple = ({
             type="number"
             required={required}
           />
-          <span className={values.length > 0 ? "text-body" : "text-black-50"}>
+          <span
+            className={
+              values.length > 0
+                ? "text-nowrap text-body text-truncate"
+                : "text-nowrap text-black-50 text-truncate"
+            }
+          >
             {display}
           </span>
         </div>

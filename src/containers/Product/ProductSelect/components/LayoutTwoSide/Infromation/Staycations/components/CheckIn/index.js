@@ -14,11 +14,14 @@ const CheckIn = ({}) => {
   };
 
   return (
-    <div className="d-flex gap-3">
-      <div ref={ref} className="d-flex flex-column w-75 position-relative">
+    <div className="row row-cols-1 px-2 row-cols-md-2">
+      <div
+        ref={ref}
+        className="d-flex flex-column mb-3 mb-md-0 pe-0 pe-md-2 px-0 position-relative"
+      >
         <button
           onClick={onToggle}
-          className="h-100 d-flex px-3 w-100 border rounded"
+          className="h-100 d-flex px-3 py-2 w-100 border rounded"
         >
           <div className="w-100 d-flex border-end align-items-start flex-column my-auto">
             <small className="fw-semibold">check-in</small>
@@ -31,15 +34,12 @@ const CheckIn = ({}) => {
         </button>
         <DateRangePicker
           hidden={!show}
+          style={{ width: "330px", padding: "0px 20px" }}
           className="position-absolute top-100 rounded shadow mt-4"
           onChange={(data) => setValues({ ...data.formated })}
         />
       </div>
-      <Button
-        justifyContent="center"
-        label="add to book"
-        className="py-3 w-50"
-      />
+      <Button justifyContent="center" label="add to book" className="py-3" />
     </div>
   );
 };

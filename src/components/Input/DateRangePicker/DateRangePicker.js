@@ -1,12 +1,13 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { DateRange } from "react-date-range";
-import PropTypes from "prop-types";
 import { useState } from "react";
 import "./styles.scss";
-import { useEffect } from "react";
 import { format } from "date-fns/esm";
 
-const DateRangePicker = ({ className = "", onChange, style, hidden }, ref) => {
+const DateRangePicker = (
+  { className = "", onChange = () => "", style, hidden },
+  ref
+) => {
   const [dates, setDates] = useState([
     {
       startDate: new Date(),

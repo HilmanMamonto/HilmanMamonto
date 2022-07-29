@@ -8,7 +8,6 @@ import React from "react";
 const ProductSelectedPage = () => {
   const { scrollPos } = useScrollPos();
 
-  console.log(scrollPos);
   const classes = {
     shadow: scrollPos >= 28 ? "shadow-sm" : "",
     border: scrollPos < 25 ? "border-bottom" : "",

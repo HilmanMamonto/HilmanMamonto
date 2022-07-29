@@ -31,7 +31,7 @@ const Notifications = () => {
     {
       name: "daniel",
       message: "Has give a review to you",
-      time: "10 days ago",
+      time: "7 days ago",
       imageUr: "/tgr/daniel-small.jpg",
     },
   ];

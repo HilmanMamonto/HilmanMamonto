@@ -3,7 +3,10 @@ import ProductCard from "./Card/Card";
 
 const ProductList = ({ data, className }) => {
   return (
-    <div className={"container " + className} style={{ marginTop: "160px" }}>
+    <div
+      className={"container px-4 px-auto  " + className}
+      style={{ marginTop: "160px" }}
+    >
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
         {data.map((item, i) => {
           return (

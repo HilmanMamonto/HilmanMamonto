@@ -1,8 +1,11 @@
 @import "/src/assets/scss/bootstrap-utilities.scss";
 
 .dashboard {
+  display: flex;
+  flex-direction: column-reverse;
+
   .sidebar {
-    position: absolute !important;
+    position: sticky !important;
   }
 }
 

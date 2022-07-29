@@ -49,6 +49,7 @@ const Avatar = ({
     );
 
   const elements = {
+    img: <div className={classes}>{item}</div>,
     a: (
       <a onClick={onClick} style={style} className={classes} href={href}>
         {item}

@@ -1,9 +1,6 @@
 @import "/src/assets/scss/bootstrap-utilities.scss";
 
 .dashboard-items {
-  display: grid;
-  grid-template-columns: 1fr;
-
   .db-item-wrapper {
     border-radius: 14px;
     box-shadow: 0px 2px 40px rgb(211 211 211 / 70%);
@@ -24,11 +21,9 @@
 
 @include media-breakpoint-up(lg) {
   .dashboard-items {
+    display: grid;
     grid-template-columns: 200px auto;
   }
-}
-
-@include media-breakpoint-up(lg) {
   .dahsboard-charts {
     grid-template-columns: 3fr 1fr;
   }

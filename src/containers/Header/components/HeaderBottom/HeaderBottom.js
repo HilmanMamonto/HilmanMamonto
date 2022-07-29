@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import PropTypes from "prop-types";
-import _dataVacStay from "json/vacations-staycations-recomendation.json";
 import Recomended from "../Form/Location/Recomended/Recomended";
 import { useEffect } from "react";
 import Manual from "../Form/Location/Manual";
@@ -121,7 +120,7 @@ const HeaderBottom = ({ isActive }) => {
               />
             </button>
           </div>
-          <div className="hb-left" hidden={active != "left"}>
+          <div className="hb-left" hidden={active !== "left"}>
             <Recomended
               onChange={handleChange}
               isActive={location === "recomended"}
@@ -130,10 +129,10 @@ const HeaderBottom = ({ isActive }) => {
           </div>
           <SearchDate
             onChange={(date) => setValues({ ...values, date: date })}
-            hidden={active != "mid"}
+            hidden={active !== "mid"}
           />
           <SearchPax
-            hidden={active != "right"}
+            hidden={active !== "right"}
             onChange={(val) => setValues({ ...values, people: val })}
           />
         </form>

@@ -74,26 +74,31 @@ const InputSchedule = ({ onChange, value }) => {
         className="mb-3"
         data={data}
       />
-      <TimePicker
-        onValidate={(v) => setValues({ ...values, validity: v })}
-        value={{ timeStart: values.timeStart, timeEnd: values.timeEnd }}
-        required={currentHour < 8}
-        startDisabled={data.length > 0}
-        disabled={currentHour >= 8}
-        className="mb-4"
-        size="large"
-        onChange={handleChange}
-      />
-      <TextArea
-        className="mb-3"
-        placeholder="schedule..."
-        min={50}
-        disabled={currentHour >= 8}
-        name="schedule"
-        required={currentHour < 8}
-        value={values.schedule}
-        onChange={handleChange}
-      />
+      {currentHour < 8 && (
+        <TimePicker
+          onValidate={(v) => setValues({ ...values, validity: v })}
+          value={{ timeStart: values.timeStart, timeEnd: values.timeEnd }}
+          required={currentHour < 8}
+          startDisabled={data.length > 0}
+          disabled={currentHour >= 8}
+          className="mb-4"
+          size="large"
+          onChange={handleChange}
+        />
+      )}
+      {currentHour < 8 && (
+        <TextArea
+          className="mb-3"
+          placeholder="schedule..."
+          min={50}
+          disabled={currentHour >= 8}
+          name="schedule"
+          required={currentHour < 8}
+          value={values.schedule}
+          onChange={handleChange}
+        />
+      )}
+
       {currentHour < 8 && (
         <Button
           fullWidth
@@ -147,7 +152,7 @@ const Desc = () => {
         value={values.tittle}
         onChange={handleChange}
       />
-      <div className="d-flex gap-3 mb-3">
+      <div className="d-flex flex-column flex-sm-row gap-3 mb-3">
         <Input
           leftIcon="budget"
           type="number"
@@ -170,7 +175,7 @@ const Desc = () => {
           required
         />
       </div>
-      <div className="d-flex gap-3 mb-3">
+      <div className="d-flex flex-column flex-sm-row gap-3 mb-3">
         <SelectMultiple
           label="Amenities"
           name="amenities"
@@ -190,7 +195,7 @@ const Desc = () => {
         className="mb-3"
         minLength={20}
         required
-        name="placeDescription"
+        name="placeDesc"
         label="Place Descrition"
         placeholder="place description..."
         value={values.placeDesc}

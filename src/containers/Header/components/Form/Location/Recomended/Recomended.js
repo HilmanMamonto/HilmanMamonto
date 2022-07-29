@@ -2,11 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import "./styles.scss";
 import PropTypes from "prop-types";
 import _dataVacStay from "json/vacations-staycations-recomendation.json";
-import ButtonRounded from "components/ButtonRounded/ButtonRounded";
 import { ANIMATE_FADEIN_RIGHT } from "assets/animate/animate";
 import SimpleCard from "components/DataDisplay/SimpleCard/SimpleCard";
 import ButtonUnderlline from "components/ButtonUnderline/ButtonUnderlline";
-import Slide from "components/DataDisplay/Slide/Slide";
+import Slider from "components/DataDisplay/Slider/Slider";
 import Icons from "components/Icons";
 
 const Recomended = ({ className = "", isActive, onChange }) => {
@@ -52,7 +51,7 @@ const Recomended = ({ className = "", isActive, onChange }) => {
         />
       </div>
       <div className="location-categories">
-        <Slide gap={2} className="w-100">
+        <Slider gap={2} className="w-100">
           {data.map((item, i) => {
             return (
               <button
@@ -66,7 +65,7 @@ const Recomended = ({ className = "", isActive, onChange }) => {
               </button>
             );
           })}
-        </Slide>
+        </Slider>
       </div>
 
       <div className="recent">

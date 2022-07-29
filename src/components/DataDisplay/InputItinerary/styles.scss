@@ -1,19 +1,8 @@
-@import "/src/assets/styles/styles.scss";
-.input-itinerary {
-  .iit-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
+@import "/src/assets/styles/variables";
 
+.input-itinerary {
   small {
     font-size: 0.75rem;
-  }
-
-  .iit-item {
-    display: flex;
-    justify-content: space-between;
   }
 
   .btn-iit {

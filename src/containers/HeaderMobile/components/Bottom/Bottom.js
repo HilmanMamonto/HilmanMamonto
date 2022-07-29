@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.scss";
 import Icons from "components/Icons";
 import IconButton from "components/IconButton/IconButton";
-import Slide from "components/DataDisplay/Slide/Slide";
+import Slider from "components/DataDisplay/Slider/Slider";
 import SimpleCard from "components/DataDisplay/SimpleCard/SimpleCard";
 import _dataVacStay from "json/vacations-staycations-recomendation.json";
 import { useState } from "react";
@@ -61,11 +61,12 @@ const Location = ({ isActive, onClick, onStatus }) => {
               label="Staycations"
             />
           </div>
-          <Slide className="gap-2">
+          <Slider className="gap-2">
             {data.map((item, i) => {
               return (
                 <button
                   key={i}
+                  type="button"
                   onClick={() => {
                     setValue(active + " " + item.tittle);
                     onStatus("done");
@@ -75,12 +76,12 @@ const Location = ({ isActive, onClick, onStatus }) => {
                 </button>
               );
             })}
-          </Slide>
+          </Slider>
         </div>
         <SearchList
           onChange={(val) => {
             setValue(val);
-            onStatus("done");
+            if (val) onStatus("done");
             setAs("recomendate");
           }}
           className="mt-3"
@@ -120,7 +121,7 @@ const Date = ({ isActive, onClick }) => {
     <section>
       <div hidden={!isActive} className="items shadow  p-4 ">
         <h5 className="mb-3">When's your trip?</h5>
-        <DateRangePicker onChange={(val) => setData({ ...val[0] })} />
+        <DateRangePicker onChange={(val) => setData({ ...val })} />
       </div>
       <button
         type="button"

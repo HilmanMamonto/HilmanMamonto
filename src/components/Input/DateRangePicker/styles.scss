@@ -8,6 +8,7 @@
   visibility: visible;
   background-color: $white;
   z-index: 1;
+  width: 100%;
 
   &[hidden] {
     display: inline-block !important;
@@ -23,10 +24,17 @@
 
   .rdrNextPrevButton {
     background-color: transparent;
+    margin: 0;
   }
 
   .rdrCalendarWrapper {
     font-size: 0.9rem;
+    width: 100%;
+    padding: 0;
+    .rdrMonth {
+      width: 100%;
+      padding: 0;
+    }
   }
 
   .rdrDayToday {

@@ -1,4 +1,4 @@
-import Slide from "components/DataDisplay/Slide/Slide";
+import Slider from "components/DataDisplay/Slider/Slider";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -13,7 +13,7 @@ const Items = ({ staycations, onChange = () => "" }) => {
 
   return (
     <div className="staycations-items mb-4">
-      <Slide gap={4}>
+      <Slider gap={4}>
         {staycations.map((item, i) => {
           return (
             <button
@@ -42,7 +42,7 @@ const Items = ({ staycations, onChange = () => "" }) => {
             </button>
           );
         })}
-      </Slide>
+      </Slider>
     </div>
   );
 };

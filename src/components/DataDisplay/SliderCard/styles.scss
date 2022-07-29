@@ -1,30 +1,40 @@
 @import "/src/assets/styles/variables";
 
-.slider-card {
-  position: relative;
-  height: fit-content;
+.mobile-slider {
   display: flex;
-  align-items: center;
-
-  .sl-items {
-    height: fit-content;
+  justify-content: center;
+  .ms-items {
+    display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    aspect-ratio: 1/1;
+    border-radius: 12px;
+
     &::-webkit-scrollbar {
       height: 0px;
     }
+
+    img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
   }
 
-  .btn-arrow {
-    position: absolute;
-    z-index: 2;
-    &.right {
-      right: 0;
-    }
+  .ms-dots {
+    display: flex;
+    gap: 0.5rem;
+    text-align: center;
 
-    &.left {
-      left: 0;
+    .ms-dot {
+      display: block;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 100px;
+      background-color: $white;
+      opacity: 0.7;
+      &.active {
+        opacity: 1;
+      }
     }
   }
 }

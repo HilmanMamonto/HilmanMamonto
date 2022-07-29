@@ -30,7 +30,6 @@ const useMediaQuery = (minMax, size) => {
     media.addEventListener("change", () => {
       setMatches(media.matches);
     });
-    console.log(matches);
   }, [matches, size]);
 
   return matches;

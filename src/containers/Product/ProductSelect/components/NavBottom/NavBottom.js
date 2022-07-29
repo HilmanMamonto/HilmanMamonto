@@ -20,13 +20,10 @@ const NavBottom = ({ hidden }) => {
           <a className="py-4" href="#staycations">
             Staycations
           </a>
-          <a className="py-4" href="#reviews">
-            Reviews
-          </a>
         </div>
         <Button
           className="px-4"
-          size="large"
+          size="small"
           color="secondary"
           shadow="medium"
           label="Book Now"

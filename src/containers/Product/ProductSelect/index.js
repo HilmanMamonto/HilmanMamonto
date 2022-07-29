@@ -5,11 +5,18 @@ import ProductPictures from "./components/ProductPictures";
 import ProductTittle from "./components/ProductTittle";
 import Reviews from "./components/Reviews";
 import _dataProduct from "json/products.json";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const ProductSelected = () => {
-  let { id } = useParams();
-  const dataProduct = _dataProduct.filter((item) => item.id === id);
+  const location = useLocation();
+  const dataProduct = _dataProduct.filter(
+    (item) => "?product=" + item.id === location.search
+  );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return dataProduct.map((item, i) => (
     <div

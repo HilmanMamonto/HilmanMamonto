@@ -18,11 +18,11 @@ const DahsboardList = ({
         className
       }
     >
-      <div className="d-flex col-4 gap-3 align-items-center">
-        <Avatar src={src} />
+      <div className="d-flex col-5 gap-3 align-items-center">
+        <Avatar as="img" src={src} />
         <span className="text-truncate">{name}</span>
       </div>
-      <div className="d-flex col-8 justify-content-between">
+      <div className="d-flex col-7 justify-content-between">
         <span>{mid}</span>
         <span className="text-end">{right}</span>
       </div>

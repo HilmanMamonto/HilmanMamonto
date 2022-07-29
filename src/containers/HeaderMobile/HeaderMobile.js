@@ -1,13 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
-import HeaderCategories from "containers/Header/components/Categories";
 import "./styles.scss";
 import Icons from "components/Icons";
 import Bottom from "./components/Bottom/Bottom";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const HeaderMobile = ({ className, hasCategories }) => {
+const HeaderMobile = ({ className }) => {
   const [active, setActive] = useState(false);
 
   const body = document.querySelector("body");
@@ -19,10 +17,10 @@ const HeaderMobile = ({ className, hasCategories }) => {
 
   return (
     <div className={"header-mobile-wrapper bg-white " + className}>
-      <div className="container header-mobile">
+      <div className="container header-mobile px-4">
         <button
           type="button"
-          className="d-flex gap-4 items px-4  border shadow-sm"
+          className="d-flex gap-3 items px-4  border shadow-sm"
           onClick={() => setActive(!active)}
         >
           <Icons variant="search" size="large" />

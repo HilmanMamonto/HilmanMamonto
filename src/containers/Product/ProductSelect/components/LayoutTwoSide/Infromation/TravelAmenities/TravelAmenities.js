@@ -1,36 +1,39 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./styles.scss";
 import Icons from "components/Icons";
 
 const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
-  console.log(travelAmenitiesNot);
   return (
     <section id="amenities" className="amenities">
       <h4 className="mb-5">Amenities</h4>
-      <div className="travel-amenities-items">
-        <div className="items">
+      <div>
+        <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4">
           {travelAmenities.map((item, i) => (
-            <div className="item" key={"am" + i}>
+            <div className="mb-4 d-flex gap-3 align-items-center" key={i}>
               <Icons size="large" variant={item.iconName} />
-              <span>{item.name}</span>
+              <span className="fs-6">{item.name}</span>
             </div>
           ))}
         </div>
-        <label>Not Include</label>
-        <div className="items">
+        <label className="mb-2 fs-5 fw-semibold">Not Include</label>
+        <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4">
           {travelAmenitiesNot.map((item, i) => (
-            <div className="item" key={"amn" + i}>
+            <div
+              className="mb-4 d-flex gap-3 align-items-center"
+              key={"amn" + i}
+            >
               <Icons size="large" variant={item.iconName} alt="" />
               <span className="not-include-tittle">{item.name}</span>
             </div>
           ))}
         </div>
-        <label>Language{language.length > 1 ? "s" : ""}</label>
+        <label className="mb-2 fs-5 fw-semibold">
+          Language{language.length > 1 ? "s" : ""}
+        </label>
         <div className="items-language">
           {language.map((item, i) => (
             <div key={"aml" + i}>
-              <img src={item.iconUrl} alt="" />
+              <img src={item.iconName} alt="" />
               <span>{item.name}</span>
             </div>
           ))}
@@ -38,12 +41,6 @@ const TravelAmenities = ({ travelAmenities, travelAmenitiesNot, language }) => {
       </div>
     </section>
   );
-};
-
-TravelAmenities.propTypes = {
-  travelAmenities: PropTypes.array.isRequired,
-  travelAmenitiesNot: PropTypes.array.isRequired,
-  language: PropTypes.array.isRequired,
 };
 
 export default TravelAmenities;

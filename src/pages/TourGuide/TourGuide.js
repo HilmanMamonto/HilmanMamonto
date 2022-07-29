@@ -5,8 +5,6 @@ import HeaderTourGuide from "containers/HeaderTourGuide/HeaderTourGuide";
 import LearnMore from "containers/LearnMore/LearnMore";
 import ProfileSlider from "containers/ProfileSlider/ProfileSlider";
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const TourGuide = () => {
   const { scrollPos } = useScrollPos();
@@ -18,7 +16,6 @@ const TourGuide = () => {
         <Banner />
         <ProfileSlider />
         <LearnMore />
-        {/* footer */}
       </div>
       <div
         style={{ zIndex: 2 }}

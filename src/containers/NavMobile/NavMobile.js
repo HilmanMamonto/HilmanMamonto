@@ -1,27 +1,29 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./styles.scss";
 import Icons from "components/Icons";
-import Avatar from "components/Avatar/Avatar";
+import { Link } from "react-router-dom";
 
-const NavMobile = ({ className }) => {
+const NavMobile = ({ className = "" }) => {
   return (
-    <div
-      className={
-        "nav-mobile container d-flex justify-content-center align-items-center gap-5 " +
-        className
-      }
-    >
-      <button className="d-flex flex-column align-items-center gap-1">
-        <Icons variant="search" />
-        <span>search</span>
+    <div className={"nav-mobile mx-0 px-4 w-100 row row-cols-3 " + className}>
+      <button className="d-flex flex-column justify-content-center align-items-center gap-1">
+        <Icons size="large" variant="logo-secondary" />
+        <span>Home</span>
       </button>
-      <button className="d-flex flex-column align-items-center gap-1">
-        <Icons variant="search" />
-        <span>search</span>
-      </button>
-      <Avatar size="small" />
-      <span>Profile</span>
+      <Link
+        to="/tour-guide"
+        className="d-flex flex-column justify-content-center align-items-center gap-1"
+      >
+        <Icons size="large" variant="camera" />
+        <span className="text-nowrap">Tour Guide</span>
+      </Link>
+      <Link
+        className="d-flex flex-column justify-content-center align-items-center gap-1"
+        to="/dashboard/main"
+      >
+        <Icons variant="dashboard" size="large" />
+        <span>Dashboard</span>
+      </Link>
     </div>
   );
 };

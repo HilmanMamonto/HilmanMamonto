@@ -1,16 +1,15 @@
+import SliderCard from "components/DataDisplay/SliderCard/SliderCard";
 import React from "react";
 import "./styles.scss";
-import Slide from "components/DataDisplay/Slide/Slide";
 
-const ProductPictures = ({ imagesUrl, sumOfPictures }) => {
-  const arr = [0, 1, 2, 3, 4];
+const ProductPictures = ({ imagesUrl }) => {
   return (
     <div className="product-pictures">
-      <Slide gap={0} className="pp-mobile d-flex d-sm-flex d-md-none">
-        {arr.map((item, i) => {
-          return <img key={i} src={imagesUrl[0].url} alt=""></img>;
+      <SliderCard className="d-flex d-sm-flex d-md-none">
+        {imagesUrl.map((item, i) => {
+          return <img key={i} src={item.url} alt=""></img>;
         })}
-      </Slide>
+      </SliderCard>
       <div className="product-pictures-wrapper">
         <div className="pp-left">
           <img className="pp-left" src={imagesUrl[0].url} alt="" />

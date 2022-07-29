@@ -2,16 +2,6 @@
 @import "/src/assets/scss/mixins/breakpoints";
 
 .product-pictures {
-  .pp-mobile {
-    border-radius: 12px;
-    overflow: hidden;
-    height: 380px;
-    width: 100%;
-    aspect-ratio: 1/1;
-    img {
-      object-fit: cover;
-    }
-  }
   .product-pictures-wrapper {
     position: relative;
     height: 310px;
@@ -21,8 +11,9 @@
 
     img {
       object-fit: cover;
-      height: 100%;
       width: inherit;
+      height: inherit;
+      aspect-ratio: 1/1;
     }
 
     .pp-left {

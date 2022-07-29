@@ -33,13 +33,13 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="d-flex flex-column flex-lg-row gap-3 justify-content-between mb-5">
+      <div className="d-flex flex-column px-4 px-sm-0  flex-lg-row gap-3 justify-content-between mb-5">
         <h1 className={"mb-0 " + ANIMATE_FADEINDOWN}>Welcome back, William</h1>
         <Link to={"main/add-package"}>
           <Button fullWidth label="add a package" color="secondary" />
         </Link>
       </div>
-      <div className="dashboard-items gap-4 mb-5 mb-lg-0">
+      <div className="dashboard-items px-4 px-sm-0 gap-4 mb-5 mb-lg-0">
         <div className="w-100 d-flex flex-column gap-3 col col-sm-2">
           <WalletInfo className={"w-100 " + ANIMATE_FADEINUP} value={500} />
           <div

@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
-import { useEffect } from "react";
 
 const InputItinerary = ({
   data = [],
@@ -9,8 +8,6 @@ const InputItinerary = ({
   className,
   numOfTime = 0,
 }) => {
-  const ref = useRef();
-
   const items = data
     ? data.map((item, i) => {
         const dotClass =
@@ -37,17 +34,18 @@ const InputItinerary = ({
 
   return (
     <div className={classes.container}>
-      <div className="iit-head">
-        <label>
-          Itinerary*
-          <small className="text-black-50 ms-1">
-            (Min and max are 8 hours), current num of time is {numOfTime}
-          </small>
-        </label>
-        <button type="button" className="btn-iit" onClick={onClickReset}>
-          Reset
-        </button>
+      <div className="mb-3">
+        <div className="d-flex justify-content-between">
+          <label>Itinerary*</label>
+          <button type="button" className="btn-iit" onClick={onClickReset}>
+            Reset
+          </button>
+        </div>
+        <small className="text-black-50 mb-5">
+          (Min and max are 8 hours), current num of time is {numOfTime}
+        </small>
       </div>
+
       <div className="iit-items">{data ? items : "There is no items"}</div>
     </div>
   );

@@ -10,8 +10,11 @@ const LearnMore = () => {
         src="/banner-learn-more.jpg"
       />
       <div className="position-absolute text-center">
-        <h1 className="text-white mb-3">Need Help?, Need Something?</h1>
+        <h1 className="text-white mb-3 w-100 text-center">
+          Need Help?, Need Something?
+        </h1>
         <Button
+          className="mx-auto"
           label="Learn More"
           size="large"
           color="secondary"

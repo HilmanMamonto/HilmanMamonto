@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./styles.scss";
-import { useState } from "react";
 import SliderCard from "components/DataDisplay/SliderCard/SliderCard";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
   imagesUrl = [],
@@ -14,30 +13,21 @@ const ProductCard = ({
   className = "",
   id,
 }) => {
-  const [current, setCurrent] = useState(0);
-
   return (
     <div className={"product-card " + className}>
-      <div className="pictures ">
-        <SliderCard variant="counter" onChange={(c) => setCurrent(c)} gap={0}>
-          {imagesUrl.map((item, i) => {
-            return (
-              <a key={i} className="picture" href={"/product/" + id}>
-                <img src={item.url} alt={item.url}></img>
-              </a>
-            );
-          })}
-        </SliderCard>
-        <div className="card-dots">
-          {imagesUrl.length > 1 &&
-            imagesUrl.map((item, i) => {
-              const act = i === current ? "active " : "";
-              return (
-                <span key={"dot " + i} className={"dot bg-white " + act} />
-              );
-            })}
-        </div>
-      </div>
+      <SliderCard>
+        {imagesUrl.map((item, i) => {
+          return (
+            <Link
+              key={i}
+              style={{ minWidth: "100%" }}
+              to={"product/?product=" + id}
+            >
+              <img src={item.url} alt={item.url}></img>
+            </Link>
+          );
+        })}
+      </SliderCard>
       <div className="description">
         <div className="d-flex justify-content-between align-items center mt-2">
           <span className="m-0 text-body fw-bold">{tittle}</span>

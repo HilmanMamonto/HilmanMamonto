@@ -1,4 +1,4 @@
-import Slide from "components/DataDisplay/Slide/Slide";
+import Slider from "components/DataDisplay/Slider/Slider";
 import React from "react";
 import "./styles.scss";
 import tourGuideReviews from "json/tourGuideReviews.json";
@@ -10,13 +10,10 @@ const ProfileSlider = () => {
         You can make <br /> awesome journies anywhere
       </h1>
 
-      <Slide buttonClass={"ps-btn"} gap={3} className="ms-3 ms-lg-5 ps-items">
+      <Slider buttonClass={"ps-btn"} gap={3} className="ms-3 ms-lg-5 ps-items">
         {tourGuideReviews.map((item, i) => {
           return (
-            <figure
-              key={i}
-              className="ps-item d-inline-flex flex-column gap-3"
-            >
+            <figure key={i} className="ps-item d-inline-flex flex-column gap-3">
               <img style={{ objectFit: "cover" }} src={item.imgUrl}></img>
               <label className="mb-2 fs-4">“{item.review}”</label>
               <div className="d-flex justify-content-between align-items-center pe-4">
@@ -26,7 +23,7 @@ const ProfileSlider = () => {
             </figure>
           );
         })}
-      </Slide>
+      </Slider>
     </div>
   );
 };

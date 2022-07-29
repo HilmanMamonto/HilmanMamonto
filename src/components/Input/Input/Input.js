@@ -80,7 +80,15 @@ export const Input = ({
         />
         {iconMessage[validate.validity]}
       </div>
-      {validate && <small>{validate.message}</small>}
+      {validate && (
+        <small
+          className={
+            validate.validity === "valid" ? "text-primary" : "text-danger"
+          }
+        >
+          {validate.message}
+        </small>
+      )}
     </div>
   );
 };
