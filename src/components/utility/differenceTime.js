@@ -1,9 +1,7 @@
 import { differenceInMilliseconds } from "date-fns";
-import { useEffect } from "react";
 import { useState } from "react";
 
 export const useDifferenceTime = () => {
-  // timeStart, timeEnd format is 00:00
   const [value, setValue] = useState("");
 
   const getDifferenceTime = (timeStart, timeEnd) => {

@@ -37,7 +37,7 @@ const Notifications = () => {
   ];
 
   return (
-    <div className="d-flex flex-column gap-3 mb-5 mb-lg-0">
+    <div className="d-flex flex-column gap-3 mb-5 px-4 mb-lg-0">
       <h1 className={"mb-4 " + ANIMATE_FADEINDOWN}>Notifications</h1>
       {arr.map((item, i) => {
         return (
