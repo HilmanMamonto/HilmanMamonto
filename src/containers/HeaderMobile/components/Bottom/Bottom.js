@@ -9,7 +9,7 @@ import { useState } from "react";
 import ButtonUnderlline from "components/ButtonUnderline/ButtonUnderlline";
 import DateRangePicker from "components/Input/DateRangePicker/DateRangePicker";
 import Counter from "components/Counter/Counter";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import SearchList from "components/DataDisplay/SearchList/SearchList";
 import { useEffect } from "react";
 import { format } from "date-fns";

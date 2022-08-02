@@ -2,7 +2,7 @@ import Stepper from "components/Stepper/Stepper";
 import React from "react";
 import Desc from "./Desc";
 import { useState } from "react";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import Availability from "./Availability";
 import Images from "./Images";
 import Stays from "./Stays";

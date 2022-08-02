@@ -1,7 +1,7 @@
 import { ANIMATE_BOUNCE, ANIMATE_HEARTBEAT } from "assets/animate/animate";
 import IconButton from "components/IconButton/IconButton";
 import Icons from "components/Icons";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";

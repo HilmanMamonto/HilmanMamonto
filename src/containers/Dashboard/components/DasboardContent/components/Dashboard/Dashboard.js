@@ -4,7 +4,7 @@ import ChartLine from "components/DataDisplay/Charts/ChartLine/ChartLine";
 import DahsboardList from "components/DataDisplay/DahsboardList/DahsboardList";
 import WalletInfo from "components/DataDisplay/WalletInfo/WalletInfo";
 import Icons from "components/Icons";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles.scss";

@@ -15,7 +15,7 @@ const NavRight = ({ className }) => {
         className
       }
     >
-      <a href="/tour-guide">Become a tour guide</a>
+      <Link to="/tour-guide">Become a tour guide</Link>
       <div ref={ref} className="position-relative">
         <IconButton onClick={onToggle} variant="burger" size="large" />
         <div

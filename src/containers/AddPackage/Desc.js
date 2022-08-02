@@ -2,7 +2,7 @@ import TextArea from "components/Input/TextArea/TextArea";
 import TimePicker from "components/TimePicker/TimePicker";
 import React from "react";
 import { useState } from "react";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import InputItinerary from "components/DataDisplay/InputItinerary/InputItinerary";
 import "./styles.scss";
 import "animate.css";

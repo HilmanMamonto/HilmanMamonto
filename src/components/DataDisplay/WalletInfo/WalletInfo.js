@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./styles.scss";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 
 const WalletInfo = ({ value = 0, className }) => {
   return (

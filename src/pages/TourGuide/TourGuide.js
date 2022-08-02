@@ -1,4 +1,4 @@
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import { useScrollPos } from "components/utility/scrollPos";
 import Banner from "containers/Banner/Banner";
 import HeaderTourGuide from "containers/HeaderTourGuide/HeaderTourGuide";

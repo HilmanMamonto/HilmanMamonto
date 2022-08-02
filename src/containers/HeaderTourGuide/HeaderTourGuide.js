@@ -1,5 +1,5 @@
 import Icons from "components/Icons";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import React from "react";
 
 const HeaderTourGuide = ({ hidden }) => {

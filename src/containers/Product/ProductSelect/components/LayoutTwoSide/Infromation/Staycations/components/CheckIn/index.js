@@ -1,5 +1,5 @@
 import DateRangePicker from "components/Input/DateRangePicker/DateRangePicker";
-import Button from "components/NewButton/Button";
+import Button from "components/Button/Button";
 import { useClickOutside } from "components/utility/clickOutside";
 import React from "react";
 import { useState } from "react";
